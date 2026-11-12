@@ -4,6 +4,7 @@
 **Disciplina:** Domínios de Software — Bacharelado em Engenharia de Software — Universidade Federal de Goiás (UFG)
 **Técnica de elicitação:** Entrevista semiestruturada
 **Duração prevista:** 45 a 60 minutos
+**Versão reduzida (20 a 25 min):** [Roteiro_Entrevista_Reduzido.md](Roteiro_Entrevista_Reduzido.md)
 **Termo de consentimento:** [Termo_Consentimento_Entrevista.md](Termo_Consentimento_Entrevista.md)
 
 ---
