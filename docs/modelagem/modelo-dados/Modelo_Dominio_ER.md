@@ -281,6 +281,10 @@ erDiagram
         uuid feedback_id PK, FK
         uuid competencia_id PK, FK
     }
+    MembroFeedbackEquipe {
+        uuid feedback_id PK, FK "feedback com receptor equipe"
+        uuid colaborador_id PK, FK "membro na data do feedback"
+    }
     Replica {
         uuid id PK
         uuid feedback_id FK
@@ -325,6 +329,8 @@ erDiagram
     Colaborador |o--o{ Feedback : emite
     Colaborador |o--o{ Feedback : recebe
     Equipe |o--o{ Feedback : recebe
+    Feedback ||--o{ MembroFeedbackEquipe : "entregue a"
+    Colaborador ||--o{ MembroFeedbackEquipe : "recebe em grupo"
     Feedback ||--|{ VersaoFeedback : "tem versoes"
     Feedback ||--|{ FeedbackFato : "baseado em"
     Fato ||--o{ FeedbackFato : embasa
@@ -344,6 +350,7 @@ erDiagram
 
 - **Campos obrigatórios (RN-002):** emissor, receptor, data, tipo, modalidade e ao menos um fato. Por isso `Feedback ||--|{ FeedbackFato` (um ou mais). No modo confidencial, o emissor existe e fica em `VinculoConfidencial` (seção 10), e não em `emissor_id`.
 - **Receptor:** exatamente um entre `receptor_colaborador_id` e `receptor_equipe_id` deve estar preenchido (restrição de verificação).
+- **Feedback para equipe no perfil individual (M-09):** ao enviar um feedback para uma equipe, o sistema grava em `MembroFeedbackEquipe` quem era membro naquela data. O feedback aparece no histórico e no perfil de cada um desses membros (RF-048), sinalizado como "feedback em grupo". O conteúdo continua em um único `Feedback`, e quem entrar na equipe depois não o recebe.
 - **Não exclusão e versões (RN-003):** não há exclusão de `Feedback`. Toda edição cria uma nova `VersaoFeedback`; a versão vigente é a de maior `numero`.
 - **Fato privado até o vínculo (RF-011):** enquanto não houver linha em `FeedbackFato`, só o `autor_id` vê o fato.
 - **Relato (RF-012):** `relator_id` nunca é exibido ao receptor. Um fato com `eh_relato = true` só pode ser vinculado a um feedback se `confirmado_pelo_autor = true`.
@@ -747,6 +754,7 @@ Consequência aceita: no modo `ANONIMO` o emissor não pode editar a resposta de
 | `Questionario`, `Pergunta` | RF-007, RF-008, RF-009, RF-010, RNF-026, RN-001 |
 | `Fato` | RF-011, RF-012, RN-001 |
 | `Feedback`, `FeedbackFato`, `FeedbackCompetencia` | RF-013, RF-014, RF-015, RF-021, RF-034, RN-002, RN-004, RNF-002 |
+| `MembroFeedbackEquipe` | RF-013, RF-048 |
 | `VersaoFeedback` | RF-016, RN-003 |
 | `Replica` | RF-020 |
 | `SolicitacaoFeedback`, `DestinatarioSolicitacao` | RF-031 |
@@ -781,7 +789,4 @@ Consequência aceita: no modo `ANONIMO` o emissor não pode editar a resposta de
 | M-06 | Configurações gerais em `ConfiguracaoOrganizacao` de linha única | Uma organização por instalação (RN-010) |
 | M-07 | Coletar `data_nascimento` e calcular a condição de menor de idade a partir dela | Decisão da equipe. A data identifica o menor (RN-016) e permite saber quando ele deixa de sê-lo, sem depender de atualização manual de um indicador |
 | M-08 | `ResultadoConsolidado` guardado ao encerrar o ciclo (RF-032), não calculado a cada consulta | Decisão da equipe. O resultado liberado ao avaliado não muda depois, mesmo que uma resposta seja ocultada ou um dado seja anonimizado mais tarde, e o histórico (RF-048) e os painéis (RF-049, RF-050) leem valores prontos |
-
-Ponto a confirmar com a equipe na revisão do modelo:
-
-- Se o receptor "equipe" de um feedback (RF-013) deve gerar uma cópia por membro no histórico individual (RF-048) ou ser mostrado a partir da equipe. O modelo atual guarda uma linha só e o histórico do colaborador consulta também os feedbacks das suas equipes.
+| M-09 | Feedback para equipe aparece no perfil de cada membro, sinalizado como "feedback em grupo", com os membros da data do envio guardados em `MembroFeedbackEquipe` | Decisão da equipe. O colaborador vê no próprio histórico (RF-048) tudo o que recebeu, e a lista de membros fixa na data impede que quem entrou depois veja o feedback e que quem saiu o perca |
