@@ -128,16 +128,40 @@ flowchart LR
 
 ## 4. Papéis e responsabilidades
 
+Para simular uma equipe real de engenharia de requisitos, cada integrante assume um papel fictício. O papel define a quem cabe **coordenar** cada assunto. Ele não impede que o integrante trabalhe em issues de outras áreas, porque as issues são distribuídas entre todos.
+
+### 4.1 Papéis fictícios da equipe
+
 | Papel | Quem | Responsabilidades |
 |---|---|---|
 | **Product Owner (PO)** | Profa. Adriana Silveira de Souza | Explica o domínio e as necessidades; responde dúvidas; decide conflitos de requisitos; valida o resultado final |
-| **Equipe de requisitos** | Ana Luísa, Davi, Isadora, Júlia e Verônica | Executa todas as etapas do processo. Cada integrante especifica pelo menos um caso de uso completo (#48) |
+| **Gerente de Projeto** | Isadora Yasmim da Silva | Mantém o repositório e o Kanban; acompanha prazos; distribui as issues; organiza as reuniões do grupo e a comunicação com a PO |
+| **Analista de Requisitos Líder** | Júlia de Souza Nascimento | Define e mantém este processo; coordena a análise e a lista geral de requisitos; decide a prioridade proposta antes de levar à PO; cuida da rastreabilidade |
+| **Analista de Elicitação** | Ana Luísa Pereira dos Santos | Coordena entrevistas e questionários; cuida do roteiro, do termo de consentimento e das transcrições; garante que cada fonte gere sua síntese |
+| **Modelador de Sistemas** | Davi Augusto Ferreira de Carvalho | Coordena os modelos: BPMN, diagrama e casos de uso, modelo de dados; garante a consistência entre modelos e requisitos |
+| **Analista de Qualidade e Documentação** | Verônica Ribeiro Oliveira Palmeira | Coordena a revisão dos artefatos; cuida dos requisitos não funcionais, da LGPD e do padrão IEEE 830; mantém o glossário |
+
+### 4.2 Papéis de execução
+
+| Papel | Quem | Responsabilidades |
+|---|---|---|
 | **Responsável pela issue** | Integrante atribuído na issue | Produz o artefato, abre o PR, responde à revisão e mantém o card do Kanban atualizado |
 | **Revisor** | Qualquer integrante que não seja o autor | Revisa o PR com a lista de verificação da seção 2.4 e aprova ou pede ajustes. Todo PR precisa de pelo menos 1 aprovação |
 | **Entrevistador** | Integrantes escalados para cada entrevista | Conduz a entrevista pelo roteiro, coleta o consentimento e grava |
 | **Transcritor** | Integrante responsável pela issue da entrevista | Transcreve, revisa e organiza a transcrição por temas |
-| **Mantenedora do repositório e do Kanban** | Isadora | Mantém a estrutura do repositório, o quadro e os acessos dos integrantes (#30) |
 | **Consolidador** | Responsável pela issue #55 | Junta os artefatos, confere consistência de IDs e termos, e prepara a entrega |
+
+### 4.3 Matriz de responsabilidades por etapa (RACI)
+
+**R** executa · **A** aprova e responde pelo resultado · **C** é consultado · **I** é informado
+
+| Etapa | PO | Gerente de Projeto | Analista Líder | Analista de Elicitação | Modelador | Qualidade e Documentação |
+|---|---|---|---|---|---|---|
+| Elicitação | C | I | C | A/R | R | R |
+| Análise | C | I | A/R | R | C | C |
+| Especificação | C | I | C | C | A/R | R |
+| Validação | A | I | R | C | C | R |
+| Gestão | I | A/R | R | I | I | C |
 
 **Regra de comunicação com a PO.** Dúvidas e conflitos são anotados no artefato onde surgiram, em uma seção "Pontos a validar". O grupo junta essas dúvidas e leva à PO em uma única conversa, para não perder respostas.
 
