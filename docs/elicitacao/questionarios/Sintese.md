@@ -1,6 +1,6 @@
 # Síntese dos Requisitos dos Questionários
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Técnica de elicitação:** Questionário (Google Forms)
 **Issue:** #42 – Síntese dos requisitos dos questionários
 **Milestone:** 1ª Entrega – Levantamento de Requisitos
@@ -185,16 +185,18 @@ Legenda da coluna **Fonte:** Q01 = questionário de Isabella; Q02 = questionári
 
 ## 4. Divergências e pendências para validação com a cliente
 
-| Tema | Q01 | Q02 | Encaminhamento |
-|---|---|---|---|
-| Anonimato | "Nada precisa ser anônimo" (sinceridade 2/5) | Avaliação do gestor deve ser anônima (sinceridade 1/5) | RQ-04 adotado como **obrigatório** na avaliação ascendente (a versão de Q01, "quando configurado", foi substituída) |
-| Diretoria vê resultados? | Não | Sim | Validar com a cliente; proposta: Diretoria vê apenas dados agregados |
-| Responder pelo celular | Nada útil | Muito útil | Manter RQ-20 com prioridade média |
-| Lembretes | Pouco útil | Útil | Manter RQ-21 com opção de desativar |
-| Tempo para avaliar | 10 a 20 min | Mais de 20 min | Manter limite de 20 min (RQ-11) |
-| Número mínimo de respondentes (RQ-14) | – | – | Definir o valor com a cliente |
-| Consentimento como base legal (RQ-12) | – | – | A pesquisa documental (RD-03) mostra que, na relação de emprego, o consentimento não deve ser a base padrão. Manter RQ-12 só para funcionalidades opcionais (RD-04) |
-| "Anônimo" × RH vendo o emissor (RQ-04, RQ-13) | – | – | A PO disse que o RH pode ver quem deu o feedback (Entrevista 01 §11). Se o RH puder ver, o modo é "confidencial", não "anônimo" (RD-15, RD-16). Validar com a PO qual dos dois vale para a avaliação ascendente |
+As pendências abaixo ficaram em aberto ao fim desta síntese. Todas foram tratadas na consolidação da [lista geral](../../Lista_Geral_Requisitos.md) (#45), como mostra a última coluna.
+
+| Tema | Q01 | Q02 | Encaminhamento | Tratamento na lista geral |
+|---|---|---|---|---|
+| Anonimato | "Nada precisa ser anônimo" (sinceridade 2/5) | Avaliação do gestor deve ser anônima (sinceridade 1/5) | RQ-04 adotado como **obrigatório** na avaliação ascendente (a versão de Q01, "quando configurado", foi substituída) | Ponto P-01: confidencial como padrão na avaliação ascendente, anônimo como opção por ciclo (RN-004, RF-030) |
+| Diretoria vê resultados? | Não | Sim | Validar com a cliente; proposta: Diretoria vê apenas dados agregados | Ponto P-02: proposta adotada (RNF-001) |
+| Responder pelo celular | Nada útil | Muito útil | Manter RQ-20 com prioridade média | Conflito C-08: interface responsiva como Must (RNF-027); aplicativo nativo na versão futura |
+| Lembretes | Pouco útil | Útil | Manter RQ-21 com opção de desativar | Conflito C-09: Should, desativável por usuário (RF-040) |
+| Tempo para avaliar | 10 a 20 min | Mais de 20 min | Manter limite de 20 min (RQ-11) | Mantido (RNF-014) |
+| Número mínimo de respondentes (RQ-14) | – | – | Definir o valor com a cliente | Ponto P-03: 3, configurável, nunca menor que 3 (RN-005) |
+| Consentimento como base legal (RQ-12) | – | – | A pesquisa documental (RD-03) mostra que, na relação de emprego, o consentimento não deve ser a base padrão. Manter RQ-12 só para funcionalidades opcionais (RD-04) | Conflito C-06: proposta adotada (RN-012, RF-055) |
+| "Anônimo" × RH vendo o emissor (RQ-04, RQ-13) | – | – | A PO disse que o RH pode ver quem deu o feedback (Entrevista 01 §11). Se o RH puder ver, o modo é "confidencial", não "anônimo" (RD-15, RD-16). Validar com a PO qual dos dois vale para a avaliação ascendente | Ponto P-01 (RN-004) |
 
 ---
 

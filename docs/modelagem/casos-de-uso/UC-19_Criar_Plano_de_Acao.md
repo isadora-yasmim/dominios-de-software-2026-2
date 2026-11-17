@@ -1,7 +1,7 @@
 # UC-19 Criar plano de ação
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
-**Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.0 · **Data:** 17/11/2026
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
+**Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.1 · **Data:** 17/11/2026
 **Responsável:** Ana Luísa Pereira dos Santos
 **Prioridade:** Must · **Área:** Plano de ação e metas · [Diagrama](Diagrama_Casos_de_Uso.md#44-plano-de-ação-e-metas) · [Modelo e convenções](Casos_de_Uso_Completos.md)
 
@@ -9,7 +9,7 @@
 
 ## 1. Escopo
 
-Sistema de Feedback e Gestão de Competências.
+Sistema Web de Feedback e Gestão de Competências.
 
 ## 2. Nível
 
@@ -79,11 +79,16 @@ Objetivo do usuário. Estende o UC-08 Registrar feedback, no ponto de extensão 
 1. O Gestor adia a criação. O Sistema mantém, no feedback de origem, a indicação de que o plano ainda não foi criado.
 2. O caso de uso termina. O Gestor pode retomá-lo a partir do feedback, ou agendar a sessão no UC-11.
 
-**1d. O emissor do feedback construtivo não é o gestor do receptor, como um par ou um colega de outra área.**
+**1d. O emissor do feedback construtivo não é o gestor do receptor, como um par ou um colega de outra área, e o feedback é identificado.**
 
 1. O Sistema permite ao emissor criar o plano com o receptor, da mesma forma que o Gestor (RF-042, RN-006).
 2. O Sistema informa que o gestor direto do receptor também acompanhará o plano (RF-044).
 3. O cenário continua no passo 2.
+
+**1e. O feedback de origem é confidencial, como o de um par ou o da avaliação ascendente.**
+
+1. O Sistema informa ao emissor que o plano será definido pelo receptor e pelo gestor direto do receptor, sem o emissor, para não revelar quem emitiu (RN-004, RN-006; UC19-D04).
+2. O caso de uso termina para o emissor. O gestor direto do receptor, que já pode ver o feedback (RNF-001), cria o plano a partir do feedback de origem, seguindo este cenário a partir do passo 2 no lugar do emissor.
 
 **3a. O emissor e o receptor não chegam a um acordo sobre as ações.**
 
@@ -159,9 +164,10 @@ Uma vez por feedback construtivo que precisa de correção. A PO diz que, no con
 
 | # | Questão | Decisão | Justificativa |
 |---|---|---|---|
-| UC19-D01 | Como o sistema registra que o plano foi definido em conjunto? | O emissor registra o plano e o receptor confirma. O plano só fica aberto depois da confirmação. **Impacto no modelo ER (#52):** acrescentar o valor `AGUARDANDO_CONFIRMACAO` à enumeração `StatusPlano` e o valor `PLANO_PARA_CONFIRMAR` à `TipoNotificacao` | RN-006 exige a definição conjunta, e a PO descreve o plano como "produto da colaboração dos dois" (E01 §4). Sem a confirmação, nada distingue um plano combinado de um plano imposto pelo emissor |
-| UC19-D02 | Quem pode ser responsável por uma ação? | Só o receptor ou o emissor do feedback | O plano mostra o problema do feedback construtivo. Pela RNF-001, só o receptor, o emissor, o gestor direto e o RH podem ver esse conteúdo. Um terceiro como responsável teria acesso ao plano e, com ele, ao problema |
+| UC19-D01 | Como o sistema registra que o plano foi definido em conjunto? | O emissor registra o plano e o receptor confirma. O plano só fica aberto depois da confirmação. **Impacto no modelo ER (#52), aplicado na versão 1.1 do modelo:** acrescentar o valor `AGUARDANDO_CONFIRMACAO` à enumeração `StatusPlano` e o valor `PLANO_PARA_CONFIRMAR` à `TipoNotificacao` | RN-006 exige a definição conjunta, e a PO descreve o plano como "produto da colaboração dos dois" (E01 §4). Sem a confirmação, nada distingue um plano combinado de um plano imposto pelo emissor |
+| UC19-D02 | Quem pode ser responsável por uma ação? | Só o receptor ou o emissor do feedback. No plano de feedback confidencial, o gestor direto ocupa o lugar do emissor (UC19-D04) | O plano mostra o problema do feedback construtivo. Pela RNF-001, só o receptor, o emissor, o gestor direto e o RH podem ver esse conteúdo. Um terceiro como responsável teria acesso ao plano e, com ele, ao problema |
 | UC19-D03 | O plano pode ser criado depois do envio do feedback? | Sim, a partir do feedback de origem, enquanto ele não tiver plano | A PO descreve o plano como resultado da sessão de feedback, depois da autorreflexão do receptor (E01 §4). Exigir o plano no mesmo momento do registro obrigaria a decidir antes da conversa |
+| UC19-D04 | Quem define o plano quando o feedback construtivo é confidencial? | O receptor e o seu gestor direto, sem o emissor. O plano guarda o gestor direto no lugar do emissor (`PlanoAcao.gestor_id` no modelo ER 1.1) | Decisão ERS-D05 da especificação IEEE 830, incorporada à RN-006 na lista geral 1.1. A RN-004 proíbe revelar o emissor confidencial ao receptor, e um plano conjunto com o emissor o revelaria. O gestor direto já pode ver o feedback (RNF-001), então nenhum dado novo é exposto |
 
 ## 13. Rastreabilidade
 
@@ -169,8 +175,8 @@ Uma vez por feedback construtivo que precisa de correção. A PO diz que, no con
 |---|---|
 | Requisitos funcionais | RF-042 (do diagrama); RF-006, RF-013, RF-016, RF-018, RF-021, RF-040, RF-043, RF-044, RF-045, RF-048 (relacionados) |
 | Requisitos não funcionais | RNF-001, RNF-002, RNF-012, RNF-015, RNF-017 a RNF-023, RNF-024, RNF-027, RNF-030 |
-| Regras de negócio | RN-001, RN-006, RN-007, RN-008, RN-013, RN-015 |
+| Regras de negócio | RN-001, RN-004, RN-006, RN-007, RN-008, RN-013, RN-015 |
 | Entidades do modelo ER | `PlanoAcao`, `AcaoPlano`, `PontoMonitoramento`, `Feedback`, `FeedbackFato`, `FeedbackCompetencia`, `Notificacao` |
 | Casos de uso relacionados | UC-08 (feedback construtivo, caso estendido); UC-04 (competências específicas); UC-11 (sessão de feedback); UC-20 (acompanhamento do plano); UC-21 (metas de desenvolvimento); UC-31 (lembretes) |
-| Decisões aplicadas | DS-10, DS-13 (especificação suplementar) |
+| Decisões aplicadas | DS-10, DS-13 (especificação suplementar); ERS-D05 (especificação IEEE 830) |
 | Fontes | [Entrevista 01](../../elicitacao/entrevistas/Entrevista01_Adriana.md), §4, §6 e §20; [Entrevista 02](../../elicitacao/entrevistas/Entrevista02_Eliene.md), §2 e §4; [Processo AS-IS e dores](../../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) |

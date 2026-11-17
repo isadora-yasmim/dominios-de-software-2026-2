@@ -1,6 +1,6 @@
 # Sistema Análogo – 15Five
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Técnica de elicitação:** Análise de sistema análogo
 **Issue:** #40 · **Data de referência da pesquisa:** 17/11/2026
 **Artefatos relacionados:** [Entrevista 01](../entrevistas/Entrevista01_Adriana.md) · [Questionário 01](../questionarios/Questionario01_Isabella.md) · Síntese dos requisitos do sistema análogo (issue #43)

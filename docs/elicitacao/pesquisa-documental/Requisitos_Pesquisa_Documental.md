@@ -1,6 +1,6 @@
 # Requisitos extraídos da Pesquisa Documental
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Técnica de elicitação:** Pesquisa documental · **Issue:** #33
 **Relatório completo:** [Pesquisa_Documental.md](Pesquisa_Documental.md) (documentos `FD-xx` na seção 2, conflitos na seção 8)
 

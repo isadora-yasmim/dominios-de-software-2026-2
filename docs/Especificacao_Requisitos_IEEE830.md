@@ -2,16 +2,17 @@
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (INF0296, 2026/2) · 1ª Etapa: Levantamento de Requisitos
-**Issue:** #54 · **Versão:** 1.0 · **Data:** 17/11/2026
+**Issue:** #54 · **Versão:** 1.1 · **Data:** 17/11/2026
 **Responsáveis:** Júlia de Souza Nascimento e Verônica Ribeiro Oliveira Palmeira
 **Padrão:** IEEE Std 830-1998, *Recommended Practice for Software Requirements Specifications*
-**Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45), versão 1.0, e [Documento Visão](Documento_Visao.md) (#46), versão 1.0
+**Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45), versão 1.1, e [Documento Visão](Documento_Visao.md) (#46), versão 1.1
 
 ## Histórico de revisões
 
 | Versão | Data | Autoras | Descrição |
 |---|---|---|---|
 | 1.0 | 17/11/2026 | Júlia de Souza Nascimento e Verônica Ribeiro Oliveira Palmeira | Primeira versão, consolidando a lista geral, o Documento Visão, os casos de uso, a especificação suplementar, o modelo ER e o dicionário de dados |
+| 1.1 | 17/11/2026 | Verônica Ribeiro Oliveira Palmeira | Revisão final (#55). Textos do RF-003, da RN-005 e da RN-006 conforme a lista geral 1.1, que incorporou o Apêndice C.3. Ajustes do Apêndice C.2 aplicados no modelo ER 1.1. Entidades novas na seção 3.4.1. Situação dos apêndices C.2 e C.3 atualizada |
 
 ---
 
@@ -265,7 +266,7 @@ Os usuários vêm do Documento Visão (seção 3.3) e os atores, do [diagrama de
 
 O tempo, representado pelo ator **Relógio do sistema**, dispara os lembretes e a política de retenção (UC-30, UC-31). Não é um usuário.
 
-O acesso de cada classe aos dados está na seção 3.6.5. A forma de dar acesso à diretoria e ao encarregado, que não estão na lista de perfis do RF-003, está na decisão [ERS-D02](#apêndice-c--decisões-desta-especificação).
+O acesso de cada classe aos dados está na seção 3.6.5. A diretoria e o encarregado entraram na lista de perfis do RF-003 na versão 1.1 da lista geral, pela decisão [ERS-D02](#apêndice-c--decisões-desta-especificação).
 
 ### 2.4 Restrições
 
@@ -383,7 +384,7 @@ Os requisitos funcionais estão organizados por funcionalidade (IEEE 830, anexo 
 |---|---|---|---|---|---|
 | RF-001 | O sistema deve permitir que o RH ou o administrador cadastre colaboradores, cargos, equipes e a hierarquia da organização (quem é gestor de quem), com quantos níveis hierárquicos forem necessários. | Must | Alta | RE-28 | UC-01 |
 | RF-002 | O sistema deve permitir importar colaboradores, cargos, equipes e hierarquia a partir de planilha (CSV), como alternativa ao cadastro manual. | Should | Alta | RE-28; RD-39 | UC-02 |
-| RF-003 | O sistema deve autenticar cada usuário e liberar as funções de acordo com o seu perfil: colaborador, gestor, RH ou administrador. Um mesmo usuário pode acumular perfis, como o gestor que também é avaliado pelo seu superior. | Must | Alta | RE-27; RD-14; RP-17 | UC-01 |
+| RF-003 | O sistema deve autenticar cada usuário e liberar as funções de acordo com o seu perfil: colaborador, gestor, RH, administrador, diretoria ou encarregado. A diretoria e o encarregado têm acesso restrito à sua função: a diretoria vê só indicadores agregados (RNF-001) e o encarregado atende às solicitações de titulares e aos incidentes (RF-061, RF-063). Um mesmo usuário pode acumular perfis, como o gestor que também é avaliado pelo seu superior. | Must | Alta | RE-27; RD-14; RP-17 | UC-01 |
 | RF-004 | O sistema deve permitir login único (SSO) com o provedor de identidade da organização. | Won't | Alta | RA-23 | — (Won't) |
 
 Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versão: integração externa não pedida pela PO.
@@ -603,11 +604,11 @@ O [modelo de domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52) d
 
 | Grupo | Entidades | Requisitos |
 |---|---|---|
-| Organização, usuários e acesso | `Colaborador`, `PerfilColaborador`, `Cargo`, `Equipe`, `ImportacaoCadastro`, `ConfiguracaoOrganizacao` | RF-001 a RF-003, RN-010, RN-013, RN-016 |
+| Organização, usuários e acesso | `Colaborador`, `PerfilColaborador`, `Cargo`, `Equipe`, `ImportacaoCadastro`, `ConfiguracaoOrganizacao` | RF-001 a RF-003, RNF-006, RN-010, RN-013, RN-016 |
 | Competências e questionários | `Competencia`, `CargoCompetencia`, `CompetenciaAtribuida`, `Questionario`, `Pergunta` | RF-005 a RF-010, RN-001, RN-014 |
-| Fatos, feedbacks e sessões | `Fato`, `Feedback`, `VersaoFeedback`, `FeedbackFato`, `FeedbackCompetencia`, `MembroFeedbackEquipe`, `Replica`, `SolicitacaoFeedback`, `DestinatarioSolicitacao`, `SessaoFeedback`, `ParticipanteSessao` | RF-011 a RF-021, RF-031, RF-034, RF-037 a RF-039, RN-002, RN-003 |
+| Fatos, feedbacks e sessões | `Fato`, `Feedback`, `VersaoFeedback`, `FeedbackFato`, `FeedbackCompetencia`, `MembroFeedbackEquipe`, `DestinatarioVisibilidade`, `Replica`, `SolicitacaoFeedback`, `DestinatarioSolicitacao`, `SessaoFeedback`, `ParticipanteSessao`, `DisponibilidadeAgenda`, `TermoOfensivo` | RF-010, RF-011 a RF-021, RF-031, RF-034, RF-037 a RF-039, RNF-002, RNF-024, RN-002, RN-003 |
 | Ciclos, respostas e anonimato | `CicloAvaliacao`, `AvaliadoCiclo`, `CicloCompetencia`, `ModalidadeCiclo`, `ObjetivoCiclo`, `ConviteAvaliacao`, `RespostaAvaliacao`, `ItemResposta`, `VinculoConfidencial`, `ResultadoConsolidado` | RF-022 a RF-033, RF-035, RN-004, RN-005, RNF-003 |
-| Metas, indicadores, check-ins e planos | `Meta`, `Indicador`, `MedicaoIndicador`, `ConfiguracaoCheckIn`, `CheckIn`, `PlanoAcao`, `AcaoPlano`, `PontoMonitoramento` | RF-023, RF-036, RF-041 a RF-047, RN-006 |
+| Metas, indicadores, check-ins e planos | `Meta`, `Indicador`, `MedicaoIndicador`, `ConfiguracaoCheckIn`, `CheckIn`, `CheckInMeta`, `CheckInPlano`, `PlanoAcao`, `AcaoPlano`, `PontoMonitoramento` | RF-023, RF-036, RF-041 a RF-047, RN-006 |
 | LGPD, auditoria e notificações | `CategoriaDado`, `CompartilhamentoDados`, `BloqueioLegal`, `TermoConsentimento`, `Consentimento`, `SolicitacaoTitular`, `IncidenteSeguranca`, `TitularAfetado`, `RegistroAuditoria`, `Notificacao`, `PreferenciaNotificacao` | RF-040, RF-054 a RF-063, RNF-005, RN-011, RN-012 |
 
 #### 3.4.2 Requisitos de integridade, guarda e privacidade dos dados
@@ -625,7 +626,7 @@ O [modelo de domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52) d
 | LD-09 | A condição de menor de 18 anos é calculada a partir da data de nascimento | RN-016; M-07 |
 | LD-10 | Dados pessoais e conteúdo de feedback são criptografados em repouso | RNF-004 |
 
-As divergências entre o ER e os requisitos apontadas pelo dicionário de dados (seção 5.2) estão tratadas no [Apêndice C.2](#c2-ajustes-no-modelo-de-dados). Em todas elas vale o requisito.
+As divergências entre o ER e os requisitos apontadas pelo dicionário de dados (seção 5.2) estão tratadas no [Apêndice C.2](#c2-ajustes-no-modelo-de-dados) e foram corrigidas na versão 1.1 do modelo ER.
 
 ### 3.5 Restrições de projeto
 
@@ -736,7 +737,7 @@ Critérios de aceitação: ES, seção 8.2. Condições de armazenamento dos mod
 | Administrador | Não | Não | Não | Não |
 | Encarregado de dados | Não, exceto o necessário para responder a uma solicitação de titular, na fila do RF-061 | Não | Não | Não |
 
-A linha do encarregado foi acrescentada por esta especificação (decisão [ERS-D02](#apêndice-c--decisões-desta-especificação)). Fatos ainda não vinculados a um feedback são visíveis só para quem os registrou (RF-011), e rascunhos, só para o autor (RNF-012).
+A linha do encarregado vem da decisão [ERS-D02](#apêndice-c--decisões-desta-especificação) e também está na ES, seção 8.1. Fatos ainda não vinculados a um feedback são visíveis só para quem os registrou (RF-011), e rascunhos, só para o autor (RNF-012).
 
 #### 3.6.6 Manutenibilidade
 
@@ -774,8 +775,8 @@ Políticas do domínio que valem independentemente da tela ou da função. A col
 | RN-002 | São obrigatórios em todo feedback: emissor, receptor, data, tipo, modalidade e pelo menos um fato. | Must | Alta | RA-24; RE-01 | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md) |
 | RN-003 | Um feedback registrado não pode ser excluído, porque é registro oficial do histórico do colaborador. O emissor pode editá-lo, e cada alteração gera uma nova versão datada, sem apagar a anterior. | Must | Média (P-04) | RE-32; RD-47 | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md), UC-17 |
 | RN-004 | Cada modalidade de feedback tem um modo de identificação do emissor: identificado (o receptor vê quem emitiu), confidencial (a identidade fica oculta para o receptor e só o RH pode consultá-la) ou anônimo (nenhum perfil, nem RH nem administrador, consegue vincular a resposta ao emissor). O feedback do gestor para o colaborador é identificado. Na avaliação ascendente, entre pares e na equipe, o modo padrão é confidencial, e o ciclo pode ser configurado como anônimo. Um usuário com perfil RH nunca pode consultar a identidade dos emissores das avaliações em que ele próprio é o avaliado. | Must | Média (P-01) | RE-33; RD-15; RQ-04; RQ-13; RP-17; ESC | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md), [UC-13](modelagem/casos-de-uso/UC-13_Planejar_Ciclo_de_Avaliacao.md), [UC-14](modelagem/casos-de-uso/UC-14_Responder_Avaliacao.md) |
-| RN-005 | Resultados de fontes confidenciais ou anônimas (pares, equipe, 360° e avaliação ascendente) só podem ser exibidos de forma agregada e quando houver um número mínimo de respondentes, configurável, com padrão de 3. Abaixo desse mínimo, as respostas são agrupadas em outra categoria ou omitidas. | Must | Média (P-03) | RQ-14; RD-17; RA-19 | UC-16, UC-23 |
-| RN-006 | Planos de ação e metas de desenvolvimento são definidos em conjunto pelo colaborador e pelo gestor; no plano de ação, pelo receptor e pelo emissor do feedback. | Must | Alta | RQ-08; RE-15 | [UC-19](modelagem/casos-de-uso/UC-19_Criar_Plano_de_Acao.md), UC-21 |
+| RN-005 | Resultados de fontes confidenciais ou anônimas (pares, equipe, 360° e avaliação ascendente) só podem ser exibidos de forma agregada e quando houver um número mínimo de respondentes, configurável, com padrão de 3 e nunca menor que 3. Abaixo desse mínimo, as respostas são agrupadas em outra categoria ou omitidas. | Must | Média (P-03) | RQ-14; RD-17; RA-19 | UC-16, UC-23 |
+| RN-006 | Planos de ação e metas de desenvolvimento são definidos em conjunto pelo colaborador e pelo gestor; no plano de ação, pelo receptor e pelo emissor do feedback. Se o feedback de origem for confidencial, o plano é definido pelo receptor e pelo seu gestor direto, sem o emissor. | Must | Alta | RQ-08; RE-15 | [UC-19](modelagem/casos-de-uso/UC-19_Criar_Plano_de_Acao.md), UC-21 |
 | RN-007 | O sistema apoia o desenvolvimento das pessoas e não decide promoção, salário ou desligamento. A organização pode usar o histórico como um dos critérios dessas decisões; nesse caso, os critérios devem estar documentados e ser os mesmos para todos no mesmo cargo. | Must | Alta | RE-34; RD-46; RP-10 | UC-23 |
 | RN-008 | Indicadores, pontuações e gráficos são apoio à decisão humana. O sistema não toma decisões automáticas sobre o colaborador e, quando calcular uma pontuação, deve exibir os critérios e os dados usados no cálculo. | Must | Alta | RD-27 | UC-16, UC-22 |
 | RN-009 | O sistema não é canal de denúncia. | Must | Alta | RE-35; RD-48 | Transversal |
@@ -880,14 +881,14 @@ As conferências abaixo foram feitas por script sobre os arquivos do repositóri
 
 ### Apêndice C – Decisões desta especificação
 
-Ao reunir os artefatos, apareceram pontos em que eles divergiam ou em que um requisito não definia tudo. O dicionário de dados (seção 5) já tinha registrado a maior parte deles. Esta seção registra como a especificação os trata. Nenhuma decisão altera o texto de um requisito da lista geral: elas esclarecem a interpretação ou indicam o ajuste necessário em outro artefato.
+Ao reunir os artefatos, apareceram pontos em que eles divergiam ou em que um requisito não definia tudo. O dicionário de dados (seção 5) já tinha registrado a maior parte deles. Esta seção registra como a especificação os trata. Na versão 1.0, nenhuma decisão alterava o texto de um requisito da lista geral: elas esclareciam a interpretação ou indicavam o ajuste necessário em outro artefato. Na revisão final (#55), os ajustes das seções C.2 e C.3 foram aplicados nos artefatos de origem.
 
 #### C.1 Decisões sobre requisitos
 
 | # | Questão | Decisão | Justificativa | Origem do ponto |
 |---|---|---|---|---|
-| ERS-D01 | Qual é o nome do produto? | **Sistema Web de Feedback e Gestão de Competências** | É o nome do Documento Visão, que é o artefato que define o produto (Larman, cap. 7), e o adotado pelo glossário. Os outros artefatos usam "Sistema de Gestão de Competências (módulo de Feedback)", que descreve a área do enunciado, e não o produto | Dicionário, T-08 |
-| ERS-D02 | Como a diretoria e o encarregado de dados acessam o sistema, se o RF-003 lista só os perfis colaborador, gestor, RH e administrador? | Os dois são classes de usuário com acesso restrito à sua função. A diretoria vê só resultados agregados (ES, seção 8.1). O encarregado acessa a fila de solicitações de titulares e o registro de incidentes (RF-061, RF-063), sem acesso ao conteúdo de feedbacks além do necessário para responder a uma solicitação. Os dois perfis devem ser incluídos na lista do RF-003 na próxima revisão da lista geral (C.3) | O Documento Visão (seção 3.3) e o diagrama de casos de uso (atores e UC-27, UC-29) já tratam os dois como usuários, e a ES já dá acesso à diretoria. Restringir o acesso à função segue o princípio da necessidade (LGPD, art. 6º, III) e a lista fechada do RNF-001 | Dicionário, I-01 |
+| ERS-D01 | Qual é o nome do produto? | **Sistema Web de Feedback e Gestão de Competências** | É o nome do Documento Visão, que é o artefato que define o produto (Larman, cap. 7), e o adotado pelo glossário. Os outros artefatos usam "Sistema Web de Feedback e Gestão de Competências", que descreve a área do enunciado, e não o produto | Dicionário, T-08 |
+| ERS-D02 | Como a diretoria e o encarregado de dados acessam o sistema, se o RF-003 lista só os perfis colaborador, gestor, RH e administrador? | Os dois são classes de usuário com acesso restrito à sua função. A diretoria vê só resultados agregados (ES, seção 8.1). O encarregado acessa a fila de solicitações de titulares e o registro de incidentes (RF-061, RF-063), sem acesso ao conteúdo de feedbacks além do necessário para responder a uma solicitação. Os dois perfis foram incluídos na lista do RF-003 na versão 1.1 da lista geral (C.3) | O Documento Visão (seção 3.3) e o diagrama de casos de uso (atores e UC-27, UC-29) já tratam os dois como usuários, e a ES já dá acesso à diretoria. Restringir o acesso à função segue o princípio da necessidade (LGPD, art. 6º, III) e a lista fechada do RNF-001 | Dicionário, I-01 |
 | ERS-D03 | Como conciliar o emissor obrigatório da RN-002 com o modo anônimo? | A RN-002 vale para todo feedback, que nunca é anônimo: fora de ciclo segue o padrão de RN-004 pela direção, e o anonimato só existe nas respostas de avaliação de um ciclo (UC08-D04), que não são feedbacks no sentido da RN-002. No modo confidencial, o emissor é guardado no vínculo separado, o que atende à RN-002 | RF-030 configura o modo por ciclo e modalidade. O ER separa `Feedback` de `RespostaAvaliacao`. A RN-002 lista os campos do feedback | Dicionário, I-02 |
 | ERS-D04 | A edição permitida pela RN-003 vale para respostas anônimas? | Não. A resposta anônima não pode ser alterada depois do envio, e o avaliador é avisado antes de enviar. Nos modos identificado e confidencial, a resposta pode ser alterada enquanto o ciclo estiver aberto, com auditoria | O sistema não guarda nada que ligue a resposta anônima ao emissor (ER, seção 10). Decisão UC14-D02 do caso de uso UC-14 | Dicionário, I-03 |
 | ERS-D05 | Como fazer o plano de ação conjunto da RN-006 quando o feedback construtivo é confidencial? | O plano é definido pelo receptor e pelo seu gestor direto, sem o emissor, para não revelar quem emitiu | A RN-006 já prevê as duas formas de definição conjunta: colaborador e gestor, ou receptor e emissor. A RN-004 proíbe revelar o emissor confidencial ao receptor. O gestor direto já pode ver o feedback (RNF-001), então nenhum dado novo é exposto | Dicionário, I-05 |
@@ -899,7 +900,7 @@ Ao reunir os artefatos, apareceram pontos em que eles divergiam ou em que um req
 
 #### C.2 Ajustes no modelo de dados
 
-O IEEE 830 (seção 5.3.4) pede que a especificação defina os requisitos lógicos dos dados. Nos pontos abaixo, o modelo ER (#52) ainda não reflete totalmente um requisito ou uma decisão de caso de uso. **Vale o requisito**, e o ajuste cabe ao responsável pelo modelo, pela gestão de mudanças do processo (seção 9). Nenhum desses pontos altera a lista de requisitos.
+O IEEE 830 (seção 5.3.4) pede que a especificação defina os requisitos lógicos dos dados. Nos pontos abaixo, a versão 1.0 do modelo ER (#52) não refletia totalmente um requisito ou uma decisão de caso de uso. Valia o requisito, e o ajuste seguiu a gestão de mudanças do processo (seção 9). **Todos foram aplicados na versão 1.1 do modelo ER** (seção 14 dele). Nenhum desses pontos altera a lista de requisitos.
 
 | # | Ponto | O que o modelo precisa atender | Requisito que prevalece |
 |---|---|---|---|
@@ -921,7 +922,7 @@ Os códigos I-xx são os da seção 5.2 do dicionário de dados.
 
 #### C.3 Alterações a incorporar na lista geral
 
-Para manter uma fonte única, as alterações de texto ficam para a próxima revisão da lista geral, pela gestão de mudanças do processo (seção 9). Até lá, vale a decisão indicada.
+Para manter uma fonte única, as alterações de texto foram feitas na própria lista geral, pela gestão de mudanças do processo (seção 9). **As três foram incorporadas na versão 1.1 da lista geral** (#55), e as tabelas da seção 3 já trazem o texto novo.
 
 | Requisito | Alteração | Decisão |
 |---|---|---|

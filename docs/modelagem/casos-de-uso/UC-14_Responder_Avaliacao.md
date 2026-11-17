@@ -1,6 +1,6 @@
 # UC-14 Responder avaliação
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.0 · **Data:** 17/11/2026
 **Responsável:** Isadora Yasmim da Silva
 **Prioridade:** Must · **Área:** Ciclo de avaliação formal · [Diagrama](Diagrama_Casos_de_Uso.md#43-ciclo-de-avaliação-formal) · [Modelo e convenções](Casos_de_Uso_Completos.md)
@@ -9,7 +9,7 @@
 
 ## 1. Escopo
 
-Sistema de Feedback e Gestão de Competências.
+Sistema Web de Feedback e Gestão de Competências.
 
 ## 2. Nível
 

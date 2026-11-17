@@ -1,10 +1,10 @@
 # Casos de Uso Completos
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (2026/2) · 1ª Etapa: Levantamento de Requisitos
 **Referência:** Larman, *Utilizando UML e Padrões*, cap. 6
 **Issue:** #48 · **Data:** 17/11/2026
-**Entrada:** [Diagrama de Casos de Uso](Diagrama_Casos_de_Uso.md) (#47) e [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.0
+**Entrada:** [Diagrama de Casos de Uso](Diagrama_Casos_de_Uso.md) (#47) e [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.1
 
 ---
 
@@ -47,7 +47,7 @@ Cada arquivo segue as seções abaixo, na mesma ordem. Os campos são os do mode
 | # | Seção | O que escrever |
 |---|---|---|
 | — | **Cabeçalho** | ID e nome do diagrama, responsável, data e versão |
-| 1 | **Escopo** | O sistema em projeto: "Sistema de Feedback e Gestão de Competências" |
+| 1 | **Escopo** | O sistema em projeto: "Sistema Web de Feedback e Gestão de Competências" |
 | 2 | **Nível** | "Objetivo do usuário", como todos os casos do diagrama. "Subfunção" só para casos incluídos, como o UC-16 |
 | 3 | **Ator principal** | O ator do diagrama que pede o serviço ao sistema para atingir seu objetivo |
 | 4 | **Interessados e interesses** | Todos que têm algo a ganhar ou a perder com o caso de uso, mesmo sem usar o sistema, e o que cada um precisa. É daqui que saem as regras que o cenário tem de respeitar |

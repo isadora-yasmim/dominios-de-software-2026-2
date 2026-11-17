@@ -1,9 +1,9 @@
 # Diagrama de Casos de Uso
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Referência:** Larman, *Utilizando UML e Padrões*, cap. 6
 **Issue:** #47 · **Data:** 17/11/2026
-**Entrada:** [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.0
+**Entrada:** [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.1
 **Fonte dos diagramas:** [Diagrama_Casos_de_Uso.puml](Diagrama_Casos_de_Uso.puml) (PlantUML; gera todas as imagens desta página)
 
 ---
@@ -18,7 +18,7 @@
 6. [Diagramas](#6-diagramas)
 7. [Cobertura dos requisitos funcionais](#7-cobertura-dos-requisitos-funcionais)
 8. [O que ficou fora do diagrama](#8-o-que-ficou-fora-do-diagrama)
-9. [Próximos passos](#9-próximos-passos)
+9. [Ligação com os demais artefatos](#9-ligação-com-os-demais-artefatos)
 
 ---
 
@@ -55,13 +55,14 @@ Com 31 casos de uso, um diagrama único fica difícil de ler. Por isso há uma *
 - **Par.** A issue lista "Par" como ator. Como qualquer colaborador pode ser par de outro, o par não é um tipo de usuário, e sim um **papel** assumido ao ser convidado para uma avaliação. Por isso o ator se chama **Avaliador convidado** e cobre também a equipe, a avaliação ascendente e a autoavaliação (RF-024, RF-027).
 - **RH e Administrador** ficaram separados, porque a lista geral define perfis diferentes (RF-003): o administrador cuida da configuração, o RH cuida do processo e vê os feedbacks. Os dois podem manter os cadastros (RF-001, RF-005).
 - **Uma pessoa pode ter vários papéis.** Um gestor também é avaliado pelo seu superior, e um usuário pode acumular o perfil RH (RF-003). No diagrama, isso aparece na generalização Gestor → Colaborador.
+- **Diretoria.** O RF-003 prevê o perfil da diretoria, com acesso restrito a indicadores agregados da organização (RNF-001, RN-005). A diretoria não tem objetivo próprio no sistema além dessa consulta, que é a visão da organização do UC-23 limitada a dados agregados. Por isso não foi desenhada como ator separado.
 - **Relógio do sistema.** Lembretes e eliminação de dados vencidos não são iniciados por uma pessoa. Representar o tempo como ator deixa claro quem dispara esses casos de uso.
 
 ---
 
 ## 3. Fronteira do sistema
 
-Dentro da fronteira está o **Sistema de Feedback e Gestão de Competências**, uma aplicação web (RNF-030) usada por uma única organização (RN-010). Fora dela ficam:
+Dentro da fronteira está o **Sistema Web de Feedback e Gestão de Competências** (nas imagens, "Sistema de Feedback e Gestão de Competências"), uma aplicação web (RNF-030) usada por uma única organização (RN-010). Fora dela ficam:
 
 - as **pessoas** da organização, representadas pelos atores da seção 2;
 - a **sessão de feedback presencial ou remota**, que acontece entre as pessoas. O sistema agenda, registra e acompanha, mas não conduz a conversa;
@@ -72,7 +73,7 @@ Dentro da fronteira está o **Sistema de Feedback e Gestão de Competências**, 
 
 ## 4. Casos de uso
 
-Formato resumido de Larman: um parágrafo com o cenário principal. A descrição completa de alguns deles será feita na issue #48.
+Formato resumido de Larman: um parágrafo com o cenário principal. A descrição completa de cinco deles, um por integrante, está em [Casos de Uso Completos](Casos_de_Uso_Completos.md) (#48).
 
 ### 4.1 Organização e parâmetros
 
@@ -247,15 +248,15 @@ Todos os 65 requisitos funcionais da lista geral foram conferidos. 62 são atend
 | RF-004 – Login único (SSO) | Won't nesta versão: integração externa não pedida pela PO |
 | RF-064 – Atalho para o canal de denúncias | É um elemento fixo da interface, não uma tarefa do usuário. O canal de denúncias fica fora da fronteira (RN-009) |
 | RF-065 – Símbolo e declaração de acessibilidade | Elemento fixo da interface. Será tratado na especificação suplementar (#51) junto com os demais RNF de acessibilidade |
-| Requisitos não funcionais | Valem para vários casos de uso ao mesmo tempo e serão tratados na especificação suplementar (#51) |
+| Requisitos não funcionais | Valem para vários casos de uso ao mesmo tempo e são tratados na [especificação suplementar](../../Especificacao_Suplementar.md) (#51) |
 
 ---
 
-## 9. Próximos passos
+## 9. Ligação com os demais artefatos
 
-**Casos de uso completos (#48).** Cada integrante descreve pelo menos um caso de uso no formato completo de Larman. Sugestão de cinco casos Must, um de cada área central:
+**Casos de uso completos (#48).** Os cinco casos sugeridos para o formato completo de Larman, um por integrante, estão descritos em [Casos de Uso Completos](Casos_de_Uso_Completos.md):
 
-| Caso de uso | Por que descrever |
+| Caso de uso | Por que foi descrito no formato completo |
 |---|---|
 | UC-08 Registrar feedback | Núcleo do domínio: emissor, receptor, fatos, tipo e regras de visibilidade |
 | UC-13 Planejar ciclo de avaliação | Concentra o feedback formal: objetivos, indicadores, modalidades e modos de identificação |
@@ -263,11 +264,11 @@ Todos os 65 requisitos funcionais da lista geral foram conferidos. 62 são atend
 | UC-19 Criar plano de ação | Liga o feedback construtivo ao acompanhamento da melhora, que é a principal dor do processo atual |
 | UC-25 Exercer direitos de titular | Cobre a LGPD, que é restrição do enunciado |
 
-Ao descrever, mantenham os IDs e os nomes desta página. Se um caso de uso mudar de nome ou for dividido, atualizem também o arquivo `.puml`.
+Os IDs e os nomes desta página são os usados em todos os artefatos. Se um caso de uso mudar de nome ou for dividido, o arquivo `.puml` e as imagens precisam ser atualizados.
 
-**Matriz de rastreabilidade (#49).** A tabela da seção 7 e a coluna Requisitos da seção 4 já trazem a ligação RF ↔ UC.
+**Matriz de rastreabilidade (#49).** A tabela da seção 7 e a coluna Requisitos da seção 4 trazem a ligação RF ↔ UC, usada na [matriz](../../Matriz_Rastreabilidade.md).
 
-**Pontos a validar da lista geral.** Se a PO decidir de outra forma em algum ponto da seção 9 da lista geral, os casos de uso afetados são estes:
+**Pontos decididos na consolidação da lista geral.** Os casos de uso abaixo seguem as decisões da seção 9 da lista geral. Se alguma delas mudar, pela gestão de mudanças do processo, estes são os casos afetados:
 
 | Ponto | Casos de uso afetados |
 |---|---|

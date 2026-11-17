@@ -1,16 +1,17 @@
 # Especificação Suplementar
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (2026/2) · 1ª Etapa: Levantamento de Requisitos
-**Issue:** #51 · **Versão:** 1.0 · **Data:** 17/11/2026
+**Issue:** #51 · **Versão:** 1.1 · **Data:** 17/11/2026
 **Responsável:** Verônica Ribeiro Oliveira Palmeira
-**Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md), versão 1.0 (#45)
+**Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md), versão 1.1 (#45)
 
 ## Histórico de revisões
 
 | Versão | Data | Descrição | Autora |
 |---|---|---|---|
 | 1.0 | 17/11/2026 | Versão inicial: requisitos não funcionais e restrições organizados pela ISO/IEC 25010:2023, com critérios de aceitação e métodos de verificação | Verônica Ribeiro Oliveira Palmeira |
+| 1.1 | 17/11/2026 | Revisão final (#55): linha do encarregado na matriz de acesso (seção 8.1), conforme o RF-003 da lista geral 1.1 (decisão ERS-D02 da especificação IEEE 830); situação das decisões DS-01, DS-09 e DS-10 fechada na seção 15; referências aos pontos da lista geral atualizadas para "pontos decididos na consolidação" | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
@@ -45,7 +46,7 @@ Este documento reúne os requisitos que não cabem nos casos de uso: atributos d
 ### 1.2 Escopo
 
 - **Requisitos especificados:** os 36 requisitos não funcionais da lista geral, de RNF-001 a RNF-036, com os mesmos identificadores, textos e prioridades.
-- **Requisitos citados:** requisitos funcionais (RF) e regras de negócio (RN) que se ligam a um atributo de qualidade aparecem como "relacionados". Eles não são repetidos aqui, porque já estão na lista geral e serão detalhados nos casos de uso.
+- **Requisitos citados:** requisitos funcionais (RF) e regras de negócio (RN) que se ligam a um atributo de qualidade aparecem como "relacionados". Eles não são repetidos aqui, porque já estão na lista geral e são detalhados nos casos de uso.
 - **Fora deste documento:** o comportamento funcional (casos de uso, #47 e #48), os dados (modelo ER, #52) e os termos (glossário, #53).
 
 Este documento não cria requisitos novos. Quando a lista geral deixou um valor em aberto, por exemplo o número de tentativas de login ou o volume de usuários, a decisão foi tomada aqui com base em norma ou nas fontes do projeto e está registrada na seção 15.
@@ -54,7 +55,7 @@ Este documento não cria requisitos novos. Quando a lista geral deixou um valor 
 
 | Artefato | Relação |
 |---|---|
-| [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45) | Fonte dos identificadores, textos, origens e prioridades. Os pontos a validar da lista (seção 9) continuam valendo, em especial o P-10, sobre as metas numéricas |
+| [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45) | Fonte dos identificadores, textos, origens e prioridades. As decisões dos pontos da seção 9 da lista valem aqui, em especial a do P-10, sobre as metas numéricas |
 | [Pesquisa documental](elicitacao/pesquisa-documental/Pesquisa_Documental.md) (#33) | Fonte das obrigações legais e normas técnicas e da adaptação da ISO/IEC 25010:2023 ao sistema |
 | [Documento Visão](Documento_Visao.md) (#46) | Resume os atributos de qualidade mais importantes para os interessados |
 | Casos de uso (#47 e #48) | Descrevem o comportamento funcional. Os requisitos especiais de cada caso de uso devem apontar para os RNF deste documento |
@@ -241,8 +242,9 @@ A matriz abaixo detalha o RNF-001 e a RN-004. A lista do RNF-001 é fechada: per
 | Emissor | Só o conteúdo que ele escreveu | — | — | Não |
 | Gestor direto | Os da sua equipe | Não | Não | Os da sua equipe, respeitado o mínimo de RN-005 |
 | RH | Os de toda a organização | Sim, com registro na trilha de auditoria (RNF-005), exceto nas avaliações em que ele próprio é o avaliado (RN-004) | Não | Os da organização, respeitado o mínimo de RN-005 |
-| Diretoria | Não | Não | Não | Os da organização, respeitado o mínimo de RN-005 (ponto a validar P-02 da lista) |
+| Diretoria | Não | Não | Não | Os da organização, respeitado o mínimo de RN-005 (decisão P-02 da lista) |
 | Administrador | Não | Não | Não | Não |
+| Encarregado de dados | Não, exceto o necessário para responder a uma solicitação de titular, na fila do RF-061 | Não | Não | Não |
 
 Fatos registrados e ainda não vinculados a um feedback são visíveis só para quem os registrou (RF-011). Rascunhos são visíveis só para o autor (RNF-012).
 
@@ -273,7 +275,7 @@ Os modos de identificação do emissor são regras de negócio (RN-004 e RN-005,
 
 ### 8.4 LGPD
 
-A conformidade com a LGPD (RNF-031) é atendida pelo conjunto de requisitos listados na seção 12.2. Os requisitos desta seção 8 são as medidas técnicas de segurança do art. 46. Os direitos do titular (art. 18) são requisitos funcionais (RF-053 a RF-061) e serão detalhados nos casos de uso.
+A conformidade com a LGPD (RNF-031) é atendida pelo conjunto de requisitos listados na seção 12.2. Os requisitos desta seção 8 são as medidas técnicas de segurança do art. 46. Os direitos do titular (art. 18) são requisitos funcionais (RF-053 a RF-061), descritos nos casos de uso UC-25 a UC-28, com o UC-25 no formato completo.
 
 ---
 
@@ -359,7 +361,7 @@ A conformidade com a LGPD (RNF-031) é atendida pelo conjunto de requisitos list
 
 ### 13.1 Interface com o usuário
 
-Interface web responsiva, em português do Brasil, acessível conforme a seção 6.2 e usável nos navegadores da seção 12. As telas serão definidas nos protótipos (#50).
+Interface web responsiva, em português do Brasil, acessível conforme a seção 6.2 e usável nos navegadores da seção 12. As telas estão nos [protótipos](prototipacao/Prototipo.md) (#50).
 
 ### 13.2 Interfaces de software
 
@@ -371,7 +373,7 @@ Interface web responsiva, em português do Brasil, acessível conforme a seção
 | Notificações e lembretes | Saída | Notificação dentro do sistema e mensagem de e-mail para o endereço cadastrado (DS-10) | RF-026, RF-037, RF-040 |
 | Integração com sistemas de RH e SSO | — | Fora desta versão | RNF-025, RF-004 (Won't) |
 
-O formato do relatório de histórico exportado pelo RH (RF-051) será definido no caso de uso correspondente.
+O formato do relatório de histórico exportado pelo RH (RF-051) fica para o detalhamento do UC-24, que está em formato resumido nesta etapa.
 
 ---
 
@@ -392,11 +394,11 @@ Larman inclui na especificação suplementar as regras do domínio que afetam a 
 
 ## 15. Decisões desta especificação
 
-A lista geral deixou alguns valores para esta especificação. Cada decisão abaixo tem a justificativa e a fonte. A coluna **Situação** indica se a decisão segue uma norma ou as fontes do projeto, ou se ainda depende de validação. As decisões que dependem de validação já estão aplicadas aos critérios desta versão. Se a PO ou a organização decidir de outra forma, a mudança segue a gestão de mudanças do [processo de requisitos](Processo_Requisitos.md) (seção 9).
+A lista geral deixou alguns valores para esta especificação. Cada decisão abaixo tem a justificativa e a fonte. A coluna **Situação** indica em que a decisão se apoia: uma norma, as fontes do projeto, um método de medição ou uma configuração que cabe à organização. Todas estão aplicadas aos critérios desta versão. Qualquer mudança futura segue a gestão de mudanças do [processo de requisitos](Processo_Requisitos.md) (seção 9).
 
 | # | Questão | Decisão | Justificativa e fonte | Requisitos | Situação |
 |---|---|---|---|---|---|
-| DS-01 | Qual o volume de usuários para dimensionar o sistema? | Cenário de referência de 500 colaboradores | Limite superior do porte informado nos dois questionários (100 a 499 funcionários). A rede da E02 tem 330 pessoas (E02 §1) | RNF-008, RNF-009 | Fundamentada nas fontes; a validar com as metas do ponto P-10 da lista |
+| DS-01 | Qual o volume de usuários para dimensionar o sistema? | Cenário de referência de 500 colaboradores | Limite superior do porte informado nos dois questionários (100 a 499 funcionários). A rede da E02 tem 330 pessoas (E02 §1) | RNF-008, RNF-009 | Fundamentada nas fontes, junto com as metas da decisão P-10 da lista |
 | DS-02 | Como medir o percentil 95 do RNF-008? | Pelo menos 100 medições por operação, no cenário de referência, com o mesmo perfil de rede 4G das ferramentas do navegador | Com 100 medições, os 5% mais lentos somam ao menos 5 medições, o que dá estabilidade ao percentil. O perfil único torna as medições comparáveis | RNF-008 | Decisão de método |
 | DS-03 | Quantos usuários simultâneos no pico? | 500, todos os colaboradores do cenário | As fontes não informam como os acessos se distribuem no dia. Testar o pior caso dispensa estimar essa distribuição | RNF-009 | Decisão de método |
 | DS-04 | Como demonstrar a escalabilidade? | Teste com o dobro do cenário (1.000), ampliando só a infraestrutura | Mostra o crescimento além do maior porte informado nas fontes sem mudança de código. A meta real depende de cada organização | RNF-029 | Decisão de método |
@@ -404,13 +406,13 @@ A lista geral deixou alguns valores para esta especificação. Cada decisão aba
 | DS-06 | Após quantas tentativas de login sem sucesso o acesso é bloqueado? | Espera crescente após cada falha, de 30 s até 1 h, e desativação do autenticador em 100 falhas consecutivas | NIST SP 800-63B-4, seção 3.2.2: limite de no máximo 100 falhas consecutivas, com técnicas adicionais como a espera crescente ("30 seconds up to an hour"). A espera crescente dificulta ataques de tentativa e erro sem permitir que um atacante bloqueie a conta de outra pessoa com poucas tentativas | RNF-006 | Fundamentada em norma |
 | DS-07 | Quais navegadores suportar? | Chrome, Edge, Firefox e Safari, na versão estável atual e na anterior, em computador e celular | Juntos somam cerca de 95% dos acessos no Brasil (StatCounter, setembro de 2026: Chrome 77,1%, Edge 7,7%, Safari 6,6%, Firefox 3,7%). Duas versões cobrem quem ainda não atualizou | RNF-030, RNF-027 | Fundamentada em dados de mercado |
 | DS-08 | Com que frequência testar a restauração dos backups? | Antes da abertura de cada ciclo formal | O ciclo formal é o período de maior uso. A PO citou ciclos de 3 ou 4 meses (E01 §5), o que dá ao menos 3 testes por ano | RNF-011 | Fundamentada nas fontes |
-| DS-09 | Dados eliminados pela política de retenção continuam nos backups? | Os backups são uma categoria da política de retenção (RF-062). Um dado eliminado deixa de existir nos backups quando termina o prazo de guarda deles | Sem essa regra, a eliminação exigida pela LGPD (art. 16) seria incompleta | RNF-011, RF-062 | A validar com a organização (prazo de guarda dos backups) |
-| DS-10 | Por qual canal saem notificações e lembretes? | Dentro do sistema e por e-mail | A PO pede "comunicado de sessão" e "lembrete" sem indicar o canal (E01 §5). A E02 usa WhatsApp (E02 §2), mas integrar com aplicativos de mensagem seria uma integração externa não pedida, critério Won't da lista (C-11) | RF-026, RF-037, RF-040 | A validar com a PO |
+| DS-09 | Dados eliminados pela política de retenção continuam nos backups? | Os backups são uma categoria da política de retenção (RF-062). Um dado eliminado deixa de existir nos backups quando termina o prazo de guarda deles | Sem essa regra, a eliminação exigida pela LGPD (art. 16) seria incompleta | RNF-011, RF-062 | Fundamentada em lei. O prazo de guarda dos backups é configurado pela organização, como os demais prazos da política de retenção (RF-062) |
+| DS-10 | Por qual canal saem notificações e lembretes? | Dentro do sistema e por e-mail | A PO pede "comunicado de sessão" e "lembrete" sem indicar o canal (E01 §5). A E02 usa WhatsApp (E02 §2), mas integrar com aplicativos de mensagem seria uma integração externa não pedida, critério Won't da lista (C-11) | RF-026, RF-037, RF-040 | Fundamentada nas fontes |
 | DS-11 | Com que antecedência anunciar uma manutenção? | A antecedência é definida no contrato entre fornecedor e organização. O sistema exibe o aviso antes da janela | O prazo de aviso faz parte do acordo de nível de serviço de cada contrato, e as fontes do projeto não o definem | RNF-010 | Depende do contrato |
 | DS-12 | Como registrar quem não respondeu sem quebrar o anonimato? | Separar o controle de participação do conteúdo das respostas, sem dado que ligue os dois | RF-029 exige saber quem não respondeu, e RN-004 exige que ninguém ligue a resposta anônima ao emissor. A separação atende aos dois. A ANPD alerta para o risco de reidentificação na anonimização (pesquisa documental, seção 3.5) | RN-004, RF-029 | Fundamentada nas fontes |
 | DS-13 | Como o sistema reconhece termos ofensivos? | Por uma lista de termos mantida pelo administrador | Torna o RNF-024 verificável e deixa a organização ajustar a lista à sua realidade, como pede o RNF-026 | RNF-024 | Decisão de método |
 
-**Metas da lista geral mantidas.** Os valores de 3 s e 2 s (RNF-008), 99,5% (RNF-010), 24 h e 4 h (RNF-011) e de uma única tela (RNF-013) são os da lista geral, que os registrou como decisão provisória no ponto a validar P-10. Esta especificação não altera esses valores, apenas define como medi-los.
+**Metas da lista geral mantidas.** Os valores de 3 s e 2 s (RNF-008), 99,5% (RNF-010), 24 h e 4 h (RNF-011) e de uma única tela (RNF-013) são os da lista geral, que os registrou como decisão do ponto P-10. Esta especificação não altera esses valores, apenas define como medi-los.
 
 ---
 
