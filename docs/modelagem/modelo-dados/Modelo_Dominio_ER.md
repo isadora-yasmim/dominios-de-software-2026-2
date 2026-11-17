@@ -92,8 +92,7 @@ erDiagram
         string email UK "login"
         string senha_hash
         bool dois_fatores_ativo "obrigatorio para RH e admin (RNF-006)"
-        date data_nascimento "so para identificar menor de idade (RN-016)"
-        bool menor_de_idade "RN-016"
+        date data_nascimento "identifica menor de idade (RN-016)"
         date data_admissao
         date data_desligamento "inicia a contagem de retencao (RN-011)"
         enum situacao "SituacaoColaborador"
@@ -153,7 +152,7 @@ erDiagram
 
 - Todo colaborador tem ao menos o perfil `COLABORADOR`. O gestor que também é avaliado pelo seu superior tem `COLABORADOR` e `GESTOR` (RF-003).
 - `gestor_id` nulo indica o topo da hierarquia. O gestor direto é a base da regra de visibilidade de RNF-001.
-- Não há campos para dados sensíveis (RN-013). A data de nascimento existe apenas para identificar menores (RN-016); se a PO preferir, pode ser substituída só pelo indicador `menor_de_idade`.
+- Não há campos para dados sensíveis (RN-013). A data de nascimento é coletada para identificar menores (RN-016). A condição de menor de idade é calculada a partir dela, sem atributo próprio, e muda sozinha quando o colaborador faz 18 anos (decisão M-07).
 
 ## 5. Competências e questionários
 
@@ -780,9 +779,9 @@ Consequência aceita: no modo `ANONIMO` o emissor não pode editar a resposta de
 | M-04 | `ConviteAvaliacao` sem FK para `RespostaAvaliacao` e `VinculoConfidencial` em esquema separado | Desvincular emissor e resposta (RN-004, RNF-003, ponto P-01) |
 | M-05 | `Indicador` único para objetivos de ciclo e metas | Uma só fonte para os gráficos de evolução (RF-049) |
 | M-06 | Configurações gerais em `ConfiguracaoOrganizacao` de linha única | Uma organização por instalação (RN-010) |
+| M-07 | Coletar `data_nascimento` e calcular a condição de menor de idade a partir dela | Decisão da equipe. A data identifica o menor (RN-016) e permite saber quando ele deixa de sê-lo, sem depender de atualização manual de um indicador |
+| M-08 | `ResultadoConsolidado` guardado ao encerrar o ciclo (RF-032), não calculado a cada consulta | Decisão da equipe. O resultado liberado ao avaliado não muda depois, mesmo que uma resposta seja ocultada ou um dado seja anonimizado mais tarde, e o histórico (RF-048) e os painéis (RF-049, RF-050) leem valores prontos |
 
-Pontos a confirmar com a equipe na revisão do modelo:
+Ponto a confirmar com a equipe na revisão do modelo:
 
 - Se o receptor "equipe" de um feedback (RF-013) deve gerar uma cópia por membro no histórico individual (RF-048) ou ser mostrado a partir da equipe. O modelo atual guarda uma linha só e o histórico do colaborador consulta também os feedbacks das suas equipes.
-- Se `data_nascimento` deve ser coletada ou basta o indicador `menor_de_idade` (minimização, RN-013).
-- Granularidade do `ResultadoConsolidado`: guardado ao encerrar o ciclo (RF-032) ou calculado a cada consulta. O modelo guarda, para que o resultado liberado não mude depois.
