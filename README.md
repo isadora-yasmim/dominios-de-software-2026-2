@@ -68,7 +68,7 @@ O sistema deve permitir:
 | 18 | Casos de uso completos, 1 por integrante (Larman, cap. 6) | [`docs/modelagem/casos-de-uso/`](docs/modelagem/casos-de-uso/) | #19 |
 | 19 | Modelo entidade-relacionamento / modelo de domínio | [`docs/modelagem/modelo-dados/`](docs/modelagem/modelo-dados/) | #23 |
 | **Protótipos** ||||
-| 20 | Protótipos das telas (Figma) | [`docs/prototipacao/`](docs/prototipacao/) · _link do Figma a definir_ | #21 |
+| 20 | Protótipos das telas (Figma) | [`docs/prototipacao/Prototipo.md`](docs/prototipacao/Prototipo.md) · [abrir no Figma](https://www.figma.com/design/yiyjqLFpIp838MAi9x0EW4/Dom%C3%ADnios-de-Software-2026-2?node-id=6-3) | #21 #50 |
 | **Entrega** ||||
 | 21 | Apresentação final | [`docs/`](docs/) | #27 |
 
