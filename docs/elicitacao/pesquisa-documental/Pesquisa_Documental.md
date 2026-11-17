@@ -3,7 +3,7 @@
 **Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
 **Técnica de elicitação:** Pesquisa documental (leis, regulamentos, normas técnicas)
 **Issue:** #33 · **Data de referência da pesquisa:** 12/11/2026
-**Artefatos relacionados:** [Requisitos_Pesquisa_Documental.csv](Requisitos_Pesquisa_Documental.csv) (mesma tabela da seção 7, para a matriz de rastreabilidade)
+**Artefatos relacionados:** [Requisitos_Pesquisa_Documental.md](Requisitos_Pesquisa_Documental.md) (mesma tabela da seção 7, para a matriz de rastreabilidade)
 
 > Este relatório não é parecer jurídico. As interpretações servem para levantar requisitos e devem ser validadas com a Product Owner e, em um projeto real, com o jurídico e o encarregado da organização cliente.
 
@@ -250,7 +250,7 @@ Os questionários divergem: no Questionário 01, "responder pelo celular" foi av
 
 ## 7. Requisitos extraídos
 
-Total de **59 requisitos candidatos**. Os mesmos dados estão em [Requisitos_Pesquisa_Documental.csv](Requisitos_Pesquisa_Documental.csv).
+Total de **59 requisitos candidatos**. Os mesmos dados estão em [Requisitos_Pesquisa_Documental.md](Requisitos_Pesquisa_Documental.md).
 
 **Por tipo:** RF: 16 · RNF: 28 · RN: 11 · Restrição: 4  
 **Por obrigatoriedade:** Legal: 27 · Norma técnica: 20 · Boa prática derivada de lei: 8 · Boa prática: 3 · Legal + norma técnica: 1
