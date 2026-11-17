@@ -8,8 +8,8 @@ Modelagem em BPMN do processo de avaliação e feedback **como acontece hoje**, 
 
 | Diagrama | Fonte | Contexto | Arquivos |
 |---|---|---|---|
-| AS-IS 1 | Entrevista 01 | Product Owner da disciplina, falando como usuária e também sobre a prática ideal | `AS-IS_01_Product_Owner.bpmn` / `.png` / `.svg` |
-| AS-IS 2 | Entrevista 02 | Secretária Municipal de Educação (cidade pequena, equipe da secretaria) | `AS-IS_02_Secretaria_Educacao.bpmn` / `.png` / `.svg` |
+| AS-IS 1 | Entrevista 01 | Product Owner da disciplina, falando como usuária e também sobre a prática ideal | `AS-IS_01_Product_Owner.bpmn` / `.png` |
+| AS-IS 2 | Entrevista 02 | Secretária Municipal de Educação (cidade pequena, equipe da secretaria) | `AS-IS_02_Secretaria_Educacao.bpmn` / `.png` |
 
 ## 2. Notação
 
@@ -59,10 +59,12 @@ A raia do RH fica sem tarefas, de propósito: a secretária responde ao prefeito
 
 ## 6. Como abrir e editar
 
-Os arquivos `.bpmn` são texto (Git friendly). Abra em [demo.bpmn.io](https://demo.bpmn.io) (Open) ou no Camunda Modeler. Os `.png` e `.svg` foram exportados com bpmn-js.
+Os arquivos `.bpmn` são texto (Git friendly). Abra em [demo.bpmn.io](https://demo.bpmn.io) (Open) ou no Camunda Modeler. Os `.png` foram exportados com bpmn-js.
 
 ## 7. Observações
 
 - A PO falou também sobre a prática ideal, por isso o Diagrama 1 representa o processo segundo ela.
 - O README lista a issue de BPMN como #15, mas o roteiro e a issue são #44. Vale alinhar com o grupo.
 - O TO-BE (opcional na issue) não foi feito.
+- No AS-IS 1, o treinamento sobre feedback aparece na raia do RH como uma inferência. Na entrevista, quem treina é a própria entrevistada, e o RH é quem usa o histórico.
+- No AS-IS 2, a ausência do RH é uma dedução a partir da fala de que a secretária responde ao prefeito. Ela não falou de RH.
