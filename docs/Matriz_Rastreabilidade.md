@@ -131,6 +131,8 @@ As anotações do protótipo foram **conferidas** com a lista geral. A coluna Re
 | T-50 | cel. 5 | Dar feedback – celular (área visível) | Colaborador | UC-08 | RF-013, RF-015, RF-018, RNF-013, RNF-027 |
 | T-51 | cel. 6 | Dar feedback – celular (página inteira) | Colaborador | UC-08 | RF-013, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RN-002, RNF-012, RNF-013, RNF-027 |
 
+**Páginas dos PDFs.** Em algumas telas, a página da coluna "Pág. do PDF" diverge da página citada na seção 4.2 (T-01, T-02, T-03, T-09, T-10 e T-30 a T-35). Os valores não foram alterados, porque os PDFs não estão no repositório. Até o grupo confirmar as páginas no Figma, vale a numeração T-xx.
+
 Telas por caso de uso:
 
 | Caso de uso | Telas |
@@ -265,7 +267,7 @@ Cada linha mostra de onde o requisito veio e onde ele é tratado. "—" indica q
 
 ### 5.2 Requisitos não funcionais
 
-A coluna Casos de uso traz os casos completos que aplicam o RNF. Os RNF que valem para todo o sistema, como acessibilidade, disponibilidade e backup, não estão ligados a uma tela ou caso específico. Legenda da verificação, como na especificação suplementar: T = teste, I = inspeção, A = análise, D = demonstração.
+A coluna Casos de uso traz os casos completos que aplicam o RNF. Os RNF globais (RNF-016 a RNF-023, RNF-027, RNF-030 e RNF-031, declarados na seção 6.1) valem para todas as telas e casos de uso. Quando a linha de um deles cita casos de uso ou telas, são exemplos em que o requisito aparece nos casos completos ou no protótipo, e não o limite da aplicação. RNF de infraestrutura, como disponibilidade e backup, não se ligam a tela nem a caso de uso. Legenda da verificação, como na especificação suplementar: T = teste, I = inspeção, A = análise, D = demonstração.
 
 | ID | Prior. | Característica | Fontes | Origem (candidatos) | Casos de uso | Telas | Esp. suplementar | Verificação |
 |---|---|---|---|---|---|---|---|---|
@@ -334,43 +336,45 @@ A coluna Casos de uso traz os casos completos que aplicam o RNF. Os RNF que vale
 Liga requisitos do mesmo nível. Três tipos de ligação:
 
 - **Requisitos citados na lista geral:** o texto ou as observações do requisito citam o outro, como RF-015, que exige os campos obrigatórios de RN-002. A ligação vale nos dois sentidos.
-- **RN e RNF aplicáveis:** regras e requisitos não funcionais que restringem o RF por estarem no mesmo caso de uso ou na mesma tela.
+- **RN e RNF aplicáveis:** regras e requisitos não funcionais que restringem o RF por estarem no mesmo caso de uso ou na mesma tela, ou por ligação explícita na lista geral ou na especificação suplementar.
 - **Conflitos e pontos a validar:** decisões da lista geral (C-xx) e pontos que ainda dependem da PO (P-xx). Se a PO decidir um ponto de outra forma, todos os requisitos da linha precisam ser revistos.
 
 ### 6.1 Requisitos funcionais
+
+**RNF globais.** RNF-016 a RNF-023 (idioma e acessibilidade), RNF-027 (interface responsiva), RNF-030 (aplicação web) e RNF-031 (LGPD) se aplicam a todos os requisitos funcionais. Eles são declarados só aqui e não aparecem na coluna "RN e RNF aplicáveis", que traz apenas as regras específicas de cada requisito. Na seção 6.2, a coluna "RF afetados" desses RNF indica "Todos". Por isso, o RF-065 (declaração de acessibilidade), atendido pelo RNF-017, não tem RNF específico na sua linha.
 
 | ID | Requisitos citados na lista geral | RN e RNF aplicáveis | Conflitos e pontos a validar |
 |---|---|---|---|
 | RF-001 | RNF-001 | RN-013, RN-016 | — |
 | RF-002 | RNF-025 | — | — |
-| RF-003 | RF-024, RN-004 | RNF-006, RNF-022, RN-009, RN-013, RN-016 | C-14 |
+| RF-003 | RF-024, RN-004 | RNF-006, RN-009, RN-013, RN-016 | C-14 |
 | RF-004 | — | — | C-11 |
 | RF-005 | — | RN-014 | — |
 | RF-006 | — | — | — |
 | RF-007 | — | RN-001, RN-014 | — |
 | RF-008 | — | RN-001, RN-014 | C-02 |
 | RF-009 | — | RN-001, RN-014 | — |
-| RF-010 | RN-008 | RNF-005, RNF-012, RNF-015, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-026, RNF-027, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | — |
+| RF-010 | RN-008 | RNF-005, RNF-012, RNF-015, RNF-026, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | — |
 | RF-011 | — | RN-001 | C-05 |
-| RF-012 | RN-001 | — | P-06 |
-| RF-013 | RN-002 | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-024, RNF-027, RNF-030, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
-| RF-014 | — | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-024, RNF-027, RNF-030, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
-| RF-015 | RN-002 | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-024, RNF-027, RNF-030, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | C-04 |
-| RF-016 | — | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-024, RNF-027, RNF-030, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
-| RF-017 | RNF-024 | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-024, RNF-027, RNF-030, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
-| RF-018 | — | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-024, RNF-027, RNF-030, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
-| RF-019 | RN-004 | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-009, RNF-012, RNF-013, RNF-014, RNF-015, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-024, RNF-027, RNF-030, RN-001, RN-002, RN-003, RN-004, RN-005, RN-006, RN-013 | — |
+| RF-012 | RN-001 | RN-001 | P-06 |
+| RF-013 | RN-002 | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-024, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
+| RF-014 | — | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-024, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
+| RF-015 | RN-002 | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-024, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | C-04 |
+| RF-016 | — | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-024, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
+| RF-017 | RNF-024 | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-024, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
+| RF-018 | — | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-024, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
+| RF-019 | RN-004 | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-009, RNF-012, RNF-013, RNF-014, RNF-015, RNF-024, RN-001, RN-002, RN-003, RN-004, RN-005, RN-006, RN-013 | — |
 | RF-020 | — | RN-003, RN-004 | — |
-| RF-021 | RF-049 | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-024, RNF-027, RNF-030, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
-| RF-022 | RF-041 | RNF-005, RNF-012, RNF-015, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-026, RNF-027, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | C-02 |
-| RF-023 | RF-041 | RNF-005, RNF-012, RNF-015, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-026, RNF-027, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | C-10 |
-| RF-024 | RF-003 | RNF-005, RNF-012, RNF-015, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-026, RNF-027, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | — |
-| RF-025 | — | RNF-005, RNF-012, RNF-015, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-026, RNF-027, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | C-01 |
-| RF-026 | — | RNF-005, RNF-012, RNF-015, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-026, RNF-027, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | — |
-| RF-027 | — | RNF-001, RNF-002, RNF-003, RNF-005, RNF-006, RNF-008, RNF-009, RNF-012, RNF-014, RNF-015, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-024, RNF-027, RN-001, RN-004, RN-005 | — |
-| RF-028 | — | RNF-001, RNF-002, RNF-003, RNF-005, RNF-006, RNF-008, RNF-009, RNF-012, RNF-014, RNF-015, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-024, RNF-027, RN-001, RN-004, RN-005 | — |
-| RF-029 | — | — | — |
-| RF-030 | RN-004 | RNF-005, RNF-012, RNF-015, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-026, RNF-027, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | P-01 |
+| RF-021 | RF-049 | RNF-001, RNF-002, RNF-003, RNF-004, RNF-005, RNF-006, RNF-008, RNF-012, RNF-013, RNF-015, RNF-024, RN-001, RN-002, RN-003, RN-004, RN-006, RN-013 | — |
+| RF-022 | RF-041 | RNF-005, RNF-012, RNF-015, RNF-026, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | C-02 |
+| RF-023 | RF-041 | RNF-005, RNF-012, RNF-015, RNF-026, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | C-10 |
+| RF-024 | RF-003 | RNF-005, RNF-012, RNF-015, RNF-026, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | — |
+| RF-025 | — | RNF-005, RNF-012, RNF-015, RNF-026, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | C-01 |
+| RF-026 | — | RNF-005, RNF-012, RNF-015, RNF-026, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | — |
+| RF-027 | — | RNF-001, RNF-002, RNF-003, RNF-005, RNF-006, RNF-008, RNF-009, RNF-012, RNF-014, RNF-015, RNF-024, RN-001, RN-004, RN-005 | — |
+| RF-028 | — | RNF-001, RNF-002, RNF-003, RNF-005, RNF-006, RNF-008, RNF-009, RNF-012, RNF-014, RNF-015, RNF-024, RN-001, RN-004, RN-005 | — |
+| RF-029 | — | RN-004 | — |
+| RF-030 | RN-004 | RNF-005, RNF-012, RNF-015, RNF-026, RN-001, RN-004, RN-005, RN-007, RN-008, RN-014 | P-01 |
 | RF-031 | — | — | — |
 | RF-032 | — | RNF-007, RN-005, RN-007, RN-008 | — |
 | RF-033 | — | RNF-007, RN-005, RN-007, RN-008 | — |
@@ -382,36 +386,36 @@ Liga requisitos do mesmo nível. Três tipos de ligação:
 | RF-039 | — | — | — |
 | RF-040 | RF-037 | — | C-09 |
 | RF-041 | RF-022, RF-023 | — | P-09 |
-| RF-042 | RN-006 | RNF-001, RNF-002, RNF-012, RNF-015, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-024, RNF-027, RNF-030, RN-001, RN-006, RN-007, RN-008, RN-013, RN-015 | — |
+| RF-042 | RN-006 | RNF-001, RNF-002, RNF-012, RNF-015, RNF-024, RN-001, RN-004, RN-006, RN-007, RN-008, RN-013, RN-015 | — |
 | RF-043 | — | RN-006 | — |
-| RF-044 | — | RNF-007, RNF-020, RN-005, RN-007 | — |
-| RF-045 | — | RN-005, RN-007 | — |
+| RF-044 | — | RNF-001, RNF-007, RN-005, RN-007 | — |
+| RF-045 | — | RNF-001, RN-005, RN-007 | — |
 | RF-046 | RN-006 | RN-006 | — |
 | RF-047 | — | RN-006 | — |
-| RF-048 | — | RNF-005, RNF-007, RNF-020, RNF-027, RN-003, RN-008 | — |
-| RF-049 | RF-021, RNF-007, RNF-020 | RNF-007, RNF-020, RNF-027, RN-008 | — |
-| RF-050 | RN-005 | RNF-007, RNF-020, RN-005, RN-007 | — |
-| RF-051 | — | RNF-005 | — |
+| RF-048 | — | RNF-001, RNF-005, RNF-007, RN-003, RN-008 | — |
+| RF-049 | RF-021, RNF-007, RNF-020 | RNF-001, RNF-007, RN-005, RN-008 | — |
+| RF-050 | RN-005 | RNF-001, RNF-007, RN-005, RN-007 | — |
+| RF-051 | — | RNF-001, RNF-005 | — |
 | RF-052 | — | RN-005, RN-007 | P-08 |
-| RF-053 | — | RNF-004, RNF-005, RNF-006, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-027, RNF-030, RNF-031, RN-003, RN-004, RN-005, RN-009, RN-011, RN-012 | — |
+| RF-053 | — | RNF-004, RNF-005, RNF-006, RN-003, RN-004, RN-005, RN-009, RN-011, RN-012 | — |
 | RF-054 | — | RN-011 | — |
 | RF-055 | RN-012 | RN-012 | C-06 |
-| RF-056 | — | RNF-004, RNF-005, RNF-006, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-027, RNF-030, RNF-031, RN-003, RN-004, RN-005, RN-011, RN-012 | C-13 |
-| RF-057 | — | RNF-004, RNF-005, RNF-006, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-027, RNF-030, RNF-031, RN-003, RN-004, RN-005, RN-011, RN-012 | — |
-| RF-058 | — | RNF-004, RNF-005, RNF-006, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-027, RNF-030, RNF-031, RN-003, RN-004, RN-005, RN-011, RN-012 | — |
-| RF-059 | — | RNF-004, RNF-005, RNF-006, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-027, RNF-030, RNF-031, RN-003, RN-004, RN-005, RN-011, RN-012 | — |
-| RF-060 | — | RNF-004, RNF-005, RNF-006, RNF-016, RNF-017, RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023, RNF-027, RNF-030, RNF-031, RN-003, RN-004, RN-005, RN-011, RN-012 | — |
+| RF-056 | — | RNF-004, RNF-005, RNF-006, RN-003, RN-004, RN-005, RN-011, RN-012 | C-13 |
+| RF-057 | — | RNF-004, RNF-005, RNF-006, RN-003, RN-004, RN-005, RN-011, RN-012 | — |
+| RF-058 | — | RNF-004, RNF-005, RNF-006, RN-003, RN-004, RN-005, RN-011, RN-012 | — |
+| RF-059 | — | RNF-004, RNF-005, RNF-006, RN-003, RN-004, RN-005, RN-011, RN-012 | — |
+| RF-060 | — | RNF-004, RNF-005, RNF-006, RN-003, RN-004, RN-005, RN-011, RN-012 | — |
 | RF-061 | — | — | — |
 | RF-062 | RN-011 | RN-011 | P-05 |
 | RF-063 | — | — | — |
-| RF-064 | RN-009 | RNF-022, RN-009 | — |
-| RF-065 | — | RNF-022, RN-009 | — |
+| RF-064 | RN-009 | RN-009 | — |
+| RF-065 | — | RN-009 | — |
 
 ### 6.2 Requisitos não funcionais e regras de negócio
 
 | ID | Requisitos citados na lista geral | RF afetados | Conflitos e pontos a validar |
 |---|---|---|---|
-| RNF-001 | RF-001, RNF-002, RN-005 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-027, RF-028, RF-042 | C-03, P-02 |
+| RNF-001 | RF-001, RNF-002, RN-005 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-027, RF-028, RF-042, RF-044, RF-045, RF-048, RF-049, RF-050, RF-051 | C-03, P-02 |
 | RNF-002 | RNF-001 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-027, RF-028, RF-042 | — |
 | RNF-003 | — | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-027, RF-028 | — |
 | RNF-004 | — | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | — |
@@ -426,32 +430,32 @@ Liga requisitos do mesmo nível. Três tipos de ligação:
 | RNF-013 | RN-002 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021 | P-10 |
 | RNF-014 | — | RF-019, RF-027, RF-028 | — |
 | RNF-015 | RN-003 | RF-010, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-042 | — |
-| RNF-016 | — | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | — |
-| RNF-017 | RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023 | RF-010, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-042, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | — |
-| RNF-018 | RNF-017 | RF-010, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-042, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | — |
-| RNF-019 | RNF-017 | RF-010, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-042, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | — |
-| RNF-020 | RF-049, RNF-017 | RF-010, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-042, RF-044, RF-048, RF-049, RF-050, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | — |
-| RNF-021 | RNF-017 | RF-010, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-042, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | — |
-| RNF-022 | RNF-017 | RF-003, RF-010, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-042, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060, RF-064, RF-065 | — |
-| RNF-023 | RNF-017 | RF-010, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-042, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | — |
+| RNF-016 | — | Todos (RNF global, seção 6.1) | — |
+| RNF-017 | RNF-018, RNF-019, RNF-020, RNF-021, RNF-022, RNF-023 | Todos (RNF global, seção 6.1) | — |
+| RNF-018 | RNF-017 | Todos (RNF global, seção 6.1) | — |
+| RNF-019 | RNF-017 | Todos (RNF global, seção 6.1) | — |
+| RNF-020 | RF-049, RNF-017 | Todos (RNF global, seção 6.1) | — |
+| RNF-021 | RNF-017 | Todos (RNF global, seção 6.1) | — |
+| RNF-022 | RNF-017 | Todos (RNF global, seção 6.1) | — |
+| RNF-023 | RNF-017 | Todos (RNF global, seção 6.1) | — |
 | RNF-024 | RF-017 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-027, RF-028, RF-042 | — |
 | RNF-025 | RF-002 | — | C-11 |
 | RNF-026 | — | RF-010, RF-022, RF-023, RF-024, RF-025, RF-026, RF-030 | — |
-| RNF-027 | — | RF-010, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-042, RF-048, RF-049, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | C-08 |
+| RNF-027 | — | Todos (RNF global, seção 6.1) | C-08 |
 | RNF-028 | RNF-035 | — | — |
 | RNF-029 | RN-010 | — | C-07 |
-| RNF-030 | — | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-042, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | — |
-| RNF-031 | — | RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | — |
+| RNF-030 | — | Todos (RNF global, seção 6.1) | — |
+| RNF-031 | — | Todos (RNF global, seção 6.1) | — |
 | RNF-032 | — | — | — |
 | RNF-033 | — | — | — |
 | RNF-034 | — | — | — |
 | RNF-035 | RNF-028 | — | C-08 |
 | RNF-036 | — | — | — |
-| RN-001 | RF-012 | RF-007, RF-008, RF-009, RF-010, RF-011, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-042 | — |
+| RN-001 | RF-012 | RF-007, RF-008, RF-009, RF-010, RF-011, RF-012, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-042 | — |
 | RN-002 | RF-013, RF-015, RNF-013 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021 | C-04 |
 | RN-003 | RF-035, RNF-015 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-020, RF-021, RF-035, RF-048, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | P-04 |
-| RN-004 | RF-003, RF-019, RF-030 | RF-010, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-020, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | C-13, C-14, P-01 |
-| RN-005 | RF-050, RNF-001 | RF-010, RF-019, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-032, RF-033, RF-044, RF-045, RF-050, RF-052, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | P-03 |
+| RN-004 | RF-003, RF-019, RF-030 | RF-010, RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-020, RF-021, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-029, RF-030, RF-042, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | C-13, C-14, P-01 |
+| RN-005 | RF-050, RNF-001 | RF-010, RF-019, RF-022, RF-023, RF-024, RF-025, RF-026, RF-027, RF-028, RF-030, RF-032, RF-033, RF-044, RF-045, RF-049, RF-050, RF-052, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | P-03 |
 | RN-006 | RF-042, RF-046 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-042, RF-043, RF-046, RF-047 | — |
 | RN-007 | — | RF-010, RF-022, RF-023, RF-024, RF-025, RF-026, RF-030, RF-032, RF-033, RF-042, RF-044, RF-045, RF-050, RF-052 | — |
 | RN-008 | RF-010 | RF-010, RF-022, RF-023, RF-024, RF-025, RF-026, RF-030, RF-032, RF-033, RF-042, RF-048, RF-049 | — |
@@ -470,7 +474,7 @@ Liga requisitos do mesmo nível. Três tipos de ligação:
 
 | Verificação | Resultado |
 |---|---|
-| Requisitos com pelo menos uma fonte | **117 de 117**. 59 requisitos são confirmados por duas ou mais técnicas de elicitação |
+| Requisitos com pelo menos uma fonte | **117 de 117**. 48 requisitos são confirmados por duas ou mais técnicas de elicitação independentes: entrevista, questionário, pesquisa documental e sistema análogo. O BPMN AS-IS (seção 3) e o enunciado não entram na contagem. A seção 3 da lista geral chega a 53 porque conta o BPMN como entrevista e o enunciado como fonte |
 | RF com caso de uso | 62 de 65. Sem caso de uso: RF-004 (Won't), RF-064 e RF-065 (elementos fixos da interface, presentes nas telas T-01 e T-45) |
 | RF com entidade | 60 de 65. Sem entidade: RF-004 (Won't); RF-017, RF-018 e RF-019 (orientações e avisos da interface, sem dado próprio); RF-051 (relatório gerado a partir do histórico já guardado) |
 | RF com tela | 51 de 65. Sem tela: RF-005, RF-006 e RF-062 (Must) e outros 11 de prioridade Should, Could ou Won't (seção 5.1) |
@@ -500,5 +504,5 @@ As tabelas desta página e o CSV foram montados a partir dos artefatos listados 
 
 1. Atualize o artefato de origem (lista geral, diagrama, protótipo, modelo ER ou especificação suplementar).
 2. Atualize a linha do requisito afetado aqui e no CSV, nas colunas correspondentes.
-3. Se surgir uma tela nova, dê a ela o próximo número livre (`T-48` em diante) e inclua-a no catálogo da seção 4.1. Números de tela, como os de requisito, não são reutilizados.
+3. Se surgir uma tela nova, dê a ela o próximo número livre (`T-52` em diante) e inclua-a no catálogo da seção 4.1. Números de tela, como os de requisito, não são reutilizados.
 4. Refaça a verificação da seção 7.
