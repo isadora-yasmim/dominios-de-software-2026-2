@@ -99,7 +99,7 @@ GES --> UC07
 GES --> UC13
 GES --> UC15
 GES --> UC18
-GES --> UC19
+COL --> UC19
 GES --> UC23
 AVA --> UC14
 UC01 <-- RH
@@ -301,7 +301,7 @@ rectangle "Sistema de Feedback e Gestão de Competências" {
 COL --> UC08
 COL --> UC20
 COL --> UC21
-GES --> UC19
+COL --> UC19
 UC19 .> UC08 : <<extend>>\n(feedback construtivo)
 @enduml
 

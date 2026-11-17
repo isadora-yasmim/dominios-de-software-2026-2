@@ -12,7 +12,7 @@
 | Versão | Data | Descrição | Autora |
 |---|---|---|---|
 | 1.0 | 17/11/2026 | Versão inicial | Ana Luísa Pereira dos Santos |
-| 1.1 | 17/11/2026 | Revisão final (#55): base na lista geral 1.1; perfis da diretoria e do encarregado ligados ao RF-003; seção 8 trata os pontos P-xx como decididos na consolidação; link para o glossário (#53) | Verônica Ribeiro Oliveira Palmeira |
+| 1.1 | 17/11/2026 | Revisão final (#55): base na lista geral 1.1; perfis da diretoria e do encarregado ligados ao RF-003; seção 8 registra os pontos P-xx como decisões do grupo, ainda não confirmadas pela PO; link para o glossário (#53) | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
@@ -25,7 +25,7 @@
 5. [Visão geral do produto](#5-visão-geral-do-produto)
 6. [Resumo das funcionalidades](#6-resumo-das-funcionalidades)
 7. [Restrições](#7-restrições)
-8. [Decisões sobre pontos sem definição nas fontes](#8-decisões-sobre-pontos-sem-definição-nas-fontes)
+8. [Decisões do grupo ainda não confirmadas pela PO](#8-decisões-do-grupo-ainda-não-confirmadas-pela-po)
 9. [Fontes](#9-fontes)
 
 ---
@@ -180,7 +180,7 @@ O sistema é uma aplicação web independente, com uma instalação por organiza
 
 - A organização cadastra os dados dos colaboradores, dos cargos e da hierarquia. O sistema não os obtém sozinho (RF-001, RF-002).
 - A organização é a controladora dos dados pessoais, e o sistema apoia suas obrigações, como atender titulares e comunicar incidentes (RF-061, RF-063).
-- Em dez pontos as fontes não davam resposta definitiva. Eles foram decididos na consolidação da Lista Geral de Requisitos, com justificativa, e os requisitos estão escritos conforme a decisão (seção 8 deste documento).
+- Em dez pontos as fontes não davam resposta definitiva. O grupo decidiu cada um na consolidação da Lista Geral de Requisitos, com justificativa, porque a PO não teve disponibilidade para confirmá-los. São decisões do grupo, ainda não confirmadas pela PO, e os requisitos estão escritos conforme a decisão (seção 8 deste documento).
 - Se o sistema for oferecido como serviço (SaaS), valem os registros de acesso (RNF-032). Se a hospedagem for fora do Brasil, vale a regra de transferência internacional (RNF-033).
 
 ### 5.4 Custo, licenciamento e instalação
@@ -228,11 +228,11 @@ A lista abaixo agrupa as 65 funções (RF) em áreas. Cada linha traz as funçõ
 
 ---
 
-## 8. Decisões sobre pontos sem definição nas fontes
+## 8. Decisões do grupo ainda não confirmadas pela PO
 
-A Lista Geral de Requisitos (seção 9) registra dez pontos em que as fontes não davam resposta definitiva, cada um com a decisão adotada e a justificativa. Os que mais afetam a visão do produto são:
+A Lista Geral de Requisitos (seção 9) registra dez pontos em que as fontes não davam resposta definitiva. Para cada um há uma decisão do grupo, com justificativa, ainda não confirmada pela PO, que não teve disponibilidade para validá-los. Os que mais afetam a visão do produto são:
 
-| Ponto | Decisão adotada |
+| Ponto | Decisão do grupo |
 |---|---|
 | P-01 Confidencial ou anônimo entre pares, equipe e na avaliação ascendente | Confidencial como padrão, anônimo como opção por ciclo |
 | P-02 Quem da diretoria vê resultados | Diretoria vê só indicadores agregados |
@@ -240,7 +240,7 @@ A Lista Geral de Requisitos (seção 9) registra dez pontos em que as fontes nã
 | P-05 Prazo de guarda após o desligamento | 5 anos, configurável |
 | P-10 Metas numéricas de desempenho, disponibilidade e backup | Valores propostos pela pesquisa documental |
 
-Os demais (P-04, P-06 a P-09) tratam de edição de feedback, relatos de colegas, ocultação de respostas, problemas por cargo e check-ins periódicos. Qualquer mudança nessas decisões segue a gestão de mudanças do [processo de requisitos](Processo_Requisitos.md) (seção 9) e atualiza a lista de requisitos e este documento.
+Os demais (P-04, P-06 a P-09) tratam de edição de feedback, relatos de colegas, ocultação de respostas, problemas por cargo e check-ins periódicos. Se a PO confirmar essas decisões de outra forma, ou se qualquer delas mudar, a alteração segue a gestão de mudanças do [processo de requisitos](Processo_Requisitos.md) (seção 9) e atualiza a lista de requisitos e este documento.
 
 ---
 

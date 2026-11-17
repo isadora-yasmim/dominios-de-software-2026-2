@@ -112,7 +112,7 @@ Formato resumido de Larman: um parágrafo com o cenário principal. A descriçã
 
 | ID | Caso de uso | Ator principal | Descrição resumida | Requisitos | Prioridade |
 |---|---|---|---|---|---|
-| UC-19 | Criar plano de ação | Gestor (emissor) | Estende UC-08 quando o feedback é construtivo: emissor e receptor definem juntos ações, responsáveis, metas, pontos de monitoramento e data final | RF-042; RN-006 | Must |
+| UC-19 | Criar plano de ação | Colaborador (emissor); gestor direto do receptor, se o feedback for confidencial | Estende UC-08 quando o feedback é construtivo: emissor e receptor definem juntos ações, responsáveis, metas, pontos de monitoramento e data final. Se o feedback for confidencial, o emissor não define o plano com o receptor, para não revelar quem emitiu: o plano é definido pelo receptor e pelo seu gestor direto (RN-004, RN-006; UC19-D04) | RF-042; RN-006 | Must |
 | UC-20 | Acompanhar plano de ação | Colaborador, Gestor | Registra o resultado de cada ponto de monitoramento, ajusta as ações e, na data final, registra se houve melhora ou se é preciso um novo feedback | RF-043 | Must |
 | UC-21 | Definir metas de desenvolvimento | Colaborador, Gestor | Cadastra metas individuais ou da equipe, com competência, indicador, valor esperado e prazo, e atualiza o progresso | RF-046, RF-047; RN-006 | Must |
 
@@ -191,7 +191,7 @@ Todos os atores e casos de uso em um único diagrama. A versão em [SVG](UC_00_V
 
 ### 6.5 Plano de ação e metas
 
-UC-08, em destaque, aparece apenas para mostrar o ponto de extensão do plano de ação.
+UC-08, em destaque, aparece apenas para mostrar o ponto de extensão do plano de ação. As imagens desta seção e da visão geral (6.1) ainda não foram geradas de novo e mostram a associação antiga Gestor → UC-19. No arquivo `.puml`, o UC-19 já está ligado ao Colaborador, de quem o Gestor herda (seção 4.4).
 
 ![Plano de ação e metas](UC_04_Plano_e_Metas.png)
 

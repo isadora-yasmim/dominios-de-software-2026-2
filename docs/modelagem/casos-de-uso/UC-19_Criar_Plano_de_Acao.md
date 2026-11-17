@@ -5,6 +5,13 @@
 **Responsável:** Ana Luísa Pereira dos Santos
 **Prioridade:** Must · **Área:** Plano de ação e metas · [Diagrama](Diagrama_Casos_de_Uso.md#44-plano-de-ação-e-metas) · [Modelo e convenções](Casos_de_Uso_Completos.md)
 
+## Histórico de revisões
+
+| Versão | Data | Descrição | Autor |
+|---|---|---|---|
+| 1.0 | 17/11/2026 | Versão inicial | Ana Luísa Pereira dos Santos |
+| 1.1 | 17/11/2026 | Revisão final (#55): extensão 1e e decisão UC19-D04 para feedback confidencial (RN-004, RN-006); UC19-D01 indica que o impacto no modelo ER foi aplicado na versão 1.1; UC19-D02 trata o gestor direto no plano de feedback confidencial; nome do produto padronizado | Verônica Ribeiro Oliveira Palmeira |
+
 ---
 
 ## 1. Escopo

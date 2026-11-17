@@ -69,8 +69,8 @@ Itens da lista "Entrega dos seguintes documentos" do enunciado, na mesma ordem.
 | Atividade do enunciado | Como foi feita | Evidência |
 |---|---|---|
 | Busca de documentos: leis, regulamentações, padrões (ISO/IEC 25010) | 21 documentos analisados (`FD-01` a `FD-21`), entre eles LGPD, ISO/IEC 25010:2023, CLT, normas de acessibilidade e guias da ANPD. 59 candidatos `RD` | [Pesquisa_Documental.md](elicitacao/pesquisa-documental/Pesquisa_Documental.md), [Requisitos_Pesquisa_Documental.md](elicitacao/pesquisa-documental/Requisitos_Pesquisa_Documental.md) |
-| 2 entrevistas, transcritas e anexadas, com identificação, função e telefone | E01: Adriana Silveira de Souza, Product Owner e professora da disciplina, 20/10/2026, 1h57min de gravação. E02: Eliene de Souza Oliveira, Secretária Municipal de Educação de Flores de Goiás (GO), com telefone, 17/11/2026. Na E01, o campo telefone consta como "N/A", porque a entrevistada é a própria professora da disciplina | Seção "Identificação" de cada transcrição |
-| 2 questionários com pessoas diferentes das entrevistadas, anexados com as respostas, identificação, função e telefone | Q01: Isabella Beatriz da Silva, Product Manager. Q02: Vaneide Neves, Assessoria ao Presidente (CEO). As duas com telefone e consentimento LGPD registrado | Seção 1 de cada questionário |
+| 2 entrevistas, transcritas e anexadas, com identificação, função e telefone | E01: Adriana Silveira de Souza, Product Owner e professora da disciplina, 20/10/2026, 1h57min de gravação. E02, com telefone, 17/11/2026. Na E01, o campo telefone consta como "N/A", porque a entrevistada é a própria professora da disciplina | Seção "Identificação" de cada transcrição |
+| 2 questionários com pessoas diferentes das entrevistadas, anexados com as respostas, identificação, função e telefone | Q01 e Q02. As duas com telefone e consentimento LGPD registrado | Seção 1 de cada questionário |
 | Pesquisar sistemas análogos e descrever as funcionalidades | 15Five, da lista de sugestões do enunciado, registrado na issue #32. 27 funcionalidades descritas (`FA-01` a `FA-27`), com capturas de tela | [Sistema_Analogo_15Five.md](elicitacao/sistema-analogo/Sistema_Analogo_15Five.md) |
 | Processo de negócio de avaliação, com as principais dores, em BPMN | Dois diagramas AS-IS, um por entrevista, com as dores D1 a D6 marcadas, em arquivo `.bpmn` e imagem | [Processo_AS-IS_e_Dores.md](elicitacao/bpmn/Processo_AS-IS_e_Dores.md) e arquivos em [`elicitacao/bpmn/`](elicitacao/bpmn/) |
 | Outras técnicas de elicitação | Prototipação no Figma (técnica `RT` do processo, seção 3) | [Prototipo.md](prototipacao/Prototipo.md) |
@@ -98,7 +98,7 @@ Cada item do escopo e cada restrição do enunciado tem requisitos e artefatos. 
 
 ## 5. Revisão cruzada entre integrantes
 
-Todo artefato entrou na `main` por pull request revisado ou integrado por um integrante diferente do autor, como exige a seção 4.2 do processo. Dados do GitHub em 17/11/2026.
+Todo artefato entrou na `main` por pull request. A seção 4.2 do processo exige revisão por um integrante diferente do autor. Pelo histórico do Git, em 21 dos 22 PRs o merge foi feito por um integrante diferente do autor do primeiro commit do PR. A exceção é o #74, que reúne casos de uso de vários integrantes, tem commits de Júlia, Davi e Verônica e foi integrado pela Verônica, também autora de parte dele. Em outros quatro PRs (#59, #63, #71 e #76), quem integrou também tem um commit de correção no próprio PR. A coluna Autor e quem integrou vêm do histórico do Git. A informação "Aprovado" vem do GitHub e não pode ser conferida pelo histórico do Git. Dados de 17/11/2026.
 
 | PR | Artefato | Autor | Revisão e integração |
 |---|---|---|---|
@@ -121,7 +121,7 @@ Todo artefato entrou na `main` por pull request revisado ou integrado por um int
 | #71 | Especificação suplementar | Verônica | Aprovado e integrado por Júlia |
 | #72 | Protótipo no Figma | Júlia | Aprovado e integrado por Verônica |
 | #73 | Dicionário de dados e glossário | Ana Luísa | Aprovado e integrado por Verônica |
-| #74 | Casos de uso completos (UC-08, UC-13, UC-14, UC-19, UC-25) | Júlia | Aprovado e integrado por Verônica |
+| #74 | Casos de uso completos (UC-08, UC-13, UC-14, UC-19, UC-25) | Júlia, Davi e Verônica (pelos commits) | Aprovado e integrado por Verônica |
 | #75 | Especificação IEEE 830 | Verônica | Aprovado e integrado por Júlia |
 | #76 | Matriz de rastreabilidade | Davi | Aprovado e integrado por Ana Luísa |
 
@@ -156,17 +156,17 @@ As conferências abaixo foram feitas por script sobre todos os arquivos `.md` e 
 
 ## 7. Correções feitas nesta revisão
 
-Cada artefato alterado recebeu uma linha no seu histórico de revisões.
+Têm histórico de revisões, com a linha da versão 1.1, sete artefatos: a lista geral, o modelo ER, o dicionário de dados, a especificação IEEE 830, a especificação suplementar, o Documento Visão e a matriz de rastreabilidade. Os casos de uso UC-08 e UC-19, que tiveram conteúdo alterado, também receberam histórico de revisões. Os demais arquivos alterados não têm histórico próprio; as alterações deles estão registradas no histórico do Git.
 
 | Artefato | Correção | Motivo |
 |---|---|---|
 | [Lista geral](Lista_Geral_Requisitos.md) (1.1) e CSV | RF-003 passa a incluir os perfis diretoria e encarregado; RN-005 registra que o mínimo de respondentes nunca é menor que 3; RN-006 trata o plano de ação de feedback confidencial | Alterações indicadas pela especificação IEEE 830 (Apêndice C.3; decisões ERS-D02, ERS-D08, ERS-D05) e ainda não aplicadas |
-| Lista geral | A seção 9 passa a "Pontos decididos na consolidação". As observações deixam de chamar as decisões de provisórias | Cada um dos dez pontos já tinha decisão e justificativa, e os demais artefatos já estavam escritos de acordo com elas |
+| Lista geral | A seção 9 passa a "Pontos decididos pelo grupo, sem confirmação da PO". As observações chamam cada decisão de "decisão do grupo, não confirmada pela PO" | A PO não teve disponibilidade para confirmar os dez pontos. As decisões são do grupo e continuam sujeitas à confirmação dela |
 | [Modelo ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (1.1) | Perfis `DIRETORIA` e `ENCARREGADO`; autor das versões e rascunho de feedback confidencial; `Feedback.peso`; regra do prazo de retenção; remoção de `Meta.atingida`; enumerações fechadas; `CheckInMeta`, `CheckInPlano`, `DestinatarioVisibilidade`, `DisponibilidadeAgenda`, `TermoOfensivo`; controle de falhas de login; `Fato.observado_equipe_id`; novos valores de notificação e de status do plano; `PlanoAcao.gestor_id` | Inconsistências I-01 e I-04 a I-13 do dicionário, decisões UC08-D01, UC08-D02 e UC19-D01 dos casos completos e Apêndice C.2 da especificação IEEE 830, que pediam esses ajustes |
 | [Dicionário de dados](Dicionario_de_Dados.md) (1.1) | Entidades e atributos conforme o ER 1.1; glossário de perfis, 360° e equipe; inventário LGPD e prazos; coluna "Tratamento" em todos os pontos da seção 5 | Manter o dicionário igual ao ER e registrar como cada ponto foi resolvido |
 | [Especificação IEEE 830](Especificacao_Requisitos_IEEE830.md) (1.1) | Textos de RF-003, RN-005 e RN-006; entidades novas na seção 3.4.1; situação dos apêndices C.2 e C.3 | Refletir a lista geral 1.1 e o ER 1.1 |
-| [Especificação suplementar](Especificacao_Suplementar.md) (1.1) | Linha do encarregado na matriz de acesso (seção 8.1); situação das decisões DS-01, DS-09 e DS-10 | Igualar à especificação IEEE 830 (seção 3.6.5) e fechar decisões marcadas "a validar" |
-| [Documento Visão](Documento_Visao.md) (1.1) | Seção 8 trata os pontos P-xx como decididos; perfis ligados ao RF-003; link para o glossário | Coerência com a lista geral 1.1 e com o dicionário, que já existe |
+| [Especificação suplementar](Especificacao_Suplementar.md) (1.1) | Linha do encarregado na matriz de acesso (seção 8.1); situação das decisões DS-01 e DS-09; DS-10 como decisão do grupo, ainda não confirmada pela PO | Igualar à especificação IEEE 830 (seção 3.6.5) e atualizar as decisões marcadas "a validar" |
+| [Documento Visão](Documento_Visao.md) (1.1) | Seção 8 registra os pontos P-xx como decisões do grupo, ainda não confirmadas pela PO; perfis ligados ao RF-003; link para o glossário | Coerência com a lista geral 1.1 e com o dicionário, que já existe |
 | [Matriz de rastreabilidade](Matriz_Rastreabilidade.md) (1.1) e CSV | Textos novos; ligações horizontais do RF-003; entidades do ER 1.1; situação das pendências; tabela 4.2 sem a coluna de página, que divergia da seção 4.1 | Refletir as correções acima |
 | [UC-19 Criar plano de ação](modelagem/casos-de-uso/UC-19_Criar_Plano_de_Acao.md) (1.1) | Extensão 1e e decisão UC19-D04 para feedback confidencial | O caso de uso permitia ao par confidencial definir o plano com o receptor, o que revelaria o emissor (RN-004, RN-006) |
 | UC-08 e UC-19 | Indicação de que o impacto no ER foi aplicado | Decisões UC08-D01, UC08-D02 e UC19-D01 |

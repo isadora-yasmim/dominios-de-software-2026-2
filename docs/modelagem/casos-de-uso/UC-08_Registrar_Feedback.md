@@ -1,9 +1,16 @@
 # UC-08 Registrar feedback
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
-**Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.0 · **Data:** 17/11/2026
+**Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.1 · **Data:** 17/11/2026
 **Responsável:** Davi Augusto Ferreira de Carvalho
 **Prioridade:** Must · **Área:** Feedback do dia a dia · [Diagrama](Diagrama_Casos_de_Uso.md#42-feedback-do-dia-a-dia) · [Modelo e convenções](Casos_de_Uso_Completos.md)
+
+## Histórico de revisões
+
+| Versão | Data | Descrição | Autor |
+|---|---|---|---|
+| 1.0 | 17/11/2026 | Versão inicial | Davi Augusto Ferreira de Carvalho |
+| 1.1 | 17/11/2026 | Revisão final (#55): as decisões UC08-D01 e UC08-D02 passam a indicar que o impacto no modelo ER foi aplicado na versão 1.1 do modelo; nome do produto padronizado | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
