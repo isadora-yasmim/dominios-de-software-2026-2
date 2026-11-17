@@ -56,9 +56,9 @@ Este documento não cria requisitos novos. Quando a lista geral deixou um valor 
 |---|---|
 | [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45) | Fonte dos identificadores, textos, origens e prioridades. Os pontos a validar da lista (seção 9) continuam valendo, em especial o P-10, sobre as metas numéricas |
 | [Pesquisa documental](elicitacao/pesquisa-documental/Pesquisa_Documental.md) (#33) | Fonte das obrigações legais e normas técnicas e da adaptação da ISO/IEC 25010:2023 ao sistema |
-| Documento Visão (#46) | Resume os atributos de qualidade mais importantes para os interessados |
+| [Documento Visão](Documento_Visao.md) (#46) | Resume os atributos de qualidade mais importantes para os interessados |
 | Casos de uso (#47 e #48) | Descrevem o comportamento funcional. Os requisitos especiais de cada caso de uso devem apontar para os RNF deste documento |
-| Modelo ER (#52) | Deve refletir as decisões de armazenamento da seção 8: vínculo pseudonimizado do emissor e controle de participação separado |
+| [Modelo ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52) | Reflete as decisões de armazenamento da seção 8: vínculo confidencial separado (`VinculoConfidencial`) e convite sem ligação com a resposta (seção 10 do modelo) |
 | Especificação IEEE 830 (#54) | Usa este documento como fonte da sua seção de requisitos não funcionais |
 | Matriz de rastreabilidade (#49) | Usa a seção 16 para ligar cada RNF à característica de qualidade e ao método de verificação |
 
