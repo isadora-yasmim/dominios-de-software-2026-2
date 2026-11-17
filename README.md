@@ -45,7 +45,7 @@ O sistema deve permitir:
 |---|----------|-------|-------|
 | **Planejamento** ||||
 | 1 | Planejamento das atividades (Kanban) | [Project](https://github.com/users/isadora-yasmim/projects/3) | #1 |
-| 2 | Definição do processo de requisitos | [`docs/`](docs/) | #2 |
+| 2 | Definição do processo de requisitos | [`docs/Processo_Requisitos.md`](docs/Processo_Requisitos.md) | #31 |
 | **Elicitação** ||||
 | 3 | Pesquisa documental (LGPD, ISO/IEC 25010, regulamentações) | [`docs/elicitacao/pesquisa-documental/`](docs/elicitacao/pesquisa-documental/) | #4 |
 | 4 | Roteiro e entrevistas transcritas (2) | [`docs/elicitacao/entrevistas/`](docs/elicitacao/entrevistas/) | #5 #6 #7 |
