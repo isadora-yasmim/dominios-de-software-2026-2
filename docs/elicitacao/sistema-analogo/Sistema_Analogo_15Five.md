@@ -249,25 +249,83 @@ Pesquisas periódicas para toda a empresa, com resultados por grupo, mapas de ca
 
 ## 9. Capturas de tela e demonstrações
 
-O grupo não teve acesso a uma conta do 15Five. As telas abaixo devem ser obtidas da demonstração oficial ou das páginas de produto e salvas em [`docs/assets/`](../../assets/) com o prefixo `15five-`.
+O grupo não teve acesso a uma conta do 15Five. As imagens abaixo foram obtidas das páginas oficiais de produto do 15Five e da página do aplicativo na App Store, em 17/11/2026. São telas de demonstração do fabricante, com dados fictícios, usadas aqui apenas para análise acadêmica. Os arquivos estão em [`docs/assets/`](../../assets/) com o prefixo `15five-`.
 
-| Tela | Situação |
-|---|---|
-| Check-in semanal com Pulse e prioridades | Pendente |
-| Envio de High Five com hashtag de valor | Pendente |
-| Envio de feedback com escolha de visibilidade | Pendente |
-| Pauta de 1-on-1 | Pendente |
-| Configuração de ciclo do Best-Self Review | Pendente |
-| Career Hub e plano de crescimento | Pendente |
-| Aplicativo móvel | Pendente |
+### Figura 1 – Check-in semanal (FA-01, FA-02, FA-03)
 
-Os artigos da central de ajuda listados na seção 11 trazem imagens das telas e podem ser usados como referência enquanto as capturas não forem feitas.
+![Tela "My Check-ins" com a pergunta de Pulse em escala de 1 a 5, a lista de prioridades da semana e o histórico de check-ins enviados](../../assets/15five-checkin.webp)
+
+O colaborador responde "Como você se sentiu no trabalho esta semana?" de 1 a 5 e marca as prioridades concluídas. À direita aparece o histórico de check-ins por semana. *Fonte: [15Five – Check-ins](https://www.15five.com/products/perform/check-ins).*
+
+### Figura 2 – High Five (FA-05)
+
+![Cartão de High Five em que uma colaboradora agradece a um colega, com curtidas, comentários e campo para comentar](../../assets/15five-high-five.webp)
+
+Reconhecimento público entre colegas, com reações e comentários. *Fonte: [15Five – 1-on-1s](https://www.15five.com/products/perform/1-on-1s).*
+
+### Figura 3 – Solicitar feedback (FA-08, FA-09)
+
+![Formulário "Request Feedback" com campos para escolher colegas e descrever o tema, aviso de visibilidade e opção de compartilhar com o gestor](../../assets/15five-solicitar-feedback.webp)
+
+O formulário avisa quem verá o pedido e traz a opção "Compartilhar feedback com seu gestor". É um bom exemplo de transparência sobre visibilidade antes do envio. *Fonte: [15Five – Feedback](https://www.15five.com/products/perform/feedback).*
+
+### Figura 4 – Histórico de feedbacks solicitados (FA-08)
+
+![Tela "Request Feedback" com filtros por pessoa, período e tipo, um pedido de feedback respondido por um colega e a lista de pedidos pendentes com prazo](../../assets/15five-feedback.webp)
+
+Lista de pedidos enviados e recebidos, com filtros por pessoa e período e com prazo de expiração dos pedidos pendentes. *Fonte: [15Five – Feedback](https://www.15five.com/products/perform/feedback).*
+
+### Figura 5 – Pauta de 1-on-1 (FA-10)
+
+![Menu de ações sobre um item do check-in com as opções de repassar, adicionar à pauta da 1-on-1, adicionar a conquistas e dificuldades, marcar para acompanhamento e compartilhar por e-mail](../../assets/15five-1on1-pauta.webp)
+
+Um item do check-in pode ser levado para a pauta da reunião individual ou marcado para acompanhamento. *Fonte: [15Five – 1-on-1s](https://www.15five.com/products/perform/1-on-1s).*
+
+### Figura 6 – Pergunta de avaliação com escala (FA-12, FA-16)
+
+![Pergunta de avaliação sobre uma competência, respondida em escala de cinco pontos de "Nunca" a "Sempre"](../../assets/15five-best-self-review.webp)
+
+Pergunta de competência respondida em escala de frequência, usada no Best-Self Review. *Fonte: [15Five – Feedback](https://www.15five.com/products/perform/feedback).*
+
+### Figura 7 – Avaliação com assistente de IA (FA-18, FA-25)
+
+![Tela de avaliação com uma pergunta sobre os pontos fortes da colaboradora, editor de texto, sinais de desempenho usados na resposta e painel do assistente com sugestões e indicador de qualidade do feedback](../../assets/15five-avaliacao-ia.webp)
+
+O avaliador escreve a resposta e o assistente sugere melhorias e mostra quais registros do período sustentam a resposta. *Fonte: [15Five – 15Five AI](https://www.15five.com/products/15five-ai).*
+
+### Figura 8 – Objetivos (OKRs) (FA-19)
+
+![Lista de objetivos com situação "no prazo" ou "atrasado", número de resultados-chave, percentual de progresso e prazo](../../assets/15five-okrs.webp)
+
+Cada objetivo mostra a situação, os resultados-chave, o progresso e o prazo. *Fonte: [15Five – Perform](https://www.15five.com/products/perform).*
+
+### Figura 9 – Metas de carreira no Career Hub (FA-20, FA-21)
+
+![Linha do tempo com metas de carreira por pessoa, filtros de metas de negócio e de autodesenvolvimento e botão para criar meta de carreira](../../assets/15five-career-hub.webp)
+
+Metas de carreira e de autodesenvolvimento em linha do tempo. *Fonte: [15Five – Perform](https://www.15five.com/products/perform).*
+
+### Figura 10 – Pesquisas de engajamento (FA-22)
+
+![Lista de pesquisas concluídas e futuras com público, datas, número de pesquisas e taxa de resposta](../../assets/15five-pesquisa-engajamento.webp)
+
+Pesquisas por público, com datas e taxa de resposta. *Fonte: [15Five – Engage](https://www.15five.com/products/engage).*
+
+### Figura 11 e 12 – Aplicativo móvel (FA-26)
+
+<p>
+<img src="../../assets/15five-mobile-1.png" alt="Aplicativo móvel mostrando a pauta de 1-on-1 com tópicos, itens de ação e notas compartilhadas" width="260">
+<img src="../../assets/15five-mobile-2.png" alt="Menu do aplicativo móvel com Best-Self Review, objetivos, 1-on-1s, painel de Pulse e acompanhamentos" width="260">
+</p>
+
+À esquerda, a pauta de 1-on-1 no celular. À direita, o menu com avaliação, objetivos, 1-on-1s, painel de Pulse e acompanhamentos. *Fonte: [15Five na App Store](https://apps.apple.com/us/app/15five/id1020253220).*
 
 ---
 
 ## 10. Limitações desta análise
 
 - A análise foi feita pela documentação oficial e por avaliações de usuários, sem uso direto da ferramenta. Detalhes de usabilidade não foram observados pelo grupo.
+- As figuras da seção 9 são imagens de divulgação do fabricante. Elas podem simplificar ou embelezar a interface real.
 - As funções e os preços valem para novembro de 2026 e podem mudar.
 - Algumas páginas da central de ajuda divergem entre si, por exemplo sobre quem vê a pauta de 1-on-1 quando a empresa nomeia observadores globais. Nesses casos registramos a regra mais restritiva.
 - As avaliações do G2 e do Capterra são opiniões de usuários e não foram verificadas pelo grupo.
