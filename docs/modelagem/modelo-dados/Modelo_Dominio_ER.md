@@ -2,8 +2,8 @@
 
 Projeto: Sistema Web de Feedback e Gestão de Competências · Disciplina Domínios de Software (INF0296, 2026/2)
 
-**Entrada:** [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.0
-**Notação:** diagramas `erDiagram` em [Mermaid](https://mermaid.js.org/syntax/entityRelationshipDiagram.html), renderizados direto pelo GitHub. As imagens exportadas estão em [`img/`](img/).
+**Entrada:** [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.1 · **Versão deste modelo:** 1.1 (revisão final, #55)
+**Notação:** diagramas `erDiagram` em [Mermaid](https://mermaid.js.org/syntax/entityRelationshipDiagram.html), renderizados direto pelo GitHub. Os diagramas Mermaid desta página são a fonte do modelo. As imagens em [`img/`](img/) foram exportadas da versão 1.0 e não mostram os ajustes da versão 1.1, listados na [seção 14](#14-histórico-de-revisões).
 
 ---
 
@@ -21,7 +21,8 @@ Projeto: Sistema Web de Feedback e Gestão de Competências · Disciplina Domín
 10. [Tratamento do anonimato no modelo](#10-tratamento-do-anonimato-no-modelo)
 11. [Dicionário de enumerações](#11-dicionário-de-enumerações)
 12. [Rastreabilidade entidade × requisito](#12-rastreabilidade-entidade--requisito)
-13. [Decisões e pontos em aberto](#13-decisões-e-pontos-em-aberto)
+13. [Decisões de modelagem](#13-decisões-de-modelagem)
+14. [Histórico de revisões](#14-histórico-de-revisões)
 
 ---
 
@@ -92,6 +93,8 @@ erDiagram
         string email UK "login"
         string senha_hash
         bool dois_fatores_ativo "obrigatorio para RH e admin (RNF-006)"
+        int falhas_login_consecutivas "zera no login com sucesso (RNF-006, DS-06)"
+        datetime login_bloqueado_ate "espera crescente de 30 s a 1 h (DS-06)"
         date data_nascimento "identifica menor de idade (RN-016)"
         date data_admissao
         date data_desligamento "inicia a contagem de retencao (RN-011)"
@@ -130,8 +133,8 @@ erDiagram
     ConfiguracaoOrganizacao {
         int id PK "linha unica (RN-010)"
         string nome_organizacao
-        int min_respondentes "padrao 3 (RN-005)"
-        int retencao_pos_desligamento_meses "padrao 60 (RN-011)"
+        int min_respondentes "padrao 3, minimo 3 (RN-005)"
+        int retencao_pos_desligamento_meses "padrao 60 (RN-011), se a categoria nao define prazo"
         text aviso_privacidade "RF-053"
         string encarregado_nome "RF-053"
         string encarregado_contato
@@ -151,6 +154,8 @@ erDiagram
 **Notas**
 
 - Todo colaborador tem ao menos o perfil `COLABORADOR`. O gestor que também é avaliado pelo seu superior tem `COLABORADOR` e `GESTOR` (RF-003).
+- Os perfis `DIRETORIA` e `ENCARREGADO` têm acesso restrito à sua função (RF-003): a diretoria vê só `ResultadoConsolidado` agregado da organização (RNF-001, RN-005), e o encarregado acessa `SolicitacaoTitular` e `IncidenteSeguranca` (RF-061, RF-063).
+- `falhas_login_consecutivas` e `login_bloqueado_ate` guardam a espera crescente após falhas de login e a desativação do autenticador em 100 falhas consecutivas (RNF-006, decisão DS-06 da especificação suplementar).
 - `gestor_id` nulo indica o topo da hierarquia. O gestor direto é a base da regra de visibilidade de RNF-001.
 - Não há campos para dados sensíveis (RN-013). A data de nascimento é coletada para identificar menores (RN-016). A condição de menor de idade é calculada a partir dela, sem atributo próprio, e muda sozinha quando o colaborador faz 18 anos (decisão M-07).
 
@@ -234,6 +239,7 @@ erDiagram
         uuid id PK
         uuid autor_id FK "quem registrou"
         uuid observado_id FK "colaborador observado"
+        uuid observado_equipe_id FK "equipe observada como um todo (UC08-D02)"
         date data_ocorrencia
         text descricao
         bool eh_relato "RF-012"
@@ -243,7 +249,8 @@ erDiagram
     }
     Feedback {
         uuid id PK
-        uuid emissor_id FK "nulo se confidencial ou anonimo"
+        uuid emissor_id FK "nulo apos o envio se confidencial"
+        decimal peso "peso no periodo (RF-010)"
         uuid receptor_colaborador_id FK "um dos dois receptores"
         uuid receptor_equipe_id FK
         enum tipo "TipoFeedback"
@@ -271,7 +278,7 @@ erDiagram
         text problema "construtivo"
         text reflexao "construtivo"
         datetime criada_em
-        uuid criada_por FK
+        uuid criada_por FK "nulo se o feedback e confidencial"
     }
     FeedbackFato {
         uuid feedback_id PK, FK
@@ -284,6 +291,23 @@ erDiagram
     MembroFeedbackEquipe {
         uuid feedback_id PK, FK "feedback com receptor equipe"
         uuid colaborador_id PK, FK "membro na data do feedback"
+    }
+    DestinatarioVisibilidade {
+        uuid feedback_id PK, FK "visibilidade AMPLIADA"
+        uuid colaborador_id PK, FK "pessoa incluida pelo emissor (RNF-002)"
+        datetime ampliada_em
+    }
+    DisponibilidadeAgenda {
+        uuid id PK
+        uuid colaborador_id FK
+        datetime inicio "horario livre (RF-038)"
+        datetime fim
+    }
+    TermoOfensivo {
+        uuid id PK
+        string termo UK "lista do administrador (RNF-024, DS-13)"
+        bool ativo
+        uuid cadastrado_por FK
     }
     Replica {
         uuid id PK
@@ -324,13 +348,18 @@ erDiagram
     CicloAvaliacao { uuid id PK }
 
     Colaborador ||--o{ Fato : registra
-    Colaborador ||--o{ Fato : "e observado em"
+    Colaborador |o--o{ Fato : "e observado em"
+    Equipe |o--o{ Fato : "e observada em"
     Colaborador |o--o{ Fato : "relata"
     Colaborador |o--o{ Feedback : emite
     Colaborador |o--o{ Feedback : recebe
     Equipe |o--o{ Feedback : recebe
     Feedback ||--o{ MembroFeedbackEquipe : "entregue a"
     Colaborador ||--o{ MembroFeedbackEquipe : "recebe em grupo"
+    Feedback ||--o{ DestinatarioVisibilidade : "ampliado a"
+    Colaborador ||--o{ DestinatarioVisibilidade : "ve por ampliacao"
+    Colaborador ||--o{ DisponibilidadeAgenda : informa
+    Colaborador ||--o{ TermoOfensivo : cadastra
     Feedback ||--|{ VersaoFeedback : "tem versoes"
     Feedback ||--|{ FeedbackFato : "baseado em"
     Fato ||--o{ FeedbackFato : embasa
@@ -348,7 +377,12 @@ erDiagram
 
 **Notas**
 
-- **Campos obrigatórios (RN-002):** emissor, receptor, data, tipo, modalidade e ao menos um fato. Por isso `Feedback ||--|{ FeedbackFato` (um ou mais). No modo confidencial, o emissor existe e fica em `VinculoConfidencial` (seção 10), e não em `emissor_id`.
+- **Campos obrigatórios (RN-002):** emissor, receptor, data, tipo, modalidade e ao menos um fato. Por isso `Feedback ||--|{ FeedbackFato` (um ou mais). No modo confidencial, o emissor existe e fica em `VinculoConfidencial` (seção 10), e não em `emissor_id`. Um feedback nunca é anônimo: o anonimato só existe nas respostas de avaliação de um ciclo (ERS-D03).
+- **Rascunho e autor das versões no modo confidencial:** enquanto o feedback é rascunho, `emissor_id` fica preenchido e só o autor vê o rascunho (RNF-012). No envio, o emissor passa para `VinculoConfidencial` e `emissor_id` fica nulo. `VersaoFeedback.criada_por` também fica nulo, porque só o emissor edita o feedback (RN-003) e o autor de cada versão é o do vínculo (RNF-003).
+- **Fato observado:** exatamente um entre `observado_id` e `observado_equipe_id` deve estar preenchido. O fato sobre a equipe como um todo só embasa feedback para a equipe (RN-001, decisão UC08-D02).
+- **Visibilidade ampliada (RNF-002):** quando o emissor amplia a visibilidade, cada pessoa incluída fica em `DestinatarioVisibilidade`.
+- **Peso (RF-010):** `Feedback.peso` e `Indicador.peso` são os pesos pedidos pelo RF-010. Os pesos de `CargoCompetencia`, `Pergunta` e `ModalidadeCiclo` são escolha de projeto, e todo peso usado no cálculo é exibido junto com o resultado (RN-008).
+- **Apoio a outras funções:** `DisponibilidadeAgenda` guarda os horários livres usados para sugerir horários da sessão (RF-038), e `TermoOfensivo`, a lista de termos que o sistema sinaliza ao emissor (RNF-024, DS-13).
 - **Receptor:** exatamente um entre `receptor_colaborador_id` e `receptor_equipe_id` deve estar preenchido (restrição de verificação).
 - **Feedback para equipe no perfil individual (M-09):** ao enviar um feedback para uma equipe, o sistema grava em `MembroFeedbackEquipe` quem era membro naquela data. O feedback aparece no histórico e no perfil de cada um desses membros (RF-048), sinalizado como "feedback em grupo". O conteúdo continua em um único `Feedback`, e quem entrar na equipe depois não o recebe.
 - **Não exclusão e versões (RN-003):** não há exclusão de `Feedback`. Toda edição cria uma nova `VersaoFeedback`; a versão vigente é a de maior `numero`.
@@ -433,7 +467,7 @@ erDiagram
         uuid id PK
         uuid ciclo_id FK
         uuid avaliado_id FK
-        enum modalidade "ou AGREGADO para fontes abaixo do minimo"
+        enum modalidade "ModalidadeAvaliacao ou AGREGADO (abaixo do minimo)"
         uuid competencia_id FK "opcional"
         uuid indicador_id FK "opcional"
         decimal valor
@@ -487,7 +521,6 @@ erDiagram
         date data_inicio
         date prazo
         enum status "StatusMeta"
-        bool atingida
         uuid criada_por FK
     }
     Indicador {
@@ -512,7 +545,7 @@ erDiagram
         uuid id PK
         uuid gestor_id FK
         uuid colaborador_id FK "o gestor escolhe quem participa"
-        enum frequencia "SEMANAL, QUINZENAL, MENSAL..."
+        enum frequencia "FrequenciaCheckIn"
         uuid questionario_id FK "perguntas alternaveis (RF-036)"
         bool ativa
     }
@@ -526,11 +559,20 @@ erDiagram
         date data_realizada
         text anotacoes
     }
+    CheckInMeta {
+        uuid checkin_id PK, FK
+        uuid meta_id PK, FK "meta em andamento (RF-041)"
+    }
+    CheckInPlano {
+        uuid checkin_id PK, FK
+        uuid plano_id PK, FK "plano em andamento (RF-041)"
+    }
     PlanoAcao {
         uuid id PK
         uuid feedback_id FK, UK "feedback construtivo de origem"
         uuid receptor_id FK
-        uuid emissor_id FK
+        uuid emissor_id FK "nulo se o feedback de origem e confidencial"
+        uuid gestor_id FK "gestor direto do receptor, se confidencial (RN-006)"
         date data_final
         enum status "StatusPlano"
         enum resultado_final "MELHOROU ou NOVO_FEEDBACK (RF-043)"
@@ -575,12 +617,19 @@ erDiagram
     PlanoAcao ||--|{ AcaoPlano : contem
     PlanoAcao ||--|{ PontoMonitoramento : "acompanhado por"
     Colaborador ||--o{ AcaoPlano : "responsavel por"
+    CheckIn ||--o{ CheckInMeta : acompanha
+    Meta ||--o{ CheckInMeta : "acompanhada em"
+    CheckIn ||--o{ CheckInPlano : acompanha
+    PlanoAcao ||--o{ CheckInPlano : "acompanhado em"
 ```
 
 **Notas**
 
 - `Indicador` pertence a um objetivo de ciclo **ou** a uma meta (exatamente um dos dois FKs preenchido). Assim, a evolução de qualquer indicador no painel (RF-049) vem sempre de `MedicaoIndicador`.
-- O plano de ação só pode nascer de um feedback de tipo `CONSTRUTIVO` (RF-042) e é definido em conjunto pelo receptor e pelo emissor (RN-006), por isso guarda os dois.
+- O plano de ação só pode nascer de um feedback de tipo `CONSTRUTIVO` (RF-042) e é definido em conjunto pelo receptor e pelo emissor (RN-006), por isso guarda os dois. Se o feedback de origem for confidencial, o plano é definido pelo receptor e pelo seu gestor direto: `emissor_id` fica nulo e `gestor_id` é preenchido, para não revelar o emissor (RN-004, RN-006, ERS-D05).
+- O plano registrado pelo emissor fica com o status `AGUARDANDO_CONFIRMACAO` até o receptor confirmar, o que registra a definição conjunta (RN-006, decisão UC19-D01).
+- O resultado da meta fica só em `Meta.status` (`ATINGIDA` ou `NAO_ATINGIDA`), sem atributo repetido (RF-047).
+- O check-in periódico fica ligado às metas e aos planos em andamento por `CheckInMeta` e `CheckInPlano` (RF-041).
 - "Quais feedbacks e planos resultaram em melhora" (RF-045) é uma consulta sobre `PlanoAcao.resultado_final`.
 
 ## 9. LGPD, auditoria e notificações
@@ -603,6 +652,8 @@ erDiagram
         string entidade_destino "RF-060"
         enum tipo_entidade "PUBLICA ou PRIVADA"
         text finalidade
+        bool inclui_menores "falso por padrao (RN-016)"
+        text justificativa_menores "obrigatoria se inclui_menores"
         date data_inicio
         date data_fim
     }
@@ -656,7 +707,7 @@ erDiagram
         uuid id PK
         uuid ator_id FK
         datetime data_hora
-        enum acao "CONSULTA, CRIACAO, ALTERACAO, OCULTACAO, CONSULTA_IDENTIDADE..."
+        enum acao "AcaoAuditoria"
         string entidade
         uuid entidade_id
         string ip_origem
@@ -697,6 +748,8 @@ erDiagram
 
 - `RegistroAuditoria` é somente inclusão: não há alteração nem exclusão, e cada registro guarda o hash do anterior. Toda leitura de `VinculoConfidencial` gera um registro com `acao = CONSULTA_IDENTIDADE` (RNF-003, RNF-005).
 - Os registros de acesso (RNF-032) são uma `CategoriaDado` com prazo mínimo de 6 meses.
+- **Prazo de retenção:** o prazo de cada `CategoriaDado` prevalece. `ConfiguracaoOrganizacao.retencao_pos_desligamento_meses` é o padrão de feedbacks, avaliações e planos de ação (RN-011) e vale quando a categoria não define prazo próprio (RF-062).
+- **Menores de 18 anos (RN-016):** um compartilhamento só abrange dados de menores se `inclui_menores` for verdadeiro, com justificativa registrada.
 - A exportação dos dados do titular (RF-058) e o relatório do histórico (RF-051) são consultas sobre as entidades das seções 6 a 8, sem tabela própria.
 
 ## 10. Tratamento do anonimato no modelo
@@ -725,7 +778,7 @@ Consequência aceita: no modo `ANONIMO` o emissor não pode editar a resposta de
 
 | Enumeração | Valores |
 |---|---|
-| `Perfil` | `COLABORADOR`, `GESTOR`, `RH`, `ADMINISTRADOR` |
+| `Perfil` | `COLABORADOR`, `GESTOR`, `RH`, `ADMINISTRADOR`, `DIRETORIA`, `ENCARREGADO` |
 | `SituacaoColaborador` | `ATIVO`, `AFASTADO`, `DESLIGADO`, `ANONIMIZADO` |
 | `TipoResposta` | `ESCALA_ORDINAL`, `NUMERICO`, `ATINGIDO_NAO_ATINGIDO`, `TEXTO_LIVRE` |
 | `TipoFeedback` | `POSITIVO`, `CONSTRUTIVO` |
@@ -737,22 +790,29 @@ Consequência aceita: no modo `ANONIMO` o emissor não pode editar a resposta de
 | `StatusCiclo` | `PLANEJADO`, `ABERTO`, `ENCERRADO`, `RESULTADOS_LIBERADOS` |
 | `StatusConvite` | `PENDENTE`, `RESPONDIDO`, `EXPIRADO` |
 | `StatusMeta` | `EM_ANDAMENTO`, `ATINGIDA`, `NAO_ATINGIDA`, `CANCELADA` |
-| `StatusPlano` | `ABERTO`, `EM_ACOMPANHAMENTO`, `CONCLUIDO` |
+| `StatusPlano` | `AGUARDANDO_CONFIRMACAO`, `ABERTO`, `EM_ACOMPANHAMENTO`, `CONCLUIDO` |
+| `FrequenciaCheckIn` | `SEMANAL`, `QUINZENAL`, `MENSAL` |
+| `AcaoAuditoria` | `CONSULTA`, `CRIACAO`, `ALTERACAO`, `OCULTACAO`, `CONSULTA_IDENTIDADE`, `EXPORTACAO`, `ANONIMIZACAO`, `ELIMINACAO` |
 | `BaseLegal` | `EXECUCAO_CONTRATO`, `LEGITIMO_INTERESSE`, `OBRIGACAO_LEGAL`, `CONSENTIMENTO`, `EXERCICIO_DIREITOS` |
 | `TipoSolicitacaoTitular` | `CONFIRMACAO_ACESSO`, `CORRECAO`, `ANONIMIZACAO_BLOQUEIO_ELIMINACAO`, `PORTABILIDADE`, `INFORMACAO_COMPARTILHAMENTO`, `REVOGACAO_CONSENTIMENTO` |
-| `TipoNotificacao` | `SESSAO_AGENDADA`, `LEMBRETE_SESSAO`, `AVALIACAO_PENDENTE`, `CHECKIN`, `PRAZO_PLANO`, `CICLO_ABERTO`, `RESPOSTA_OCULTADA` |
+| `TipoNotificacao` | `SESSAO_AGENDADA`, `LEMBRETE_SESSAO`, `AVALIACAO_PENDENTE`, `CHECKIN`, `PRAZO_PLANO`, `CICLO_ABERTO`, `RESPOSTA_OCULTADA`, `FEEDBACK_RECEBIDO`, `PLANO_PARA_CONFIRMAR` |
 
 ## 12. Rastreabilidade entidade × requisito
 
 | Entidade | Requisitos atendidos |
 |---|---|
 | `Colaborador`, `Cargo`, `Equipe` | RF-001, RF-048, RNF-001, RN-013, RN-016 |
-| `PerfilColaborador` | RF-003, RNF-006 |
+| `Colaborador` (controle de falhas de login) | RNF-006 |
+| `PerfilColaborador` | RF-003, RNF-001, RNF-006 |
 | `ImportacaoCadastro` | RF-002 |
 | `ConfiguracaoOrganizacao` | RN-005, RN-010, RN-011, RF-053, RF-064, RF-065 |
 | `Competencia`, `CargoCompetencia`, `CompetenciaAtribuida` | RF-005, RF-006, RN-014 |
 | `Questionario`, `Pergunta` | RF-007, RF-008, RF-009, RF-010, RNF-026, RN-001 |
 | `Fato` | RF-011, RF-012, RN-001 |
+| `DestinatarioVisibilidade` | RNF-002 |
+| `DisponibilidadeAgenda` | RF-038 |
+| `TermoOfensivo` | RNF-024 |
+| `Feedback` (peso no período) | RF-010 |
 | `Feedback`, `FeedbackFato`, `FeedbackCompetencia` | RF-013, RF-014, RF-015, RF-021, RF-034, RN-002, RN-004, RNF-002 |
 | `MembroFeedbackEquipe` | RF-013, RF-048 |
 | `VersaoFeedback` | RF-016, RN-003 |
@@ -767,17 +827,18 @@ Consequência aceita: no modo `ANONIMO` o emissor não pode editar a resposta de
 | `ResultadoConsolidado` | RF-032, RF-033, RF-049, RF-050, RF-052, RN-005, RN-008, RNF-007 |
 | `Indicador`, `MedicaoIndicador` | RF-023, RF-046, RF-049 |
 | `Meta` | RF-046, RF-047 |
-| `ConfiguracaoCheckIn`, `CheckIn` | RF-036, RF-041 |
+| `ConfiguracaoCheckIn`, `CheckIn`, `CheckInMeta`, `CheckInPlano` | RF-036, RF-041 |
 | `PlanoAcao`, `AcaoPlano`, `PontoMonitoramento` | RF-042, RF-043, RF-044, RF-045, RN-006 |
 | `CategoriaDado`, `CompartilhamentoDados` | RF-054, RF-060, RF-062, RNF-032 |
+| `CompartilhamentoDados` (dados de menores) | RN-016 |
 | `BloqueioLegal` | RF-062 |
 | `TermoConsentimento`, `Consentimento` | RF-055, RN-012 |
 | `SolicitacaoTitular` | RF-056, RF-057, RF-058, RF-059, RF-061 |
 | `IncidenteSeguranca`, `TitularAfetado` | RF-063 |
-| `RegistroAuditoria` | RNF-005, RF-035 |
+| `RegistroAuditoria` | RNF-005, RF-035, RF-058, RF-062 |
 | `Notificacao`, `PreferenciaNotificacao` | RF-026, RF-037, RF-040 |
 
-## 13. Decisões e pontos em aberto
+## 13. Decisões de modelagem
 
 | # | Decisão de modelagem | Justificativa |
 |---|---|---|
@@ -790,3 +851,11 @@ Consequência aceita: no modo `ANONIMO` o emissor não pode editar a resposta de
 | M-07 | Coletar `data_nascimento` e calcular a condição de menor de idade a partir dela | Decisão da equipe. A data identifica o menor (RN-016) e permite saber quando ele deixa de sê-lo, sem depender de atualização manual de um indicador |
 | M-08 | `ResultadoConsolidado` guardado ao encerrar o ciclo (RF-032), não calculado a cada consulta | Decisão da equipe. O resultado liberado ao avaliado não muda depois, mesmo que uma resposta seja ocultada ou um dado seja anonimizado mais tarde, e o histórico (RF-048) e os painéis (RF-049, RF-050) leem valores prontos |
 | M-09 | Feedback para equipe aparece no perfil de cada membro, sinalizado como "feedback em grupo", com os membros da data do envio guardados em `MembroFeedbackEquipe` | Decisão da equipe. O colaborador vê no próprio histórico (RF-048) tudo o que recebeu, e a lista de membros fixa na data impede que quem entrou depois veja o feedback e que quem saiu o perca |
+| M-10 | Ajustes da revisão final (versão 1.1), listados na seção 14 | Aplicam as inconsistências I-01 e I-04 a I-13 do [dicionário de dados](../../Dicionario_de_Dados.md) (seção 5.2), as decisões UC08-D01, UC08-D02 e UC19-D01 dos casos de uso completos e as decisões ERS-D02, ERS-D05 e ERS-D08 da [especificação IEEE 830](../../Especificacao_Requisitos_IEEE830.md) (Apêndice C), que pediam esses ajustes no modelo |
+
+## 14. Histórico de revisões
+
+| Versão | Data | Descrição |
+|---|---|---|
+| 1.0 | 17/11/2026 | Versão inicial (#52) |
+| 1.1 | 17/11/2026 | Revisão final (#55). Perfis `DIRETORIA` e `ENCARREGADO` (RF-003, I-01). Emissor e autor das versões de feedback confidencial só no vínculo, com o rascunho ligado ao autor até o envio (I-04). `Feedback.peso` e regra de exibição dos pesos (I-06). Prazo da categoria prevalece sobre o padrão da organização (I-07). Removido `Meta.atingida` (I-08). Enumerações `AcaoAuditoria` e `FrequenciaCheckIn` fechadas e domínio de `ResultadoConsolidado.modalidade` explicitado (I-09). `CheckInMeta` e `CheckInPlano` (I-10). `DestinatarioVisibilidade` (I-11). `CompartilhamentoDados.inclui_menores` (I-12). `DisponibilidadeAgenda`, `TermoOfensivo` e controle de falhas de login em `Colaborador` (I-13). `Fato.observado_equipe_id` (UC08-D02). `FEEDBACK_RECEBIDO` e `PLANO_PARA_CONFIRMAR` em `TipoNotificacao` e `AGUARDANDO_CONFIRMACAO` em `StatusPlano` (UC08-D01, UC19-D01). `PlanoAcao.gestor_id` para plano de feedback confidencial (ERS-D05). Piso de 3 em `min_respondentes` (ERS-D08) |

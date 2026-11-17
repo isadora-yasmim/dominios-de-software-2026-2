@@ -1,6 +1,6 @@
 # Definição do Processo de Requisitos
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (2026/2) · 1ª Etapa: Levantamento de Requisitos
 **Issue:** #31
 

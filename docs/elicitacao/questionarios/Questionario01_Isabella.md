@@ -1,6 +1,6 @@
 # Resultado do Questionário – Feedback e Avaliação de Competências
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Técnica de elicitação:** Questionário (Google Forms)
 **Data/hora da resposta:** 08/11/2026, 16:49:35 (GMT-3)
 

@@ -1,10 +1,17 @@
 # Matriz de Rastreabilidade
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (2026/2) · 1ª Etapa: Levantamento de Requisitos
-**Issue:** #49 · **Versão:** 1.0 · **Data:** 17/11/2026
+**Issue:** #49 · **Versão:** 1.1 · **Data:** 17/11/2026
 **Responsável:** Davi Augusto Ferreira de Carvalho
 **Artefatos relacionados:** [Matriz_Rastreabilidade.csv](Matriz_Rastreabilidade.csv) (todas as colunas, uma linha por requisito, para filtrar em planilha)
+
+## Histórico de revisões
+
+| Versão | Data | Descrição | Autor |
+|---|---|---|---|
+| 1.0 | 17/11/2026 | Versão inicial | Davi Augusto Ferreira de Carvalho |
+| 1.1 | 17/11/2026 | Revisão final (#55): textos do RF-003, da RN-005 e da RN-006 conforme a lista geral 1.1, com as novas ligações horizontais do RF-003 (RF-061, RF-063, RNF-001); entidades novas do modelo ER 1.1 na coluna Entidades; situação das pendências na seção 8; tabela 4.2 sem a coluna de página, que divergia da seção 4.1 | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
@@ -60,7 +67,7 @@ Esta matriz segue o **processo de requisitos**, que foi aprovado pelo grupo e us
 | Requisito → tela | [Protótipo no Figma](prototipacao/Prototipo.md) (#50) | Anotações "requisitos atendidos" de cada tela, conferidas com a lista geral (seção 4) |
 | Requisito → entidade | [Modelo de domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52) | Seção 12, entidade × requisito |
 | RNF → característica e verificação | [Especificação suplementar](Especificacao_Suplementar.md) (#51) | Seção 16.1 (RNF) e seção 14 (regras de negócio) |
-| Requisito ↔ requisito | Lista geral | Requisitos citados no texto e nas observações de cada requisito, conflitos resolvidos (C-xx, seção 8) e pontos a validar (P-xx, seção 9) |
+| Requisito ↔ requisito | Lista geral | Requisitos citados no texto e nas observações de cada requisito, conflitos resolvidos (C-xx, seção 8) e pontos decididos na consolidação (P-xx, seção 9) |
 
 **Códigos das fontes.** Entrevista (`RE`, ou trecho `E01 §n` usado diretamente), Questionário (`RQ`), Pesquisa documental (`RD`), Sistema análogo (`RA`), BPMN AS-IS (`RP`) e Enunciado do trabalho (`ESC`). Como na lista geral, o BPMN foi feito a partir das entrevistas e não conta como fonte independente.
 
@@ -131,7 +138,7 @@ As anotações do protótipo foram **conferidas** com a lista geral. A coluna Re
 | T-50 | cel. 5 | Dar feedback – celular (área visível) | Colaborador | UC-08 | RF-013, RF-015, RF-018, RNF-013, RNF-027 |
 | T-51 | cel. 6 | Dar feedback – celular (página inteira) | Colaborador | UC-08 | RF-013, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RN-002, RNF-012, RNF-013, RNF-027 |
 
-**Páginas dos PDFs.** Em algumas telas, a página da coluna "Pág. do PDF" diverge da página citada na seção 4.2 (T-01, T-02, T-03, T-09, T-10 e T-30 a T-35). Os valores não foram alterados, porque os PDFs não estão no repositório. Até o grupo confirmar as páginas no Figma, vale a numeração T-xx.
+**Páginas dos PDFs.** Em algumas telas (T-01, T-02, T-03, T-09, T-10 e T-30 a T-35), a página da coluna "Pág. do PDF" diverge da página citada em outra listagem das telas, que constava da seção 4.2 na versão 1.0 desta matriz. Os PDFs não estão no repositório e as páginas ainda não foram confirmadas no Figma, por isso os valores desta coluna não devem ser tomados como certos. Até o grupo confirmar as páginas no Figma, vale a numeração T-xx.
 
 Telas por caso de uso:
 
@@ -175,17 +182,17 @@ Nove casos de uso não têm tela no protótipo: UC-03, UC-04, UC-07, UC-12, UC-1
 
 As anotações do Figma não foram alteradas. A matriz usa a correção da última coluna.
 
-| Página do PDF | Tela | Anotação no Figma | Correção usada na matriz | Motivo |
-|---|---|---|---|---|
-| 2 e 3 | T-01, T-02 | UC-01 | Sem caso de uso (RF-003) | O login é pré-condição de todos os casos de uso. O UC-01 é "Manter colaboradores e estrutura" (diagrama, seção 8) |
-| 4 e 18 | T-03, T-10 | RNF-022 | RNF-021 | RNF-022 trata do login sem teste cognitivo. Mensagem de erro clara é RNF-021 |
-| 17 | T-09 | RF-014 | RF-022, RF-023 | RF-014 é o feedback informal. O feedback formal vinculado a ciclo é RF-022, com indicadores em RF-023 |
-| 58 | T-30 | RF-023, RF-024 | RF-022, RF-023 | RF-024 são as modalidades, que estão na etapa 4 |
-| 59 | T-31 | RF-025, RF-026 | RF-022 | A etapa escolhe questionário e competências do ciclo (RF-022). RF-025 é a seleção de participantes do 360° e RF-026 é a notificação |
-| 60 | T-32 | RF-027, RF-029 | RF-024, RF-030 | A etapa define modalidades (RF-024) e modo de identificação (RF-030). RF-027 é responder e RF-029 é registrar quem não respondeu |
-| 61 | T-33 | RF-028, RF-030 | RF-022, RF-025 | A etapa convida os avaliadores (RF-025) e define datas (RF-022). RF-028 é consultar fatos ao responder |
-| 62 | T-34 | RF-022 a RF-030 | RF-022, RF-026 | A revisão abre o ciclo e notifica os participantes (RF-026). O intervalo inclui RF-027 a RF-029, que não são do planejamento |
-| 63 | T-35 | RF-030 | RF-029, RF-040 | A tela mostra quem respondeu e envia lembretes. RF-030 é a configuração do modo de identificação |
+| Tela | Anotação no Figma | Correção usada na matriz | Motivo |
+|---|---|---|---|
+| T-01, T-02 | UC-01 | Sem caso de uso (RF-003) | O login é pré-condição de todos os casos de uso. O UC-01 é "Manter colaboradores e estrutura" (diagrama, seção 8) |
+| T-03, T-10 | RNF-022 | RNF-021 | RNF-022 trata do login sem teste cognitivo. Mensagem de erro clara é RNF-021 |
+| T-09 | RF-014 | RF-022, RF-023 | RF-014 é o feedback informal. O feedback formal vinculado a ciclo é RF-022, com indicadores em RF-023 |
+| T-30 | RF-023, RF-024 | RF-022, RF-023 | RF-024 são as modalidades, que estão na etapa 4 |
+| T-31 | RF-025, RF-026 | RF-022 | A etapa escolhe questionário e competências do ciclo (RF-022). RF-025 é a seleção de participantes do 360° e RF-026 é a notificação |
+| T-32 | RF-027, RF-029 | RF-024, RF-030 | A etapa define modalidades (RF-024) e modo de identificação (RF-030). RF-027 é responder e RF-029 é registrar quem não respondeu |
+| T-33 | RF-028, RF-030 | RF-022, RF-025 | A etapa convida os avaliadores (RF-025) e define datas (RF-022). RF-028 é consultar fatos ao responder |
+| T-34 | RF-022 a RF-030 | RF-022, RF-026 | A revisão abre o ciclo e notifica os participantes (RF-026). O intervalo inclui RF-027 a RF-029, que não são do planejamento |
+| T-35 | RF-030 | RF-029, RF-040 | A tela mostra quem respondeu e envia lembretes. RF-030 é a configuração do modo de identificação |
 
 As anotações das telas para celular estão corretas. A matriz acrescentou a elas o RNF-027 (interface responsiva), que é o requisito que essas telas demonstram.
 
@@ -208,7 +215,7 @@ Cada linha mostra de onde o requisito veio e onde ele é tratado. "—" indica q
 | RF-007 | Must | Entrevista, Questionário, Sistema análogo, BPMN AS-IS, Enunciado | RE-12; RA-14; RQ-02; RP-02; RP-16; ESC | UC-05 | T-37 | Pergunta, Questionario |
 | RF-008 | Should | Entrevista, BPMN AS-IS | RE-12; RP-02 | UC-05 | T-37 | Pergunta, Questionario |
 | RF-009 | Should | Entrevista | RE-13 | UC-05 | T-37 | Pergunta, Questionario |
-| RF-010 | Could | Entrevista | RE-14 | UC-13, UC-16 | — | Pergunta, Questionario |
+| RF-010 | Could | Entrevista | RE-14 | UC-13, UC-16 | — | Feedback, Pergunta, Questionario |
 | RF-011 | Must | Entrevista, Sistema análogo, BPMN AS-IS | RE-02; RA-02; RP-01; RP-11 | UC-06 | T-42 | Fato |
 | RF-012 | Could | Entrevista, BPMN AS-IS | RE-05; RP-15 | UC-07 | — | Fato |
 | RF-013 | Must | Entrevista, Sistema análogo, BPMN AS-IS, Enunciado | RE-01; RA-24; RP-01; RP-11; ESC | UC-08 | T-08, T-09, T-50, T-51 | Feedback, FeedbackCompetencia, FeedbackFato, MembroFeedbackEquipe |
@@ -234,12 +241,12 @@ Cada linha mostra de onde o requisito veio e onde ele é tratado. "—" indica q
 | RF-033 | Should | Entrevista, Questionário | RE-21; RQ-18 | UC-16 | T-19 | ResultadoConsolidado |
 | RF-034 | Should | Entrevista, BPMN AS-IS | RE-22; RP-08 | UC-12 | — | Feedback, FeedbackCompetencia, FeedbackFato |
 | RF-035 | Could | Sistema análogo | RA-13 | UC-17 | T-38 | ItemResposta, RegistroAuditoria, RespostaAvaliacao |
-| RF-036 | Could | Sistema análogo | RA-26 | UC-18 | — | CheckIn, ConfiguracaoCheckIn |
+| RF-036 | Could | Sistema análogo | RA-26 | UC-18 | — | CheckIn, CheckInMeta, CheckInPlano, ConfiguracaoCheckIn |
 | RF-037 | Should | Entrevista, Sistema análogo, BPMN AS-IS | RE-08; RA-08; RP-12 | UC-11, UC-31 | T-13, T-46 | Notificacao, ParticipanteSessao, PreferenciaNotificacao, SessaoFeedback |
-| RF-038 | Could | Entrevista, BPMN AS-IS | RE-09; RP-12 | UC-11 | T-46 | ParticipanteSessao, SessaoFeedback |
+| RF-038 | Could | Entrevista, BPMN AS-IS | RE-09; RP-12 | UC-11 | T-46 | DisponibilidadeAgenda, ParticipanteSessao, SessaoFeedback |
 | RF-039 | Could | Sistema análogo | RA-08 | UC-11 | T-46 | ParticipanteSessao, SessaoFeedback |
 | RF-040 | Should | Questionário, BPMN AS-IS | RQ-21; RP-06; RP-14 | UC-31 | T-35, T-47 | Notificacao, PreferenciaNotificacao |
-| RF-041 | Should | Entrevista, Sistema análogo, BPMN AS-IS | RA-01; RE-06; RP-07 | UC-18 | — | CheckIn, ConfiguracaoCheckIn |
+| RF-041 | Should | Entrevista, Sistema análogo, BPMN AS-IS | RA-01; RE-06; RP-07 | UC-18 | — | CheckIn, CheckInMeta, CheckInPlano, ConfiguracaoCheckIn |
 | RF-042 | Must | Entrevista, Questionário, Sistema análogo, BPMN AS-IS, Enunciado | RE-15; RA-18; RQ-07; RP-14; ESC | UC-19 | T-13, T-20 | AcaoPlano, PlanoAcao, PontoMonitoramento |
 | RF-043 | Must | Entrevista, Sistema análogo, BPMN AS-IS, Enunciado | RE-16; RA-18; RP-04; RP-07; RP-14; ESC | UC-20 | T-21, T-22 | AcaoPlano, PlanoAcao, PontoMonitoramento |
 | RF-044 | Should | Entrevista, Questionário | RQ-17; RE-25 | UC-23 | T-39 | AcaoPlano, PlanoAcao, PontoMonitoramento |
@@ -256,11 +263,11 @@ Cada linha mostra de onde o requisito veio e onde ele é tratado. "—" indica q
 | RF-055 | Must | Questionário, Pesquisa documental | RD-04; RQ-12 | UC-26 | T-04, T-41 | Consentimento, TermoConsentimento |
 | RF-056 | Must | Pesquisa documental | RD-07 | UC-25 | T-41 | SolicitacaoTitular |
 | RF-057 | Must | Pesquisa documental | RD-08 | UC-25 | T-41 | SolicitacaoTitular |
-| RF-058 | Must | Pesquisa documental | RD-10 | UC-25 | T-41 | SolicitacaoTitular |
+| RF-058 | Must | Pesquisa documental | RD-10 | UC-25 | T-41 | RegistroAuditoria, SolicitacaoTitular |
 | RF-059 | Must | Pesquisa documental | RD-11 | UC-25 | T-41 | SolicitacaoTitular |
 | RF-060 | Must | Pesquisa documental | RD-12 | UC-25 | T-41 | CategoriaDado, CompartilhamentoDados |
 | RF-061 | Should | Pesquisa documental | RD-13 | UC-27 | — | SolicitacaoTitular |
-| RF-062 | Must | Entrevista, Pesquisa documental | RD-24; RE-36 | UC-28, UC-30 | — | BloqueioLegal, CategoriaDado, CompartilhamentoDados |
+| RF-062 | Must | Entrevista, Pesquisa documental | RD-24; RE-36 | UC-28, UC-30 | — | BloqueioLegal, CategoriaDado, CompartilhamentoDados, RegistroAuditoria |
 | RF-063 | Should | Pesquisa documental | RD-26 | UC-29 | — | IncidenteSeguranca, TitularAfetado |
 | RF-064 | Should | Entrevista, Pesquisa documental | RD-48; RE-35 | — | T-01 | ConfiguracaoOrganizacao |
 | RF-065 | Must | Pesquisa documental | RD-58 | — | T-01, T-45 | ConfiguracaoOrganizacao |
@@ -327,7 +334,7 @@ A coluna Casos de uso traz os casos completos que aplicam o RNF. Os RNF globais 
 | RN-013 | Must | Pesquisa documental | RD-05 | UC-01, UC-08, UC-19 | — | Cargo, Colaborador, Equipe | — |
 | RN-014 | Must | Pesquisa documental | RD-45 | UC-03, UC-05, UC-13 | T-37 | CargoCompetencia, Competencia, CompetenciaAtribuida | — |
 | RN-015 | Should | Pesquisa documental | RD-49 | UC-19 | — | — | — |
-| RN-016 | Must | Pesquisa documental | RD-29 | UC-01 | — | Cargo, Colaborador, Equipe | — |
+| RN-016 | Must | Pesquisa documental | RD-29 | UC-01 | — | Cargo, Colaborador, CompartilhamentoDados, Equipe | — |
 
 ---
 
@@ -337,17 +344,17 @@ Liga requisitos do mesmo nível. Três tipos de ligação:
 
 - **Requisitos citados na lista geral:** o texto ou as observações do requisito citam o outro, como RF-015, que exige os campos obrigatórios de RN-002. A ligação vale nos dois sentidos.
 - **RN e RNF aplicáveis:** regras e requisitos não funcionais que restringem o RF por estarem no mesmo caso de uso ou na mesma tela, ou por ligação explícita na lista geral ou na especificação suplementar.
-- **Conflitos e pontos a validar:** decisões da lista geral (C-xx) e pontos que ainda dependem da PO (P-xx). Se a PO decidir um ponto de outra forma, todos os requisitos da linha precisam ser revistos.
+- **Conflitos e pontos decididos:** conflitos resolvidos na lista geral (C-xx, seção 8) e pontos decididos na consolidação (P-xx, seção 9). Se uma dessas decisões mudar, todos os requisitos da linha precisam ser revistos (gestão de mudanças do processo, seção 9).
 
 ### 6.1 Requisitos funcionais
 
 **RNF globais.** RNF-016 a RNF-023 (idioma e acessibilidade), RNF-027 (interface responsiva), RNF-030 (aplicação web) e RNF-031 (LGPD) se aplicam a todos os requisitos funcionais. Eles são declarados só aqui e não aparecem na coluna "RN e RNF aplicáveis", que traz apenas as regras específicas de cada requisito. Na seção 6.2, a coluna "RF afetados" desses RNF indica "Todos". Por isso, o RF-065 (declaração de acessibilidade), atendido pelo RNF-017, não tem RNF específico na sua linha.
 
-| ID | Requisitos citados na lista geral | RN e RNF aplicáveis | Conflitos e pontos a validar |
+| ID | Requisitos citados na lista geral | RN e RNF aplicáveis | Conflitos e pontos decididos |
 |---|---|---|---|
 | RF-001 | RNF-001 | RN-013, RN-016 | — |
 | RF-002 | RNF-025 | — | — |
-| RF-003 | RF-024, RN-004 | RNF-006, RN-009, RN-013, RN-016 | C-14 |
+| RF-003 | RF-024, RF-061, RF-063, RNF-001, RN-004 | RNF-006, RN-009, RN-013, RN-016 | C-14 |
 | RF-004 | — | — | C-11 |
 | RF-005 | — | RN-014 | — |
 | RF-006 | — | — | — |
@@ -405,17 +412,17 @@ Liga requisitos do mesmo nível. Três tipos de ligação:
 | RF-058 | — | RNF-004, RNF-005, RNF-006, RN-003, RN-004, RN-005, RN-011, RN-012 | — |
 | RF-059 | — | RNF-004, RNF-005, RNF-006, RN-003, RN-004, RN-005, RN-011, RN-012 | — |
 | RF-060 | — | RNF-004, RNF-005, RNF-006, RN-003, RN-004, RN-005, RN-011, RN-012 | — |
-| RF-061 | — | — | — |
+| RF-061 | RF-003 | — | — |
 | RF-062 | RN-011 | RN-011 | P-05 |
-| RF-063 | — | — | — |
+| RF-063 | RF-003 | — | — |
 | RF-064 | RN-009 | RN-009 | — |
 | RF-065 | — | RN-009 | — |
 
 ### 6.2 Requisitos não funcionais e regras de negócio
 
-| ID | Requisitos citados na lista geral | RF afetados | Conflitos e pontos a validar |
+| ID | Requisitos citados na lista geral | RF afetados | Conflitos e pontos decididos |
 |---|---|---|---|
-| RNF-001 | RF-001, RNF-002, RN-005 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-027, RF-028, RF-042, RF-044, RF-045, RF-048, RF-049, RF-050, RF-051 | C-03, P-02 |
+| RNF-001 | RF-001, RF-003, RNF-002, RN-005 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-027, RF-028, RF-042, RF-044, RF-045, RF-048, RF-049, RF-050, RF-051 | C-03, P-02 |
 | RNF-002 | RNF-001 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-027, RF-028, RF-042 | — |
 | RNF-003 | — | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-027, RF-028 | — |
 | RNF-004 | — | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RF-053, RF-056, RF-057, RF-058, RF-059, RF-060 | — |
@@ -489,12 +496,12 @@ Liga requisitos do mesmo nível. Três tipos de ligação:
 
 ## 8. Pendências encontradas
 
-| # | Pendência | Artefato afetado | Sugestão |
-|---|---|---|---|
-| 1 | As anotações de 9 telas citam requisitos errados (seção 4.2) | Protótipo (#50) | Corrigir as anotações no Figma |
-| 2 | RF-005 e RF-006 (competências do cargo e específicas) e RF-062 (retenção) são Must e não têm tela | Protótipo (#50) | Desenhar as telas de UC-03, UC-04 e UC-28, ou registrar que ficam para a etapa de design |
-| 3 | Três decisões dos casos de uso completos pedem mudanças que ainda não estão no modelo ER: aviso `FEEDBACK_RECEBIDO` (UC08-D01; a tela T-47 já mostra esse aviso), `observado_equipe_id` em `Fato` (UC08-D02) e a confirmação do plano pelo receptor (UC19-D01) | Modelo ER (#52) | Aplicar no modelo ER e na seção 12 dele |
-| 4 | Os pontos a validar P-01 a P-10 continuam abertos | Lista geral (#45) | Ao receber a resposta da PO, usar a seção 6 desta matriz para achar todos os requisitos afetados |
+| # | Pendência | Artefato afetado | Sugestão | Situação na revisão final (#55) |
+|---|---|---|---|---|
+| 1 | As anotações de 9 telas citam requisitos errados (seção 4.2) | Protótipo (#50) | Corrigir as anotações no Figma | Aberta. A correção é feita no arquivo do Figma, fora do repositório. Até lá, vale a correção da seção 4.2 |
+| 2 | RF-005 e RF-006 (competências do cargo e específicas) e RF-062 (retenção) são Must e não têm tela | Protótipo (#50) | Desenhar as telas de UC-03, UC-04 e UC-28, ou registrar que ficam para a etapa de design | Aberta. Os requisitos continuam rastreados pelo caso de uso e pela entidade |
+| 3 | Três decisões dos casos de uso completos pedem mudanças que ainda não estão no modelo ER: aviso `FEEDBACK_RECEBIDO` (UC08-D01; a tela T-47 já mostra esse aviso), `observado_equipe_id` em `Fato` (UC08-D02) e a confirmação do plano pelo receptor (UC19-D01) | Modelo ER (#52) | Aplicar no modelo ER e na seção 12 dele | Resolvida. Aplicadas na versão 1.1 do modelo ER (seção 14 dele), junto com os ajustes do Apêndice C.2 da especificação IEEE 830 |
+| 4 | Os pontos a validar P-01 a P-10 continuam abertos | Lista geral (#45) | Ao receber a resposta da PO, usar a seção 6 desta matriz para achar todos os requisitos afetados | Aberta. Os dez pontos são decisões do grupo, ainda não confirmadas pela PO, que não teve disponibilidade para validá-los (seção 9 da lista geral) |
 
 ---
 

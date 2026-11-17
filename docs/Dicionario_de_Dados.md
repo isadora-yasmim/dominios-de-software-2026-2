@@ -2,10 +2,17 @@
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (INF0296, 2026/2) · 1ª Etapa: Levantamento de Requisitos
-**Issue:** #53 · **Versão:** 1.0 · **Data:** 17/11/2026
+**Issue:** #53 · **Versão:** 1.1 · **Data:** 17/11/2026
 **Responsável:** Ana Luísa Pereira dos Santos
 **Referência de método:** Larman, *Utilizando UML e Padrões*, cap. 7 (Glossário e dicionário de dados)
-**Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45), versão 1.0, e [Modelo de Domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52). Os identificadores `RF-`, `RNF-` e `RN-` são os da lista geral. Os `UC-` são os do [Diagrama de Casos de Uso](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47).
+**Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45), versão 1.1, e [Modelo de Domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52), versão 1.1. Os identificadores `RF-`, `RNF-` e `RN-` são os da lista geral. Os `UC-` são os do [Diagrama de Casos de Uso](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47).
+
+## Histórico de revisões
+
+| Versão | Data | Descrição | Autora |
+|---|---|---|---|
+| 1.0 | 17/11/2026 | Versão inicial | Ana Luísa Pereira dos Santos |
+| 1.1 | 17/11/2026 | Revisão final (#55): atributos e entidades conforme o modelo ER 1.1 (`DestinatarioVisibilidade`, `DisponibilidadeAgenda`, `TermoOfensivo`, `CheckInMeta`, `CheckInPlano` e atributos novos); perfis `DIRETORIA` e `ENCARREGADO`; inventário LGPD e prazos de retenção atualizados; coluna Tratamento na seção 5 | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
@@ -78,7 +85,7 @@ Termos em ordem alfabética. A coluna **No modelo ER** indica onde o termo apare
 | **Anônimo (modo)** | Modo de identificação em que ninguém, nem RH nem administrador, consegue ligar a resposta ao emissor | Evitar chamar de "anônimo" o modo confidencial. A palavra só aparece na interface quando o modo é este (Especificação Suplementar, seção 8.3) | É um modo de identificação. Exige o mínimo de respondentes na exibição | `ModoIdentificacao.ANONIMO`. Não gera `VinculoConfidencial` | RN-004, RN-005, RF-030 |
 | **Autoavaliação** | Modalidade em que o colaborador avalia a si mesmo no ciclo. O resultado é comparado com a avaliação feita pelos demais avaliadores | Sinônimo: autofeedback (E01) | É uma modalidade. Quem responde é um avaliador convidado (o próprio avaliado) | `ModalidadeAvaliacao.AUTOAVALIACAO`, `DirecaoFeedback.AUTOAVALIACAO` | RF-024, RF-033 |
 | **Avaliação** | Julgamento do desempenho feito com parâmetros definidos antes, em geral por questionário dentro de um ciclo. O feedback é a comunicação desse julgamento (E01 §14) | Não usar como sinônimo de feedback | Feita por um avaliador convidado, em uma modalidade do ciclo, com um questionário | `RespostaAvaliacao`, `ItemResposta` | RF-027, RF-028 |
-| **Avaliação 360°** | Modalidade em que o gestor abre o ciclo e convida membros do próprio time, e todos avaliam todos | Escrever "360°" (símbolo de grau), como na lista geral. Evitar "360º" (ordinal) | É uma modalidade. Ver a ambiguidade com a avaliação de equipe na seção 5.3 | `ModalidadeAvaliacao.AVALIACAO_360` | RF-024, RF-025, RF-029 |
+| **Avaliação 360°** | Modalidade em que o gestor abre o ciclo e seleciona ou convida os participantes, que precisam ser do seu time | Escrever "360°" (símbolo de grau), como na lista geral. Evitar "360º" (ordinal) | É uma modalidade. Difere da avaliação de equipe, em que todos avaliam todos (ERS-D09; seção 5.3) | `ModalidadeAvaliacao.AVALIACAO_360` | RF-024, RF-025, RF-029 |
 | **Avaliação ascendente** | Modalidade em que o colaborador avalia o seu gestor. O modo padrão é confidencial, e o ciclo pode ser configurado como anônimo | Sinônimo: colaborador → gestor | É uma modalidade. Protegida pelo mínimo de respondentes | `ModalidadeAvaliacao.ASCENDENTE`, `DirecaoFeedback.ASCENDENTE` | RF-024, RN-004, RN-005 |
 | **Avaliação de equipe** | Modalidade em que todos os membros da equipe avaliam todos | Sinônimo: equipe (todos avaliam todos) | É uma modalidade. Ver a seção 5.3 | `ModalidadeAvaliacao.EQUIPE`, `DirecaoFeedback.EQUIPE` | RF-024, RN-004 |
 | **Avaliado** | Colaborador que é objeto de avaliação em um ciclo, individualmente ou como membro de uma equipe | No ciclo, corresponde ao receptor | Participa de um ciclo. Recebe convites de avaliação e resultados consolidados | `AvaliadoCiclo.avaliado_id` | RF-022, RF-026 |
@@ -95,10 +102,10 @@ Termos em ordem alfabética. A coluna **No modelo ER** indica onde o termo apare
 | **Convite de avaliação** | Registro de que um avaliador foi chamado a avaliar um avaliado em uma modalidade do ciclo, com prazo e situação. Não tem ligação com a resposta | - | Gerado por uma modalidade do ciclo. Base para saber quem não respondeu | `ConviteAvaliacao` | RF-025, RF-027, RF-029, RNF-012 |
 | **Dado pessoal** | Informação relacionada a pessoa natural identificada ou identificável (LGPD, art. 5º, I). O conteúdo de um feedback é dado pessoal de duas pessoas: de quem recebe e de quem emite (pesquisa documental, seção 3.1) | - | Ver a seção 4 | Coluna "Dado pessoal" da seção 3 | RNF-031, RN-013 |
 | **Dado pessoal sensível** | Dado sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização religiosa, filosófica ou política, saúde, vida sexual, dado genético ou biométrico (LGPD, art. 5º, II) | - | O sistema não tem campos para esses dados. Textos livres podem contê-los por descuido | Nenhum atributo (RN-013) | RN-013, RN-015, RF-018 |
-| **Diretoria** | Cúpula da organização. Vê apenas indicadores agregados, com o mínimo de respondentes | - | Usuário citado no Documento Visão. Não é valor do enumerado `Perfil` (seção 5.2) | - | RNF-001, RF-050 (P-02) |
+| **Diretoria** | Cúpula da organização. Vê apenas indicadores agregados, com o mínimo de respondentes | - | Usuário com perfil próprio e acesso restrito à sua função (RF-003) | `Perfil.DIRETORIA` | RF-003, RNF-001, RN-005 (P-02) |
 | **Dor** | Problema do processo atual marcado no BPMN AS-IS (D1 a D6) | - | Origem de requisitos. Não é dado do sistema | - | Lista geral, seções 2.4 e 7.2 |
 | **Emissor** | Quem dá o feedback ou responde a uma avaliação. A identidade dele segue o modo de identificação | Sinônimos: autor do feedback, avaliador (no ciclo) | Emite feedbacks e respostas. Com o receptor, define o plano de ação | `Feedback.emissor_id`, `RespostaAvaliacao.avaliador_id`, `VinculoConfidencial.emissor_id`, `PlanoAcao.emissor_id` | RF-013, RF-019, RN-002, RN-004 |
-| **Encarregado** | Pessoa indicada pelo controlador para ser o canal de comunicação com os titulares e com a ANPD (LGPD, art. 5º, VIII, e art. 41). A identidade e o contato dele ficam no aviso de privacidade | Sinônimos: encarregado de dados, DPO (diagrama de casos de uso) | Trata solicitações de titulares e registra incidentes. Não é valor do enumerado `Perfil` (seção 5.2) | `ConfiguracaoOrganizacao.encarregado_nome`, `encarregado_contato`, `SolicitacaoTitular.responsavel_id` | RF-053, RF-061, RF-063 |
+| **Encarregado** | Pessoa indicada pelo controlador para ser o canal de comunicação com os titulares e com a ANPD (LGPD, art. 5º, VIII, e art. 41). A identidade e o contato dele ficam no aviso de privacidade | Sinônimos: encarregado de dados, DPO (diagrama de casos de uso) | Trata solicitações de titulares e registra incidentes. Tem perfil próprio, com acesso restrito à sua função (RF-003) | `Perfil.ENCARREGADO`, `ConfiguracaoOrganizacao.encarregado_nome`, `encarregado_contato`, `SolicitacaoTitular.responsavel_id` | RF-003, RF-053, RF-061, RF-063 |
 | **Equipe** | Grupo de colaboradores sob a responsabilidade de um gestor. Pode estar dentro de outra equipe | Sinônimos: time, setor (E02) | Pode ser receptora de feedback e ter metas | `Equipe` | RF-001, RF-013, RF-022, RF-047 |
 | **Fato** | Comportamento ou resultado observado, com data e descrição, que fundamenta um feedback. Até ser vinculado a um feedback, é visível só para quem o registrou | Evitar "impressão", "opinião" e "achismo" (E01 §20) | Embasa feedbacks. Todo feedback tem ao menos um fato | `Fato`, `FeedbackFato` | RF-011, RF-018, RN-001, RN-002 |
 | **Feedback** | Comunicação ao receptor sobre um comportamento ou resultado observado, baseada em fatos. Tem tipo (positivo ou construtivo) e é formal ou informal. Não pode ser excluído; cada edição gera uma versão | Não usar como sinônimo de avaliação | Tem emissor, receptor, fatos, competências e versões. Pode gerar plano de ação e sessão | `Feedback`, `VersaoFeedback` | RF-013, RN-001, RN-002, RN-003 |
@@ -120,7 +127,7 @@ Termos em ordem alfabética. A coluna **No modelo ER** indica onde o termo apare
 | **Objetivo do ciclo** | Comportamento ou resultado que o avaliado deve atingir no ciclo | - | Medido por indicadores | `ObjetivoCiclo` | RF-022, RF-023 |
 | **Operador** | Quem trata dados em nome do controlador (LGPD, art. 5º, VII). Aqui, o fornecedor do sistema quando ele é operado como serviço (pesquisa documental, seção 3.1) | - | Atua para o controlador | - | RNF-032, RNF-034 |
 | **Par** | Colega que avalia outro colaborador ou dá feedback a ele, sem relação de gestão entre os dois. Em um ciclo, é um avaliador convidado | Sinônimos: colega, entre pares | É um papel, não um perfil | `ModalidadeAvaliacao.PARES`, `DirecaoFeedback.PARES` | RF-024, RN-004, RN-005 |
-| **Perfil de usuário** | Conjunto de permissões de acesso: colaborador, gestor, RH ou administrador. Um usuário pode acumular perfis | Sinônimo: papel de acesso | Diretoria e encarregado são usuários sem perfil próprio (seção 5.2) | `PerfilColaborador`, `Perfil` | RF-003, RNF-001, RNF-006 |
+| **Perfil de usuário** | Conjunto de permissões de acesso: colaborador, gestor, RH, administrador, diretoria ou encarregado. Um usuário pode acumular perfis | Sinônimo: papel de acesso | Diretoria e encarregado têm acesso restrito à sua função (RF-003) | `PerfilColaborador`, `Perfil` | RF-003, RNF-001, RNF-006 |
 | **Pergunta** | Item de um questionário, ligado ou não a uma competência e a um cargo, com tipo de resposta definido. O gestor pode acrescentar perguntas para um colaborador | - | Pertence a um questionário | `Pergunta` | RF-007, RF-008, RF-009, RN-001, RN-014 |
 | **Plano de ação** | Conjunto de ações, responsáveis, metas, pontos de monitoramento e data final, criado a partir de um feedback construtivo, em conjunto pelo emissor e pelo receptor. Na data final, registra se houve melhora ou se é preciso novo feedback | - | Nasce de um feedback construtivo. Contém ações e pontos de monitoramento | `PlanoAcao`, `AcaoPlano`, `PontoMonitoramento` | RF-042 a RF-045, RN-006 |
 | **Política de retenção** | Prazo de guarda de cada categoria de dado e ação ao fim do prazo (eliminar ou anonimizar). Padrão: enquanto o colaborador estiver na organização e por 5 anos depois do desligamento. Processo judicial em curso bloqueia a eliminação | Sinônimo: prazo de guarda | Aplicada pelo relógio do sistema | `CategoriaDado`, `BloqueioLegal`, `ConfiguracaoOrganizacao.retencao_pos_desligamento_meses` | RF-062, RN-011 (P-05) |
@@ -155,7 +162,7 @@ Uma tabela por entidade, na ordem das seções 4 a 9 do [modelo ER](modelagem/mo
 
 Pessoa da organização cadastrada no sistema (RF-001). Guarda a hierarquia pelo autorrelacionamento `gestor_id`.
 
-**Requisitos de origem:** RF-001, RF-048, RNF-001, RN-013, RN-016
+**Requisitos de origem:** RF-001, RF-048, RNF-001, RNF-006, RN-013, RN-016
 
 | Atributo | Definição | Tipo | Tamanho ou domínio | Unid. | Obr. | Chave | Relacionamento | Regra de validação | Dado pessoal |
 |---|---|---|---|---|---|---|---|---|---|
@@ -165,6 +172,8 @@ Pessoa da organização cadastrada no sistema (RF-001). Guarda a hierarquia pelo
 | `email` | E-mail usado como login | `string` | 254* | - | sim* | UK | - | Formato de e-mail válido*. Único | Pessoal |
 | `senha_hash` | Resumo criptográfico da senha | `string` | 255* | - | sim* | - | - | A senha nunca é guardada em claro. Usar algoritmo próprio para senhas, com sal* (RNF-004) | Pessoal |
 | `dois_fatores_ativo` | Indica se a autenticação em dois fatores está ativa | `bool` | verdadeiro ou falso | - | sim | - | `PerfilColaborador` | Deve ser verdadeiro para quem tem perfil `RH` ou `ADMINISTRADOR` (RNF-006) | Não |
+| `falhas_login_consecutivas` | Tentativas de login sem sucesso seguidas | `int` | 0 a 100 | tentativas | sim | - | - | Volta a zero no login com sucesso. Em 100 falhas seguidas, o autenticador é desativado (RNF-006, DS-06) | Não |
+| `login_bloqueado_ate` | Fim da espera imposta após uma falha de login | `datetime` | data e hora | - | não | - | - | Espera crescente de 30 s até 1 h a cada falha (RNF-006, DS-06) | Não |
 | `data_nascimento` | Data de nascimento | `date` | data passada | - | sim* | - | - | Usada só para calcular se o colaborador é menor de 18 anos, sem atributo próprio (RN-016, decisão M-07) | Pessoal |
 | `data_admissao` | Data de entrada na organização | `date` | data | - | sim* | - | - | Menor ou igual a `data_desligamento`, quando houver* | Pessoal |
 | `data_desligamento` | Data de saída da organização | `date` | data | - | não | - | `CategoriaDado` | Maior ou igual a `data_admissao`*. Preenchida quando `situacao = DESLIGADO`*. Inicia a contagem do prazo de retenção (RN-011) | Pessoal |
@@ -177,12 +186,12 @@ Pessoa da organização cadastrada no sistema (RF-001). Guarda a hierarquia pelo
 
 Perfis de acesso de cada colaborador. Um colaborador pode acumular perfis (RF-003, decisão M-01).
 
-**Requisitos de origem:** RF-003, RNF-006
+**Requisitos de origem:** RF-003, RNF-001, RNF-006
 
 | Atributo | Definição | Tipo | Tamanho ou domínio | Unid. | Obr. | Chave | Relacionamento | Regra de validação | Dado pessoal |
 |---|---|---|---|---|---|---|---|---|---|
 | `colaborador_id` | Colaborador que tem o perfil | `uuid` | 36 | - | sim | PK, FK | `Colaborador` | Todo colaborador tem ao menos o perfil `COLABORADOR` (ER, seção 4) | Pessoal |
-| `perfil` | Perfil concedido | `enum` | `Perfil`: `COLABORADOR`, `GESTOR`, `RH`, `ADMINISTRADOR` | - | sim | PK | - | Perfis `RH` e `ADMINISTRADOR` exigem dois fatores (RNF-006) | Pessoal |
+| `perfil` | Perfil concedido | `enum` | `Perfil`: `COLABORADOR`, `GESTOR`, `RH`, `ADMINISTRADOR`, `DIRETORIA`, `ENCARREGADO` | - | sim | PK | - | Perfis `RH` e `ADMINISTRADOR` exigem dois fatores (RNF-006). `DIRETORIA` vê só resultados agregados (RNF-001, RN-005). `ENCARREGADO` acessa as solicitações de titulares e os incidentes (RF-061, RF-063) | Pessoal |
 | `concedido_em` | Data da concessão | `date` | data | - | sim* | - | - | Não futura* | Pessoal |
 
 #### `Cargo`
@@ -238,8 +247,8 @@ Configurações gerais. Tem uma única linha, porque cada instalação atende um
 |---|---|---|---|---|---|---|---|---|---|
 | `id` | Identificador da linha única | `int` | sempre 1* | - | sim | PK | - | Só existe uma linha (RN-010) | Não |
 | `nome_organizacao` | Nome da organização | `string` | 150* | - | sim* | - | - | - | Não |
-| `min_respondentes` | Mínimo de respondentes para exibir resultado de fonte confidencial ou anônima | `int` | inteiro positivo; padrão 3 | respostas | sim | - | `ModalidadeCiclo.min_respondentes` | Padrão 3, configurável (RN-005). Valor mínimo aceito a definir (seção 5.1) | Não |
-| `retencao_pos_desligamento_meses` | Prazo de guarda após o desligamento | `int` | inteiro positivo; padrão 60 | meses | sim | - | `CategoriaDado.prazo_retencao_meses` | Padrão 60 meses (5 anos), configurável (RN-011, RF-062). Ver a seção 5.2 | Não |
+| `min_respondentes` | Mínimo de respondentes para exibir resultado de fonte confidencial ou anônima | `int` | inteiro maior ou igual a 3; padrão 3 | respostas | sim | - | `ModalidadeCiclo.min_respondentes` | Padrão 3, configurável, nunca menor que 3 (RN-005) | Não |
+| `retencao_pos_desligamento_meses` | Prazo de guarda após o desligamento | `int` | inteiro positivo; padrão 60 | meses | sim | - | `CategoriaDado.prazo_retencao_meses` | Padrão 60 meses (5 anos), configurável (RN-011). Vale para feedbacks, avaliações e planos quando a categoria não define prazo próprio. O prazo de `CategoriaDado` prevalece (RF-062) | Não |
 | `aviso_privacidade` | Texto do aviso de privacidade | `text` | 20.000* caracteres | - | sim | - | - | Deve trazer finalidades, bases legais, compartilhamentos, prazos de retenção, direitos do titular e identidade e contato do encarregado (RF-053) | Não |
 | `encarregado_nome` | Nome do encarregado de dados | `string` | 150* | - | sim | - | - | Exibido no aviso de privacidade (RF-053) | Pessoal |
 | `encarregado_contato` | Contato do encarregado | `string` | 254* | - | sim | - | - | E-mail ou telefone válido* (RF-053) | Pessoal |
@@ -271,7 +280,7 @@ Competências fixas de cada cargo (RF-005).
 |---|---|---|---|---|---|---|---|---|---|
 | `cargo_id` | Cargo | `uuid` | 36 | - | sim | PK, FK | `Cargo` | - | Não |
 | `competencia_id` | Competência exigida | `uuid` | 36 | - | sim | PK, FK | `Competencia` | Competência ativa* | Não |
-| `peso` | Peso da competência no cargo | `decimal` | 0 ou mais*, 3 casas* | - | não | - | - | Maior ou igual a zero*. Ver RF-010 na seção 5.2 | Não |
+| `peso` | Peso da competência no cargo | `decimal` | 0 ou mais*, 3 casas* | - | não | - | - | Maior ou igual a zero*. Peso de projeto, além do RF-010, exibido junto com o resultado (RN-008; I-06) | Não |
 
 #### `CompetenciaAtribuida`
 
@@ -340,7 +349,8 @@ Comportamento ou resultado observado, que fundamenta um feedback (RF-011, RF-012
 |---|---|---|---|---|---|---|---|---|---|
 | `id` | Identificador do fato | `uuid` | 36 | - | sim | PK | `FeedbackFato` | Gerado pelo sistema | Não |
 | `autor_id` | Quem registrou | `uuid` | 36 | - | sim | FK | `Colaborador` | Enquanto não houver vínculo em `FeedbackFato`, só o autor vê o fato (RF-011) | Pessoal |
-| `observado_id` | Colaborador observado | `uuid` | 36 | - | sim | FK | `Colaborador` | - | Pessoal |
+| `observado_id` | Colaborador observado | `uuid` | 36 | - | não | FK | `Colaborador` | Exatamente um entre este e `observado_equipe_id` | Pessoal |
+| `observado_equipe_id` | Equipe observada como um todo | `uuid` | 36 | - | não | FK | `Equipe` | Exatamente um entre este e `observado_id`. Só embasa feedback para a equipe (RN-001, decisão UC08-D02) | Não |
 | `data_ocorrencia` | Data em que o fato ocorreu | `date` | data | - | sim | - | - | Não futura* (RF-011) | Pessoal |
 | `descricao` | Descrição do fato | `text` | 2.000* caracteres | - | sim | - | - | Fato ou comportamento observável, sem personalidade nem vida privada (RN-001). Orientação contra dados sensíveis (RF-018) | Pessoal (R) |
 | `eh_relato` | Indica se o fato veio do relato de outro colaborador | `bool` | verdadeiro ou falso | - | sim | - | - | Verdadeiro só se o autor tem perfil `GESTOR` (RF-012) | Não |
@@ -352,18 +362,19 @@ Comportamento ou resultado observado, que fundamenta um feedback (RF-011, RF-012
 
 Cabeçalho do feedback. O conteúdo fica em `VersaoFeedback` (RN-003).
 
-**Requisitos de origem:** RF-013, RF-014, RF-015, RF-021, RF-034, RN-002, RN-004, RNF-002
+**Requisitos de origem:** RF-010, RF-013, RF-014, RF-015, RF-021, RF-034, RN-002, RN-004, RNF-002
 
 | Atributo | Definição | Tipo | Tamanho ou domínio | Unid. | Obr. | Chave | Relacionamento | Regra de validação | Dado pessoal |
 |---|---|---|---|---|---|---|---|---|---|
 | `id` | Identificador do feedback | `uuid` | 36 | - | sim | PK | `VersaoFeedback`, `FeedbackFato`, `Replica`, `PlanoAcao`, `SessaoFeedback` | Gerado pelo sistema | Não |
-| `emissor_id` | Quem deu o feedback | `uuid` | 36 | - | não | FK | `Colaborador` | Obrigatório no modo `IDENTIFICADO`. Nulo nos modos `CONFIDENCIAL` (identidade em `VinculoConfidencial`) e `ANONIMO` (RN-002, RN-004). Ver a seção 5.2 | Pessoal |
+| `emissor_id` | Quem deu o feedback | `uuid` | 36 | - | não | FK | `Colaborador` | Obrigatório no modo `IDENTIFICADO` e enquanto o feedback é rascunho. No modo `CONFIDENCIAL`, fica nulo após o envio, e a identidade vai para `VinculoConfidencial` (RN-002, RN-004, RNF-003) | Pessoal |
 | `receptor_colaborador_id` | Colaborador que recebe | `uuid` | 36 | - | não | FK | `Colaborador` | Exatamente um entre este e `receptor_equipe_id` (ER, seção 6) | Pessoal |
 | `receptor_equipe_id` | Equipe que recebe | `uuid` | 36 | - | não | FK | `Equipe` | Exatamente um entre este e `receptor_colaborador_id`. Gera `MembroFeedbackEquipe` | Não |
 | `tipo` | Tipo do feedback | `enum` | `TipoFeedback`: `POSITIVO`, `CONSTRUTIVO` | - | sim | - | - | Obrigatório (RN-002). Define a estrutura de `VersaoFeedback` (RF-016) | Pessoal |
 | `modalidade` | Formal ou informal | `enum` | `FORMAL`, `INFORMAL` | - | sim | - | - | Obrigatório (RN-002). Ver o termo "Modalidade" na seção 5.3 | Não |
-| `direcao` | Quem avalia quem | `enum` | `DirecaoFeedback`: `GESTOR_COLABORADOR`, `ASCENDENTE`, `PARES`, `EQUIPE`, `AUTOAVALIACAO`, `OUTRA_AREA` | - | sim* | - | - | `GESTOR_COLABORADOR` exige modo `IDENTIFICADO` (RN-004) | Não |
-| `modo_identificacao` | Modo de identificação do emissor | `enum` | `ModoIdentificacao`: `IDENTIFICADO`, `CONFIDENCIAL`, `ANONIMO` | - | sim | - | - | Segue a configuração da modalidade e a RN-004. O emissor vê o efeito antes do envio (RF-019) | Não |
+| `direcao` | Quem avalia quem | `enum` | `DirecaoFeedback`: `GESTOR_COLABORADOR`, `ASCENDENTE`, `PARES`, `EQUIPE`, `AUTOAVALIACAO`, `OUTRA_AREA` | - | sim* | - | - | `GESTOR_COLABORADOR` e `OUTRA_AREA` usam o modo `IDENTIFICADO` (RN-004, ERS-D06) | Não |
+| `peso` | Peso do feedback no cálculo dos resultados do período | `decimal` | 0 ou mais*, 3 casas* | - | não | - | - | Maior ou igual a zero* (RF-010). Exibido junto com o resultado calculado (RN-008) | Não |
+| `modo_identificacao` | Modo de identificação do emissor | `enum` | `ModoIdentificacao`: `IDENTIFICADO`, `CONFIDENCIAL`, `ANONIMO` | - | sim | - | - | Segue a configuração da modalidade e a RN-004. O emissor vê o efeito antes do envio (RF-019). `ANONIMO` não é aceito em feedback: o anonimato só existe nas respostas de avaliação (ERS-D03) | Não |
 | `visibilidade` | Quem pode ver | `enum` | `Visibilidade`: `PUBLICO_MINIMO`, `AMPLIADA` | - | sim | - | - | Padrão `PUBLICO_MINIMO`. Só o emissor amplia, por nova ação explícita (RNF-001, RNF-002) | Não |
 | `ciclo_id` | Ciclo do feedback formal | `uuid` | 36 | - | não | FK | `CicloAvaliacao` | Obrigatório se `modalidade = FORMAL`* e nulo se `INFORMAL` (ER: "só feedback formal") | Não |
 | `solicitacao_id` | Solicitação que o feedback atende | `uuid` | 36 | - | não | FK | `SolicitacaoFeedback` | O emissor deve ser destinatário da solicitação* (RF-031) | Não |
@@ -392,7 +403,7 @@ Conteúdo do feedback. Cada edição cria uma versão; a vigente é a de maior `
 | `problema` | Problema associado aos fatos | `text` | 2.000* caracteres | - | não | - | - | Exigido no tipo `CONSTRUTIVO`* (RF-016) | Pessoal (R) |
 | `reflexao` | Reflexão conduzida com o receptor | `text` | 2.000* caracteres | - | não | - | - | Usado no tipo `CONSTRUTIVO` (RF-016) | Pessoal (R) |
 | `criada_em` | Momento da versão | `datetime` | data e hora | - | sim | - | - | Gerado pelo sistema. Torna cada versão datada (RN-003) | Não |
-| `criada_por` | Autor da versão | `uuid` | 36 | - | sim | FK | `Colaborador` | Deve ser o emissor (RN-003). Ver a seção 5.2 sobre o modo confidencial | Pessoal (C) |
+| `criada_por` | Autor da versão | `uuid` | 36 | - | não | FK | `Colaborador` | Preenchido quando o feedback é identificado, e deve ser o emissor (RN-003). Nulo no modo confidencial: o autor é o emissor guardado em `VinculoConfidencial` (RNF-003) | Pessoal |
 
 #### `FeedbackFato`
 
@@ -494,6 +505,44 @@ Participantes de cada sessão e suas anotações privadas (RF-039).
 | `sessao_id` | Sessão | `uuid` | 36 | - | sim | PK, FK | `SessaoFeedback` | Ao menos um participante por sessão | Não |
 | `colaborador_id` | Participante | `uuid` | 36 | - | sim | PK, FK | `Colaborador` | - | Pessoal |
 | `anotacao_privada` | Anotações do participante | `text` | 4.000* caracteres | - | não | - | - | Visível só ao próprio participante (RF-039) | Pessoal (R) |
+
+#### `DestinatarioVisibilidade`
+
+Pessoas a quem o emissor ampliou a visibilidade de um feedback (RNF-002).
+
+**Requisitos de origem:** RNF-002
+
+| Atributo | Definição | Tipo | Tamanho ou domínio | Unid. | Obr. | Chave | Relacionamento | Regra de validação | Dado pessoal |
+|---|---|---|---|---|---|---|---|---|---|
+| `feedback_id` | Feedback com visibilidade ampliada | `uuid` | 36 | - | sim | PK, FK | `Feedback` | O feedback tem `visibilidade = AMPLIADA` | Não |
+| `colaborador_id` | Pessoa incluída | `uuid` | 36 | - | sim | PK, FK | `Colaborador` | Incluída só por ação explícita do emissor (RNF-002) | Pessoal |
+| `ampliada_em` | Momento da ampliação | `datetime` | data e hora | - | sim | - | - | Gerado pelo sistema | Não |
+
+#### `DisponibilidadeAgenda`
+
+Horários livres informados pelo colaborador, usados para sugerir o horário da sessão (RF-038).
+
+**Requisitos de origem:** RF-038
+
+| Atributo | Definição | Tipo | Tamanho ou domínio | Unid. | Obr. | Chave | Relacionamento | Regra de validação | Dado pessoal |
+|---|---|---|---|---|---|---|---|---|---|
+| `id` | Identificador do horário | `uuid` | 36 | - | sim | PK | - | Gerado pelo sistema | Não |
+| `colaborador_id` | Dono da agenda | `uuid` | 36 | - | sim | FK | `Colaborador` | - | Pessoal |
+| `inicio` | Início do horário livre | `datetime` | data e hora | - | sim | - | - | Anterior a `fim` | Pessoal |
+| `fim` | Fim do horário livre | `datetime` | data e hora | - | sim | - | - | Posterior a `inicio` | Pessoal |
+
+#### `TermoOfensivo`
+
+Lista de termos que o sistema sinaliza ao emissor antes do envio (RNF-024, decisão DS-13).
+
+**Requisitos de origem:** RNF-024
+
+| Atributo | Definição | Tipo | Tamanho ou domínio | Unid. | Obr. | Chave | Relacionamento | Regra de validação | Dado pessoal |
+|---|---|---|---|---|---|---|---|---|---|
+| `id` | Identificador do termo | `uuid` | 36 | - | sim | PK | - | Gerado pelo sistema | Não |
+| `termo` | Palavra ou expressão sinalizada | `string` | 100* | - | sim | UK | - | Único. Sinaliza sem bloquear o envio (RNF-024) | Não |
+| `ativo` | Indica se o termo está em uso | `bool` | verdadeiro ou falso | - | sim | - | - | - | Não |
+| `cadastrado_por` | Administrador que cadastrou | `uuid` | 36 | - | sim | FK | `Colaborador` | Perfil `ADMINISTRADOR` (DS-13) | Pessoal |
 
 ### 3.4 Ciclos de avaliação, respostas e anonimato
 
@@ -641,7 +690,7 @@ Resultado calculado ao encerrar o ciclo e guardado (RF-032, decisão M-08).
 | `id` | Identificador do resultado | `uuid` | 36 | - | sim | PK | - | Gerado pelo sistema | Não |
 | `ciclo_id` | Ciclo | `uuid` | 36 | - | sim | FK | `CicloAvaliacao` | - | Não |
 | `avaliado_id` | Avaliado | `uuid` | 36 | - | sim | FK | `Colaborador` | - | Pessoal |
-| `modalidade` | Fonte do resultado | `enum` | `ModalidadeAvaliacao` ou `AGREGADO` | - | sim | - | - | `AGREGADO` reúne fontes abaixo do mínimo de respondentes (RN-005). Ver a seção 5.2 | Não |
+| `modalidade` | Fonte do resultado | `enum` | `ModalidadeAvaliacao` ou `AGREGADO` | - | sim | - | - | `AGREGADO` reúne fontes abaixo do mínimo de respondentes (RN-005) | Não |
 | `competencia_id` | Competência do resultado | `uuid` | 36 | - | não | FK | `Competencia` | - | Não |
 | `indicador_id` | Indicador do resultado | `uuid` | 36 | - | não | FK | `Indicador` | - | Não |
 | `valor` | Valor consolidado | `decimal` | conforme a escala* | - | sim | - | - | Apoio à decisão humana. Critérios e dados do cálculo exibíveis (RN-008) | Pessoal |
@@ -666,8 +715,7 @@ Meta de desenvolvimento individual ou de equipe (RF-046, RF-047).
 | `descricao` | Descrição da meta | `text` | 2.000* caracteres | - | sim | - | - | Orientação do RF-018* | Pessoal (R) |
 | `data_inicio` | Início | `date` | data | - | sim* | - | - | Menor ou igual a `prazo` | Não |
 | `prazo` | Data limite | `date` | data | - | sim | - | - | Maior ou igual a `data_inicio` (RF-046) | Não |
-| `status` | Situação da meta | `enum` | `StatusMeta`: `EM_ANDAMENTO`, `ATINGIDA`, `NAO_ATINGIDA`, `CANCELADA` | - | sim | - | - | Ver a redundância com `atingida` na seção 5.2 | Pessoal |
-| `atingida` | Indica se a meta foi atingida | `bool` | verdadeiro ou falso | - | não | - | - | Coerente com `status`* (RF-047) | Pessoal |
+| `status` | Situação da meta | `enum` | `StatusMeta`: `EM_ANDAMENTO`, `ATINGIDA`, `NAO_ATINGIDA`, `CANCELADA` | - | sim | - | - | Único registro do resultado da meta (RF-047) | Pessoal |
 | `criada_por` | Quem cadastrou | `uuid` | 36 | - | sim | FK | `Colaborador` | Colaborador ou gestor, na meta individual; gestor ou membro da equipe, na meta de equipe (RF-046, RF-047, RN-006) | Pessoal |
 
 #### `Indicador`
@@ -713,7 +761,7 @@ Regra de check-ins periódicos definida pelo gestor (RF-041, RF-036).
 | `id` | Identificador da configuração | `uuid` | 36 | - | sim | PK | `CheckIn` | Gerado pelo sistema | Não |
 | `gestor_id` | Gestor que configurou | `uuid` | 36 | - | sim | FK | `Colaborador` | Perfil `GESTOR` (RF-041) | Pessoal |
 | `colaborador_id` | Colaborador incluído nos check-ins | `uuid` | 36 | - | sim | FK | `Colaborador` | Membro da equipe do gestor (RF-041, P-09) | Pessoal |
-| `frequencia` | Periodicidade | `enum` | `SEMANAL`, `QUINZENAL`, `MENSAL` e outros (lista aberta no ER) | - | sim | - | - | Ver a seção 5.2 | Não |
+| `frequencia` | Periodicidade | `enum` | `FrequenciaCheckIn`: `SEMANAL`, `QUINZENAL`, `MENSAL` | - | sim | - | - | Configurável pelo gestor (RF-041) | Não |
 | `questionario_id` | Perguntas do check-in | `uuid` | 36 | - | não | FK | `Questionario` | Perguntas alternáveis entre períodos (RF-036) | Não |
 | `ativa` | Indica se a configuração está em vigor | `bool` | verdadeiro ou falso | - | sim | - | - | - | Não |
 
@@ -734,6 +782,28 @@ Check-in realizado ou previsto (RF-023, RF-041).
 | `data_realizada` | Data em que ocorreu | `date` | data | - | não | - | - | Não futura* | Não |
 | `anotacoes` | Registro do check-in | `text` | 4.000* caracteres | - | não | - | - | Orientação do RF-018* | Pessoal (R) |
 
+#### `CheckInMeta`
+
+Metas em andamento acompanhadas em um check-in periódico (RF-041).
+
+**Requisitos de origem:** RF-041
+
+| Atributo | Definição | Tipo | Tamanho ou domínio | Unid. | Obr. | Chave | Relacionamento | Regra de validação | Dado pessoal |
+|---|---|---|---|---|---|---|---|---|---|
+| `checkin_id` | Check-in | `uuid` | 36 | - | sim | PK, FK | `CheckIn` | - | Não |
+| `meta_id` | Meta acompanhada | `uuid` | 36 | - | sim | PK, FK | `Meta` | Meta do colaborador do check-in, com `status = EM_ANDAMENTO`* | Não |
+
+#### `CheckInPlano`
+
+Planos de ação em andamento acompanhados em um check-in periódico (RF-041).
+
+**Requisitos de origem:** RF-041
+
+| Atributo | Definição | Tipo | Tamanho ou domínio | Unid. | Obr. | Chave | Relacionamento | Regra de validação | Dado pessoal |
+|---|---|---|---|---|---|---|---|---|---|
+| `checkin_id` | Check-in | `uuid` | 36 | - | sim | PK, FK | `CheckIn` | - | Não |
+| `plano_id` | Plano acompanhado | `uuid` | 36 | - | sim | PK, FK | `PlanoAcao` | Plano do colaborador do check-in, ainda não concluído* | Não |
+
 #### `PlanoAcao`
 
 Plano criado a partir de um feedback construtivo (RF-042, RF-043).
@@ -745,9 +815,10 @@ Plano criado a partir de um feedback construtivo (RF-042, RF-043).
 | `id` | Identificador do plano | `uuid` | 36 | - | sim | PK | `AcaoPlano`, `PontoMonitoramento` | Gerado pelo sistema | Não |
 | `feedback_id` | Feedback de origem | `uuid` | 36 | - | sim | FK, UK | `Feedback` | Feedback do tipo `CONSTRUTIVO` (RF-042). No máximo um plano por feedback | Não |
 | `receptor_id` | Receptor do feedback | `uuid` | 36 | - | sim | FK | `Colaborador` | Igual ao receptor do feedback de origem* (RN-006) | Pessoal |
-| `emissor_id` | Emissor do feedback | `uuid` | 36 | - | sim | FK | `Colaborador` | Igual ao emissor do feedback de origem (RN-006). Ver a seção 5.2 | Pessoal (C) |
+| `emissor_id` | Emissor do feedback | `uuid` | 36 | - | não | FK | `Colaborador` | Igual ao emissor do feedback de origem quando ele é identificado (RN-006). Nulo se o feedback de origem é confidencial (RN-004, ERS-D05) | Pessoal |
+| `gestor_id` | Gestor direto do receptor | `uuid` | 36 | - | não | FK | `Colaborador` | Obrigatório quando o feedback de origem é confidencial: o plano é definido pelo receptor e pelo gestor direto, sem o emissor (RN-006, ERS-D05) | Pessoal |
 | `data_final` | Data de verificação final | `date` | data | - | sim | - | - | (RF-042) | Não |
-| `status` | Situação do plano | `enum` | `StatusPlano`: `ABERTO`, `EM_ACOMPANHAMENTO`, `CONCLUIDO` | - | sim | - | - | - | Não |
+| `status` | Situação do plano | `enum` | `StatusPlano`: `AGUARDANDO_CONFIRMACAO`, `ABERTO`, `EM_ACOMPANHAMENTO`, `CONCLUIDO` | - | sim | - | - | Fica em `AGUARDANDO_CONFIRMACAO` até o receptor confirmar o plano registrado pelo emissor (RN-006, decisão UC19-D01) | Não |
 | `resultado_final` | Desfecho na data final | `enum` | `MELHOROU`, `NOVO_FEEDBACK` | - | não | - | - | Obrigatório para concluir o plano* (RF-043). Base do RF-045 | Pessoal |
 | `conclusao` | Comentário final | `text` | 2.000* caracteres | - | não | - | - | Orientação do RF-018* | Pessoal (R) |
 
@@ -802,7 +873,7 @@ Inventário das categorias de dados e da política de retenção (RF-054, RF-062
 
 Entidades com quem os dados são compartilhados (RF-060).
 
-**Requisitos de origem:** RF-060
+**Requisitos de origem:** RF-060, RN-016
 
 | Atributo | Definição | Tipo | Tamanho ou domínio | Unid. | Obr. | Chave | Relacionamento | Regra de validação | Dado pessoal |
 |---|---|---|---|---|---|---|---|---|---|
@@ -811,6 +882,8 @@ Entidades com quem os dados são compartilhados (RF-060).
 | `entidade_destino` | Quem recebe os dados | `string` | 150* | - | sim | - | - | (RF-060) | Não |
 | `tipo_entidade` | Natureza de quem recebe | `enum` | `PUBLICA`, `PRIVADA` | - | sim | - | - | (RF-060) | Não |
 | `finalidade` | Para que os dados são compartilhados | `text` | 1.000* caracteres | - | sim | - | - | - | Não |
+| `inclui_menores` | Indica se o compartilhamento abrange dados de menores de 18 anos | `bool` | verdadeiro ou falso; padrão falso | - | sim | - | - | Verdadeiro só com justificativa (RN-016; LGPD, art. 14) | Não |
+| `justificativa_menores` | Por que os dados de menores são necessários | `text` | 1.000* caracteres | - | não | - | - | Obrigatória quando `inclui_menores` é verdadeiro (RN-016) | Não |
 | `data_inicio` | Início do compartilhamento | `date` | data | - | sim | - | - | - | Não |
 | `data_fim` | Fim do compartilhamento | `date` | data | - | não | - | - | Maior ou igual a `data_inicio`* | Não |
 
@@ -868,7 +941,7 @@ Pedido do titular para exercer um direito da LGPD (RF-056 a RF-061).
 | `titular_id` | Titular que pediu | `uuid` | 36 | - | sim | FK | `Colaborador` | - | Pessoal |
 | `tipo` | Direito exercido | `enum` | `TipoSolicitacaoTitular`: `CONFIRMACAO_ACESSO`, `CORRECAO`, `ANONIMIZACAO_BLOQUEIO_ELIMINACAO`, `PORTABILIDADE`, `INFORMACAO_COMPARTILHAMENTO`, `REVOGACAO_CONSENTIMENTO` | - | sim | - | - | (RF-056 a RF-060) | Pessoal |
 | `aberta_em` | Momento da abertura | `datetime` | data e hora | - | sim | - | - | Gerado pelo sistema (RF-061) | Não |
-| `prazo` | Data limite de resposta | `date` | data | - | sim | - | - | 15 dias para a declaração completa (RF-056). Os demais prazos não estão na lista geral (seção 5.1) | Não |
+| `prazo` | Data limite de resposta | `date` | data | - | sim | - | - | 15 dias para a declaração completa (RF-056). Os demais prazos são definidos pela organização (ERS-D10) | Não |
 | `status` | Situação | `enum` | `ABERTA`, `EM_ANALISE`, `ATENDIDA`, `NEGADA` | - | sim | - | - | (RF-061) | Não |
 | `responsavel_id` | Quem trata a solicitação | `uuid` | 36 | - | não | FK | `Colaborador` | RH ou encarregado (RF-061) | Pessoal |
 | `resposta` | Resposta enviada ao titular | `text` | 10.000* caracteres | - | não | - | - | Obrigatória quando `status` é `ATENDIDA` ou `NEGADA`*. Não revela emissores confidenciais (RF-056) | Pessoal (R) |
@@ -913,7 +986,7 @@ Trilha de auditoria. Somente inclusão: sem alteração nem exclusão (RNF-005).
 | `id` | Identificador do registro | `uuid` | 36 | - | sim | PK | - | Gerado pelo sistema | Não |
 | `ator_id` | Quem fez a ação | `uuid` | 36 | - | sim | FK | `Colaborador` | (RNF-005: "quem") | Pessoal |
 | `data_hora` | Momento da ação | `datetime` | data e hora | - | sim | - | - | Gerado pelo sistema (RNF-005: "quando") | Não |
-| `acao` | Ação registrada | `enum` | `CONSULTA`, `CRIACAO`, `ALTERACAO`, `OCULTACAO`, `CONSULTA_IDENTIDADE` e outros (lista aberta no ER) | - | sim | - | - | Toda leitura de `VinculoConfidencial` gera `CONSULTA_IDENTIDADE` (RNF-003). Ver a seção 5.2 | Não |
+| `acao` | Ação registrada | `enum` | `AcaoAuditoria`: `CONSULTA`, `CRIACAO`, `ALTERACAO`, `OCULTACAO`, `CONSULTA_IDENTIDADE`, `EXPORTACAO`, `ANONIMIZACAO`, `ELIMINACAO` | - | sim | - | - | Toda leitura de `VinculoConfidencial` gera `CONSULTA_IDENTIDADE` (RNF-003). Exportação, anonimização e eliminação de dados também são registradas (RF-058, RF-062) | Não |
 | `entidade` | Entidade afetada | `string` | 60* | - | sim | - | - | Nome de entidade do ER* (RNF-005: "o quê") | Não |
 | `entidade_id` | Registro afetado | `uuid` | 36 | - | sim | - | Qualquer entidade | - | Não |
 | `ip_origem` | Endereço IP de origem | `string` | 45* (IPv4 ou IPv6) | - | sim | - | - | Endereço IP válido* (RNF-005: "de onde"; RNF-032) | Pessoal |
@@ -930,7 +1003,7 @@ Notificações e lembretes enviados ou agendados (RF-026, RF-037, RF-040).
 |---|---|---|---|---|---|---|---|---|---|
 | `id` | Identificador da notificação | `uuid` | 36 | - | sim | PK | - | Gerado pelo sistema | Não |
 | `destinatario_id` | Quem recebe | `uuid` | 36 | - | sim | FK | `Colaborador` | - | Pessoal |
-| `tipo` | Tipo da notificação | `enum` | `TipoNotificacao`: `SESSAO_AGENDADA`, `LEMBRETE_SESSAO`, `AVALIACAO_PENDENTE`, `CHECKIN`, `PRAZO_PLANO`, `CICLO_ABERTO`, `RESPOSTA_OCULTADA` | - | sim | - | `PreferenciaNotificacao` | Lembretes não são enviados a quem os desativou (RF-040) | Não |
+| `tipo` | Tipo da notificação | `enum` | `TipoNotificacao`: `SESSAO_AGENDADA`, `LEMBRETE_SESSAO`, `AVALIACAO_PENDENTE`, `CHECKIN`, `PRAZO_PLANO`, `CICLO_ABERTO`, `RESPOSTA_OCULTADA`, `FEEDBACK_RECEBIDO`, `PLANO_PARA_CONFIRMAR` | - | sim | - | `PreferenciaNotificacao` | Lembretes não são enviados a quem os desativou (RF-040) | Não |
 | `entidade` | Entidade de origem | `string` | 60* | - | sim | - | - | Nome de entidade do ER* | Não |
 | `entidade_id` | Registro de origem | `uuid` | 36 | - | sim | - | Qualquer entidade | - | Não |
 | `agendada_para` | Momento previsto do envio | `datetime` | data e hora | - | sim | - | - | - | Não |
@@ -961,15 +1034,13 @@ As enumerações com nome (`Perfil`, `TipoFeedback`, `ModoIdentificacao` e outra
 | `SessaoFeedback.status` | `AGENDADA`, `REALIZADA`, `CANCELADA` | - |
 | `ObjetivoCiclo.tipo` | `COMPORTAMENTO`, `RESULTADO` | - |
 | `VinculoConfidencial.origem` | `RESPOSTA`, `FEEDBACK` | - |
-| `ResultadoConsolidado.modalidade` | valores de `ModalidadeAvaliacao` e `AGREGADO` | `AGREGADO` não está na seção 11 do ER |
+| `ResultadoConsolidado.modalidade` | valores de `ModalidadeAvaliacao` e `AGREGADO` | `AGREGADO` reúne fontes abaixo do mínimo (RN-005) |
 | `Meta.escopo` | `INDIVIDUAL`, `EQUIPE` | - |
-| `ConfiguracaoCheckIn.frequencia` | `SEMANAL`, `QUINZENAL`, `MENSAL`... | Lista incompleta no ER |
 | `PlanoAcao.resultado_final` | `MELHOROU`, `NOVO_FEEDBACK` | - |
 | `AcaoPlano.status` | `PENDENTE`, `EM_ANDAMENTO`, `CONCLUIDA` | - |
 | `CategoriaDado.acao_fim_prazo` | `ELIMINAR`, `ANONIMIZAR` | - |
 | `CompartilhamentoDados.tipo_entidade` | `PUBLICA`, `PRIVADA` | - |
 | `SolicitacaoTitular.status` | `ABERTA`, `EM_ANALISE`, `ATENDIDA`, `NEGADA` | - |
-| `RegistroAuditoria.acao` | `CONSULTA`, `CRIACAO`, `ALTERACAO`, `OCULTACAO`, `CONSULTA_IDENTIDADE`... | Lista incompleta no ER |
 
 ---
 
@@ -994,12 +1065,12 @@ A base legal indicada é a **provável**, segundo a RN-012 e a pesquisa document
 
 | Grupo | Atributos | Finalidade | Base legal provável | Retenção |
 |---|---|---|---|---|
-| **Cadastro e acesso** | `Colaborador`: `id`, `matricula`, `nome`, `email`, `senha_hash`, `data_nascimento`, `data_admissao`, `data_desligamento`, `situacao`, `cargo_id`, `equipe_id`, `gestor_id`. `PerfilColaborador`: todos. `Equipe.gestor_id` | Identificar o usuário, controlar o acesso por perfil e montar a hierarquia que define a visibilidade (RF-001, RF-003, RNF-001) | Execução de contrato (RN-012) | Não definida na lista geral para o cadastro (seção 5.1). Configurável por categoria (RF-062) |
-| **Fatos e feedbacks** | `Fato`: `autor_id`, `observado_id`, `data_ocorrencia`, `descricao`. `Feedback`: `emissor_id`, `receptor_colaborador_id`, `tipo`, `postura_receptor`, `agregou_valor`. `VersaoFeedback`: campos de texto e `criada_por`. `MembroFeedbackEquipe.colaborador_id`. `Replica`: `autor_id`, `texto`. `SolicitacaoFeedback`: `solicitante_id`, `tema`. `DestinatarioSolicitacao.destinatario_id`. `SessaoFeedback`: `organizador_id`, `assunto`, `pauta_compartilhada`. `ParticipanteSessao`: `colaborador_id`, `anotacao_privada`. `CompetenciaAtribuida`: `colaborador_id`, `atribuida_por`, `justificativa`. `Pergunta.colaborador_alvo_id` | Apoiar o desenvolvimento profissional do colaborador (RN-007) | Execução de contrato ou legítimo interesse (RN-012) | Enquanto o colaborador estiver na organização e por 5 anos (60 meses) após o desligamento, configurável. Depois, eliminar ou anonimizar (RN-011, RF-062) |
+| **Cadastro e acesso** | `Colaborador`: `id`, `matricula`, `nome`, `email`, `senha_hash`, `falhas_login_consecutivas`, `login_bloqueado_ate`, `data_nascimento`, `data_admissao`, `data_desligamento`, `situacao`, `cargo_id`, `equipe_id`, `gestor_id`. `PerfilColaborador`: todos. `Equipe.gestor_id` | Identificar o usuário, controlar o acesso por perfil e montar a hierarquia que define a visibilidade (RF-001, RF-003, RNF-001) | Execução de contrato (RN-012) | Definida pela organização, por categoria (RF-062, ERS-D10) |
+| **Fatos e feedbacks** | `Fato`: `autor_id`, `observado_id`, `data_ocorrencia`, `descricao`. `Feedback`: `emissor_id`, `receptor_colaborador_id`, `tipo`, `postura_receptor`, `agregou_valor`. `VersaoFeedback`: campos de texto e `criada_por`. `MembroFeedbackEquipe.colaborador_id`. `Replica`: `autor_id`, `texto`. `SolicitacaoFeedback`: `solicitante_id`, `tema`. `DestinatarioSolicitacao.destinatario_id`. `SessaoFeedback`: `organizador_id`, `assunto`, `pauta_compartilhada`. `ParticipanteSessao`: `colaborador_id`, `anotacao_privada`. `DestinatarioVisibilidade.colaborador_id`. `DisponibilidadeAgenda`: `colaborador_id`, `inicio`, `fim`. `CompetenciaAtribuida`: `colaborador_id`, `atribuida_por`, `justificativa`. `Pergunta.colaborador_alvo_id` | Apoiar o desenvolvimento profissional do colaborador (RN-007) | Execução de contrato ou legítimo interesse (RN-012) | Enquanto o colaborador estiver na organização e por 5 anos (60 meses) após o desligamento, configurável. Depois, eliminar ou anonimizar (RN-011, RF-062) |
 | **Avaliações de ciclo** | `CicloAvaliacao.criado_por`. `AvaliadoCiclo.avaliado_id`. `ObjetivoCiclo`: `avaliado_id`, `descricao`. `ConviteAvaliacao`: `avaliado_id`, `avaliador_id`, `rascunho_cifrado`. `RespostaAvaliacao`: `avaliado_id`, `avaliador_id`, `motivo_ocultacao`. `ItemResposta`: `valor_numerico`, `atingido`, `valor_texto`. `ResultadoConsolidado`: `avaliado_id`, `valor` | Avaliar o desempenho por competência e indicador, como apoio à decisão humana (RN-008) | Execução de contrato ou legítimo interesse (RN-012) | Igual aos feedbacks (RN-011). O rascunho é apagado no envio da resposta (RNF-012; ER, seção 10) |
-| **Metas, check-ins e planos** | `Meta`: `colaborador_id`, `descricao`, `status`, `atingida`, `criada_por`. `MedicaoIndicador`: `valor_observado`, `registrada_por`. `ConfiguracaoCheckIn`: `gestor_id`, `colaborador_id`. `CheckIn`: `gestor_id`, `colaborador_id`, `anotacoes`. `PlanoAcao`: `receptor_id`, `emissor_id`, `resultado_final`, `conclusao`. `AcaoPlano`: `descricao`, `responsavel_id`. `PontoMonitoramento.resultado` | Acompanhar a melhora do colaborador (RF-043, RF-046) | Execução de contrato ou legítimo interesse (RN-012) | Planos: RN-011. Metas e check-ins: não citados na RN-011 (seção 5.1) |
-| **Direitos do titular e LGPD** | `Consentimento`: `colaborador_id`, `concedido_em`, `revogado_em`. `SolicitacaoTitular`: `titular_id`, `tipo`, `responsavel_id`, `resposta`. `BloqueioLegal`: `colaborador_id`, `numero_processo`. `TitularAfetado.colaborador_id`. `IncidenteSeguranca`: `descricao`, `dados_afetados`. `ConfiguracaoOrganizacao`: `encarregado_nome`, `encarregado_contato` | Cumprir e comprovar as obrigações da LGPD (RF-053, RF-055 a RF-063) | Obrigação legal. Para o bloqueio judicial, exercício regular de direitos em processo | Incidentes: no mínimo 5 anos (RF-063). Bloqueio: até `data_fim`. Demais: não definidos na lista (seção 5.1) |
-| **Auditoria, importação e notificações** | `RegistroAuditoria`: `ator_id`, `ip_origem`, `detalhes`. `ImportacaoCadastro`: `executada_por`, `log_erros`. `Questionario.criado_por`. `Notificacao.destinatario_id`. `PreferenciaNotificacao.colaborador_id` | Segurança, responsabilização e envio de lembretes (RNF-005, RF-040) | Registros de acesso: obrigação legal, se o sistema for operado como serviço (RNF-032). Demais: legítimo interesse | Registros de acesso: no mínimo 6 meses (RNF-032). Demais: não definidos na lista (seção 5.1) |
+| **Metas, check-ins e planos** | `Meta`: `colaborador_id`, `descricao`, `status`, `criada_por`. `MedicaoIndicador`: `valor_observado`, `registrada_por`. `ConfiguracaoCheckIn`: `gestor_id`, `colaborador_id`. `CheckIn`: `gestor_id`, `colaborador_id`, `anotacoes`. `PlanoAcao`: `receptor_id`, `emissor_id`, `gestor_id`, `resultado_final`, `conclusao`. `AcaoPlano`: `descricao`, `responsavel_id`. `PontoMonitoramento.resultado` | Acompanhar a melhora do colaborador (RF-043, RF-046) | Execução de contrato ou legítimo interesse (RN-012) | Planos: RN-011. Metas e check-ins: definidos pela organização (RF-062, ERS-D10) |
+| **Direitos do titular e LGPD** | `Consentimento`: `colaborador_id`, `concedido_em`, `revogado_em`. `SolicitacaoTitular`: `titular_id`, `tipo`, `responsavel_id`, `resposta`. `BloqueioLegal`: `colaborador_id`, `numero_processo`. `TitularAfetado.colaborador_id`. `IncidenteSeguranca`: `descricao`, `dados_afetados`. `ConfiguracaoOrganizacao`: `encarregado_nome`, `encarregado_contato` | Cumprir e comprovar as obrigações da LGPD (RF-053, RF-055 a RF-063) | Obrigação legal. Para o bloqueio judicial, exercício regular de direitos em processo | Incidentes: no mínimo 5 anos (RF-063). Bloqueio: até `data_fim`. Demais: definidos pela organização (RF-062, ERS-D10) |
+| **Auditoria, importação e notificações** | `RegistroAuditoria`: `ator_id`, `ip_origem`, `detalhes`. `ImportacaoCadastro`: `executada_por`, `log_erros`. `Questionario.criado_por`. `Notificacao.destinatario_id`. `PreferenciaNotificacao.colaborador_id`. `TermoOfensivo.cadastrado_por` | Segurança, responsabilização e envio de lembretes (RNF-005, RF-040) | Registros de acesso: obrigação legal, se o sistema for operado como serviço (RNF-032). Demais: legítimo interesse | Registros de acesso: no mínimo 6 meses (RNF-032). Demais: definidos pela organização (RF-062, ERS-D10) |
 
 ### 4.3 Textos livres e risco de dado sensível
 
@@ -1029,16 +1100,16 @@ Atributos `Pessoal (C)`. Só o RH pode chegar a eles, com registro na trilha de 
 |---|---|---|
 | `VinculoConfidencial.emissor_id` | Guarda quem emitiu no modo confidencial | Esquema separado, com chave de criptografia própria. Toda leitura gera `CONSULTA_IDENTIDADE` (RNF-003; ER, seção 10) |
 | `Fato.relator_id` | Guarda quem relatou o fato ao gestor | Nunca exibido ao receptor (RF-012) |
-| `VersaoFeedback.criada_por` | Guarda o autor de cada versão, inclusive no modo confidencial | Ver a inconsistência na seção 5.2 |
-| `PlanoAcao.emissor_id` | Guarda o emissor do feedback que originou o plano | Ver a inconsistência na seção 5.2 |
+| `VersaoFeedback.criada_por` | Guarda o autor de cada versão | Nulo no modo confidencial: o autor fica só em `VinculoConfidencial` (ER, seção 6; I-04) |
+| `PlanoAcao.emissor_id` | Guarda o emissor do feedback que originou o plano | Nulo quando o feedback de origem é confidencial. O plano é feito com o gestor direto (`PlanoAcao.gestor_id`), sem revelar o emissor (ERS-D05; I-05) |
 
-No modo **anônimo**, a identidade não é guardada em lugar nenhum (RN-004; ER, seção 10). Os campos `Feedback.emissor_id` e `RespostaAvaliacao.avaliador_id` ficam nulos, e o convite não tem ligação com a resposta (decisão M-04).
+No modo **anônimo**, a identidade não é guardada em lugar nenhum (RN-004; ER, seção 10). O campo `RespostaAvaliacao.avaliador_id` fica nulo, e o convite não tem ligação com a resposta (decisão M-04). O modo anônimo só existe nas respostas de avaliação: um feedback nunca é anônimo (ERS-D03).
 
 ### 4.5 Colaboradores menores de 18 anos
 
 - O menor é identificado pela `Colaborador.data_nascimento`. A condição de menor é calculada a partir dela, sem atributo próprio, e muda sozinha aos 18 anos (RN-016, decisão M-07).
 - Todos os dados de um colaborador menor, e não só a data de nascimento, devem ser tratados no seu melhor interesse e compartilhados apenas no estritamente necessário (RN-016; LGPD, art. 14).
-- O ER não tem como restringir o compartilhamento por titular: `CompartilhamentoDados` é definido por categoria de dado (seção 5.2).
+- Um compartilhamento só abrange dados de menores se `CompartilhamentoDados.inclui_menores` for verdadeiro, com justificativa registrada (ER 1.1; I-12).
 
 ### 4.6 Resumo dos prazos de retenção
 
@@ -1050,58 +1121,58 @@ No modo **anônimo**, a identidade não é guardada em lugar nenhum (RN-004; ER,
 | Registro de incidente de segurança | No mínimo 5 anos | Conforme a categoria | RF-063 |
 | Rascunho de resposta de avaliação | Até o envio da resposta | Apagado | RNF-012; ER, seção 10 |
 | Backups | Seguem a categoria do dado | Dado eliminado deixa de existir ao fim da guarda do backup | Especificação Suplementar, DS-09 |
-| Cadastro, metas, check-ins, consentimentos, solicitações de titulares, notificações e demais registros de auditoria | Não definido na lista geral | - | Seção 6.1 |
+| Cadastro, metas, check-ins, consentimentos, solicitações de titulares, notificações e demais registros de auditoria | Definido pela organização, como controladora, na configuração de cada categoria | Conforme a categoria | RF-054, RF-062; ERS-D10 |
 
 ---
 
 ## 5. Pontos não confirmados e inconsistências
 
-Esta seção só registra os pontos. A correção cabe ao responsável por cada artefato, pela gestão de mudanças do [processo de requisitos](Processo_Requisitos.md) (seção 9).
+Esta seção registra os pontos encontrados na versão 1.0. A correção coube ao responsável por cada artefato, pela gestão de mudanças do [processo de requisitos](Processo_Requisitos.md) (seção 9). Na revisão final (#55), todos foram tratados, e a coluna **Tratamento** indica onde.
 
 ### 5.1 Pontos não confirmados
 
-| # | Ponto | Situação | Afeta |
-|---|---|---|---|
-| G-01 | Tamanhos, formatos, obrigatoriedade e regras marcados com `*` | Propostos por este documento. O ER é conceitual e não define tamanhos (ER, seção 1). Confirmar no projeto físico | Seção 3 |
-| G-02 | Valor mínimo aceito para `min_respondentes` | A RN-005 fixa o padrão 3, configurável. O ponto P-03 diz que 3 é o menor valor que impede descobrir o emissor por exclusão, mas a lista não proíbe valores menores | `ConfiguracaoOrganizacao`, `ModalidadeCiclo`, RN-005 |
-| G-03 | Prazo de retenção do cadastro, das metas, dos check-ins, dos consentimentos, das solicitações de titulares, das notificações e da trilha de auditoria (fora os registros de acesso) | A RN-011 cobre só feedbacks, avaliações e planos de ação | Seção 4.6, RF-062 |
-| G-04 | Prazos de resposta às solicitações de titular, além dos 15 dias do RF-056 | A regulamentação da ANPD sobre direitos do titular ainda está pendente (pesquisa documental, FD-08) | `SolicitacaoTitular.prazo` |
-| G-05 | Base legal de cada categoria | Indicada como "provável" na seção 4.2. Quem decide é o controlador (RF-054) | `CategoriaDado.base_legal` |
-| G-06 | Modo de identificação do feedback para colaborador de outra área (`DirecaoFeedback.OUTRA_AREA`) | A RN-004 define o modo do gestor, da avaliação ascendente, dos pares e da equipe, mas não o de outra área | `Feedback.modo_identificacao` |
-| G-07 | Canal das notificações (no sistema e por e-mail) | Decisão DS-10 da Especificação Suplementar, ainda a validar com a PO. O ER não guarda o canal | `Notificacao` |
-| G-08 | Responsável deste documento | Não preenchido no cabeçalho | Cabeçalho |
+| # | Ponto | Situação na versão 1.0 | Afeta | Tratamento |
+|---|---|---|---|---|
+| G-01 | Tamanhos, formatos, obrigatoriedade e regras marcados com `*` | Propostos por este documento. O ER é conceitual e não define tamanhos (ER, seção 1). Confirmar no projeto físico | Seção 3 | Mantido. Os valores com `*` são propostas para o projeto físico, que não faz parte desta etapa |
+| G-02 | Valor mínimo aceito para `min_respondentes` | A RN-005 fixa o padrão 3, configurável. O ponto P-03 diz que 3 é o menor valor que impede descobrir o emissor por exclusão, mas a lista não proíbe valores menores | `ConfiguracaoOrganizacao`, `ModalidadeCiclo`, RN-005 | Resolvido. Mínimo de 3 na RN-005 (lista geral 1.1) e no ER 1.1 (ERS-D08) |
+| G-03 | Prazo de retenção do cadastro, das metas, dos check-ins, dos consentimentos, das solicitações de titulares, das notificações e da trilha de auditoria (fora os registros de acesso) | A RN-011 cobre só feedbacks, avaliações e planos de ação | Seção 4.6, RF-062 | Resolvido. A organização define os prazos por categoria (RF-062, ERS-D10) |
+| G-04 | Prazos de resposta às solicitações de titular, além dos 15 dias do RF-056 | A regulamentação da ANPD sobre direitos do titular ainda está pendente (pesquisa documental, FD-08) | `SolicitacaoTitular.prazo` | Resolvido. A organização define os prazos, além dos 15 dias do RF-056 (ERS-D10) |
+| G-05 | Base legal de cada categoria | Indicada como "provável" na seção 4.2. Quem decide é o controlador (RF-054) | `CategoriaDado.base_legal` | Resolvido. A base legal é registrada pelo controlador em `CategoriaDado.base_legal` (RF-054, ERS-D10) |
+| G-06 | Modo de identificação do feedback para colaborador de outra área (`DirecaoFeedback.OUTRA_AREA`) | A RN-004 define o modo do gestor, da avaliação ascendente, dos pares e da equipe, mas não o de outra área | `Feedback.modo_identificacao` | Resolvido. Identificado (ERS-D06, UC08-D04) |
+| G-07 | Canal das notificações (no sistema e por e-mail) | Decisão DS-10 da Especificação Suplementar. O ER não guarda o canal | `Notificacao` | Resolvido. Dentro do sistema e por e-mail (DS-10). Os dois canais valem para toda notificação, por isso o ER não precisa guardar o canal |
+| G-08 | Responsável deste documento | Não preenchido no cabeçalho | Cabeçalho | Resolvido. Cabeçalho preenchido |
 
 ### 5.2 Inconsistências entre o ER e a lista geral
 
-| # | Inconsistência | Onde | Requisitos |
-|---|---|---|---|
-| I-01 | **Perfis sem diretoria nem encarregado.** O enumerado `Perfil` tem só os 4 perfis do RF-003. O Documento Visão (seção 3.3) lista a diretoria e o encarregado de dados como usuários, e o diagrama de casos de uso tem o ator Encarregado (DPO). Sem um perfil, o sistema não tem como dar a eles o acesso que o RNF-001 e o RF-061 preveem | `Perfil`, `PerfilColaborador` | RF-003, RNF-001, RF-061 |
-| I-02 | **Emissor obrigatório e modo anônimo.** A RN-002 exige o emissor em todo feedback. No modo anônimo, o ER não guarda o emissor em lugar nenhum. A lista não registra essa exceção | `Feedback.emissor_id` | RN-002, RN-004 |
-| I-03 | **Edição no modo anônimo.** A RN-003 permite que o emissor edite o feedback. O ER aceita que, no modo anônimo, a resposta não possa ser editada, porque o sistema não sabe quem a escreveu (ER, seção 10). A lista não registra essa exceção | `VersaoFeedback`, `RespostaAvaliacao` | RN-003, RN-004 |
-| I-04 | **Autor da versão expõe o emissor.** `VersaoFeedback.criada_por` guarda o emissor mesmo nos modos confidencial e anônimo. Isso contradiz a própria seção 10 do ER ("`emissor_id` fica nulo") e o RNF-003 (vínculo guardado à parte). O mesmo vale para o rascunho de feedback (`Feedback.status = RASCUNHO`): com `emissor_id` nulo, não há como saber de quem é o rascunho | `VersaoFeedback.criada_por`, `Feedback.status` | RNF-003, RN-004, RNF-012 |
-| I-05 | **Plano de ação revela o emissor.** O plano é feito em conjunto pelo emissor e pelo receptor (RN-006), e `PlanoAcao.emissor_id` guarda o emissor. Se o feedback construtivo vier de um par, da equipe ou da avaliação ascendente, o modo padrão é confidencial (RN-004), e o plano conjunto revela ao receptor quem emitiu | `PlanoAcao.emissor_id` | RN-004, RN-006, RF-042 |
-| I-06 | **Pesos.** O RF-010 fala em pesos "aos feedbacks de um período e aos indicadores de um mesmo feedback". O ER põe `peso` em `CargoCompetencia`, `Pergunta`, `ModalidadeCiclo` e `Indicador`, mas não em `Feedback`. Os pesos de competência no cargo e de pergunta vão além do texto do requisito | Atributos `peso` | RF-010 |
-| I-07 | **Retenção em dois lugares.** `ConfiguracaoOrganizacao.retencao_pos_desligamento_meses` e `CategoriaDado.prazo_retencao_meses` guardam prazos de retenção. O ER não diz qual vale quando os dois divergem | `ConfiguracaoOrganizacao`, `CategoriaDado` | RN-011, RF-062 |
-| I-08 | **Meta com dois indicadores de resultado.** `Meta.status` já tem `ATINGIDA` e `NAO_ATINGIDA`, e `Meta.atingida` repete a mesma informação | `Meta` | RF-047 |
-| I-09 | **Enumerações incompletas.** `ResultadoConsolidado.modalidade` usa `AGREGADO`, que não está em `ModalidadeAvaliacao`. `RegistroAuditoria.acao` e `ConfiguracaoCheckIn.frequencia` terminam em "...", sem a lista completa de valores | Seção 3.7 | RN-005, RNF-005, RF-041 |
-| I-10 | **Check-in sem ligação com metas e planos.** O RF-041 diz que os check-ins periódicos ficam vinculados às metas e aos planos de ação em andamento. `CheckIn` não tem FK para `Meta` nem para `PlanoAcao`; a ligação só existe indiretamente, pelo colaborador | `CheckIn` | RF-041 |
-| I-11 | **Visibilidade ampliada sem destinatários.** O RNF-002 permite ao emissor ampliar a visibilidade. O ER tem o valor `AMPLIADA`, mas não guarda para quem ela foi ampliada | `Feedback.visibilidade` | RNF-002 |
-| I-12 | **Compartilhamento de dados de menores.** A RN-016 manda compartilhar os dados de menores só no estritamente necessário. `CompartilhamentoDados` é definido por categoria de dado e não permite tratar os titulares menores de forma diferente | `CompartilhamentoDados` | RN-016 |
-| I-13 | **Dados sem entidade.** O RF-038 (sugerir horários livres) precisa conhecer a agenda das pessoas. A decisão DS-13 (lista de termos ofensivos mantida pelo administrador, RNF-024) e a decisão DS-06 (espera crescente e bloqueio após falhas de login, RNF-006) precisam guardar dados. Nenhum dos três tem entidade ou atributo no ER | ER | RF-038, RNF-024, RNF-006 |
-| I-14 | **Quem configura o modo de identificação.** O RF-030 dá essa função ao RH ou ao administrador, e este documento usa essa regra em `ModalidadeCiclo.modo_identificacao`. O caso de uso UC-13 inclui o modo de identificação entre as tarefas do gestor | Diagrama de casos de uso, UC-13 | RF-030 |
+| # | Inconsistência | Onde | Requisitos | Tratamento |
+|---|---|---|---|---|
+| I-01 | **Perfis sem diretoria nem encarregado.** O enumerado `Perfil` tem só os 4 perfis do RF-003. O Documento Visão (seção 3.3) lista a diretoria e o encarregado de dados como usuários, e o diagrama de casos de uso tem o ator Encarregado (DPO). Sem um perfil, o sistema não tem como dar a eles o acesso que o RNF-001 e o RF-061 preveem | `Perfil`, `PerfilColaborador` | RF-003, RNF-001, RF-061 | Resolvido. RF-003 na lista geral 1.1 e enumeração `Perfil` no ER 1.1 (ERS-D02) |
+| I-02 | **Emissor obrigatório e modo anônimo.** A RN-002 exige o emissor em todo feedback. No modo anônimo, o ER não guarda o emissor em lugar nenhum. A lista não registra essa exceção | `Feedback.emissor_id` | RN-002, RN-004 | Resolvido. Feedback nunca é anônimo; o anonimato só existe nas respostas de avaliação (ERS-D03) |
+| I-03 | **Edição no modo anônimo.** A RN-003 permite que o emissor edite o feedback. O ER aceita que, no modo anônimo, a resposta não possa ser editada, porque o sistema não sabe quem a escreveu (ER, seção 10). A lista não registra essa exceção | `VersaoFeedback`, `RespostaAvaliacao` | RN-003, RN-004 | Resolvido. A resposta anônima não pode ser alterada depois do envio, e o avaliador é avisado (ERS-D04, UC14-D02) |
+| I-04 | **Autor da versão expõe o emissor.** `VersaoFeedback.criada_por` guarda o emissor mesmo nos modos confidencial e anônimo. Isso contradiz a própria seção 10 do ER ("`emissor_id` fica nulo") e o RNF-003 (vínculo guardado à parte). O mesmo vale para o rascunho de feedback (`Feedback.status = RASCUNHO`): com `emissor_id` nulo, não há como saber de quem é o rascunho | `VersaoFeedback.criada_por`, `Feedback.status` | RNF-003, RN-004, RNF-012 | Resolvido no ER 1.1. `criada_por` nulo no modo confidencial; rascunho ligado ao autor até o envio |
+| I-05 | **Plano de ação revela o emissor.** O plano é feito em conjunto pelo emissor e pelo receptor (RN-006), e `PlanoAcao.emissor_id` guarda o emissor. Se o feedback construtivo vier de um par, da equipe ou da avaliação ascendente, o modo padrão é confidencial (RN-004), e o plano conjunto revela ao receptor quem emitiu | `PlanoAcao.emissor_id` | RN-004, RN-006, RF-042 | Resolvido. Plano definido pelo receptor e pelo gestor direto (RN-006 na lista geral 1.1, ERS-D05); `PlanoAcao.gestor_id` no ER 1.1 |
+| I-06 | **Pesos.** O RF-010 fala em pesos "aos feedbacks de um período e aos indicadores de um mesmo feedback". O ER põe `peso` em `CargoCompetencia`, `Pergunta`, `ModalidadeCiclo` e `Indicador`, mas não em `Feedback`. Os pesos de competência no cargo e de pergunta vão além do texto do requisito | Atributos `peso` | RF-010 | Resolvido no ER 1.1. `Feedback.peso`; pesos adicionais exibidos no cálculo (RN-008) |
+| I-07 | **Retenção em dois lugares.** `ConfiguracaoOrganizacao.retencao_pos_desligamento_meses` e `CategoriaDado.prazo_retencao_meses` guardam prazos de retenção. O ER não diz qual vale quando os dois divergem | `ConfiguracaoOrganizacao`, `CategoriaDado` | RN-011, RF-062 | Resolvido no ER 1.1. O prazo da categoria prevalece |
+| I-08 | **Meta com dois indicadores de resultado.** `Meta.status` já tem `ATINGIDA` e `NAO_ATINGIDA`, e `Meta.atingida` repete a mesma informação | `Meta` | RF-047 | Resolvido no ER 1.1. `Meta.atingida` removido |
+| I-09 | **Enumerações incompletas.** `ResultadoConsolidado.modalidade` usa `AGREGADO`, que não está em `ModalidadeAvaliacao`. `RegistroAuditoria.acao` e `ConfiguracaoCheckIn.frequencia` terminam em "...", sem a lista completa de valores | Seção 3.7 | RN-005, RNF-005, RF-041 | Resolvido no ER 1.1. Enumerações `AcaoAuditoria` e `FrequenciaCheckIn` e domínio de `ResultadoConsolidado.modalidade` |
+| I-10 | **Check-in sem ligação com metas e planos.** O RF-041 diz que os check-ins periódicos ficam vinculados às metas e aos planos de ação em andamento. `CheckIn` não tem FK para `Meta` nem para `PlanoAcao`; a ligação só existe indiretamente, pelo colaborador | `CheckIn` | RF-041 | Resolvido no ER 1.1. `CheckInMeta` e `CheckInPlano` |
+| I-11 | **Visibilidade ampliada sem destinatários.** O RNF-002 permite ao emissor ampliar a visibilidade. O ER tem o valor `AMPLIADA`, mas não guarda para quem ela foi ampliada | `Feedback.visibilidade` | RNF-002 | Resolvido no ER 1.1. `DestinatarioVisibilidade` |
+| I-12 | **Compartilhamento de dados de menores.** A RN-016 manda compartilhar os dados de menores só no estritamente necessário. `CompartilhamentoDados` é definido por categoria de dado e não permite tratar os titulares menores de forma diferente | `CompartilhamentoDados` | RN-016 | Resolvido no ER 1.1. `CompartilhamentoDados.inclui_menores` |
+| I-13 | **Dados sem entidade.** O RF-038 (sugerir horários livres) precisa conhecer a agenda das pessoas. A decisão DS-13 (lista de termos ofensivos mantida pelo administrador, RNF-024) e a decisão DS-06 (espera crescente e bloqueio após falhas de login, RNF-006) precisam guardar dados. Nenhum dos três tem entidade ou atributo no ER | ER | RF-038, RNF-024, RNF-006 | Resolvido no ER 1.1. `DisponibilidadeAgenda`, `TermoOfensivo` e controle de falhas de login em `Colaborador` |
+| I-14 | **Quem configura o modo de identificação.** O RF-030 dá essa função ao RH ou ao administrador, e este documento usa essa regra em `ModalidadeCiclo.modo_identificacao`. O caso de uso UC-13 inclui o modo de identificação entre as tarefas do gestor | Diagrama de casos de uso, UC-13 | RF-030 | Resolvido. Só o RH ou o administrador altera o modo; o gestor usa o padrão da RN-004 (ERS-D07, UC13-D02) |
 
 ### 5.3 Termos usados de forma diferente
 
-| # | Termo | Uso divergente | Proposta para este glossário |
-|---|---|---|---|
-| T-01 | **Modalidade** | A lista geral (seção 2.4) define modalidade como "quem avalia quem". O RF-013, a RN-002 e o atributo `Feedback.modalidade` usam a palavra para "formal ou informal". No ER, "quem avalia quem" é `Feedback.direcao` e `ModalidadeCiclo.modalidade` | Manter "modalidade" para "quem avalia quem", como na seção 2.4. Decidir com a equipe um termo para formal ou informal e ajustar a lista e o ER |
-| T-02 | **Check-in** | A lista geral (seção 2.4) chama de check-in o ponto de verificação do ciclo **e** o do plano de ação. No ER, o plano de ação usa `PontoMonitoramento`, e `CheckIn` vale só para ciclo e para check-in periódico | Check-in para o ciclo e o periódico; ponto de monitoramento para o plano, como no ER |
-| T-03 | **360° e equipe** | O RF-024 lista "de equipe (todos avaliam todos)" e "360°" como modalidades diferentes. A PO descreve o 360° também como "todos avaliam todos" (E01 §14, §21). O ER tem os dois valores e permite ainda combinar modalidades no mesmo ciclo | Diferença a definir com a PO. Hipótese: 360° é a combinação de gestor, ascendente, pares e autoavaliação em um ciclo |
-| T-04 | **Avaliador, participante convidado, emissor** | O ER usa `avaliador_id`; o RF-027 fala em "participante convidado"; o diagrama de casos de uso usa o ator "Avaliador convidado"; a lista geral (seção 2.4) usa "emissor" também para quem responde a uma avaliação | "Emissor" como termo geral; "avaliador convidado" para o papel no ciclo |
-| T-05 | **Receptor e avaliado** | A lista geral usa "receptor"; o ER usa `avaliado_id` nas entidades de ciclo | "Receptor" no feedback; "avaliado" no ciclo, como sinônimos |
-| T-06 | **Ciclo** | "Ciclo de feedback formal" (RF-022), "ciclo formal" (seção 2.4) e "ciclo de avaliação" (ER, casos de uso) | "Ciclo de avaliação", com os outros como sinônimos |
-| T-07 | **Encarregado** | "Encarregado" (RF-053), "encarregado de dados da organização" (RF-061), "Encarregado de dados (DPO)" (casos de uso) | "Encarregado", com "encarregado de dados" e "DPO" como sinônimos |
-| T-08 | **Nome do sistema** | A lista geral, a Especificação Suplementar e o diagrama de casos de uso usam "Sistema de Gestão de Competências (módulo de Feedback)". O Documento Visão e o ER usam "Sistema Web de Feedback e Gestão de Competências" | Este documento usa o nome do Documento Visão. Sugere-se padronizar nos demais |
+| # | Termo | Uso divergente | Proposta para este glossário | Tratamento |
+|---|---|---|---|---|
+| T-01 | **Modalidade** | A lista geral (seção 2.4) define modalidade como "quem avalia quem". O RF-013, a RN-002 e o atributo `Feedback.modalidade` usam a palavra para "formal ou informal". No ER, "quem avalia quem" é `Feedback.direcao` e `ModalidadeCiclo.modalidade` | Manter "modalidade" para "quem avalia quem", como na seção 2.4. No RF-013, na RN-002 e em `Feedback.modalidade`, ler a palavra como "formal ou informal" | Resolvido. Leitura padronizada na ERS-D09 (1) |
+| T-02 | **Check-in** | A lista geral (seção 2.4) chama de check-in o ponto de verificação do ciclo **e** o do plano de ação. No ER, o plano de ação usa `PontoMonitoramento`, e `CheckIn` vale só para ciclo e para check-in periódico | Check-in para o ciclo e o periódico; ponto de monitoramento para o plano, como no ER | Resolvido. Proposta adotada (ERS-D09 (2)) |
+| T-03 | **360° e equipe** | O RF-024 lista "de equipe (todos avaliam todos)" e "360°" como modalidades diferentes. A PO descreve o 360° também como "todos avaliam todos" (E01 §14, §21). O ER tem os dois valores e permite ainda combinar modalidades no mesmo ciclo | Na avaliação de equipe, todos os membros avaliam todos (RF-024). No 360°, o gestor seleciona ou convida os participantes, que precisam ser do seu time (RF-025) | Resolvido. Diferença tirada do texto do RF-024 e do RF-025 (ERS-D09 (3)) |
+| T-04 | **Avaliador, participante convidado, emissor** | O ER usa `avaliador_id`; o RF-027 fala em "participante convidado"; o diagrama de casos de uso usa o ator "Avaliador convidado"; a lista geral (seção 2.4) usa "emissor" também para quem responde a uma avaliação | "Emissor" como termo geral; "avaliador convidado" para o papel no ciclo | Resolvido. Proposta adotada (ERS-D09 (4)) |
+| T-05 | **Receptor e avaliado** | A lista geral usa "receptor"; o ER usa `avaliado_id` nas entidades de ciclo | "Receptor" no feedback; "avaliado" no ciclo, como sinônimos | Resolvido. Proposta adotada (ERS-D09 (5)) |
+| T-06 | **Ciclo** | "Ciclo de feedback formal" (RF-022), "ciclo formal" (seção 2.4) e "ciclo de avaliação" (ER, casos de uso) | "Ciclo de avaliação", com os outros como sinônimos | Resolvido. Proposta adotada (ERS-D09 (6)) |
+| T-07 | **Encarregado** | "Encarregado" (RF-053), "encarregado de dados da organização" (RF-061), "Encarregado de dados (DPO)" (casos de uso) | "Encarregado", com "encarregado de dados" e "DPO" como sinônimos | Resolvido. Proposta adotada (ERS-D09 (7)) |
+| T-08 | **Nome do sistema** | A lista geral, a Especificação Suplementar e o diagrama de casos de uso usam "Sistema Web de Feedback e Gestão de Competências". O Documento Visão e o ER usam "Sistema Web de Feedback e Gestão de Competências" | Este documento usa o nome do Documento Visão, padronizado nos demais | Resolvido. Nome do Documento Visão adotado (ERS-D01) e padronizado nos cabeçalhos dos artefatos na revisão final |
 
 ---
 

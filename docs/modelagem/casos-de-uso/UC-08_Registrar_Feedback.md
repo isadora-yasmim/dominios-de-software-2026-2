@@ -1,15 +1,22 @@
 # UC-08 Registrar feedback
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
-**Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.0 · **Data:** 17/11/2026
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
+**Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.1 · **Data:** 17/11/2026
 **Responsável:** Davi Augusto Ferreira de Carvalho
 **Prioridade:** Must · **Área:** Feedback do dia a dia · [Diagrama](Diagrama_Casos_de_Uso.md#42-feedback-do-dia-a-dia) · [Modelo e convenções](Casos_de_Uso_Completos.md)
+
+## Histórico de revisões
+
+| Versão | Data | Descrição | Autor |
+|---|---|---|---|
+| 1.0 | 17/11/2026 | Versão inicial | Davi Augusto Ferreira de Carvalho |
+| 1.1 | 17/11/2026 | Revisão final (#55): as decisões UC08-D01 e UC08-D02 passam a indicar que o impacto no modelo ER foi aplicado na versão 1.1 do modelo; nome do produto padronizado | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
 ## 1. Escopo
 
-Sistema de Feedback e Gestão de Competências.
+Sistema Web de Feedback e Gestão de Competências.
 
 ## 2. Nível
 
@@ -193,8 +200,8 @@ O cenário descreve o caso mais comum: o gestor registra um feedback informal pa
 
 | # | Questão | Decisão | Justificativa |
 |---|---|---|---|
-| UC08-D01 | O receptor é avisado quando recebe um feedback? | Sim, por aviso dentro do sistema, ao enviar e ao editar. **Impacto no modelo ER (#52):** acrescentar o valor `FEEDBACK_RECEBIDO` à enumeração `TipoNotificacao` | Sem aviso, o reconhecimento rápido (RF-015) não chegaria a quem foi reconhecido, e ele substitui a mensagem de WhatsApp que a E02 usa hoje (E02 §2). O canal segue a DS-10. O aviso não leva o conteúdo, só indica que há um feedback novo no histórico (RNF-002) |
-| UC08-D02 | Como registrar fatos sobre uma equipe, se `Fato` só tem um colaborador observado (`observado_id`)? | O feedback para equipe aceita fatos de qualquer membro. **Impacto no modelo ER (#52):** acrescentar `observado_equipe_id` a `Fato`, para fatos sobre a equipe como um todo, como "o time atrasou as entregas do mês" | RN-002 exige pelo menos um fato em todo feedback, e RN-001 exige que o fato seja sobre o receptor. Sem o campo, um feedback para a equipe teria de usar fatos de uma pessoa só, o que mistura problema individual com problema do grupo |
+| UC08-D01 | O receptor é avisado quando recebe um feedback? | Sim, por aviso dentro do sistema, ao enviar e ao editar. **Impacto no modelo ER (#52), aplicado na versão 1.1 do modelo:** acrescentar o valor `FEEDBACK_RECEBIDO` à enumeração `TipoNotificacao` | Sem aviso, o reconhecimento rápido (RF-015) não chegaria a quem foi reconhecido, e ele substitui a mensagem de WhatsApp que a E02 usa hoje (E02 §2). O canal segue a DS-10. O aviso não leva o conteúdo, só indica que há um feedback novo no histórico (RNF-002) |
+| UC08-D02 | Como registrar fatos sobre uma equipe, se `Fato` só tem um colaborador observado (`observado_id`)? | O feedback para equipe aceita fatos de qualquer membro. **Impacto no modelo ER (#52), aplicado na versão 1.1 do modelo:** acrescentar `observado_equipe_id` a `Fato`, para fatos sobre a equipe como um todo, como "o time atrasou as entregas do mês" | RN-002 exige pelo menos um fato em todo feedback, e RN-001 exige que o fato seja sobre o receptor. Sem o campo, um feedback para a equipe teria de usar fatos de uma pessoa só, o que mistura problema individual com problema do grupo |
 | UC08-D03 | O receptor vê as versões anteriores de um feedback editado? | Sim. O receptor e o RH veem a versão vigente, com a indicação de que foi editada, e podem consultar as anteriores | O feedback é registro oficial (E01 §20). Se o receptor já registrou uma réplica sobre a versão anterior (RF-020), uma edição silenciosa mudaria o sentido da réplica. RN-003 guarda as versões, e esta decisão define quem as vê |
 | UC08-D04 | Qual o modo de identificação de um feedback dado fora de um ciclo? | Segue o padrão de RN-004 pela direção: gestor → colaborador e outra área, **identificado**; entre pares e ascendente, **confidencial**. O modo anônimo só existe em ciclos | RF-030 configura o modo por ciclo e modalidade, então fora de um ciclo vale o padrão de RN-004. Se a solicitação de feedback (UC-09) tiver um único destinatário, o aviso do passo 9 lembra que o solicitante pode deduzir quem respondeu (RF-019) |
 | UC08-D05 | A data do feedback pode ser diferente da data do registro? | Sim, pode ser anterior, mas não futura | A conversa costuma acontecer antes do registro: a PO comunica o feedback e depois registra (E01 §1), e a E02 conversa no fim do expediente (E02 §2). Uma data futura não descreve um feedback já dado. Para marcar uma conversa futura existe o UC-11 |

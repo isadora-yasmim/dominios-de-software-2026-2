@@ -1,6 +1,6 @@
 # Síntese dos Requisitos do Sistema Análogo – 15Five
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Técnica de elicitação:** Análise de sistema análogo
 **Issue:** #43 · **Data:** 17/11/2026
 **Entrada:** [Sistema_Analogo_15Five.md](Sistema_Analogo_15Five.md) (funcionalidades `FA-01` a `FA-27`)
@@ -15,7 +15,7 @@
 3. [Requisitos candidatos](#3-requisitos-candidatos)
 4. [Funcionalidades descartadas](#4-funcionalidades-descartadas)
 5. [Requisitos que vêm das falhas do 15Five](#5-requisitos-que-vêm-das-falhas-do-15five)
-6. [Pontos a validar com a PO](#6-pontos-a-validar-com-a-po)
+6. [Pontos em aberto e tratamento na lista geral](#6-pontos-em-aberto-e-tratamento-na-lista-geral)
 
 ---
 
@@ -134,10 +134,12 @@ Os pontos fracos levantados na [seção 7 da descrição](Sistema_Analogo_15Five
 
 ---
 
-## 6. Pontos a validar com a PO
+## 6. Pontos em aberto e tratamento na lista geral
 
-1. **Registro de fatos antes do feedback (RA-02).** A PO falou em coletar e registrar fatos e depois ligá-los a um feedback. Confirmar se esse registro prévio deve ser uma função própria ou só um campo do feedback.
-2. **Check-ins periódicos (RA-01).** Confirmar se o acompanhamento entre sessões de feedback deve existir para todos os colaboradores ou só para quem tem plano de ação aberto.
-3. **Indicação de pares (RA-11).** Confirmar se quem indica os pares é o avaliado, o gestor ou o RH.
-4. **Moderação pelo RH (RA-13).** Confirmar se o RH pode ocultar respostas inadequadas antes da liberação, já que a PO disse que feedback não pode ser apagado.
-5. **Feedback positivo rápido (RA-03).** Confirmar se o feedback informal positivo precisa ter fatos obrigatórios como os demais (RA-24) ou se pode ter um formulário simplificado.
+Os pontos abaixo ficaram em aberto ao fim desta síntese. Todos foram decididos na consolidação da [lista geral](../../Lista_Geral_Requisitos.md) (#45), como indicado em cada item.
+
+1. **Registro de fatos antes do feedback (RA-02).** A PO falou em coletar e registrar fatos e depois ligá-los a um feedback. Confirmar se esse registro prévio deve ser uma função própria ou só um campo do feedback. **Tratamento:** conflito C-05 da lista geral, função própria de registro de fatos (RF-011).
+2. **Check-ins periódicos (RA-01).** Confirmar se o acompanhamento entre sessões de feedback deve existir para todos os colaboradores ou só para quem tem plano de ação aberto. **Tratamento:** ponto P-09, o gestor define para quais colaboradores da equipe os check-ins valem (RF-041).
+3. **Indicação de pares (RA-11).** Confirmar se quem indica os pares é o avaliado, o gestor ou o RH. **Tratamento:** conflito C-01, o gestor seleciona os participantes do seu time (RF-025).
+4. **Moderação pelo RH (RA-13).** Confirmar se o RH pode ocultar respostas inadequadas antes da liberação, já que a PO disse que feedback não pode ser apagado. **Tratamento:** ponto P-07, o RH pode ocultar sem apagar, com auditoria e aviso ao emissor (RF-035).
+5. **Feedback positivo rápido (RA-03).** Confirmar se o feedback informal positivo precisa ter fatos obrigatórios como os demais (RA-24) ou se pode ter um formulário simplificado. **Tratamento:** conflito C-04, formulário simplificado com fato obrigatório (RF-015, RN-002).

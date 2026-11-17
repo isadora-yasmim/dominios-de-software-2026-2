@@ -1,6 +1,6 @@
 # Síntese dos Requisitos das Entrevistas
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Técnica de elicitação:** Entrevista semiestruturada
 **Issue:** #41 · **Data:** 17/11/2026
 **Artefatos relacionados:** [Requisitos_Entrevistas.csv](Requisitos_Entrevistas.csv) (mesmas tabelas da seção 3, para a lista geral e a matriz de rastreabilidade)
@@ -22,7 +22,7 @@
 2. [Principais achados](#2-principais-achados)
 3. [Requisitos candidatos](#3-requisitos-candidatos)
 4. [Resumo](#4-resumo)
-5. [Pontos a validar com a PO](#5-pontos-a-validar-com-a-po)
+5. [Pontos em aberto e tratamento na lista geral](#5-pontos-em-aberto-e-tratamento-na-lista-geral)
 6. [Limitações](#6-limitações)
 
 ---
@@ -150,20 +150,22 @@
 
 ---
 
-## 5. Pontos a validar com a PO
+## 5. Pontos em aberto e tratamento na lista geral
 
-| # | Tema | O que as fontes dizem | Proposta |
-|---|---|---|---|
-| 1 | RH vê todos os feedbacks? | A PO diz que sim, inclusive quem emitiu (E01 §11). Na E02, só a gestora e a pessoa veem (E02 §6) | Manter a visão da PO (RE-29), já que a E02 descreve uma organização sem RH próprio |
-| 2 | Anonimato entre pares | A PO prefere transparência, mas aceita omitir o emissor entre pares (E01 §11). A E02 prefere anônimo (E02 §6). Se o RH vê o emissor, o modo é "confidencial", não "anônimo" (RD-15, RD-16) | Validar qual modo vale para pares e para a avaliação ascendente. A E02 diria a verdade ao superior mesmo identificada (E02 §6), ao contrário dos questionários (sinceridade 1,5/5) |
-| 3 | Relato de terceiros (RE-05) | A E02 recebe relatos de colegas (E02 §3). A PO exige fatos observados pelo emissor (RE-31) | Aceitar o relato só como fato registrado pelo gestor, marcado como relato, depois de ele verificar por conta própria (como a E02 já faz, §4) |
-| 4 | Edição de feedback | A PO só disse que não se pode excluir (E01 §20). A pesquisa documental pede versionamento das edições (RD-47) | Confirmar se a edição é permitida e se mantém a versão anterior |
-| 5 | Uma ou várias organizações | A PO primeiro falou em várias empresas e depois em "uma empresa específica" (E01 §25, §31) | Confirmar RE-37 e se o sistema será instalado na intranet ou oferecido como serviço (RD-23, RD-25) |
-| 6 | Prazo de retenção | A PO disse "talvez cinco anos", sem norma definida (E01 §37) | Confirmar o prazo e o que acontece depois: eliminação ou anonimização (RD-24) |
-| 7 | Sugestão de horários (RE-09) | Só a E02 pediu. Depende de o sistema conhecer a agenda dos usuários | Validar se entra no escopo ou se basta o agendamento com lembrete (RE-08) |
-| 8 | Problemas por cargo (RE-26) | A E02 quer consultar problemas do cargo depois que a pessoa sai | Mostrar só dados agregados e sem identificar o antigo ocupante (RD-49) |
-| 9 | Quem escolhe os avaliadores do 360° | A PO diz que é o gestor (E01 §21). O RA-11, na síntese do sistema análogo, diz que é o avaliado | Seguir a PO (RE-19) e corrigir o RA-11 na lista geral |
-| 10 | Escopo da arquitetura | A PO disse que a arquitetura pode se limitar a gestor e colaborador (E01 §24) | Usar essa informação ao priorizar as modalidades da RE-18 na lista geral |
+Os pontos abaixo ficaram em aberto ao fim desta síntese. Todos foram decididos na consolidação da [lista geral](../../Lista_Geral_Requisitos.md) (#45), como mostra a última coluna.
+
+| # | Tema | O que as fontes dizem | Proposta | Tratamento na lista geral |
+|---|---|---|---|---|
+| 1 | RH vê todos os feedbacks? | A PO diz que sim, inclusive quem emitiu (E01 §11). Na E02, só a gestora e a pessoa veem (E02 §6) | Manter a visão da PO (RE-29), já que a E02 descreve uma organização sem RH próprio | Conflito C-03: união das listas da E01 e dos questionários (RNF-001) |
+| 2 | Anonimato entre pares | A PO prefere transparência, mas aceita omitir o emissor entre pares (E01 §11). A E02 prefere anônimo (E02 §6). Se o RH vê o emissor, o modo é "confidencial", não "anônimo" (RD-15, RD-16) | Validar qual modo vale para pares e para a avaliação ascendente. A E02 diria a verdade ao superior mesmo identificada (E02 §6), ao contrário dos questionários (sinceridade 1,5/5) | Ponto P-01: confidencial como padrão, anônimo como opção por ciclo (RN-004, RF-030) |
+| 3 | Relato de terceiros (RE-05) | A E02 recebe relatos de colegas (E02 §3). A PO exige fatos observados pelo emissor (RE-31) | Aceitar o relato só como fato registrado pelo gestor, marcado como relato, depois de ele verificar por conta própria (como a E02 já faz, §4) | Ponto P-06: relato marcado e confirmado pelo gestor (RF-012) |
+| 4 | Edição de feedback | A PO só disse que não se pode excluir (E01 §20). A pesquisa documental pede versionamento das edições (RD-47) | Confirmar se a edição é permitida e se mantém a versão anterior | Ponto P-04: edição permitida, com versões (RN-003) |
+| 5 | Uma ou várias organizações | A PO primeiro falou em várias empresas e depois em "uma empresa específica" (E01 §25, §31) | Confirmar RE-37 e se o sistema será instalado na intranet ou oferecido como serviço (RD-23, RD-25) | Conflito C-07: uma organização por instalação (RN-010) |
+| 6 | Prazo de retenção | A PO disse "talvez cinco anos", sem norma definida (E01 §37) | Confirmar o prazo e o que acontece depois: eliminação ou anonimização (RD-24) | Ponto P-05: 5 anos, configurável; depois, eliminar ou anonimizar (RN-011, RF-062) |
+| 7 | Sugestão de horários (RE-09) | Só a E02 pediu. Depende de o sistema conhecer a agenda dos usuários | Validar se entra no escopo ou se basta o agendamento com lembrete (RE-08) | Conflito C-12: sugestão de horários como Could (RF-038) |
+| 8 | Problemas por cargo (RE-26) | A E02 quer consultar problemas do cargo depois que a pessoa sai | Mostrar só dados agregados e sem identificar o antigo ocupante (RD-49) | Ponto P-08: só dados agregados (RF-052) |
+| 9 | Quem escolhe os avaliadores do 360° | A PO diz que é o gestor (E01 §21). O RA-11, na síntese do sistema análogo, diz que é o avaliado | Seguir a PO (RE-19) e corrigir o RA-11 na lista geral | Conflito C-01: o gestor escolhe os avaliadores (RF-025) |
+| 10 | Escopo da arquitetura | A PO disse que a arquitetura pode se limitar a gestor e colaborador (E01 §24) | Usar essa informação ao priorizar as modalidades da RE-18 na lista geral | Seção 12 da lista geral (Limitações): a redução do escopo fica para a segunda etapa, sem alterar a lista |
 
 ---
 

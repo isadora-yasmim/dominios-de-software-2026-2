@@ -1,6 +1,6 @@
 # Pesquisa Documental – LGPD, ISO/IEC 25010 e regulamentações
 
-**Projeto:** Sistema de Gestão de Competências (módulo de Feedback)
+**Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Técnica de elicitação:** Pesquisa documental (leis, regulamentos, normas técnicas)
 **Issue:** #33 · **Data de referência da pesquisa:** 12/11/2026
 **Artefatos relacionados:** [Requisitos_Pesquisa_Documental.md](Requisitos_Pesquisa_Documental.md) (mesma tabela da seção 7, para a matriz de rastreabilidade)
@@ -18,7 +18,7 @@
 5. [Normas trabalhistas e de RH](#5-normas-trabalhistas-e-de-rh)
 6. [Acessibilidade web e responsividade](#6-acessibilidade-web-e-responsividade)
 7. [Requisitos extraídos](#7-requisitos-extraídos)
-8. [Conflitos e pontos a validar](#8-conflitos-e-pontos-a-validar)
+8. [Conflitos e pontos em aberto](#8-conflitos-e-pontos-em-aberto)
 9. [Referências](#9-referências)
 
 ---
@@ -319,19 +319,21 @@ Total de **59 requisitos candidatos**. Os mesmos dados estão em [Requisitos_Pes
 
 ---
 
-## 8. Conflitos e pontos a validar
+## 8. Conflitos e pontos em aberto
 
-| # | Ponto | Fontes em tensão | Proposta | Validar com |
-|---|---|---|---|---|
-| 1 | **RQ-12 x RD-03.** O Questionário 01 derivou "registrar consentimento antes da coleta". No sistema, porém, o consentimento não deve ser a base padrão no contexto de emprego | RQ-12; LGPD arts. 7º e 8º; FD-06 | Manter RQ-12 apenas para funcionalidades opcionais (RD-04) e usar RD-03 como regra geral | PO / grupo (issue #45) |
-| 2 | **Quem vê a identidade do emissor.** A PO disse que o RH pode ver quem deu o feedback e que, no feedback formal, o receptor sabe quem é o emissor. Já o RQ-13 pede que nenhum perfil veja o autor de uma avaliação anônima, e as respondentes deram nota 1/5 e 2/5 para a sinceridade com o gestor identificado | Entrevista 01 §11 e §32; RQ-04; RQ-13; LGPD art. 6º VI | Três modos por tipo de feedback (RD-15) e rótulo honesto (RD-16). Se o RH puder ver, o modo se chama "confidencial", não "anônimo" | PO |
-| 3 | **Direito de acesso x identidade do emissor confidencial.** Ao pedir acesso aos seus dados (art. 18), o avaliado poderia querer saber quem o avaliou | LGPD art. 18 II; RD-15 | Entregar o conteúdo sem a identidade de emissores confidenciais, com a justificativa registrada no RIPD (os direitos de um titular não anulam os de outro) | PO; em projeto real, jurídico |
-| 4 | **Prazo padrão de retenção** | CLT art. 11; LGPD art. 16 | Padrão sugerido: duração do contrato + 2 anos, configurável (RD-24) | PO |
-| 5 | **Número mínimo de respondentes** para exibir agregados | FD-07; RQ-14 | Sugestão: 3, configurável (RD-17) | PO |
-| 6 | **Uso dos resultados para promoção ou salário** | Entrevista 01 §8; CLT art. 461; Lei nº 14.611/2023 | Fora do escopo; RD-46 limita o sistema a apoiar, sem calcular | PO |
-| 7 | **Metas numéricas dos RNF** (desempenho, disponibilidade, RPO/RTO) | ISO/IEC 25010 | Valores propostos em RD-31 a RD-34 | Grupo (issue #51) |
-| 8 | **Regulamentação pendente.** A ANPD ainda não publicou o regulamento de direitos do titular (portabilidade, prazos e formatos), que está na Agenda Regulatória | FD-08 | Projetar RD-07 a RD-13 de forma configurável e revisar quando o regulamento sair | Grupo |
-| 9 | **Diretoria vendo resultados individuais.** O Questionário 02 incluiu a Diretoria entre quem vê o resultado; o Questionário 01 e a PO citam só avaliado, gestor direto e RH | RQ-05; Questionário 02 §9; LGPD art. 6º III | Diretoria vê apenas indicadores agregados, respeitando o mínimo de respondentes (RD-14, RD-17) | PO |
+Os pontos abaixo ficaram em aberto ao fim da pesquisa documental. Todos foram tratados na consolidação dos requisitos, como mostra a última coluna.
+
+| # | Ponto | Fontes em tensão | Proposta | Validar com | Tratamento |
+|---|---|---|---|---|---|
+| 1 | **RQ-12 x RD-03.** O Questionário 01 derivou "registrar consentimento antes da coleta". No sistema, porém, o consentimento não deve ser a base padrão no contexto de emprego | RQ-12; LGPD arts. 7º e 8º; FD-06 | Manter RQ-12 apenas para funcionalidades opcionais (RD-04) e usar RD-03 como regra geral | PO / grupo (issue #45) | Conflito C-06 da lista geral: proposta adotada (RN-012, RF-055) |
+| 2 | **Quem vê a identidade do emissor.** A PO disse que o RH pode ver quem deu o feedback e que, no feedback formal, o receptor sabe quem é o emissor. Já o RQ-13 pede que nenhum perfil veja o autor de uma avaliação anônima, e as respondentes deram nota 1/5 e 2/5 para a sinceridade com o gestor identificado | Entrevista 01 §11 e §32; RQ-04; RQ-13; LGPD art. 6º VI | Três modos por tipo de feedback (RD-15) e rótulo honesto (RD-16). Se o RH puder ver, o modo se chama "confidencial", não "anônimo" | PO | Ponto P-01 da lista geral: confidencial como padrão, anônimo como opção por ciclo (RN-004, RF-030) |
+| 3 | **Direito de acesso x identidade do emissor confidencial.** Ao pedir acesso aos seus dados (art. 18), o avaliado poderia querer saber quem o avaliou | LGPD art. 18 II; RD-15 | Entregar o conteúdo sem a identidade de emissores confidenciais, com a justificativa registrada no RIPD (os direitos de um titular não anulam os de outro) | PO; em projeto real, jurídico | Conflito C-13 da lista geral: proposta adotada (RF-056) |
+| 4 | **Prazo padrão de retenção** | CLT art. 11; LGPD art. 16 | Padrão sugerido: duração do contrato + 2 anos, configurável (RD-24) | PO | Ponto P-05 da lista geral: 5 anos após o desligamento, configurável (RN-011, RF-062) |
+| 5 | **Número mínimo de respondentes** para exibir agregados | FD-07; RQ-14 | Sugestão: 3, configurável (RD-17) | PO | Ponto P-03 da lista geral: 3, configurável, nunca menor que 3 (RN-005) |
+| 6 | **Uso dos resultados para promoção ou salário** | Entrevista 01 §8; CLT art. 461; Lei nº 14.611/2023 | Fora do escopo; RD-46 limita o sistema a apoiar, sem calcular | PO | Fora do escopo (lista geral, seção 10; RN-007) |
+| 7 | **Metas numéricas dos RNF** (desempenho, disponibilidade, RPO/RTO) | ISO/IEC 25010 | Valores propostos em RD-31 a RD-34 | Grupo (issue #51) | Ponto P-10 da lista geral e [especificação suplementar](../../Especificacao_Suplementar.md) (#51) |
+| 8 | **Regulamentação pendente.** A ANPD ainda não publicou o regulamento de direitos do titular (portabilidade, prazos e formatos), que está na Agenda Regulatória | FD-08 | Projetar RD-07 a RD-13 de forma configurável e revisar quando o regulamento sair | Grupo | Requisitos configuráveis (RF-054, RF-062); decisão ERS-D10 da especificação IEEE 830 |
+| 9 | **Diretoria vendo resultados individuais.** O Questionário 02 incluiu a Diretoria entre quem vê o resultado; o Questionário 01 e a PO citam só avaliado, gestor direto e RH | RQ-05; Questionário 02 §9; LGPD art. 6º III | Diretoria vê apenas indicadores agregados, respeitando o mínimo de respondentes (RD-14, RD-17) | PO | Ponto P-02 da lista geral: proposta adotada (RNF-001) |
 
 ---
 
