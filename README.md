@@ -53,7 +53,7 @@ O sistema deve permitir:
 | 6 | Descrição do sistema análogo | [`docs/elicitacao/sistema-analogo/`](docs/elicitacao/sistema-analogo/) | #11 |
 | 7 | Processo de negócio em BPMN (AS-IS e dores) | [`docs/elicitacao/bpmn/`](docs/elicitacao/bpmn/) | #15 |
 | **Análise** ||||
-| 8 | Síntese dos requisitos das entrevistas | [`docs/`](docs/) | #12 |
+| 8 | Síntese dos requisitos das entrevistas | [`docs/elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md`](docs/elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md) | #41 |
 | 9 | Síntese dos requisitos dos questionários | [`docs/`](docs/) | #13 |
 | 10 | Síntese dos requisitos do sistema análogo | [`docs/elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md`](docs/elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | #43 |
 | 11 | Lista de requisitos — geral | [`docs/`](docs/) | #16 |
