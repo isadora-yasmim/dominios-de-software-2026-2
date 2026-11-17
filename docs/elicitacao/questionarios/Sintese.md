@@ -56,6 +56,7 @@ Nenhum tipo de feedback formal ou construtivo aparece como "frequente". O reconh
 | Falta de tempo para avaliar | | ✔ | 1 |
 
 ![Problemas do processo atual (nº de citações)](../../assets/problemas_processo_atual.png)
+
 ### 1.5 Utilidade dos recursos propostos
 
 Pontuação usada: Muito útil = 4 · Útil = 3 · Pouco útil = 2 · Nada útil = 1.
@@ -192,6 +193,8 @@ Legenda da coluna **Fonte:** Q01 = questionário de Isabella; Q02 = questionári
 | Lembretes | Pouco útil | Útil | Manter RQ-21 com opção de desativar |
 | Tempo para avaliar | 10 a 20 min | Mais de 20 min | Manter limite de 20 min (RQ-11) |
 | Número mínimo de respondentes (RQ-14) | – | – | Definir o valor com a cliente |
+| Consentimento como base legal (RQ-12) | – | – | A pesquisa documental (RD-03) mostra que, na relação de emprego, o consentimento não deve ser a base padrão. Manter RQ-12 só para funcionalidades opcionais (RD-04) |
+| "Anônimo" × RH vendo o emissor (RQ-04, RQ-13) | – | – | A PO disse que o RH pode ver quem deu o feedback (Entrevista 01 §11). Se o RH puder ver, o modo é "confidencial", não "anônimo" (RD-15, RD-16). Validar com a PO qual dos dois vale para a avaliação ascendente |
 
 ---
 
