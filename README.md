@@ -56,7 +56,7 @@ O sistema deve permitir:
 | 8 | Síntese dos requisitos das entrevistas | [`docs/elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md`](docs/elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md) | #41 |
 | 9 | Síntese dos requisitos dos questionários | [`docs/`](docs/) | #13 |
 | 10 | Síntese dos requisitos do sistema análogo | [`docs/elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md`](docs/elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | #43 |
-| 11 | Lista de requisitos — geral | [`docs/`](docs/) | #16 |
+| 11 | Lista de requisitos — geral | [`docs/Lista_Geral_Requisitos.md`](docs/Lista_Geral_Requisitos.md) | #45 |
 | 12 | Matriz de rastreabilidade (horizontal e vertical) | [`docs/`](docs/) | #20 |
 | **Especificação** ||||
 | 13 | Documento Visão (Larman, cap. 7) | [`docs/`](docs/) | #17 |
