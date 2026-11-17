@@ -1,0 +1,421 @@
+' Diagramas de casos de uso - Sistema de Feedback e Gestao de Competencias
+' Issue #47 - base: Lista Geral de Requisitos (#45)
+' Renderizar: java -jar plantuml.jar -charset UTF-8 -tpng -tsvg Diagrama_Casos_de_Uso.puml
+' Gera uma imagem por diagrama, com o nome indicado em @startuml
+
+@startuml UC_00_Visao_Geral
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam actorStyle awesome
+skinparam ArrowColor #444444
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #2F5597
+}
+skinparam rectangle {
+  BorderColor #2F5597
+  BorderThickness 2
+}
+skinparam package {
+  BorderColor #9DA9BF
+  FontColor #2F5597
+}
+
+title Visão geral dos casos de uso
+
+actor "Colaborador" as COL
+actor "Gestor" as GES
+actor "Avaliador\nconvidado" as AVA
+actor "RH" as RH
+actor "Administrador" as ADM
+actor "Encarregado de\ndados (DPO)" as DPO
+actor "Relógio do\nsistema" <<tempo>> as REL
+GES -|> COL
+
+rectangle "Sistema de Feedback e Gestão de Competências" {
+  package "Organização e parâmetros" {
+    usecase "UC-01\nManter colaboradores\ne estrutura" as UC01
+    usecase "UC-02\nImportar cadastro\npor planilha" as UC02
+    usecase "UC-03\nManter competências\ndos cargos" as UC03
+    usecase "UC-04\nAtribuir competências\nespecíficas" as UC04
+    usecase "UC-05\nManter questionários\nde avaliação" as UC05
+  }
+  package "Feedback do dia a dia" {
+    usecase "UC-06\nRegistrar fato\nobservado" as UC06
+    usecase "UC-07\nRegistrar relato\nde colega" as UC07
+    usecase "UC-08\nRegistrar feedback" as UC08
+    usecase "UC-09\nSolicitar feedback" as UC09
+    usecase "UC-10\nRegistrar réplica" as UC10
+    usecase "UC-11\nAgendar sessão\nde feedback" as UC11
+    usecase "UC-12\nAvaliar sessão\nde feedback" as UC12
+  }
+  package "Ciclo de avaliação formal" {
+    usecase "UC-13\nPlanejar ciclo\nde avaliação" as UC13
+    usecase "UC-14\nResponder avaliação" as UC14
+    usecase "UC-15\nAcompanhar e\nencerrar ciclo" as UC15
+    usecase "UC-16\nConsolidar resultados\ndo ciclo" as UC16
+    usecase "UC-17\nModerar resposta\ninadequada" as UC17
+    usecase "UC-18\nRegistrar check-in" as UC18
+  }
+  package "Plano de ação e metas" {
+    usecase "UC-19\nCriar plano de ação" as UC19
+    usecase "UC-20\nAcompanhar\nplano de ação" as UC20
+    usecase "UC-21\nDefinir metas de\ndesenvolvimento" as UC21
+  }
+  package "Histórico e análise" {
+    usecase "UC-22\nConsultar meu painel\nde desenvolvimento" as UC22
+    usecase "UC-23\nConsultar painéis da\nequipe e da organização" as UC23
+    usecase "UC-24\nExportar histórico\nde colaborador" as UC24
+  }
+  package "Privacidade (LGPD)" {
+    usecase "UC-25\nExercer direitos\nde titular" as UC25
+    usecase "UC-26\nGerenciar\nconsentimentos" as UC26
+    usecase "UC-27\nTratar solicitações\nde titulares" as UC27
+    usecase "UC-28\nConfigurar privacidade\ne retenção" as UC28
+    usecase "UC-29\nRegistrar incidente\nde segurança" as UC29
+  }
+  package "Rotinas automáticas" {
+    usecase "UC-30\nAplicar política\nde retenção" as UC30
+    usecase "UC-31\nEnviar lembretes\ne notificações" as UC31
+  }
+}
+
+COL --> UC06
+COL --> UC08
+COL --> UC09
+COL --> UC10
+COL --> UC11
+COL --> UC12
+COL --> UC20
+COL --> UC21
+COL --> UC22
+COL --> UC25
+COL --> UC26
+GES --> UC04
+GES --> UC05
+GES --> UC07
+GES --> UC13
+GES --> UC15
+GES --> UC18
+GES --> UC19
+GES --> UC23
+AVA --> UC14
+UC01 <-- RH
+UC03 <-- RH
+UC05 <-- RH
+UC13 <-- RH
+UC15 <-- RH
+UC17 <-- RH
+UC23 <-- RH
+UC24 <-- RH
+UC27 <-- RH
+UC01 <-- ADM
+UC03 <-- ADM
+UC28 <-- ADM
+UC27 <-- DPO
+UC29 <-- DPO
+UC30 <-- REL
+UC31 <-- REL
+UC02 .> UC01 : <<extend>>
+UC07 .> UC06 : <<extend>>
+UC19 .> UC08 : <<extend>>
+UC17 .> UC15 : <<extend>>
+UC15 .> UC16 : <<include>>
+@enduml
+
+@startuml UC_01_Organizacao
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam actorStyle awesome
+skinparam ArrowColor #444444
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #2F5597
+}
+skinparam rectangle {
+  BorderColor #2F5597
+  BorderThickness 2
+}
+skinparam package {
+  BorderColor #9DA9BF
+  FontColor #2F5597
+}
+
+title Organização e parâmetros
+
+actor "Colaborador" as COL
+actor "Gestor" as GES
+actor "RH" as RH
+actor "Administrador" as ADM
+GES -|> COL
+
+rectangle "Sistema de Feedback e Gestão de Competências" {
+  usecase "UC-01\nManter colaboradores\ne estrutura" as UC01
+  usecase "UC-02\nImportar cadastro\npor planilha" as UC02
+  usecase "UC-03\nManter competências\ndos cargos" as UC03
+  usecase "UC-04\nAtribuir competências\nespecíficas" as UC04
+  usecase "UC-05\nManter questionários\nde avaliação" as UC05
+}
+
+GES --> UC04
+GES --> UC05
+UC01 <-- RH
+UC03 <-- RH
+UC05 <-- RH
+UC01 <-- ADM
+UC03 <-- ADM
+UC02 .> UC01 : <<extend>>
+@enduml
+
+@startuml UC_02_Feedback
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam actorStyle awesome
+skinparam ArrowColor #444444
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #2F5597
+}
+skinparam rectangle {
+  BorderColor #2F5597
+  BorderThickness 2
+}
+skinparam package {
+  BorderColor #9DA9BF
+  FontColor #2F5597
+}
+
+title Feedback do dia a dia
+
+actor "Colaborador" as COL
+actor "Gestor" as GES
+GES -|> COL
+
+rectangle "Sistema de Feedback e Gestão de Competências" {
+  usecase "UC-06\nRegistrar fato\nobservado" as UC06
+  usecase "UC-07\nRegistrar relato\nde colega" as UC07
+  usecase "UC-08\nRegistrar feedback" as UC08
+  usecase "UC-09\nSolicitar feedback" as UC09
+  usecase "UC-10\nRegistrar réplica" as UC10
+  usecase "UC-11\nAgendar sessão\nde feedback" as UC11
+  usecase "UC-12\nAvaliar sessão\nde feedback" as UC12
+}
+
+COL --> UC06
+COL --> UC08
+COL --> UC09
+COL --> UC10
+COL --> UC11
+COL --> UC12
+GES --> UC07
+UC07 .> UC06 : <<extend>>
+@enduml
+
+@startuml UC_03_Ciclo_Formal
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam actorStyle awesome
+skinparam ArrowColor #444444
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #2F5597
+}
+skinparam rectangle {
+  BorderColor #2F5597
+  BorderThickness 2
+}
+skinparam package {
+  BorderColor #9DA9BF
+  FontColor #2F5597
+}
+
+title Ciclo de avaliação formal
+
+actor "Colaborador" as COL
+actor "Gestor" as GES
+actor "Avaliador\nconvidado" as AVA
+actor "RH" as RH
+GES -|> COL
+
+rectangle "Sistema de Feedback e Gestão de Competências" {
+  usecase "UC-13\nPlanejar ciclo\nde avaliação" as UC13
+  usecase "UC-14\nResponder avaliação" as UC14
+  usecase "UC-15\nAcompanhar e\nencerrar ciclo" as UC15
+  usecase "UC-16\nConsolidar resultados\ndo ciclo" as UC16
+  usecase "UC-17\nModerar resposta\ninadequada" as UC17
+  usecase "UC-18\nRegistrar check-in" as UC18
+}
+
+GES --> UC13
+GES --> UC15
+GES --> UC18
+AVA --> UC14
+UC13 <-- RH
+UC15 <-- RH
+UC17 <-- RH
+UC17 .> UC15 : <<extend>>
+UC15 .> UC16 : <<include>>
+@enduml
+
+@startuml UC_04_Plano_e_Metas
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam actorStyle awesome
+skinparam ArrowColor #444444
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #2F5597
+}
+skinparam rectangle {
+  BorderColor #2F5597
+  BorderThickness 2
+}
+skinparam package {
+  BorderColor #9DA9BF
+  FontColor #2F5597
+}
+
+title Plano de ação e metas
+
+actor "Colaborador" as COL
+actor "Gestor" as GES
+GES -|> COL
+
+rectangle "Sistema de Feedback e Gestão de Competências" {
+  usecase "UC-19\nCriar plano de ação" as UC19
+  usecase "UC-20\nAcompanhar\nplano de ação" as UC20
+  usecase "UC-21\nDefinir metas de\ndesenvolvimento" as UC21
+  usecase "UC-08\nRegistrar feedback" as UC08 #EEF2F8
+}
+
+COL --> UC08
+COL --> UC20
+COL --> UC21
+GES --> UC19
+UC19 .> UC08 : <<extend>>\n(feedback construtivo)
+@enduml
+
+@startuml UC_05_Historico_e_Analise
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam actorStyle awesome
+skinparam ArrowColor #444444
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #2F5597
+}
+skinparam rectangle {
+  BorderColor #2F5597
+  BorderThickness 2
+}
+skinparam package {
+  BorderColor #9DA9BF
+  FontColor #2F5597
+}
+
+title Histórico e análise
+
+actor "Colaborador" as COL
+actor "Gestor" as GES
+actor "RH" as RH
+GES -|> COL
+
+rectangle "Sistema de Feedback e Gestão de Competências" {
+  usecase "UC-22\nConsultar meu painel\nde desenvolvimento" as UC22
+  usecase "UC-23\nConsultar painéis da\nequipe e da organização" as UC23
+  usecase "UC-24\nExportar histórico\nde colaborador" as UC24
+}
+
+COL --> UC22
+GES --> UC23
+UC23 <-- RH
+UC24 <-- RH
+@enduml
+
+@startuml UC_06_Privacidade
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam actorStyle awesome
+skinparam ArrowColor #444444
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #2F5597
+}
+skinparam rectangle {
+  BorderColor #2F5597
+  BorderThickness 2
+}
+skinparam package {
+  BorderColor #9DA9BF
+  FontColor #2F5597
+}
+
+title Privacidade (LGPD)
+
+actor "Colaborador" as COL
+actor "RH" as RH
+actor "Administrador" as ADM
+actor "Encarregado de\ndados (DPO)" as DPO
+
+rectangle "Sistema de Feedback e Gestão de Competências" {
+  usecase "UC-25\nExercer direitos\nde titular" as UC25
+  usecase "UC-26\nGerenciar\nconsentimentos" as UC26
+  usecase "UC-27\nTratar solicitações\nde titulares" as UC27
+  usecase "UC-28\nConfigurar privacidade\ne retenção" as UC28
+  usecase "UC-29\nRegistrar incidente\nde segurança" as UC29
+}
+
+COL --> UC25
+COL --> UC26
+UC27 <-- RH
+UC28 <-- ADM
+UC27 <-- DPO
+UC29 <-- DPO
+@enduml
+
+@startuml UC_07_Rotinas_Automaticas
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam actorStyle awesome
+skinparam ArrowColor #444444
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #2F5597
+}
+skinparam rectangle {
+  BorderColor #2F5597
+  BorderThickness 2
+}
+skinparam package {
+  BorderColor #9DA9BF
+  FontColor #2F5597
+}
+
+title Rotinas automáticas
+
+actor "Relógio do\nsistema" <<tempo>> as REL
+
+rectangle "Sistema de Feedback e Gestão de Competências" {
+  usecase "UC-30\nAplicar política\nde retenção" as UC30
+  usecase "UC-31\nEnviar lembretes\ne notificações" as UC31
+}
+
+UC30 <-- REL
+UC31 <-- REL
+@enduml

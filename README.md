@@ -64,7 +64,7 @@ O sistema deve permitir:
 | 15 | Dicionário de dados / glossário (Larman, cap. 7) | [`docs/`](docs/) | #24 |
 | 16 | Especificação de Requisitos (IEEE 830 e/ou EOR) | [`docs/`](docs/) | #25 |
 | **Modelagem** ||||
-| 17 | Diagrama de casos de uso (Larman, cap. 6) | [`docs/modelagem/casos-de-uso/`](docs/modelagem/casos-de-uso/) | #18 |
+| 17 | Diagrama de casos de uso (Larman, cap. 6) | [`docs/modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md`](docs/modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) | #47 |
 | 18 | Casos de uso completos, 1 por integrante (Larman, cap. 6) | [`docs/modelagem/casos-de-uso/`](docs/modelagem/casos-de-uso/) | #19 |
 | 19 | Modelo entidade-relacionamento / modelo de domínio | [`docs/modelagem/modelo-dados/`](docs/modelagem/modelo-dados/) | #23 |
 | **Protótipos** ||||
