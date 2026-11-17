@@ -22,7 +22,7 @@ O sistema deve permitir:
 
 ### Sistema análogo analisado
 
-> _A definir (issue #3)._
+**15Five** – plataforma de feedback contínuo, avaliação 360° e desenvolvimento. Descrição em [`docs/elicitacao/sistema-analogo/Sistema_Analogo_15Five.md`](docs/elicitacao/sistema-analogo/Sistema_Analogo_15Five.md).
 
 ---
 
