@@ -62,7 +62,7 @@ O sistema deve permitir:
 | 13 | Documento Visão (Larman, cap. 7) | [`docs/`](docs/) | #17 |
 | 14 | Especificação suplementar: RNF segundo ISO/IEC 25010 (Larman, cap. 7) | [`docs/Especificacao_Suplementar.md`](docs/Especificacao_Suplementar.md) | #51 |
 | 15 | Dicionário de dados / glossário (Larman, cap. 7) | [`docs/`](docs/) | #24 |
-| 16 | Especificação de Requisitos (IEEE 830 e/ou EOR) | [`docs/`](docs/) | #25 |
+| 16 | Especificação de Requisitos (IEEE 830 e/ou EOR) | [`docs/Especificacao_Requisitos_IEEE830.md`](docs/Especificacao_Requisitos_IEEE830.md) | #25 |
 | **Modelagem** ||||
 | 17 | Diagrama de casos de uso (Larman, cap. 6) | [`docs/modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md`](docs/modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) | #47 |
 | 18 | Casos de uso completos, 1 por integrante (Larman, cap. 6) | [`docs/modelagem/casos-de-uso/Casos_de_Uso_Completos.md`](docs/modelagem/casos-de-uso/Casos_de_Uso_Completos.md) | #19 |
