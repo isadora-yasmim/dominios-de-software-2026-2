@@ -33,10 +33,10 @@ O formato completo (*fully dressed*) é o mais detalhado dos três formatos de L
 | UC-25 Exercer direitos de titular | Verônica Ribeiro Oliveira Palmeira | Cobre a LGPD, que é restrição do enunciado. Verônica cuida da LGPD e dos RNF no processo (seção 4.1) | [UC-25_Exercer_Direitos_de_Titular.md](UC-25_Exercer_Direitos_de_Titular.md) | Descrito |
 | UC-14 Responder avaliação | Isadora Yasmim da Silva | Mostra o fluxo do avaliador e as regras de confidencialidade e anonimato, que Isadora modelou no modelo ER (#52, seção 10) | [UC-14_Responder_Avaliacao.md](UC-14_Responder_Avaliacao.md) | Descrito |
 | _A definir_ | Ana Luísa Pereira dos Santos | | | Pendente |
-| _A definir_ | Davi Augusto Ferreira de Carvalho | | | Pendente |
+| UC-08 Registrar feedback | Davi Augusto Ferreira de Carvalho | Núcleo do domínio: emissor, receptor, fatos, tipo e regras de visibilidade. Davi fez o diagrama de casos de uso (#47) e coordena os modelos (seção 4.1) | [UC-08_Registrar_Feedback.md](UC-08_Registrar_Feedback.md) | Descrito |
 | _A definir_ | Júlia de Souza Nascimento | | | Pendente |
 
-Ainda sem responsável, entre os sugeridos na seção 9 do diagrama: **UC-08** Registrar feedback, **UC-13** Planejar ciclo de avaliação e **UC-19** Criar plano de ação. Ao escolher, atualize esta tabela.
+Ainda sem responsável, entre os sugeridos na seção 9 do diagrama: **UC-13** Planejar ciclo de avaliação e **UC-19** Criar plano de ação. Ao escolher, atualize esta tabela.
 
 ---
 
