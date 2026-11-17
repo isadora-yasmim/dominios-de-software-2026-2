@@ -57,7 +57,7 @@ O sistema deve permitir:
 | 9 | Síntese dos requisitos dos questionários | [`docs/`](docs/) | #13 |
 | 10 | Síntese dos requisitos do sistema análogo | [`docs/elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md`](docs/elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | #43 |
 | 11 | Lista de requisitos — geral | [`docs/Lista_Geral_Requisitos.md`](docs/Lista_Geral_Requisitos.md) | #45 |
-| 12 | Matriz de rastreabilidade (horizontal e vertical) | [`docs/`](docs/) | #20 |
+| 12 | Matriz de rastreabilidade (horizontal e vertical) | [`docs/Matriz_Rastreabilidade.md`](docs/Matriz_Rastreabilidade.md) | #49 |
 | **Especificação** ||||
 | 13 | Documento Visão (Larman, cap. 7) | [`docs/`](docs/) | #17 |
 | 14 | Especificação suplementar: RNF segundo ISO/IEC 25010 (Larman, cap. 7) | [`docs/Especificacao_Suplementar.md`](docs/Especificacao_Suplementar.md) | #51 |
