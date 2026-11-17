@@ -60,7 +60,7 @@ O sistema deve permitir:
 | 12 | Matriz de rastreabilidade (horizontal e vertical) | [`docs/`](docs/) | #20 |
 | **Especificação** ||||
 | 13 | Documento Visão (Larman, cap. 7) | [`docs/`](docs/) | #17 |
-| 14 | Especificação suplementar: RNF segundo ISO/IEC 25010 (Larman, cap. 7) | [`docs/`](docs/) | #22 |
+| 14 | Especificação suplementar: RNF segundo ISO/IEC 25010 (Larman, cap. 7) | [`docs/Especificacao_Suplementar.md`](docs/Especificacao_Suplementar.md) | #51 |
 | 15 | Dicionário de dados / glossário (Larman, cap. 7) | [`docs/`](docs/) | #24 |
 | 16 | Especificação de Requisitos (IEEE 830 e/ou EOR) | [`docs/`](docs/) | #25 |
 | **Modelagem** ||||
