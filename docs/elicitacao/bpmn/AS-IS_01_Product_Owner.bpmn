@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+  <collaboration id="Collaboration_1">
+    <participant id="Participant_1" name="AS-IS 1 · Feedback e avaliação segundo a Product Owner (Entrevista 01)" processRef="Process_1" />
+  </collaboration>
+  <process id="Process_1" isExecutable="false">
+    <laneSet id="LaneSet_1">
+      <lane id="Lane_RH" name="RH">
+        <flowNodeRef>r_start</flowNodeRef>
+        <flowNodeRef>r_train</flowNodeRef>
+        <flowNodeRef>r_end1</flowNodeRef>
+        <flowNodeRef>r_start2</flowNodeRef>
+        <flowNodeRef>r_hist</flowNodeRef>
+        <flowNodeRef>r_end2</flowNodeRef>
+      </lane>
+      <lane id="Lane_Gestor" name="Gestor">
+        <flowNodeRef>g_startF</flowNodeRef>
+        <flowNodeRef>g_plan</flowNodeRef>
+        <flowNodeRef>g_par1</flowNodeRef>
+        <flowNodeRef>g_coleta</flowNodeRef>
+        <flowNodeRef>g_par2</flowNodeRef>
+        <flowNodeRef>g_agenda</flowNodeRef>
+        <flowNodeRef>g_xor1</flowNodeRef>
+        <flowNodeRef>g_startI</flowNodeRef>
+        <flowNodeRef>g_fato</flowNodeRef>
+        <flowNodeRef>g_sessao</flowNodeRef>
+        <flowNodeRef>g_regis</flowNodeRef>
+        <flowNodeRef>g_xor2</flowNodeRef>
+        <flowNodeRef>g_plano</flowNodeRef>
+        <flowNodeRef>g_monit</flowNodeRef>
+        <flowNodeRef>g_xor3</flowNodeRef>
+        <flowNodeRef>g_end</flowNodeRef>
+      </lane>
+      <lane id="Lane_Colab" name="Colaborador">
+        <flowNodeRef>c_auto</flowNodeRef>
+        <flowNodeRef>c_sessao</flowNodeRef>
+      </lane>
+      <lane id="Lane_Pares" name="Pares">
+        <flowNodeRef>p_360</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="r_start" name="Implantação do processo" />
+    <task id="r_train" name="Treinar quem dá e quem recebe feedback" />
+    <endEvent id="r_end1" name="Equipe preparada" />
+    <startEvent id="r_start2" name="Decisão sobre a pessoa (ex.: promoção)" />
+    <task id="r_hist" name="Consultar o histórico de feedbacks" />
+    <endEvent id="r_end2" name="Decisão fundamentada" />
+    <startEvent id="g_startF" name="Ciclo formal planejado" />
+    <task id="g_plan" name="Planejar objetivos, competências e indicadores" />
+    <parallelGateway id="g_par1" name="" />
+    <task id="g_coleta" name="Coletar fatos e fazer os check-ins" />
+    <parallelGateway id="g_par2" name="" />
+    <task id="g_agenda" name="Agendar a sessão de feedback" />
+    <exclusiveGateway id="g_xor1" name="" />
+    <startEvent id="g_startI" name="Fato observado no dia a dia" />
+    <task id="g_fato" name="Coletar o fato e decidir dar o feedback" />
+    <task id="g_sessao" name="Conduzir o feedback (positivo ou construtivo)" />
+    <task id="g_regis" name="Registrar o feedback e avaliar a sessão" />
+    <exclusiveGateway id="g_xor2" name="Feedback construtivo?" />
+    <task id="g_plano" name="Construir o plano de ação com o colaborador" />
+    <task id="g_monit" name="Monitorar o plano nos check-ins" />
+    <exclusiveGateway id="g_xor3" name="Melhorou até a data final?" />
+    <endEvent id="g_end" name="Feedback encerrado" />
+    <task id="c_auto" name="Fazer a autoavaliação" />
+    <task id="c_sessao" name="Receber o feedback e refletir" />
+    <task id="p_360" name="Avaliar o colega no 360º" />
+    <sequenceFlow id="Flow_1" sourceRef="r_start" targetRef="r_train" />
+    <sequenceFlow id="Flow_2" sourceRef="r_train" targetRef="r_end1" />
+    <sequenceFlow id="Flow_3" sourceRef="r_start2" targetRef="r_hist" />
+    <sequenceFlow id="Flow_4" sourceRef="r_hist" targetRef="r_end2" />
+    <sequenceFlow id="Flow_5" sourceRef="g_startF" targetRef="g_plan" />
+    <sequenceFlow id="Flow_6" sourceRef="g_plan" targetRef="g_par1" />
+    <sequenceFlow id="Flow_7" sourceRef="g_par1" targetRef="g_coleta" />
+    <sequenceFlow id="Flow_8" sourceRef="g_par1" targetRef="c_auto" />
+    <sequenceFlow id="Flow_9" sourceRef="g_par1" targetRef="p_360" />
+    <sequenceFlow id="Flow_10" sourceRef="g_coleta" targetRef="g_par2" />
+    <sequenceFlow id="Flow_11" sourceRef="c_auto" targetRef="g_par2" />
+    <sequenceFlow id="Flow_12" sourceRef="p_360" targetRef="g_par2" />
+    <sequenceFlow id="Flow_13" sourceRef="g_par2" targetRef="g_agenda" />
+    <sequenceFlow id="Flow_14" sourceRef="g_agenda" targetRef="g_xor1" />
+    <sequenceFlow id="Flow_15" sourceRef="g_startI" targetRef="g_fato" />
+    <sequenceFlow id="Flow_16" sourceRef="g_fato" targetRef="g_xor1" />
+    <sequenceFlow id="Flow_17" sourceRef="g_xor1" targetRef="g_sessao" />
+    <sequenceFlow id="Flow_18" sourceRef="g_sessao" targetRef="c_sessao" />
+    <sequenceFlow id="Flow_19" sourceRef="c_sessao" targetRef="g_regis" />
+    <sequenceFlow id="Flow_20" sourceRef="g_regis" targetRef="g_xor2" />
+    <sequenceFlow id="Flow_21" sourceRef="g_xor2" targetRef="g_plano" name="Sim" />
+    <sequenceFlow id="Flow_22" sourceRef="g_xor2" targetRef="g_end" name="Não (positivo)" />
+    <sequenceFlow id="Flow_23" sourceRef="g_plano" targetRef="g_monit" />
+    <sequenceFlow id="Flow_24" sourceRef="g_monit" targetRef="g_xor3" />
+    <sequenceFlow id="Flow_25" sourceRef="g_xor3" targetRef="g_end" name="Sim" />
+    <sequenceFlow id="Flow_26" sourceRef="g_xor3" targetRef="g_sessao" name="Não: nova rodada" />
+    <textAnnotation id="Ann_1"><text>D2 · Planejar e acompanhar cada pessoa dá trabalho e falta tempo</text></textAnnotation>
+    <association id="Assoc_Ann_1" sourceRef="Ann_1" targetRef="g_plan" associationDirection="None" />
+    <textAnnotation id="Ann_2"><text>D3 · Reação defensiva: o feedback é visto como crítica</text></textAnnotation>
+    <association id="Assoc_Ann_2" sourceRef="Ann_2" targetRef="c_sessao" associationDirection="None" />
+    <textAnnotation id="Ann_3"><text>D6 · Participação dos avaliadores no 360º não é garantida</text></textAnnotation>
+    <association id="Assoc_Ann_3" sourceRef="Ann_3" targetRef="p_360" associationDirection="None" />
+    <textAnnotation id="Ann_4"><text>D5 · Feedback mal dado: pouco elogio e crítica agressiva</text></textAnnotation>
+    <association id="Assoc_Ann_4" sourceRef="Ann_4" targetRef="g_sessao" associationDirection="None" />
+    <textAnnotation id="Ann_5"><text>D1 · Registro manual (papel, Excel) e informação que se perde</text></textAnnotation>
+    <association id="Assoc_Ann_5" sourceRef="Ann_5" targetRef="g_regis" associationDirection="None" />
+    <textAnnotation id="Ann_6"><text>D4 · Sem controle se a pessoa melhorou</text></textAnnotation>
+    <association id="Assoc_Ann_6" sourceRef="Ann_6" targetRef="g_xor3" associationDirection="None" />
+    <textAnnotation id="Ann_7"><text>D1 · O feedback informal fica só na conversa</text></textAnnotation>
+    <association id="Assoc_Ann_7" sourceRef="Ann_7" targetRef="g_fato" associationDirection="None" />
+    <textAnnotation id="Legend_1"><text>DORES IDENTIFICADAS (fonte: Entrevista 01, com a Product Owner)
+D1  Registro manual (papel, Excel): o feedback, sobretudo o informal, se perde (seções 6 e 18)
+D2  Planejar e acompanhar cada pessoa dá muito trabalho e o gestor tem pouco tempo (seção 9)
+D3  Reação defensiva: o feedback é visto como crítica destrutiva (seções 13, 20 e 22)
+D4  Sem controle se a pessoa melhorou depois do feedback (seção 6)
+D5  Feedback mal dado: pouco elogio e crítica agressiva (seção 20)
+D6  No 360º, a participação dos avaliadores não é garantida (seção 21)</text></textAnnotation>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1">
+      <bpmndi:BPMNShape id="Participant_1_di" bpmnElement="Participant_1" isHorizontal="true"><dc:Bounds x="20" y="20" width="2360" height="1030" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_RH_di" bpmnElement="Lane_RH" isHorizontal="true"><dc:Bounds x="50" y="20" width="2330" height="190" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Gestor_di" bpmnElement="Lane_Gestor" isHorizontal="true"><dc:Bounds x="50" y="210" width="2330" height="420" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Colab_di" bpmnElement="Lane_Colab" isHorizontal="true"><dc:Bounds x="50" y="630" width="2330" height="210" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Pares_di" bpmnElement="Lane_Pares" isHorizontal="true"><dc:Bounds x="50" y="840" width="2330" height="210" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="r_start_di" bpmnElement="r_start"><dc:Bounds x="147" y="102" width="36" height="36" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="r_train_di" bpmnElement="r_train"><dc:Bounds x="240" y="80" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="r_end1_di" bpmnElement="r_end1"><dc:Bounds x="437" y="102" width="36" height="36" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="r_start2_di" bpmnElement="r_start2"><dc:Bounds x="1667" y="102" width="36" height="36" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="r_hist_di" bpmnElement="r_hist"><dc:Bounds x="1760" y="80" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="r_end2_di" bpmnElement="r_end2"><dc:Bounds x="1992" y="102" width="36" height="36" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_startF_di" bpmnElement="g_startF"><dc:Bounds x="147" y="342" width="36" height="36" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_plan_di" bpmnElement="g_plan" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="240" y="320" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_par1_di" bpmnElement="g_par1"><dc:Bounds x="430" y="335" width="50" height="50" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_coleta_di" bpmnElement="g_coleta"><dc:Bounds x="530" y="320" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_par2_di" bpmnElement="g_par2"><dc:Bounds x="720" y="335" width="50" height="50" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_agenda_di" bpmnElement="g_agenda"><dc:Bounds x="820" y="320" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_xor1_di" bpmnElement="g_xor1" isMarkerVisible="true"><dc:Bounds x="1010" y="335" width="50" height="50" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_startI_di" bpmnElement="g_startI"><dc:Bounds x="147" y="492" width="36" height="36" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_fato_di" bpmnElement="g_fato" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="240" y="470" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_sessao_di" bpmnElement="g_sessao" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="1110" y="320" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_regis_di" bpmnElement="g_regis" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="1470" y="320" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_xor2_di" bpmnElement="g_xor2" isMarkerVisible="true"><dc:Bounds x="1660" y="335" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="1630" y="299" width="110" height="32" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_plano_di" bpmnElement="g_plano"><dc:Bounds x="1760" y="320" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_monit_di" bpmnElement="g_monit"><dc:Bounds x="1940" y="320" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_xor3_di" bpmnElement="g_xor3" isMarkerVisible="true" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="2130" y="335" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="2039" y="401" width="110" height="32" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="g_end_di" bpmnElement="g_end"><dc:Bounds x="2257" y="342" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="2220" y="306" width="110" height="32" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="c_auto_di" bpmnElement="c_auto"><dc:Bounds x="530" y="715" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="c_sessao_di" bpmnElement="c_sessao" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="1290" y="715" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="p_360_di" bpmnElement="p_360" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="530" y="925" width="140" height="80" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Ann_1_di" bpmnElement="Ann_1" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="228" y="218" width="165" height="62" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Ann_2_di" bpmnElement="Ann_2" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="1278" y="638" width="165" height="62" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Ann_3_di" bpmnElement="Ann_3" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="518" y="848" width="165" height="62" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Ann_4_di" bpmnElement="Ann_4" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="1098" y="438" width="165" height="62" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Ann_5_di" bpmnElement="Ann_5" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="1458" y="438" width="165" height="62" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Ann_6_di" bpmnElement="Ann_6" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="2112" y="438" width="165" height="62" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Ann_7_di" bpmnElement="Ann_7" bioc:stroke="#B3261E" bioc:fill="#FDECEA"><dc:Bounds x="228" y="562" width="165" height="62" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Legend_1_di" bpmnElement="Legend_1"><dc:Bounds x="20" y="1080" width="1500" height="112" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="183" y="120" />
+        <di:waypoint x="240" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="380" y="120" />
+        <di:waypoint x="437" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
+        <di:waypoint x="1703" y="120" />
+        <di:waypoint x="1760" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
+        <di:waypoint x="1900" y="120" />
+        <di:waypoint x="1992" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+        <di:waypoint x="183" y="360" />
+        <di:waypoint x="240" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
+        <di:waypoint x="380" y="360" />
+        <di:waypoint x="430" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
+        <di:waypoint x="480" y="360" />
+        <di:waypoint x="530" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
+        <di:waypoint x="455" y="385" />
+        <di:waypoint x="455" y="755" />
+        <di:waypoint x="530" y="755" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_9_di" bpmnElement="Flow_9">
+        <di:waypoint x="455" y="385" />
+        <di:waypoint x="455" y="965" />
+        <di:waypoint x="530" y="965" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10_di" bpmnElement="Flow_10">
+        <di:waypoint x="670" y="360" />
+        <di:waypoint x="720" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11_di" bpmnElement="Flow_11">
+        <di:waypoint x="670" y="755" />
+        <di:waypoint x="745" y="755" />
+        <di:waypoint x="745" y="385" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
+        <di:waypoint x="670" y="965" />
+        <di:waypoint x="745" y="965" />
+        <di:waypoint x="745" y="385" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13_di" bpmnElement="Flow_13">
+        <di:waypoint x="770" y="360" />
+        <di:waypoint x="820" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14_di" bpmnElement="Flow_14">
+        <di:waypoint x="960" y="360" />
+        <di:waypoint x="1010" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15_di" bpmnElement="Flow_15">
+        <di:waypoint x="183" y="510" />
+        <di:waypoint x="240" y="510" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16_di" bpmnElement="Flow_16">
+        <di:waypoint x="380" y="510" />
+        <di:waypoint x="1035" y="510" />
+        <di:waypoint x="1035" y="385" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17_di" bpmnElement="Flow_17">
+        <di:waypoint x="1060" y="360" />
+        <di:waypoint x="1110" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18_di" bpmnElement="Flow_18">
+        <di:waypoint x="1250" y="360" />
+        <di:waypoint x="1270" y="360" />
+        <di:waypoint x="1270" y="755" />
+        <di:waypoint x="1290" y="755" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_19_di" bpmnElement="Flow_19">
+        <di:waypoint x="1430" y="755" />
+        <di:waypoint x="1450" y="755" />
+        <di:waypoint x="1450" y="360" />
+        <di:waypoint x="1470" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_20_di" bpmnElement="Flow_20">
+        <di:waypoint x="1610" y="360" />
+        <di:waypoint x="1660" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_21_di" bpmnElement="Flow_21">
+        <di:waypoint x="1710" y="360" />
+        <di:waypoint x="1760" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_22_di" bpmnElement="Flow_22">
+        <di:waypoint x="1685" y="385" />
+        <di:waypoint x="1685" y="438" />
+        <di:waypoint x="2275" y="438" />
+        <di:waypoint x="2275" y="378" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_23_di" bpmnElement="Flow_23">
+        <di:waypoint x="1900" y="360" />
+        <di:waypoint x="1940" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_24_di" bpmnElement="Flow_24">
+        <di:waypoint x="2080" y="360" />
+        <di:waypoint x="2130" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_25_di" bpmnElement="Flow_25">
+        <di:waypoint x="2180" y="360" />
+        <di:waypoint x="2257" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_26_di" bpmnElement="Flow_26">
+        <di:waypoint x="2155" y="335" />
+        <di:waypoint x="2155" y="290" />
+        <di:waypoint x="1180" y="290" />
+        <di:waypoint x="1180" y="320" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Assoc_Ann_1_di" bpmnElement="Assoc_Ann_1"><di:waypoint x="310" y="280" /><di:waypoint x="310" y="320" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Assoc_Ann_2_di" bpmnElement="Assoc_Ann_2"><di:waypoint x="1360" y="700" /><di:waypoint x="1360" y="715" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Assoc_Ann_3_di" bpmnElement="Assoc_Ann_3"><di:waypoint x="600" y="910" /><di:waypoint x="600" y="925" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Assoc_Ann_4_di" bpmnElement="Assoc_Ann_4"><di:waypoint x="1180" y="438" /><di:waypoint x="1180" y="400" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Assoc_Ann_5_di" bpmnElement="Assoc_Ann_5"><di:waypoint x="1540" y="438" /><di:waypoint x="1540" y="400" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Assoc_Ann_6_di" bpmnElement="Assoc_Ann_6"><di:waypoint x="2155" y="438" /><di:waypoint x="2155" y="385" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Assoc_Ann_7_di" bpmnElement="Assoc_Ann_7"><di:waypoint x="310" y="562" /><di:waypoint x="310" y="550" /></bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
