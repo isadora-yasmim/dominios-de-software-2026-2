@@ -501,7 +501,7 @@ Liga requisitos do mesmo nível. Três tipos de ligação:
 | 1 | As anotações de 9 telas citam requisitos errados (seção 4.2) | Protótipo (#50) | Corrigir as anotações no Figma | Aberta. A correção é feita no arquivo do Figma, fora do repositório. Até lá, vale a correção da seção 4.2 |
 | 2 | RF-005 e RF-006 (competências do cargo e específicas) e RF-062 (retenção) são Must e não têm tela | Protótipo (#50) | Desenhar as telas de UC-03, UC-04 e UC-28, ou registrar que ficam para a etapa de design | Aberta. Os requisitos continuam rastreados pelo caso de uso e pela entidade |
 | 3 | Três decisões dos casos de uso completos pedem mudanças que ainda não estão no modelo ER: aviso `FEEDBACK_RECEBIDO` (UC08-D01; a tela T-47 já mostra esse aviso), `observado_equipe_id` em `Fato` (UC08-D02) e a confirmação do plano pelo receptor (UC19-D01) | Modelo ER (#52) | Aplicar no modelo ER e na seção 12 dele | Resolvida. Aplicadas na versão 1.1 do modelo ER (seção 14 dele), junto com os ajustes do Apêndice C.2 da especificação IEEE 830 |
-| 4 | Os pontos a validar P-01 a P-10 continuam abertos | Lista geral (#45) | Ao receber a resposta da PO, usar a seção 6 desta matriz para achar todos os requisitos afetados | Aberta. Os dez pontos são decisões do grupo, ainda não confirmadas pela PO, que não teve disponibilidade para validá-los (seção 9 da lista geral) |
+| 4 | Os pontos a validar P-01 a P-10 continuam abertos | Lista geral (#45) | Ao receber a resposta da PO, usar a seção 6 desta matriz para achar todos os requisitos afetados | Aberta. Os dez pontos são decisões do grupo, ainda não confirmadas pela PO (seção 9 da lista geral) |
 
 ---
 

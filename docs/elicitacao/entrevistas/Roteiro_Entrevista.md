@@ -18,7 +18,7 @@
 5. [Identificação do entrevistado](#5-identificação-do-entrevistado)
 6. [Blocos de perguntas](#6-blocos-de-perguntas)
    - [Bloco A – Contexto e processo atual](#bloco-a--contexto-e-processo-atual)
-   - [Bloco B – Tipos de feedback: chefe-colaborador, pares e 360º](#bloco-b--tipos-de-feedback-chefe-colaborador-pares-e-360º)
+   - [Bloco B – Tipos de feedback: chefe-colaborador, pares e 360°](#bloco-b--tipos-de-feedback-chefe-colaborador-pares-e-360)
    - [Bloco C – Feedback formal, informal, positivo e construtivo](#bloco-c--feedback-formal-informal-positivo-e-construtivo)
    - [Bloco D – Uso de questionários na avaliação](#bloco-d--uso-de-questionários-na-avaliação)
    - [Bloco E – Análise, indicadores e visualizações](#bloco-e--análise-indicadores-e-visualizações)
@@ -107,12 +107,12 @@ Texto de referência para o entrevistador:
 4. Descreva, passo a passo, o que acontece desde que um gestor decide dar um feedback até o encerramento desse feedback.
 5. Existe algum treinamento ou orientação sobre como dar e receber feedback? Como as pessoas reagem quando são chamadas para uma sessão de feedback?
 
-### Bloco B – Tipos de feedback: chefe-colaborador, pares e 360º
+### Bloco B – Tipos de feedback: chefe-colaborador, pares e 360°
 
 *Tempo sugerido: 7 min*
 
-6. Quais destas modalidades acontecem na sua organização: gestor → colaborador, colaborador → gestor, entre pares, avaliação 360º, autoavaliação? Como cada uma funciona?
-7. Na avaliação entre pares e na 360º, quem decide quem avalia quem? O gestor escolhe os participantes, todos do time avaliam todos, ou o próprio colaborador indica?
+6. Quais destas modalidades acontecem na sua organização: gestor → colaborador, colaborador → gestor, entre pares, avaliação 360°, autoavaliação? Como cada uma funciona?
+7. Na avaliação entre pares e na 360°, quem decide quem avalia quem? O gestor escolhe os participantes, todos do time avaliam todos, ou o próprio colaborador indica?
 8. Você já fez autoavaliação? Ela é comparada com a percepção dos colegas ou do gestor? Isso foi útil?
 9. O que acontece quando alguém convidado a avaliar não responde? Isso é registrado? Há alguma consequência?
 10. Acontece feedback entre pessoas de áreas ou times diferentes? Em que situações?
@@ -156,7 +156,7 @@ Texto de referência para o entrevistador:
 
 29. Hoje, quem consegue ver os feedbacks e avaliações de uma pessoa? (a própria pessoa, o gestor direto, o RH, a diretoria, os colegas)
 30. Quem deveria ver, na sua opinião? Existe alguma informação que deveria ficar restrita?
-31. O colaborador sabe quem escreveu cada feedback sobre ele? Em quais modalidades (gestor → colaborador, pares, 360º, colaborador → gestor) o anonimato faz sentido e em quais atrapalha?
+31. O colaborador sabe quem escreveu cada feedback sobre ele? Em quais modalidades (gestor → colaborador, pares, 360°, colaborador → gestor) o anonimato faz sentido e em quais atrapalha?
 32. Você se sentiria à vontade para dar um feedback sincero ao seu gestor se ele soubesse que foi você? E se fosse anônimo? Já viu alguém ser prejudicado por um feedback que deu?
 33. Se o RH ou um administrador do sistema consegue identificar o autor de um feedback anônimo, isso quebra a confiança? Como isso deveria ser tratado?
 34. Por quanto tempo os feedbacks devem ficar guardados? O que deve acontecer com o histórico quando a pessoa sai da organização?
@@ -217,7 +217,7 @@ Agradecer, confirmar o aceite do termo de consentimento, encerrar a gravação e
 
 | Item do escopo (issue #34) | Bloco | Perguntas |
 |---|---|---|
-| Tipos de feedback: chefe-colaborador, pares, 360º | B | 6 a 10 |
+| Tipos de feedback: chefe-colaborador, pares, 360° | B | 6 a 10 |
 | Feedback formal, informal, positivo e construtivo | C | 11 a 17 |
 | Uso de questionários na avaliação | D | 18 a 23 |
 | Análise, indicadores e visualizações desejadas | E | 24 a 28 |

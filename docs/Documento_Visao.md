@@ -2,7 +2,7 @@
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (INF0296, 2026/2) · 1ª Etapa: Levantamento de Requisitos
-**Issue:** #46 · **Versão:** 1.1 · **Data:** 17/11/2026
+**Issue:** #46 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsável:** Ana Luísa Pereira dos Santos
 **Referência de método:** Larman, *Utilizando UML e Padrões*, cap. 7 (Documento Visão)
 **Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (issue #45), versão 1.1. Os identificadores `RF-`, `RNF-` e `RN-` citados aqui são os dessa lista.
@@ -13,6 +13,7 @@
 |---|---|---|---|
 | 1.0 | 17/11/2026 | Versão inicial | Ana Luísa Pereira dos Santos |
 | 1.1 | 17/11/2026 | Revisão final (#55): base na lista geral 1.1; perfis da diretoria e do encarregado ligados ao RF-003; seção 8 registra os pontos P-xx como decisões do grupo, ainda não confirmadas pela PO; link para o glossário (#53) | Verônica Ribeiro Oliveira Palmeira |
+| 1.2 | 18/11/2026 | Revisão de conformidade com o modelo de Larman (cap. 7): nova seção 2.4, Alternativas e concorrência; coluna Prioridade na tabela de necessidades (seção 4.2) | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
@@ -79,6 +80,20 @@ As dores acima são as seis marcadas em cada um dos diagramas do processo atual 
 | **Diferentemente de** | planilhas, anotações e mensagens de aplicativos, e de ferramentas estrangeiras como o 15Five |
 | **nosso produto** | exige base em fatos, oferece modos de identificação do emissor (identificado, confidencial e anônimo) com número mínimo de respondentes, funciona em português e foi pensado desde o início para a LGPD e a acessibilidade |
 
+### 2.4 Alternativas e concorrência
+
+Larman (cap. 7) pede que o Documento Visão registre as alternativas que as partes interessadas já usam ou poderiam usar. O levantamento encontrou três grupos.
+
+| Alternativa | Onde apareceu | Pontos fortes | Pontos fracos em relação a este produto |
+|---|---|---|---|
+| **Registro manual**: conversa sem registro, caderno de anotações, planilha eletrônica e mensagens de WhatsApp | E02 §2, §4 (conversa, caderninho e WhatsApp); E01 §15, §18 (planilha do Excel e papel) | Custo zero e nenhum aprendizado novo. A planilha permite montar gráficos de desempenho, como faz o gerente citado pela PO (E01 §15) | A informação se perde e não há controle de melhora (D1 e D4 dos dois diagramas AS-IS). Não há modo confidencial nem anônimo: a proteção de quem relata depende da discrição do gestor (D5 do AS-IS 2). Não há histórico consultável (E02 §7) |
+| **Módulos de feedback dentro de sistemas de RH mais amplos** | E01 §33: "tem muitas ferramentas que estão integradas a outros tipos de sistema, né? De sistema mais amplo de RH" | Integram o feedback ao cadastro e aos demais processos de RH | O feedback é uma função secundária. A PO pediu foco no desenvolvimento das pessoas, e não em promoção e salário, que ficam com outros sistemas de RH (E01 §8) |
+| **Ferramentas especializadas de mercado**, como o 15Five, analisado pelo grupo | [Sistema análogo – 15Five](elicitacao/sistema-analogo/Sistema_Analogo_15Five.md) | Feedback contínuo, avaliação 360°, metas e plano de crescimento no mesmo lugar; anonimato configurável; mínimo de respondentes; aplicativo móvel (seção 7 da análise) | Feedback em texto livre, sem fatos, tipo nem plano de ação nascido do feedback; interface sem português; cobrança em dólar por usuário; aplicativos desiguais entre iOS e Android; dados fora do Brasil, o que exige mecanismo de transferência internacional (seções 5 e 7 da análise) |
+
+O enunciado sugere outras dez ferramentas de feedback 360° (ClickUp, Culture Amp, SurveySparrow, SurveyMonkey, Qualtrics 360, Lattice, PerformYard, Trakstar, Leapsome e Spidergap). Cada grupo da turma analisa um sistema diferente, e este grupo analisou o 15Five. As demais não foram analisadas e por isso não aparecem como comparação.
+
+O que diferencia este produto das alternativas está na declaração de posição (seção 2.3): base obrigatória em fatos (RN-001, RN-002), plano de ação ligado ao feedback construtivo (RF-042), modos de identificação com mínimo de respondentes (RN-004, RN-005), português do Brasil (RNF-016) e conformidade com a LGPD e com as normas de acessibilidade desde a primeira versão (RNF-031, RNF-017).
+
 ---
 
 ## 3. Partes interessadas e usuários
@@ -140,21 +155,21 @@ Um mesmo usuário pode acumular perfis, como o gestor que também é avaliado pe
 
 ### 4.2 Necessidades principais
 
-A tabela liga cada necessidade levantada às dores do processo atual e aos requisitos que a atendem.
+A tabela liga cada necessidade levantada às dores do processo atual e aos requisitos que a atendem. A prioridade é a mais alta entre os requisitos ligados à necessidade, como no diagrama de casos de uso (seção 1). A coluna Situação hoje corresponde às soluções atuais do modelo de Larman.
 
-| # | Necessidade | Quem precisa | Situação hoje | Requisitos |
-|---|---|---|---|---|
-| N1 | Registrar fatos, feedbacks e elogios de forma simples | Gestor, colaborador | Papel, Excel, caderninho, WhatsApp ou só de boca (D1) | RF-011, RF-013, RF-014, RF-015, RF-048 |
-| N2 | Gastar menos tempo para planejar e dar feedback | Gestor | Planejar e acompanhar cada pessoa dá trabalho; as agendas não coincidem e o feedback passa batido (D2) | RF-007, RF-008, RF-037, RF-038, RNF-013 |
-| N3 | Dar e receber feedback de forma estruturada e menos defensiva | Gestor, colaborador | Reação defensiva e feedback agressivo ou sem elogio (D3, D5) | RF-016, RF-017, RF-020, RNF-024 |
-| N4 | Saber se a pessoa melhorou | Gestor, RH | Sem controle, depende da memória (D4) | RF-040, RF-042, RF-043, RF-045 |
-| N5 | Garantir a participação nas avaliações | Gestor, RH | Participação no 360° não garantida (D6) | RF-029, RF-040 |
-| N6 | Avaliar por critérios objetivos | Gestor, RH | Avaliação pela percepção, sem formulário nem indicadores (D6) | RF-007, RF-009, RF-023 |
-| N7 | Proteger a identidade de quem avalia | Colaborador (emissor) | Depende só da discrição do gestor (D5) | RF-019, RF-030, RN-004, RN-005, RNF-001, RNF-003 |
-| N8 | Consultar o histórico para decisões sobre pessoas | RH | Sem histórico, ou histórico espalhado | RF-048, RF-051, RN-003, RN-007 |
-| N9 | Acompanhar a evolução por competência | Colaborador, gestor, RH | Não existe | RF-005, RF-021, RF-049, RF-050 |
-| N10 | Cumprir a LGPD e a acessibilidade | Organização, encarregado | Não se aplica, pois não há sistema | RF-053 a RF-065, RNF-004, RNF-005, RNF-017, RN-012 |
-| N11 | Funcionar em organização pequena, sem RH próprio | Gestor | O RH não participa do processo | RF-003, RN-004 |
+| # | Necessidade | Prioridade | Quem precisa | Situação hoje | Requisitos |
+|---|---|---|---|---|---|
+| N1 | Registrar fatos, feedbacks e elogios de forma simples | Must | Gestor, colaborador | Papel, Excel, caderninho, WhatsApp ou só de boca (D1) | RF-011, RF-013, RF-014, RF-015, RF-048 |
+| N2 | Gastar menos tempo para planejar e dar feedback | Must | Gestor | Planejar e acompanhar cada pessoa dá trabalho; as agendas não coincidem e o feedback passa batido (D2) | RF-007, RF-008, RF-037, RF-038, RNF-013 |
+| N3 | Dar e receber feedback de forma estruturada e menos defensiva | Should | Gestor, colaborador | Reação defensiva e feedback agressivo ou sem elogio (D3, D5) | RF-016, RF-017, RF-020, RNF-024 |
+| N4 | Saber se a pessoa melhorou | Must | Gestor, RH | Sem controle, depende da memória (D4) | RF-040, RF-042, RF-043, RF-045 |
+| N5 | Garantir a participação nas avaliações | Should | Gestor, RH | Participação no 360° não garantida (D6) | RF-029, RF-040 |
+| N6 | Avaliar por critérios objetivos | Must | Gestor, RH | Avaliação pela percepção, sem formulário nem indicadores (D6) | RF-007, RF-009, RF-023 |
+| N7 | Proteger a identidade de quem avalia | Must | Colaborador (emissor) | Depende só da discrição do gestor (D5) | RF-019, RF-030, RN-004, RN-005, RNF-001, RNF-003 |
+| N8 | Consultar o histórico para decisões sobre pessoas | Must | RH | Sem histórico, ou histórico espalhado | RF-048, RF-051, RN-003, RN-007 |
+| N9 | Acompanhar a evolução por competência | Must | Colaborador, gestor, RH | Não existe | RF-005, RF-021, RF-049, RF-050 |
+| N10 | Cumprir a LGPD e a acessibilidade | Must | Organização, encarregado | Não se aplica, pois não há sistema | RF-053 a RF-065, RNF-004, RNF-005, RNF-017, RN-012 |
+| N11 | Funcionar em organização pequena, sem RH próprio | Must | Gestor | O RH não participa do processo | RF-003, RN-004 |
 
 ---
 
@@ -180,7 +195,7 @@ O sistema é uma aplicação web independente, com uma instalação por organiza
 
 - A organização cadastra os dados dos colaboradores, dos cargos e da hierarquia. O sistema não os obtém sozinho (RF-001, RF-002).
 - A organização é a controladora dos dados pessoais, e o sistema apoia suas obrigações, como atender titulares e comunicar incidentes (RF-061, RF-063).
-- Em dez pontos as fontes não davam resposta definitiva. O grupo decidiu cada um na consolidação da Lista Geral de Requisitos, com justificativa, porque a PO não teve disponibilidade para confirmá-los. São decisões do grupo, ainda não confirmadas pela PO, e os requisitos estão escritos conforme a decisão (seção 8 deste documento).
+- Em dez pontos as fontes não davam resposta definitiva. O grupo decidiu cada um na consolidação da Lista Geral de Requisitos, com justificativa nas fontes. São decisões do grupo, ainda não confirmadas pela PO, e os requisitos estão escritos conforme a decisão (seção 8 deste documento).
 - Se o sistema for oferecido como serviço (SaaS), valem os registros de acesso (RNF-032). Se a hospedagem for fora do Brasil, vale a regra de transferência internacional (RNF-033).
 
 ### 5.4 Custo, licenciamento e instalação
@@ -230,7 +245,7 @@ A lista abaixo agrupa as 65 funções (RF) em áreas. Cada linha traz as funçõ
 
 ## 8. Decisões do grupo ainda não confirmadas pela PO
 
-A Lista Geral de Requisitos (seção 9) registra dez pontos em que as fontes não davam resposta definitiva. Para cada um há uma decisão do grupo, com justificativa, ainda não confirmada pela PO, que não teve disponibilidade para validá-los. Os que mais afetam a visão do produto são:
+A Lista Geral de Requisitos (seção 9) registra dez pontos em que as fontes não davam resposta definitiva. Para cada um há uma decisão do grupo, com justificativa, ainda não confirmada pela PO. Os que mais afetam a visão do produto são:
 
 | Ponto | Decisão do grupo |
 |---|---|

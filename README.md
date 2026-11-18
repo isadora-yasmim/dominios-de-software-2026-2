@@ -12,7 +12,7 @@ Levantar e especificar os requisitos de um **sistema web de gestão de competên
 
 O sistema deve permitir:
 
-- **Diversas fontes de feedback:** chefe → colaborador, entre pares e avaliação 360º, sempre com base em dados coletados dos emissores.
+- **Diversas fontes de feedback:** chefe → colaborador, entre pares e avaliação 360°, sempre com base em dados coletados dos emissores.
 - **Diferentes tipos de feedback:** formal, informal, positivo e construtivo.
 - **Questionários:** perguntas que apoiam os emissores na avaliação e orientam os receptores sobre suas metas e competências.
 - **Análise robusta:** indicadores, tendências e gráficos que mostram a evolução de cada colaborador.

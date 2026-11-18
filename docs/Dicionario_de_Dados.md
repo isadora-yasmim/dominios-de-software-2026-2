@@ -1172,7 +1172,7 @@ Esta seção registra os pontos encontrados na versão 1.0. A correção coube a
 | T-05 | **Receptor e avaliado** | A lista geral usa "receptor"; o ER usa `avaliado_id` nas entidades de ciclo | "Receptor" no feedback; "avaliado" no ciclo, como sinônimos | Resolvido. Proposta adotada (ERS-D09 (5)) |
 | T-06 | **Ciclo** | "Ciclo de feedback formal" (RF-022), "ciclo formal" (seção 2.4) e "ciclo de avaliação" (ER, casos de uso) | "Ciclo de avaliação", com os outros como sinônimos | Resolvido. Proposta adotada (ERS-D09 (6)) |
 | T-07 | **Encarregado** | "Encarregado" (RF-053), "encarregado de dados da organização" (RF-061), "Encarregado de dados (DPO)" (casos de uso) | "Encarregado", com "encarregado de dados" e "DPO" como sinônimos | Resolvido. Proposta adotada (ERS-D09 (7)) |
-| T-08 | **Nome do sistema** | A lista geral, a Especificação Suplementar e o diagrama de casos de uso usam "Sistema Web de Feedback e Gestão de Competências". O Documento Visão e o ER usam "Sistema Web de Feedback e Gestão de Competências" | Este documento usa o nome do Documento Visão, padronizado nos demais | Resolvido. Nome do Documento Visão adotado (ERS-D01) e padronizado nos cabeçalhos dos artefatos na revisão final |
+| T-08 | **Nome do sistema** | Na versão 1.0, a lista geral, a Especificação Suplementar e o diagrama de casos de uso usavam "Sistema de Gestão de Competências (módulo de Feedback)". O Documento Visão e o ER usavam "Sistema Web de Feedback e Gestão de Competências" | Este documento usa o nome do Documento Visão, padronizado nos demais | Resolvido. Nome do Documento Visão adotado (ERS-D01) e padronizado nos cabeçalhos dos artefatos na revisão final |
 
 ---
 

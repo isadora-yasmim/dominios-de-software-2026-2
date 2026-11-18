@@ -8,8 +8,8 @@
 | Campo | Informação |
 |---|---|
 | **Entrevistado** | Adriana Silveira de Souza |
-| **Função** | Product Owner, Professora da disciplina de Domínios de Software  |
-| **Telefone** | N/A |
+| **Função** | Product Owner, Professora da disciplina de Domínios de Software |
+| **Telefone** | (62) 8242-6161 |
 | **Entrevistadores** | Alunos da disciplina de Domínios de Software |
 | **Data** | 20/10/2026 |
 | **Duração da gravação** | 01:57:54 |

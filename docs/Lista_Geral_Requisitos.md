@@ -431,7 +431,7 @@ Esta seção registra os pontos em que as fontes divergiam e que foram resolvido
 
 ## 9. Pontos decididos pelo grupo, sem confirmação da PO
 
-Nos pontos abaixo, as fontes não dão uma resposta definitiva: a PO não tratou do assunto, tratou sem fechar a questão, ou as fontes divergem sem que uma prevaleça pelos critérios da seção 2.2. Pela seção 4.3 do processo, esses pontos deveriam ser levados à PO. Como a PO não teve disponibilidade para confirmá-los, o grupo adotou uma decisão para cada um.
+Nos pontos abaixo, as fontes não dão uma resposta definitiva: a PO não tratou do assunto, tratou sem fechar a questão, ou as fontes divergem sem que uma prevaleça pelos critérios da seção 2.2. Pela seção 4.3 do processo, esses pontos são levados à PO. Para que a especificação não ficasse incompleta até a validação, o grupo adotou uma decisão para cada um.
 
 Cada ponto tem a **decisão do grupo, ainda não confirmada pela PO**, com a justificativa, e os requisitos afetados estão escritos de acordo com ela. A coluna Observações desses requisitos indica o ponto correspondente. As decisões continuam sujeitas à confirmação da PO, que leva os requisitos afetados ao status **Validado** (seção 2.4). Se a PO decidir de outra forma, a mudança segue a gestão de mudanças do processo (seção 9): análise de impacto pela matriz de rastreabilidade (#49) e atualização desta lista por PR.
 
@@ -665,6 +665,6 @@ Os candidatos `RP` foram extraídos nesta consolidação (seção 2.1), por isso
 
 - **Fontes pequenas.** São duas entrevistas e dois questionários. Falta a visão de alguém de RH, que aparece só pelo que a PO disse sobre o perfil.
 - **BPMN feito a partir das entrevistas.** Os dois diagramas modelam o que foi dito nas entrevistas, e não uma observação direta do processo. O AS-IS 1 também mistura a prática atual com a prática ideal descrita pela PO (documento do BPMN, seção 7). Por isso o BPMN foi usado para localizar as dores no fluxo e conferir a cobertura, e não como evidência independente. O processo proposto (TO-BE), opcional na issue #44, não foi modelado.
-- **Decisões do grupo sem confirmação da PO.** Em dez pontos as fontes não davam resposta definitiva (seção 9). O grupo decidiu cada um com justificativa nas fontes, porque a PO não teve disponibilidade para confirmá-los. Os requisitos afetados estão escritos de acordo com a decisão e só passam a Validado com a confirmação da PO.
+- **Decisões do grupo sem confirmação da PO.** Em dez pontos as fontes não davam resposta definitiva (seção 9). O grupo decidiu cada um com justificativa nas fontes, e as decisões aguardam a validação da PO. Os requisitos afetados estão escritos de acordo com a decisão e só passam a Validado com a confirmação da PO.
 - **Metas numéricas.** Os valores dos RNF de desempenho, disponibilidade, backup e do feedback informal em uma tela vêm da pesquisa documental ou desta consolidação, e não de pedido da PO (ponto P-10). Eles estão detalhados, com critério de aceitação e método de verificação, na [especificação suplementar](Especificacao_Suplementar.md) (#51).
 - **Escopo amplo de propósito.** A PO pediu requisitos amplos e disse que a arquitetura pode ser reduzida, por exemplo só a gestor e colaborador (E01 §24). A redução será decidida na segunda etapa do trabalho, sem alterar esta lista.

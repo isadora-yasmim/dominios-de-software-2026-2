@@ -52,7 +52,7 @@ Se sobrar tempo, aprofundar com as perguntas marcadas com ↳ ou com o bloco cor
 
 *4 min*
 
-4. Quais modalidades acontecem: gestor → colaborador, colaborador → gestor, entre pares, 360º, autoavaliação? Quem decide quem avalia quem? (6, 7)
+4. Quais modalidades acontecem: gestor → colaborador, colaborador → gestor, entre pares, 360°, autoavaliação? Quem decide quem avalia quem? (6, 7)
 5. Como você diferencia feedback formal de informal? O informal é registrado em algum lugar? (11)
 6. Como um feedback construtivo é conduzido aqui? Ele parte de fatos observados e termina em um plano de ação? E o positivo, cita os fatos e o impacto? (12, 13, 14)
 
@@ -93,7 +93,7 @@ Agradecer, confirmar o aceite do termo, encerrar a gravação e seguir o [checkl
 
 | Item do escopo (issue #34) | Perguntas |
 |---|---|
-| Tipos de feedback: chefe-colaborador, pares, 360º | 4 |
+| Tipos de feedback: chefe-colaborador, pares, 360° | 4 |
 | Feedback formal, informal, positivo e construtivo | 5, 6 |
 | Uso de questionários na avaliação | 7 |
 | Análise, indicadores e visualizações desejadas | 8, 9 |

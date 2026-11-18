@@ -20,7 +20,7 @@ Modelagem em BPMN do processo de avaliação e feedback **como acontece hoje**, 
 
 ## 3. AS-IS 1 (Entrevista 01)
 
-**Feedback formal (ciclo planejado)**: o gestor planeja objetivos, competências e indicadores, depois coleta fatos e faz check-ins. Em paralelo, o colaborador faz a autoavaliação e os pares respondem o 360º. O gestor agenda a sessão e a conduz (positivo ou construtivo). O colaborador recebe e reflete. O gestor registra e avalia a sessão. Se foi construtivo, constrói o plano de ação com o colaborador, monitora, e verifica se melhorou. Se não melhorou, abre nova rodada.
+**Feedback formal (ciclo planejado)**: o gestor planeja objetivos, competências e indicadores, depois coleta fatos e faz check-ins. Em paralelo, o colaborador faz a autoavaliação e os pares respondem o 360°. O gestor agenda a sessão e a conduz (positivo ou construtivo). O colaborador recebe e reflete. O gestor registra e avalia a sessão. Se foi construtivo, constrói o plano de ação com o colaborador, monitora, e verifica se melhorou. Se não melhorou, abre nova rodada.
 
 **Feedback informal**: o gestor observa um fato no dia a dia, decide dar o feedback e conduz a sessão.
 
@@ -33,7 +33,7 @@ Modelagem em BPMN do processo de avaliação e feedback **como acontece hoje**, 
 | D3 | Reação defensiva, feedback visto como crítica destrutiva | Receber o feedback | seções 13, 20 e 22 |
 | D4 | Sem controle se a pessoa melhorou | Verificação final | seção 6 |
 | D5 | Feedback mal dado (pouco elogio, crítica agressiva) | Conduzir o feedback | seção 20 |
-| D6 | Participação no 360º não garantida | Avaliar o colega | seção 21 |
+| D6 | Participação no 360° não garantida | Avaliar o colega | seção 21 |
 
 ## 4. AS-IS 2 (Entrevista 02)
 
@@ -55,7 +55,7 @@ A raia do RH fica sem tarefas, de propósito: a secretária responde ao prefeito
 - Registro (D1) e acompanhamento sem controle (D4) aparecem nos dois casos, então são fortes candidatos a requisitos centrais (histórico de feedbacks, plano de ação com prazo e lembretes).
 - Dificuldade de agenda e de tempo (D2) e reação defensiva (D3) também são comuns.
 - A PO descreve um processo estruturado, mas manual. A secretaria tem um processo totalmente informal.
-- Anonimato (D5 da Secretaria) e participação no 360º (D6 da PO) sugerem requisitos de avaliação anônima e lembretes.
+- Anonimato (D5 da Secretaria) e participação no 360° (D6 da PO) sugerem requisitos de avaliação anônima e lembretes.
 
 ## 6. Como abrir e editar
 
@@ -64,7 +64,6 @@ Os arquivos `.bpmn` são texto (Git friendly). Abra em [demo.bpmn.io](https://de
 ## 7. Observações
 
 - A PO falou também sobre a prática ideal, por isso o Diagrama 1 representa o processo segundo ela.
-- O README lista a issue de BPMN como #15, mas o roteiro e a issue são #44. Vale alinhar com o grupo.
-- O TO-BE (opcional na issue) não foi feito.
+- O processo proposto (TO-BE) não foi modelado, porque o enunciado pede o processo de negócio atual com as principais dores. A forma como o sistema muda o processo está descrita nos casos de uso (#47, #48).
 - No AS-IS 1, o treinamento sobre feedback aparece na raia do RH como uma inferência. Na entrevista, quem treina é a própria entrevistada, e o RH é quem usa o histórico.
 - No AS-IS 2, a ausência do RH é uma dedução a partir da fala de que a secretária responde ao prefeito. Ela não falou de RH.

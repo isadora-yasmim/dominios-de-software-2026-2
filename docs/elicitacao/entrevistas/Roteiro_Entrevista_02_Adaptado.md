@@ -105,7 +105,7 @@ O roteiro reduzido foi pensado para uma conversa geral sobre feedback em uma org
 
 | Item do escopo (issue #34) | Perguntas |
 |---|---|
-| Tipos de feedback: chefe-colaborador, pares, 360º | 16, 17 |
+| Tipos de feedback: chefe-colaborador, pares, 360° | 16, 17 |
 | Feedback formal, informal, positivo e construtivo | 18, 20, 21, 24 |
 | Uso de questionários na avaliação | 25, 26 |
 | Análise, indicadores e visualizações desejadas | 27, 28 |
