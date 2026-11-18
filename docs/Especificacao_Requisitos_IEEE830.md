@@ -2,7 +2,7 @@
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (INF0296, 2026/2) · 1ª Etapa: Levantamento de Requisitos
-**Issue:** #54 · **Versão:** 1.1 · **Data:** 17/11/2026
+**Issue:** #54 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsáveis:** Júlia de Souza Nascimento e Verônica Ribeiro Oliveira Palmeira
 **Padrão:** IEEE Std 830-1998, *Recommended Practice for Software Requirements Specifications*
 **Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45), versão 1.1, e [Documento Visão](Documento_Visao.md) (#46), versão 1.1
@@ -13,6 +13,7 @@
 |---|---|---|---|
 | 1.0 | 17/11/2026 | Júlia de Souza Nascimento e Verônica Ribeiro Oliveira Palmeira | Primeira versão, consolidando a lista geral, o Documento Visão, os casos de uso, a especificação suplementar, o modelo ER e o dicionário de dados |
 | 1.1 | 17/11/2026 | Verônica Ribeiro Oliveira Palmeira | Revisão final (#55). Textos do RF-003, da RN-005 e da RN-006 conforme a lista geral 1.1, que incorporou o Apêndice C.3. Ajustes do Apêndice C.2 aplicados no modelo ER 1.1. Entidades novas na seção 3.4.1. Situação dos apêndices C.2 e C.3 atualizada |
+| 1.2 | 18/11/2026 | Verônica Ribeiro Oliveira Palmeira | Revisão de conformidade: definições de Avaliação 360° e Plano de ação iguais às do glossário (a de 360° contradizia a ERS-D09); ator do UC-19 conforme o diagrama; texto da ERS-D01 com o nome antigo dos artefatos; matriz de rastreabilidade no Apêndice E |
 
 ---
 
@@ -77,7 +78,7 @@ As definições abaixo são as do [Dicionário de Dados e Glossário](Dicionario
 | **Avaliado** | Colaborador que é objeto de avaliação em um ciclo, individualmente ou como membro de uma equipe |
 | **Avaliador convidado** | Papel de quem é convidado a responder uma avaliação de um ciclo: par, membro da equipe, liderado na avaliação ascendente ou o próprio avaliado na autoavaliação. É um papel, não um perfil |
 | **Avaliação** | Julgamento do desempenho feito com parâmetros definidos antes, em geral por questionário dentro de um ciclo. O feedback é a comunicação desse julgamento (E01 §14) |
-| **Avaliação 360°** | Modalidade em que o gestor abre o ciclo e convida membros do próprio time, e todos avaliam todos |
+| **Avaliação 360°** | Modalidade em que o gestor abre o ciclo e seleciona ou convida os participantes, que precisam ser do seu time |
 | **Avaliação ascendente** | Modalidade em que o colaborador avalia o seu gestor. O modo padrão é confidencial, e o ciclo pode ser configurado como anônimo |
 | **Avaliação de equipe** | Modalidade em que todos os membros da equipe avaliam todos |
 | **Check-in** | Encontro de verificação entre gestor e colaborador. No ciclo formal, registra os valores observados dos indicadores. No check-in periódico, acompanha metas e planos em andamento |
@@ -100,7 +101,7 @@ As definições abaixo são as do [Dicionário de Dados e Glossário](Dicionario
 | **Modalidade** | Quem avalia quem: gestor → colaborador, ascendente, pares, equipe, autoavaliação ou 360° (lista geral, seção 2.4) |
 | **Modo de identificação** | Como a identidade do emissor é tratada: identificado, confidencial ou anônimo. Configurado pelo RH ou pelo administrador, por ciclo e por modalidade |
 | **Mínimo de respondentes** | Número mínimo de respostas de uma fonte confidencial ou anônima para que o resultado seja exibido. Padrão: 3 |
-| **Plano de ação** | Conjunto de ações, responsáveis, metas, pontos de monitoramento e data final, criado a partir de um feedback construtivo, em conjunto pelo emissor e pelo receptor. Na data final, registra se houve melhora ou se é preciso novo feedback |
+| **Plano de ação** | Conjunto de ações, responsáveis, metas, pontos de monitoramento e data final, criado a partir de um feedback construtivo, em conjunto pelo emissor e pelo receptor. Se o feedback de origem for confidencial, o plano é definido pelo receptor e pelo seu gestor direto, sem o emissor (RN-006). Na data final, registra se houve melhora ou se é preciso novo feedback |
 | **Ponto de monitoramento** | Data prevista do plano de ação em que se registra o resultado das ações |
 | **Pseudonimização** | Tratamento após o qual o dado só pode ser associado ao titular com uma informação adicional guardada à parte (LGPD, art. 13, §4º). Continua sendo dado pessoal |
 | **Receptor** | Quem recebe o feedback: um colaborador ou uma equipe |
@@ -512,7 +513,7 @@ Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versã
 
 | Caso de uso | Ator principal | Resumo |
 |---|---|---|
-| [UC-19 Criar plano de ação](modelagem/casos-de-uso/UC-19_Criar_Plano_de_Acao.md) (completo) | Gestor (emissor) | Estende UC-08 quando o feedback é construtivo: emissor e receptor definem juntos ações, responsáveis, metas, pontos de monitoramento e data final |
+| [UC-19 Criar plano de ação](modelagem/casos-de-uso/UC-19_Criar_Plano_de_Acao.md) (completo) | Colaborador (emissor); gestor direto do receptor, se o feedback for confidencial | Estende UC-08 quando o feedback é construtivo: emissor e receptor definem juntos ações, responsáveis, metas, pontos de monitoramento e data final. Se o feedback for confidencial, o plano é definido pelo receptor e pelo seu gestor direto (RN-004, RN-006; UC19-D04) |
 | UC-20 Acompanhar plano de ação | Colaborador, Gestor | Registra o resultado de cada ponto de monitoramento, ajusta as ações e, na data final, registra se houve melhora ou se é preciso um novo feedback |
 | UC-21 Definir metas de desenvolvimento | Colaborador, Gestor | Cadastra metas individuais ou da equipe, com competência, indicador, valor esperado e prazo, e atualiza o progresso |
 | UC-23 Consultar painéis da equipe e da organização | Gestor, RH | Vê indicadores consolidados, tendências e a situação de planos e metas da equipe (gestor) ou da organização (RH), incluindo quais feedbacks geraram melhora e problemas recorrentes por cargo |
@@ -887,7 +888,7 @@ Ao reunir os artefatos, apareceram pontos em que eles divergiam ou em que um req
 
 | # | Questão | Decisão | Justificativa | Origem do ponto |
 |---|---|---|---|---|
-| ERS-D01 | Qual é o nome do produto? | **Sistema Web de Feedback e Gestão de Competências** | É o nome do Documento Visão, que é o artefato que define o produto (Larman, cap. 7), e o adotado pelo glossário. Os outros artefatos usam "Sistema Web de Feedback e Gestão de Competências", que descreve a área do enunciado, e não o produto | Dicionário, T-08 |
+| ERS-D01 | Qual é o nome do produto? | **Sistema Web de Feedback e Gestão de Competências** | É o nome do Documento Visão, que é o artefato que define o produto (Larman, cap. 7), e o adotado pelo glossário. Na versão 1.0, os outros artefatos usavam "Sistema de Gestão de Competências (módulo de Feedback)", que descreve a área do enunciado, e não o produto | Dicionário, T-08 |
 | ERS-D02 | Como a diretoria e o encarregado de dados acessam o sistema, se o RF-003 lista só os perfis colaborador, gestor, RH e administrador? | Os dois são classes de usuário com acesso restrito à sua função. A diretoria vê só resultados agregados (ES, seção 8.1). O encarregado acessa a fila de solicitações de titulares e o registro de incidentes (RF-061, RF-063), sem acesso ao conteúdo de feedbacks além do necessário para responder a uma solicitação. Os dois perfis foram incluídos na lista do RF-003 na versão 1.1 da lista geral (C.3) | O Documento Visão (seção 3.3) e o diagrama de casos de uso (atores e UC-27, UC-29) já tratam os dois como usuários, e a ES já dá acesso à diretoria. Restringir o acesso à função segue o princípio da necessidade (LGPD, art. 6º, III) e a lista fechada do RNF-001 | Dicionário, I-01 |
 | ERS-D03 | Como conciliar o emissor obrigatório da RN-002 com o modo anônimo? | A RN-002 vale para todo feedback, que nunca é anônimo: fora de ciclo segue o padrão de RN-004 pela direção, e o anonimato só existe nas respostas de avaliação de um ciclo (UC08-D04), que não são feedbacks no sentido da RN-002. No modo confidencial, o emissor é guardado no vínculo separado, o que atende à RN-002 | RF-030 configura o modo por ciclo e modalidade. O ER separa `Feedback` de `RespostaAvaliacao`. A RN-002 lista os campos do feedback | Dicionário, I-02 |
 | ERS-D04 | A edição permitida pela RN-003 vale para respostas anônimas? | Não. A resposta anônima não pode ser alterada depois do envio, e o avaliador é avisado antes de enviar. Nos modos identificado e confidencial, a resposta pode ser alterada enquanto o ciclo estiver aberto, com auditoria | O sistema não guarda nada que ligue a resposta anônima ao emissor (ER, seção 10). Decisão UC14-D02 do caso de uso UC-14 | Dicionário, I-03 |
@@ -960,4 +961,5 @@ Fonte: lista geral, seção 10.
 | [Modelo de Domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) | Requisitos lógicos de dados | #52 |
 | [Dicionário de Dados e Glossário](Dicionario_de_Dados.md) | Definições e inconsistências entre artefatos | #53 |
 | [Processo AS-IS e dores](elicitacao/bpmn/Processo_AS-IS_e_Dores.md) | Dores D1 a D6 | #44 |
+| [Matriz de Rastreabilidade](Matriz_Rastreabilidade.md) e [CSV](Matriz_Rastreabilidade.csv) | Ligação de cada requisito à fonte, aos casos de uso, às telas e às entidades | #49 |
 | [Síntese das entrevistas](elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md), [dos questionários](elicitacao/questionarios/Sintese.md), [da pesquisa documental](elicitacao/pesquisa-documental/Requisitos_Pesquisa_Documental.md) e [do sistema análogo](elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | Fontes dos candidatos citados na coluna Origem | #41, #42, #33, #43 |
