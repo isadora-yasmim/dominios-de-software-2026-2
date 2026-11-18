@@ -56,7 +56,7 @@ Itens da lista "Entrega dos seguintes documentos" do enunciado, na mesma ordem.
 | 10 | Diagrama de casos de uso – cap. 6 do Larman | [Diagrama_Casos_de_Uso.md](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md), fonte [PlantUML](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.puml) e 8 imagens: 7 atores e 31 casos de uso | #47 | Atendido |
 | 11 | Casos de uso essenciais, pelo menos 1 completo por integrante – cap. 6 do Larman | [Casos_de_Uso_Completos.md](modelagem/casos-de-uso/Casos_de_Uso_Completos.md): 5 casos completos para 5 integrantes (UC-08, UC-13, UC-14, UC-19, UC-25). Os 31 casos estão em formato resumido no diagrama, seção 4 | #48 | Atendido |
 | 12 | Matriz de Rastreabilidade (horizontal e vertical) – requisitos, fontes e artefatos | [Matriz_Rastreabilidade.md](Matriz_Rastreabilidade.md) e [CSV](Matriz_Rastreabilidade.csv): vertical (fonte → requisito → caso de uso → tela → entidade) e horizontal (requisito ↔ requisito) | #49 | Atendido |
-| 13 | Protótipos das telas – Figma | [Prototipo.md](prototipacao/Prototipo.md) e [arquivo no Figma](https://www.figma.com/design/yiyjqLFpIp838MAi9x0EW4/Dom%C3%ADnios-de-Software-2026-2?node-id=6-3): 51 telas, 47 web e 4 para celular | #50 | Atendido. Ver a seção 8 |
+| 13 | Protótipos das telas – Figma | [Prototipo.md](prototipacao/Prototipo.md) e [arquivo no Figma](https://www.figma.com/design/yiyjqLFpIp838MAi9x0EW4/Dom%C3%ADnios-de-Software-2026-2?node-id=6-3): 54 telas, 50 web e 4 para celular, exportadas para [`prototipacao/telas/`](prototipacao/telas/) | #50 | Atendido |
 | 14 | Especificação suplementar para os RNF (ISO/IEC 25010) – cap. 7 do Larman | [Especificacao_Suplementar.md](Especificacao_Suplementar.md): 36 RNF com critério de aceitação e método de verificação, pela ISO/IEC 25010:2023 | #51 | Atendido |
 | 15 | Modelo Entidade-Relacionamento / Modelo de domínio | [Modelo_Dominio_ER.md](modelagem/modelo-dados/Modelo_Dominio_ER.md): diagramas Mermaid por área, tratamento do anonimato e rastreabilidade entidade × requisito | #52 | Atendido |
 | 16 | Dicionário de dados (glossário): termo, definição, formato (tipo, tamanho, unidade), relacionamento e regra de validação – cap. 7 do Larman | [Dicionario_de_Dados.md](Dicionario_de_Dados.md): glossário de termos de negócio e dicionário de todos os atributos do ER, com tipo, tamanho ou domínio, unidade, obrigatoriedade, chave, relacionamento, regra de validação e classificação LGPD | #53 | Atendido |
@@ -185,11 +185,11 @@ Estes pontos dependem de ferramentas fora do Git e não alteram nenhum requisito
 
 | # | Ponto | Situação |
 |---|---|---|
-| 1 | Anotações de 9 telas no Figma citam requisitos diferentes dos da lista geral | Corrigidas na matriz (seção 4.2), que é a referência. A atualização das anotações é feita no arquivo do Figma |
-| 2 | Casos de uso sem tela no protótipo, entre eles UC-03, UC-04 e UC-28, que atendem requisitos Must | Registrados na matriz (seções 4.1 e 8). Os requisitos continuam rastreados pelo caso de uso e pela entidade |
+| 1 | Anotações de 9 telas no Figma citavam requisitos diferentes dos da lista geral | Resolvido em 18/11/2026: anotações corrigidas no Figma, conforme a matriz (seção 4.2) |
+| 2 | Requisitos Must sem tela (RF-005, RF-006 e RF-062) | Resolvido em 18/11/2026: telas T-52 (UC-03), T-53 (UC-04) e T-54 (UC-28) |
 | 3 | Imagens exportadas do modelo ER (pasta `img/`) | Resolvido em 18/11/2026: as 7 imagens, em PNG e SVG, foram geradas de novo a partir dos diagramas Mermaid da versão 1.2 do modelo |
 | 4 | Imagens PNG e SVG do diagrama de casos de uso | Resolvido em 18/11/2026: todas as imagens foram geradas de novo a partir do `.puml`, e o UC-19 aparece ligado ao Colaborador |
-| 5 | PDFs exportados do Figma, usados para numerar as telas `T-xx` na matriz | Não estão no repositório. A coluna "Pág. do PDF" da matriz (seção 4.1) não pode ser conferida por quem não tem os PDFs |
+| 5 | Telas do protótipo fora do repositório | Resolvido em 18/11/2026: as 54 telas foram exportadas do Figma para [`prototipacao/telas/`](prototipacao/telas/), e a matriz liga cada `T-xx` à sua imagem, no lugar das páginas dos PDFs |
 
 ---
 
@@ -220,6 +220,8 @@ Depois do merge do PR #77, todo o repositório foi lido de novo e comparado, ite
 | [Dicionário de dados](Dicionario_de_Dados.md) (1.2) | Termos Plano de ação, Emissor e Receptor com a regra do feedback confidencial; `Feedback.data_feedback` não futura; `AcaoPlano.responsavel_id` e `meta_acao`; `RegistroAuditoria.ator_id` e `ip_origem` opcionais nas rotinas automáticas; contato do encarregado no agente de pequeno porte | Coerência com a RN-006 1.1, com as decisões UC08-D05 e UC19-D02, com o UC-19 (toda ação tem meta) e com o UC-30, cuja eliminação automática não tem usuário mas precisa ser auditada |
 | [Modelo ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (1.2) | Cardinalidade zero ou um entre `Colaborador` e `RegistroAuditoria` | Mesma razão do item anterior |
 | [Especificação suplementar](Especificacao_Suplementar.md) (1.2) | Links para os artefatos relacionados; seção 12.3 com os itens do modelo de Larman sem requisito nesta etapa | Seções do modelo de Larman (cap. 7) que não estavam registradas |
+| [Protótipo no Figma](prototipacao/Prototipo.md) (1.3) | Anotações das 9 telas corrigidas e as demais completadas; telas de login sem "UC-01" no nome; frame solto sobre o título do login removido; telas T-52 a T-54; refinamento visual de todo o arquivo (paleta índigo e grafite com contraste conferido, sem degradês, cantos e sombras padronizados); 54 telas exportadas para o repositório, com galeria | Pendências 1, 2 e 5 da seção 8 e pedido de visual mais profissional |
+| [Matriz de rastreabilidade](Matriz_Rastreabilidade.md) (1.2) e CSV | Coluna Imagem no lugar da página do PDF; T-52 a T-54 no catálogo, nas telas por caso de uso e nas colunas Telas; cobertura recalculada (55 de 65 RF com tela, nenhum Must sem tela; 54 de 54 telas com requisito) | Refletir o protótipo atualizado |
 
 **Conferências refeitas depois das correções:** links internos e âncoras de todos os arquivos `.md` (nenhum quebrado); citações literais conferidas com as transcrições; texto dos 117 requisitos igual na lista geral, no CSV e na especificação IEEE 830, e dos 36 RNF na especificação suplementar; definições da IEEE 830 iguais às do glossário.
 
