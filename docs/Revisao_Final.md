@@ -188,7 +188,7 @@ Estes pontos dependem de ferramentas fora do Git e não alteram nenhum requisito
 | 1 | Anotações de 9 telas no Figma citam requisitos diferentes dos da lista geral | Corrigidas na matriz (seção 4.2), que é a referência. A atualização das anotações é feita no arquivo do Figma |
 | 2 | Casos de uso sem tela no protótipo, entre eles UC-03, UC-04 e UC-28, que atendem requisitos Must | Registrados na matriz (seções 4.1 e 8). Os requisitos continuam rastreados pelo caso de uso e pela entidade |
 | 3 | Imagens exportadas do modelo ER (pasta `img/`) | Mostram a versão 1.0. Os diagramas Mermaid da página do modelo, renderizados pelo GitHub, são a fonte e já estão na versão 1.1 |
-| 4 | Imagens PNG e SVG da visão geral e da área "Plano de ação e metas" do diagrama de casos de uso | Mostram a associação antiga Gestor → UC-19. O arquivo `.puml`, que é a fonte, já liga o UC-19 ao Colaborador. As imagens precisam ser geradas de novo pelo comando da seção 6 do diagrama |
+| 4 | Imagens PNG e SVG do diagrama de casos de uso | Resolvido em 18/11/2026: todas as imagens foram geradas de novo a partir do `.puml`, e o UC-19 aparece ligado ao Colaborador |
 | 5 | PDFs exportados do Figma, usados para numerar as telas `T-xx` na matriz | Não estão no repositório. A coluna "Pág. do PDF" da matriz (seção 4.1) não pode ser conferida por quem não tem os PDFs |
 
 ---
