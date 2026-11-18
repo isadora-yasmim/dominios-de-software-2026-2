@@ -504,7 +504,7 @@ Liga requisitos do mesmo nível. Três tipos de ligação:
 | 1 | As anotações de 9 telas citam requisitos errados (seção 4.2) | Protótipo (#50) | Corrigir as anotações no Figma | Resolvida em 18/11/2026. As 9 anotações foram corrigidas no Figma, e as demais foram completadas com todos os requisitos da seção 4.1 |
 | 2 | RF-005 e RF-006 (competências do cargo e específicas) e RF-062 (retenção) são Must e não têm tela | Protótipo (#50) | Desenhar as telas de UC-03, UC-04 e UC-28, ou registrar que ficam para a etapa de design | Resolvida em 18/11/2026. Telas T-52 (UC-03), T-53 (UC-04) e T-54 (UC-28) |
 | 3 | Três decisões dos casos de uso completos pedem mudanças que ainda não estão no modelo ER: aviso `FEEDBACK_RECEBIDO` (UC08-D01; a tela T-47 já mostra esse aviso), `observado_equipe_id` em `Fato` (UC08-D02) e a confirmação do plano pelo receptor (UC19-D01) | Modelo ER (#52) | Aplicar no modelo ER e na seção 12 dele | Resolvida. Aplicadas na versão 1.1 do modelo ER (seção 14 dele), junto com os ajustes do Apêndice C.2 da especificação IEEE 830 |
-| 4 | Os pontos a validar P-01 a P-10 continuam abertos | Lista geral (#45) | Ao receber a resposta da PO, usar a seção 6 desta matriz para achar todos os requisitos afetados | Aberta. Os dez pontos são decisões do grupo, ainda não confirmadas pela PO (seção 9 da lista geral) |
+| 4 | Os pontos P-01 a P-10 são decisões do grupo ainda não confirmadas pela PO | Lista geral (#45) | Ao receber a resposta da PO, usar a seção 6 desta matriz para achar todos os requisitos afetados | Aberta. Os dez pontos são decisões do grupo, ainda não confirmadas pela PO (seção 9 da lista geral) |
 
 ---
 
@@ -514,5 +514,5 @@ As tabelas desta página e o CSV foram montados a partir dos artefatos listados 
 
 1. Atualize o artefato de origem (lista geral, diagrama, protótipo, modelo ER ou especificação suplementar).
 2. Atualize a linha do requisito afetado aqui e no CSV, nas colunas correspondentes.
-3. Se surgir uma tela nova, dê a ela o próximo número livre (`T-52` em diante) e inclua-a no catálogo da seção 4.1. Números de tela, como os de requisito, não são reutilizados.
+3. Se surgir uma tela nova, dê a ela o próximo número livre (`T-55` em diante) e inclua-a no catálogo da seção 4.1. Números de tela, como os de requisito, não são reutilizados.
 4. Refaça a verificação da seção 7.

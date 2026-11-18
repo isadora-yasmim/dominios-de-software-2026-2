@@ -2,7 +2,7 @@
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (2026/2) · 1ª Etapa: Levantamento de Requisitos
-**Issue:** #45 · **Versão:** 1.1 · **Data:** 17/11/2026
+**Issue:** #45 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsável:** Verônica Ribeiro Oliveira Palmeira
 **Artefatos relacionados:** [Lista_Geral_Requisitos.csv](Lista_Geral_Requisitos.csv) (mesmos requisitos, com todos os atributos, para a matriz de rastreabilidade)
 
@@ -23,6 +23,7 @@
 |---|---|---|---|
 | 1.0 | 17/11/2026 | Versão inicial: 160 candidatos de 5 técnicas consolidados em 117 requisitos | Verônica Ribeiro Oliveira Palmeira |
 | 1.1 | 17/11/2026 | Revisão final (#55): incorpora as alterações indicadas pela especificação IEEE 830 (Apêndice C.3): perfis diretoria e encarregado no RF-003 (ERS-D02), piso de 3 respondentes na RN-005 (ERS-D08) e plano de ação de feedback confidencial na RN-006 (ERS-D05). A seção 9 passa a registrar os pontos como decisões do grupo, ainda não confirmadas pela PO. Nenhum identificador, prioridade ou total foi alterado | Verônica Ribeiro Oliveira Palmeira |
+| 1.2 | 18/11/2026 | Observação do RNF-006 aponta os valores já definidos na especificação suplementar (DS-05 e DS-06); textos da seção 9 e da seção 12 sem atribuir motivo à PO. Nenhum identificador, prioridade ou total foi alterado | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
@@ -266,7 +267,7 @@ Na contagem acima, os candidatos do BPMN (`RP`) contam como entrevista, porque o
 | RNF-003 | Nos feedbacks e avaliações em modo confidencial, o vínculo entre emissor e resposta deve ser armazenado separado do conteúdo (pseudonimização), com acesso restrito ao RH e registrado na trilha de auditoria. | Segurança (confidencialidade, responsabilização) | RD-18 | Should | Boa prática derivada da LGPD (art. 13, §4º). |
 | RNF-004 | Dados pessoais e conteúdo de feedback devem ser criptografados em trânsito (TLS 1.2 ou superior) e em repouso. | Segurança (confidencialidade, integridade) | RD-19 | Must | Medida técnica de segurança (LGPD, art. 46). |
 | RNF-005 | O sistema deve manter trilha de auditoria inalterável dos acessos e das alterações a dados pessoais e feedbacks (quem, quando, o quê e de onde), incluindo toda consulta à identidade de emissores confidenciais. | Segurança (responsabilização, não repúdio) | RD-20 | Must | LGPD, arts. 6º, X, 37 e 46. |
-| RNF-006 | O sistema deve exigir autenticação em dois fatores para RH e administradores, bloquear o acesso após tentativas sucessivas de login sem sucesso e encerrar a sessão após um período de inatividade. | Segurança (autenticidade, resistência) | RD-21 | Should | Boa prática derivada da LGPD (art. 46). Número de tentativas e tempo de inatividade a definir na especificação suplementar (#51). |
+| RNF-006 | O sistema deve exigir autenticação em dois fatores para RH e administradores, bloquear o acesso após tentativas sucessivas de login sem sucesso e encerrar a sessão após um período de inatividade. | Segurança (autenticidade, resistência) | RD-21 | Should | Boa prática derivada da LGPD (art. 46). Número de tentativas e tempo de inatividade definidos na especificação suplementar (#51): decisões DS-05 e DS-06. |
 
 ### 5.2 Adequação funcional
 

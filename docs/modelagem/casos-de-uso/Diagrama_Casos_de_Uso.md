@@ -247,7 +247,7 @@ Todos os 65 requisitos funcionais da lista geral foram conferidos. 62 são atend
 | Autenticação (parte de RF-003) | Fazer login não é um objetivo do usuário, e sim um passo para chegar a ele. Larman recomenda não modelar o login como caso de uso. Ele entra como **pré-condição** de todos os casos de uso. A atribuição de perfis está em UC-01 |
 | RF-004 – Login único (SSO) | Won't nesta versão: integração externa não pedida pela PO |
 | RF-064 – Atalho para o canal de denúncias | É um elemento fixo da interface, não uma tarefa do usuário. O canal de denúncias fica fora da fronteira (RN-009) |
-| RF-065 – Símbolo e declaração de acessibilidade | Elemento fixo da interface. Será tratado na especificação suplementar (#51) junto com os demais RNF de acessibilidade |
+| RF-065 – Símbolo e declaração de acessibilidade | Elemento fixo da interface. É tratado na [especificação suplementar](../../Especificacao_Suplementar.md) (#51), seção 6.2, junto com os demais RNF de acessibilidade, e aparece na tela T-45 |
 | Requisitos não funcionais | Valem para vários casos de uso ao mesmo tempo e são tratados na [especificação suplementar](../../Especificacao_Suplementar.md) (#51) |
 
 ---
