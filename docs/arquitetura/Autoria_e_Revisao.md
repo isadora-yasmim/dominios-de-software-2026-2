@@ -1,7 +1,7 @@
 # Planejamento da 2ª etapa e tabela de autoria e revisão
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências · **Etapa:** 2ª Entrega – Arquitetura e Desenho Detalhado · **Prazo:** 08/12/2026
-**Versão:** 1.1 · **Issue:** #78 · **Autora:** Isadora Yasmim da Silva · **Revisor(a):** Júlia de Souza Nascimento
+**Versão:** 1.2 · **Issue:** #78 · **Autora:** Isadora Yasmim da Silva · **Revisor(a):** Júlia de Souza Nascimento
 
 | Item | Descrição |
 |---|---|
@@ -19,7 +19,7 @@
 | 3. A mesma pessoa não pode ser autora e revisora do mesmo item | Cada linha da seção 3 tem autor e revisor diferentes; a conferência está na seção 4 |
 | 3. Todo integrante é autor de algum item e revisor de outro | A seção 4 mostra a quantidade de itens de cada integrante nos dois papéis |
 | 4. O documento final traz a tabela artefato, autor e revisor | A seção 3 é essa tabela, mantida aqui até a consolidação do PDF |
-| 7. A docente faz parte do time do GitHub e do Discord | Convite do GitHub enviado; situação registrada na seção 5 |
+| 7. A docente faz parte do time do GitHub e do Discord | Convite do GitHub enviado e servidor do Discord criado; situação registrada na seção 5 |
 
 A revisão de cada item é feita no pull request da issue correspondente: o revisor indicado aprova o PR, e só então o merge é feito. O PR aprovado é a evidência de revisão.
 
@@ -111,7 +111,7 @@ Todos os integrantes são autores de pelo menos um item e revisores de pelo meno
 | 1 | Ler o enunciado da Parte III em grupo e levar as dúvidas à PO | Todos | A fazer na próxima reunião; registrar na ata (#108) |
 | 2 | Confirmar esta distribuição de revisores com o grupo | Todos | **Concluída:** distribuição confirmada pelo grupo e campo **Revisor(a)** preenchido nas issues #78 a #111 |
 | 3 | Docente como colaboradora do repositório no GitHub (regra 7) | Isadora | **Aguardando a docente:** convite enviado e ainda não aceito. Enquanto isso, o repositório fica público para que ela tenha acesso |
-| 4 | Docente no servidor do Discord (regra 7) | Isadora | **A fazer:** criar o servidor do Discord da equipe e convidar a docente |
+| 4 | Docente no servidor do Discord (regra 7) | Isadora | **Aguardando a docente:** servidor da equipe criado; o convite será enviado assim que a docente informar o usuário dela no Discord |
 
 ---
 
@@ -121,3 +121,4 @@ Todos os integrantes são autores de pelo menos um item e revisores de pelo meno
 |---|---|---|---|
 | 1.0 | 19/11/2026 | Isadora Yasmim da Silva | Proposta inicial da distribuição de autoria e revisão das issues #78 a #111 |
 | 1.1 | 19/11/2026 | Isadora Yasmim da Silva | Distribuição confirmada pelo grupo, revisores registrados nas issues e situação das pendências atualizada |
+| 1.2 | 19/11/2026 | Isadora Yasmim da Silva | Servidor do Discord criado; convite à docente aguardando o usuário dela |
