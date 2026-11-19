@@ -1,8 +1,8 @@
 # Sistema Web de Feedback e Gestão de Competências
 
-Projeto da disciplina **Domínios de Software (2026/2)** · 1ª Etapa: Levantamento de Requisitos
+Projeto da disciplina **Domínios de Software (2026/2)** · 1ª Etapa: Levantamento de Requisitos · 2ª Etapa: Arquitetura e Desenho Detalhado
 
-**Kanban:** [Kanban Domínios de Software](https://github.com/users/isadora-yasmim/projects/3) · **Entrega:** 10/11/2026
+**Kanban:** [Kanban Domínios de Software](https://github.com/users/isadora-yasmim/projects/3) · **Entregas:** 1ª etapa em 10/11/2026 · 2ª etapa em 08/12/2026
 
 ---
 
@@ -40,7 +40,7 @@ Os papéis estão definidos na seção 4 do [processo de requisitos](docs/Proces
 
 ---
 
-## Índice dos artefatos
+## Índice dos artefatos da 1ª etapa
 
 A coluna **Item do enunciado** segue a lista de entregas da 1ª etapa. A conferência completa de cada item está na [revisão final](docs/Revisao_Final.md).
 
@@ -78,6 +78,48 @@ A coluna **Item do enunciado** segue a lista de entregas da 1ª etapa. A confer�
 
 ---
 
+## 2ª etapa: Arquitetura e Desenho Detalhado
+
+A 2ª etapa entrega um **documento único em PDF** com a arquitetura do sistema em C4 adaptado (contexto, containers, componentes e código), apoiado nos artefatos da 1ª etapa. Os artefatos ficam em [`docs/arquitetura/`](docs/arquitetura/). Quem é autor e quem é revisor de cada item está na [tabela de autoria e revisão](docs/arquitetura/Autoria_e_Revisao.md). O local de cada artefato será preenchido quando o PR correspondente entrar na `main`.
+
+| # | Artefato | Seção do PDF | Local | Issue |
+|---|----------|--------------|-------|-------|
+| **Planejamento e padrões** |||||
+| 1 | Planejamento e tabela artefato × autor × revisor | Após os apêndices | [`Autoria_e_Revisao.md`](docs/arquitetura/Autoria_e_Revisao.md) | #78 |
+| 2 | Guia de padrões da arquitetura | — | `docs/arquitetura/Padroes.md` (a criar) | #79 |
+| 3 | Stack tecnológica e decisões arquiteturais | 3 | `docs/arquitetura/Decisoes_Arquiteturais.md` (a criar) | #80 |
+| **Seções textuais** |||||
+| 4 | Introdução | 1 | — | #81 |
+| 5 | Stakeholders, preocupações e matriz | 2 | — | #82 |
+| 6 | Requisitos não funcionais (ISO/IEC 25010) e mecanismos arquiteturais | 3 | — | #83 |
+| 7 | Ambiente operacional web: papéis, HTTP, ciclo da requisição, sessão e estado | 4 | — | #84, #85, #86 |
+| **N1 – Contexto** |||||
+| 8 | DImp – diagrama de implantação com atores | 5 | — | #87 |
+| 9 | DPN – processos de negócio TO-BE | 5 | — | #88 |
+| 10 | DCdu – diagramas de casos de uso | 5 | — | #89 |
+| **N2 – Containers** |||||
+| 11 | DPac – diagrama de pacotes | 5 | — | #90 |
+| 12 | Casos de uso completos (UC-01 a UC-31) | 5 | — | #91 a #95 |
+| 13 | PIhc – protótipo de IHC por caso de uso | 5 | `docs/arquitetura/pihc/` (a criar) | #96 |
+| **N3 – Componentes** |||||
+| 14 | DCmp – diagramas de componentes do backend e do frontend | 5 | — | #97, #98 |
+| 15 | ECBD – esquema conceitual de banco de dados (DCD/MER e DDC) | 5 | — | #99 |
+| 16 | DSeq entre componentes | 5 | — | #100, #101 |
+| **N4 – Código** |||||
+| 17 | EOBD – esquema operacional de banco de dados | 5 | `docs/arquitetura/eobd/` (a criar) | #102 |
+| 18 | DCla – diagramas de classes por componente | 5 | — | #103 |
+| 19 | DSeq de operações de classe (3) | 5 | — | #104 |
+| 20 | Contratos de operação (3) | 5 | — | #105 |
+| **Consolidação** |||||
+| 21 | Matriz de rastreabilidade da arquitetura | 2 e apêndice | — | #106 |
+| 22 | Referências e apêndice de prompts de IA | Referências e apêndices | — | #107 |
+| 23 | Apêndice de reuniões, comunicações e riscos | Apêndices | — | #108 |
+| 24 | Documento único em PDF | Todas | — | #109 |
+| 25 | Revisão final da arquitetura | — | `docs/arquitetura/Revisao_Final.md` (a criar) | #110 |
+| 26 | Apresentação final e avaliação 360º | — | — | #111 |
+
+---
+
 ## Estrutura do repositório
 
 ```
@@ -90,6 +132,7 @@ docs/
 ├── Dicionario_de_Dados.md
 ├── Especificacao_Requisitos_IEEE830.md
 ├── Revisao_Final.md
+├── arquitetura/
 ├── assets/
 ├── elicitacao/
 │   ├── bpmn/
