@@ -2,7 +2,7 @@
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (2026/2) · 1ª Etapa: Levantamento de Requisitos
-**Issue:** #51 · **Versão:** 1.1 · **Data:** 17/11/2026
+**Issue:** #51 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsável:** Verônica Ribeiro Oliveira Palmeira
 **Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md), versão 1.1 (#45)
 
@@ -12,6 +12,7 @@
 |---|---|---|---|
 | 1.0 | 17/11/2026 | Versão inicial: requisitos não funcionais e restrições organizados pela ISO/IEC 25010:2023, com critérios de aceitação e métodos de verificação | Verônica Ribeiro Oliveira Palmeira |
 | 1.1 | 17/11/2026 | Revisão final (#55): linha do encarregado na matriz de acesso (seção 8.1), conforme o RF-003 da lista geral 1.1 (decisão ERS-D02 da especificação IEEE 830); situação das decisões DS-01 e DS-09 fechada na seção 15, e a DS-10 registrada como decisão do grupo, ainda não confirmada pela PO; referências aos pontos da lista geral atualizadas | Verônica Ribeiro Oliveira Palmeira |
+| 1.2 | 18/11/2026 | Links para os artefatos relacionados (seção 1.3); seção 12.3 com os itens do modelo de Larman sem requisito nesta etapa (componentes adquiridos e de código aberto) e onde ficam as informações do domínio | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
@@ -58,10 +59,10 @@ Este documento não cria requisitos novos. Quando a lista geral deixou um valor 
 | [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45) | Fonte dos identificadores, textos, origens e prioridades. As decisões dos pontos da seção 9 da lista valem aqui, em especial a do P-10, sobre as metas numéricas |
 | [Pesquisa documental](elicitacao/pesquisa-documental/Pesquisa_Documental.md) (#33) | Fonte das obrigações legais e normas técnicas e da adaptação da ISO/IEC 25010:2023 ao sistema |
 | [Documento Visão](Documento_Visao.md) (#46) | Resume os atributos de qualidade mais importantes para os interessados |
-| Casos de uso (#47 e #48) | Descrevem o comportamento funcional. Os requisitos especiais de cada caso de uso devem apontar para os RNF deste documento |
+| [Diagrama de casos de uso](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47) e [casos de uso completos](modelagem/casos-de-uso/Casos_de_Uso_Completos.md) (#48) | Descrevem o comportamento funcional. A seção "Requisitos especiais" de cada caso de uso completo aponta para os RNF deste documento |
 | [Modelo ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52) | Reflete as decisões de armazenamento da seção 8: vínculo confidencial separado (`VinculoConfidencial`) e convite sem ligação com a resposta (seção 10 do modelo) |
-| Especificação IEEE 830 (#54) | Usa este documento como fonte da sua seção de requisitos não funcionais |
-| Matriz de rastreabilidade (#49) | Usa a seção 16 para ligar cada RNF à característica de qualidade e ao método de verificação |
+| [Especificação IEEE 830](Especificacao_Requisitos_IEEE830.md) (#54) | Usa este documento como fonte da sua seção de requisitos não funcionais |
+| [Matriz de rastreabilidade](Matriz_Rastreabilidade.md) (#49) | Usa a seção 16 para ligar cada RNF à característica de qualidade e ao método de verificação |
 
 ### 1.4 Como ler as tabelas
 
@@ -354,6 +355,16 @@ A conformidade com a LGPD (RNF-031) é atendida pelo conjunto de requisitos list
 | Lei Brasileira de Inclusão, art. 63 | Acessibilidade do sistema web e símbolo de acessibilidade | RNF-017 a RNF-023, RNF-027, RF-065 |
 | CF/88, art. 7º, XXX e XXXI; Lei nº 9.029/1995 | Critérios de avaliação sem discriminação | RN-014, RNF-024 |
 | Lei nº 14.457/2022, art. 23 | Canal de denúncias separado do sistema de feedback | RN-009, RF-064 |
+
+### 12.3 Itens do modelo de Larman sem requisito nesta etapa
+
+O modelo de especificação suplementar de Larman (cap. 7) traz também componentes adquiridos, componentes de código aberto e informações do domínio de interesse.
+
+| Item | Situação neste projeto |
+|---|---|
+| Componentes adquiridos | Nenhum requisito ou fonte exige componente comercial. A escolha de componentes faz parte da arquitetura e do projeto, que a PO indicou como a segunda etapa do trabalho (E01 §24) |
+| Componentes de código aberto | Mesma situação: a escolha fica para a segunda etapa. Qualquer componente escolhido terá de respeitar os RNF desta especificação, em especial a segurança (seção 8) e a acessibilidade (seção 6.2) |
+| Informações do domínio de interesse | Estão no [glossário e dicionário de dados](Dicionario_de_Dados.md) (#53), na [pesquisa documental](elicitacao/pesquisa-documental/Pesquisa_Documental.md) (#33), que reúne as normas legais e técnicas do domínio, e no [processo AS-IS](elicitacao/bpmn/Processo_AS-IS_e_Dores.md) (#44) |
 
 ---
 

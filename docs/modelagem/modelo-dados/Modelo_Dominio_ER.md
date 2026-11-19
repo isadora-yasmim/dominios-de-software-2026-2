@@ -2,8 +2,8 @@
 
 Projeto: Sistema Web de Feedback e Gestão de Competências · Disciplina Domínios de Software (INF0296, 2026/2)
 
-**Entrada:** [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.1 · **Versão deste modelo:** 1.1 (revisão final, #55)
-**Notação:** diagramas `erDiagram` em [Mermaid](https://mermaid.js.org/syntax/entityRelationshipDiagram.html), renderizados direto pelo GitHub. Os diagramas Mermaid desta página são a fonte do modelo. As imagens em [`img/`](img/) foram exportadas da versão 1.0 e não mostram os ajustes da versão 1.1, listados na [seção 14](#14-histórico-de-revisões).
+**Entrada:** [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.1 · **Versão deste modelo:** 1.2
+**Notação:** diagramas `erDiagram` em [Mermaid](https://mermaid.js.org/syntax/entityRelationshipDiagram.html), renderizados direto pelo GitHub. Os diagramas Mermaid desta página são a fonte do modelo. As imagens em [`img/`](img/), em PNG e SVG, foram geradas desses diagramas com o Mermaid CLI na versão 1.2 do modelo (18/11/2026), uma por seção: `00` é a visão geral (seção 3) e `01` a `06` são as seções 4 a 9.
 
 ---
 
@@ -77,7 +77,7 @@ erDiagram
 
     Colaborador ||--o{ Consentimento : concede
     Colaborador ||--o{ SolicitacaoTitular : abre
-    Colaborador ||--o{ RegistroAuditoria : "gera (ator)"
+    Colaborador |o--o{ RegistroAuditoria : "gera (ator)"
 ```
 
 ## 4. Organização, usuários e acesso
@@ -705,7 +705,7 @@ erDiagram
     }
     RegistroAuditoria {
         uuid id PK
-        uuid ator_id FK
+        uuid ator_id FK "nulo so nas rotinas automaticas (UC-30)"
         datetime data_hora
         enum acao "AcaoAuditoria"
         string entidade
@@ -739,7 +739,7 @@ erDiagram
     Colaborador |o--o{ SolicitacaoTitular : "responde"
     IncidenteSeguranca ||--o{ TitularAfetado : afeta
     Colaborador ||--o{ TitularAfetado : "afetado por"
-    Colaborador ||--o{ RegistroAuditoria : "ator de"
+    Colaborador |o--o{ RegistroAuditoria : "ator de"
     Colaborador ||--o{ Notificacao : recebe
     Colaborador ||--o{ PreferenciaNotificacao : configura
 ```
@@ -859,3 +859,4 @@ Consequência aceita: no modo `ANONIMO` o emissor não pode editar a resposta de
 |---|---|---|
 | 1.0 | 17/11/2026 | Versão inicial (#52) |
 | 1.1 | 17/11/2026 | Revisão final (#55). Perfis `DIRETORIA` e `ENCARREGADO` (RF-003, I-01). Emissor e autor das versões de feedback confidencial só no vínculo, com o rascunho ligado ao autor até o envio (I-04). `Feedback.peso` e regra de exibição dos pesos (I-06). Prazo da categoria prevalece sobre o padrão da organização (I-07). Removido `Meta.atingida` (I-08). Enumerações `AcaoAuditoria` e `FrequenciaCheckIn` fechadas e domínio de `ResultadoConsolidado.modalidade` explicitado (I-09). `CheckInMeta` e `CheckInPlano` (I-10). `DestinatarioVisibilidade` (I-11). `CompartilhamentoDados.inclui_menores` (I-12). `DisponibilidadeAgenda`, `TermoOfensivo` e controle de falhas de login em `Colaborador` (I-13). `Fato.observado_equipe_id` (UC08-D02). `FEEDBACK_RECEBIDO` e `PLANO_PARA_CONFIRMAR` em `TipoNotificacao` e `AGUARDANDO_CONFIRMACAO` em `StatusPlano` (UC08-D01, UC19-D01). `PlanoAcao.gestor_id` para plano de feedback confidencial (ERS-D05). Piso de 3 em `min_respondentes` (ERS-D08) |
+| 1.2 | 18/11/2026 | `RegistroAuditoria.ator_id` opcional (cardinalidade zero ou um com `Colaborador`): as ações das rotinas automáticas do relógio do sistema, como a eliminação da política de retenção (UC-30), não têm usuário, mas precisam ser auditadas (RNF-005, RF-062). Imagens de `img/` geradas de novo a partir dos diagramas desta versão, com o dobro da resolução das anteriores |

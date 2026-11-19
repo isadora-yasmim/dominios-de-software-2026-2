@@ -165,7 +165,7 @@ Outras ligações entre casos de uso existem, mas não são `include` nem `exten
 
 ## 6. Diagramas
 
-As imagens são geradas pelo arquivo [Diagrama_Casos_de_Uso.puml](Diagrama_Casos_de_Uso.puml). Para alterar um diagrama, edite esse arquivo e gere as imagens de novo:
+As imagens são geradas pelo arquivo [Diagrama_Casos_de_Uso.puml](Diagrama_Casos_de_Uso.puml), em PNG e em SVG (o SVG pode ser ampliado sem perder qualidade). Todas foram geradas de novo em 18/11/2026, a partir da versão atual do `.puml`. Para alterar um diagrama, edite esse arquivo e gere as imagens de novo:
 
 ```bash
 java -jar plantuml.jar -charset UTF-8 -tpng Diagrama_Casos_de_Uso.puml
@@ -191,7 +191,7 @@ Todos os atores e casos de uso em um único diagrama. A versão em [SVG](UC_00_V
 
 ### 6.5 Plano de ação e metas
 
-UC-08, em destaque, aparece apenas para mostrar o ponto de extensão do plano de ação. As imagens desta seção e da visão geral (6.1) ainda não foram geradas de novo e mostram a associação antiga Gestor → UC-19. No arquivo `.puml`, o UC-19 já está ligado ao Colaborador, de quem o Gestor herda (seção 4.4).
+UC-08, em destaque, aparece apenas para mostrar o ponto de extensão do plano de ação. O UC-19 está ligado ao Colaborador, de quem o Gestor herda (seção 4.4).
 
 ![Plano de ação e metas](UC_04_Plano_e_Metas.png)
 
@@ -247,7 +247,7 @@ Todos os 65 requisitos funcionais da lista geral foram conferidos. 62 são atend
 | Autenticação (parte de RF-003) | Fazer login não é um objetivo do usuário, e sim um passo para chegar a ele. Larman recomenda não modelar o login como caso de uso. Ele entra como **pré-condição** de todos os casos de uso. A atribuição de perfis está em UC-01 |
 | RF-004 – Login único (SSO) | Won't nesta versão: integração externa não pedida pela PO |
 | RF-064 – Atalho para o canal de denúncias | É um elemento fixo da interface, não uma tarefa do usuário. O canal de denúncias fica fora da fronteira (RN-009) |
-| RF-065 – Símbolo e declaração de acessibilidade | Elemento fixo da interface. Será tratado na especificação suplementar (#51) junto com os demais RNF de acessibilidade |
+| RF-065 – Símbolo e declaração de acessibilidade | Elemento fixo da interface. É tratado na [especificação suplementar](../../Especificacao_Suplementar.md) (#51), seção 6.2, junto com os demais RNF de acessibilidade, e aparece na tela T-45 |
 | Requisitos não funcionais | Valem para vários casos de uso ao mesmo tempo e são tratados na [especificação suplementar](../../Especificacao_Suplementar.md) (#51) |
 
 ---

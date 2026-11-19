@@ -2,7 +2,7 @@
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (INF0296, 2026/2) · 1ª Etapa: Levantamento de Requisitos
-**Issue:** #53 · **Versão:** 1.1 · **Data:** 17/11/2026
+**Issue:** #53 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsável:** Ana Luísa Pereira dos Santos
 **Referência de método:** Larman, *Utilizando UML e Padrões*, cap. 7 (Glossário e dicionário de dados)
 **Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45), versão 1.1, e [Modelo de Domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52), versão 1.1. Os identificadores `RF-`, `RNF-` e `RN-` são os da lista geral. Os `UC-` são os do [Diagrama de Casos de Uso](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47).
@@ -13,6 +13,7 @@
 |---|---|---|---|
 | 1.0 | 17/11/2026 | Versão inicial | Ana Luísa Pereira dos Santos |
 | 1.1 | 17/11/2026 | Revisão final (#55): atributos e entidades conforme o modelo ER 1.1 (`DestinatarioVisibilidade`, `DisponibilidadeAgenda`, `TermoOfensivo`, `CheckInMeta`, `CheckInPlano` e atributos novos); perfis `DIRETORIA` e `ENCARREGADO`; inventário LGPD e prazos de retenção atualizados; coluna Tratamento na seção 5 | Verônica Ribeiro Oliveira Palmeira |
+| 1.2 | 18/11/2026 | Coerência com os casos de uso completos e com a RN-006 1.1: termos Plano de ação, Emissor e Receptor; data do feedback não futura (UC08-D05); responsável e meta da ação do plano (UC19-D02 e UC-19, seção 6); ator e IP da trilha de auditoria nas rotinas automáticas (UC-30); exceção do agente de pequeno porte no contato do encarregado; texto da divergência T-08 | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
@@ -104,7 +105,7 @@ Termos em ordem alfabética. A coluna **No modelo ER** indica onde o termo apare
 | **Dado pessoal sensível** | Dado sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização religiosa, filosófica ou política, saúde, vida sexual, dado genético ou biométrico (LGPD, art. 5º, II) | - | O sistema não tem campos para esses dados. Textos livres podem contê-los por descuido | Nenhum atributo (RN-013) | RN-013, RN-015, RF-018 |
 | **Diretoria** | Cúpula da organização. Vê apenas indicadores agregados, com o mínimo de respondentes | - | Usuário com perfil próprio e acesso restrito à sua função (RF-003) | `Perfil.DIRETORIA` | RF-003, RNF-001, RN-005 (P-02) |
 | **Dor** | Problema do processo atual marcado no BPMN AS-IS (D1 a D6) | - | Origem de requisitos. Não é dado do sistema | - | Lista geral, seções 2.4 e 7.2 |
-| **Emissor** | Quem dá o feedback ou responde a uma avaliação. A identidade dele segue o modo de identificação | Sinônimos: autor do feedback, avaliador (no ciclo) | Emite feedbacks e respostas. Com o receptor, define o plano de ação | `Feedback.emissor_id`, `RespostaAvaliacao.avaliador_id`, `VinculoConfidencial.emissor_id`, `PlanoAcao.emissor_id` | RF-013, RF-019, RN-002, RN-004 |
+| **Emissor** | Quem dá o feedback ou responde a uma avaliação. A identidade dele segue o modo de identificação | Sinônimos: autor do feedback, avaliador (no ciclo) | Emite feedbacks e respostas. Com o receptor, define o plano de ação, salvo quando o feedback é confidencial (RN-006) | `Feedback.emissor_id`, `RespostaAvaliacao.avaliador_id`, `VinculoConfidencial.emissor_id`, `PlanoAcao.emissor_id` | RF-013, RF-019, RN-002, RN-004 |
 | **Encarregado** | Pessoa indicada pelo controlador para ser o canal de comunicação com os titulares e com a ANPD (LGPD, art. 5º, VIII, e art. 41). A identidade e o contato dele ficam no aviso de privacidade | Sinônimos: encarregado de dados, DPO (diagrama de casos de uso) | Trata solicitações de titulares e registra incidentes. Tem perfil próprio, com acesso restrito à sua função (RF-003) | `Perfil.ENCARREGADO`, `ConfiguracaoOrganizacao.encarregado_nome`, `encarregado_contato`, `SolicitacaoTitular.responsavel_id` | RF-003, RF-053, RF-061, RF-063 |
 | **Equipe** | Grupo de colaboradores sob a responsabilidade de um gestor. Pode estar dentro de outra equipe | Sinônimos: time, setor (E02) | Pode ser receptora de feedback e ter metas | `Equipe` | RF-001, RF-013, RF-022, RF-047 |
 | **Fato** | Comportamento ou resultado observado, com data e descrição, que fundamenta um feedback. Até ser vinculado a um feedback, é visível só para quem o registrou | Evitar "impressão", "opinião" e "achismo" (E01 §20) | Embasa feedbacks. Todo feedback tem ao menos um fato | `Fato`, `FeedbackFato` | RF-011, RF-018, RN-001, RN-002 |
@@ -129,12 +130,12 @@ Termos em ordem alfabética. A coluna **No modelo ER** indica onde o termo apare
 | **Par** | Colega que avalia outro colaborador ou dá feedback a ele, sem relação de gestão entre os dois. Em um ciclo, é um avaliador convidado | Sinônimos: colega, entre pares | É um papel, não um perfil | `ModalidadeAvaliacao.PARES`, `DirecaoFeedback.PARES` | RF-024, RN-004, RN-005 |
 | **Perfil de usuário** | Conjunto de permissões de acesso: colaborador, gestor, RH, administrador, diretoria ou encarregado. Um usuário pode acumular perfis | Sinônimo: papel de acesso | Diretoria e encarregado têm acesso restrito à sua função (RF-003) | `PerfilColaborador`, `Perfil` | RF-003, RNF-001, RNF-006 |
 | **Pergunta** | Item de um questionário, ligado ou não a uma competência e a um cargo, com tipo de resposta definido. O gestor pode acrescentar perguntas para um colaborador | - | Pertence a um questionário | `Pergunta` | RF-007, RF-008, RF-009, RN-001, RN-014 |
-| **Plano de ação** | Conjunto de ações, responsáveis, metas, pontos de monitoramento e data final, criado a partir de um feedback construtivo, em conjunto pelo emissor e pelo receptor. Na data final, registra se houve melhora ou se é preciso novo feedback | - | Nasce de um feedback construtivo. Contém ações e pontos de monitoramento | `PlanoAcao`, `AcaoPlano`, `PontoMonitoramento` | RF-042 a RF-045, RN-006 |
+| **Plano de ação** | Conjunto de ações, responsáveis, metas, pontos de monitoramento e data final, criado a partir de um feedback construtivo, em conjunto pelo emissor e pelo receptor. Se o feedback de origem for confidencial, o plano é definido pelo receptor e pelo seu gestor direto, sem o emissor (RN-006). Na data final, registra se houve melhora ou se é preciso novo feedback | - | Nasce de um feedback construtivo. Contém ações e pontos de monitoramento | `PlanoAcao`, `AcaoPlano`, `PontoMonitoramento` | RF-042 a RF-045, RN-006 |
 | **Política de retenção** | Prazo de guarda de cada categoria de dado e ação ao fim do prazo (eliminar ou anonimizar). Padrão: enquanto o colaborador estiver na organização e por 5 anos depois do desligamento. Processo judicial em curso bloqueia a eliminação | Sinônimo: prazo de guarda | Aplicada pelo relógio do sistema | `CategoriaDado`, `BloqueioLegal`, `ConfiguracaoOrganizacao.retencao_pos_desligamento_meses` | RF-062, RN-011 (P-05) |
 | **Ponto de monitoramento** | Data prevista do plano de ação em que se registra o resultado das ações | A lista geral (seção 2.4) chama isso também de check-in (seção 5.3) | Pertence a um plano de ação | `PontoMonitoramento` | RF-042, RF-043 |
 | **Pseudonimização** | Tratamento após o qual o dado só pode ser associado ao titular com uma informação adicional guardada à parte (LGPD, art. 13, §4º). Continua sendo dado pessoal | Não confundir com anonimização | É a técnica do modo confidencial | `VinculoConfidencial` | RNF-003 |
 | **Questionário** | Conjunto de perguntas usado em uma modalidade do ciclo ou em check-ins. Pode ser modelo reutilizável e padrão da organização | Sinônimo: formulário de avaliação | Contém perguntas. Usado por modalidades e por configurações de check-in | `Questionario` | RF-007, RF-008, RF-036 |
-| **Receptor** | Quem recebe o feedback: um colaborador ou uma equipe | No ciclo, corresponde ao avaliado | Com o emissor, define o plano de ação. Pode registrar réplica | `Feedback.receptor_colaborador_id`, `Feedback.receptor_equipe_id`, `PlanoAcao.receptor_id` | RF-013, RF-020, RN-002 |
+| **Receptor** | Quem recebe o feedback: um colaborador ou uma equipe | No ciclo, corresponde ao avaliado | Com o emissor, define o plano de ação; no feedback confidencial, com o gestor direto (RN-006). Pode registrar réplica | `Feedback.receptor_colaborador_id`, `Feedback.receptor_equipe_id`, `PlanoAcao.receptor_id` | RF-013, RF-020, RN-002 |
 | **Relato** | Fato registrado pelo gestor a partir do que outro colaborador contou. Quem relatou fica oculto ao receptor. Só embasa um feedback depois de confirmado pela observação do próprio gestor | Evitar "denúncia" e "reclamação": o sistema não é canal de denúncia (RN-009) | É um tipo de fato | `Fato.eh_relato`, `Fato.relator_id`, `Fato.confirmado_pelo_autor` | RF-012 (P-06), RN-001, RN-009 |
 | **Relógio do sistema** | Ator que representa o tempo e dispara tarefas automáticas: lembretes e política de retenção | - | Ator dos casos de uso UC-30 e UC-31. Não é usuário | `Notificacao.agendada_para` | RF-040, RF-062 |
 | **Réplica** | Manifestação do receptor sobre um feedback recebido, sem alterar o texto do emissor | Sinônimo: manifestação | Ligada a um feedback | `Replica` | RF-020 |
@@ -250,7 +251,7 @@ Configurações gerais. Tem uma única linha, porque cada instalação atende um
 | `min_respondentes` | Mínimo de respondentes para exibir resultado de fonte confidencial ou anônima | `int` | inteiro maior ou igual a 3; padrão 3 | respostas | sim | - | `ModalidadeCiclo.min_respondentes` | Padrão 3, configurável, nunca menor que 3 (RN-005) | Não |
 | `retencao_pos_desligamento_meses` | Prazo de guarda após o desligamento | `int` | inteiro positivo; padrão 60 | meses | sim | - | `CategoriaDado.prazo_retencao_meses` | Padrão 60 meses (5 anos), configurável (RN-011). Vale para feedbacks, avaliações e planos quando a categoria não define prazo próprio. O prazo de `CategoriaDado` prevalece (RF-062) | Não |
 | `aviso_privacidade` | Texto do aviso de privacidade | `text` | 20.000* caracteres | - | sim | - | - | Deve trazer finalidades, bases legais, compartilhamentos, prazos de retenção, direitos do titular e identidade e contato do encarregado (RF-053) | Não |
-| `encarregado_nome` | Nome do encarregado de dados | `string` | 150* | - | sim | - | - | Exibido no aviso de privacidade (RF-053) | Pessoal |
+| `encarregado_nome` | Nome do encarregado de dados | `string` | 150* | - | sim | - | - | Exibido no aviso de privacidade (RF-053). Se a organização for agente de pequeno porte dispensado de indicar encarregado (Res. CD/ANPD nº 2/2022), guarda o responsável pelo canal de comunicação com o titular (pesquisa documental, seção 3.7) | Pessoal |
 | `encarregado_contato` | Contato do encarregado | `string` | 254* | - | sim | - | - | E-mail ou telefone válido* (RF-053) | Pessoal |
 | `url_canal_denuncia` | Endereço do canal de denúncias da organização | `string` | 2.048* | - | não* | - | - | URL válida, com `https`* (RF-064) | Não |
 | `declaracao_acessibilidade` | Texto da declaração de acessibilidade | `text` | 20.000* caracteres | - | sim | - | - | Deve trazer o nível de conformidade e um canal para reportar barreiras (RF-065) | Não |
@@ -378,7 +379,7 @@ Cabeçalho do feedback. O conteúdo fica em `VersaoFeedback` (RN-003).
 | `visibilidade` | Quem pode ver | `enum` | `Visibilidade`: `PUBLICO_MINIMO`, `AMPLIADA` | - | sim | - | - | Padrão `PUBLICO_MINIMO`. Só o emissor amplia, por nova ação explícita (RNF-001, RNF-002) | Não |
 | `ciclo_id` | Ciclo do feedback formal | `uuid` | 36 | - | não | FK | `CicloAvaliacao` | Obrigatório se `modalidade = FORMAL`* e nulo se `INFORMAL` (ER: "só feedback formal") | Não |
 | `solicitacao_id` | Solicitação que o feedback atende | `uuid` | 36 | - | não | FK | `SolicitacaoFeedback` | O emissor deve ser destinatário da solicitação* (RF-031) | Não |
-| `data_feedback` | Data do feedback | `date` | data | - | sim | - | - | Obrigatório (RN-002) | Não |
+| `data_feedback` | Data do feedback | `date` | data | - | sim | - | - | Obrigatório (RN-002). Pode ser anterior à data do registro, mas não futura (UC08-D05) | Não |
 | `postura_receptor` | Postura do receptor na sessão, na avaliação do emissor | `enum` | `PosturaReceptor`: `COLABORATIVA`, `REATIVA` | - | não | - | - | Preenchido só pelo emissor, após a sessão (RF-034) | Pessoal |
 | `agregou_valor` | Avaliação do receptor sobre o feedback | `bool` | verdadeiro ou falso | - | não | - | - | Preenchido só pelo receptor, após a sessão (RF-034) | Pessoal |
 | `status` | Situação do registro | `enum` | `RASCUNHO`, `ENVIADO` | - | sim | - | - | Rascunho visível só ao autor (Especificação Suplementar, seção 8.1). Para enviar, precisa de ao menos um fato (RN-002). Depois de enviado, não pode ser excluído (RN-003) | Não |
@@ -833,8 +834,8 @@ Ações de um plano (RF-042).
 | `id` | Identificador da ação | `uuid` | 36 | - | sim | PK | - | Gerado pelo sistema | Não |
 | `plano_id` | Plano | `uuid` | 36 | - | sim | FK | `PlanoAcao` | Ao menos uma ação por plano | Não |
 | `descricao` | O que será feito | `text` | 1.000* caracteres | - | sim | - | - | - | Pessoal (R) |
-| `responsavel_id` | Responsável pela ação | `uuid` | 36 | - | sim | FK | `Colaborador` | (RF-042) | Pessoal |
-| `meta_acao` | Resultado esperado da ação | `string` | 255* | - | não* | - | - | (RF-042) | Não |
+| `responsavel_id` | Responsável pela ação | `uuid` | 36 | - | sim | FK | `Colaborador` | O receptor ou o emissor do feedback de origem; no plano de feedback confidencial, o receptor ou o gestor direto (RF-042, RNF-001, UC19-D02) | Pessoal |
+| `meta_acao` | Resultado esperado da ação | `string` | 255* | - | sim | - | - | Toda ação tem meta (RF-042; UC-19, seção 6 e extensão 6a) | Não |
 | `prazo` | Data limite da ação | `date` | data | - | sim* | - | - | Menor ou igual a `PlanoAcao.data_final`* | Não |
 | `status` | Situação da ação | `enum` | `PENDENTE`, `EM_ANDAMENTO`, `CONCLUIDA` | - | sim | - | - | - | Não |
 
@@ -984,12 +985,12 @@ Trilha de auditoria. Somente inclusão: sem alteração nem exclusão (RNF-005).
 | Atributo | Definição | Tipo | Tamanho ou domínio | Unid. | Obr. | Chave | Relacionamento | Regra de validação | Dado pessoal |
 |---|---|---|---|---|---|---|---|---|---|
 | `id` | Identificador do registro | `uuid` | 36 | - | sim | PK | - | Gerado pelo sistema | Não |
-| `ator_id` | Quem fez a ação | `uuid` | 36 | - | sim | FK | `Colaborador` | (RNF-005: "quem") | Pessoal |
+| `ator_id` | Quem fez a ação | `uuid` | 36 | - | não | FK | `Colaborador` | Obrigatório nas ações de usuário (RNF-005: "quem"). Nulo só nas ações das rotinas automáticas do relógio do sistema, como a eliminação ou a anonimização da política de retenção (UC-30), identificadas em `detalhes` | Pessoal |
 | `data_hora` | Momento da ação | `datetime` | data e hora | - | sim | - | - | Gerado pelo sistema (RNF-005: "quando") | Não |
 | `acao` | Ação registrada | `enum` | `AcaoAuditoria`: `CONSULTA`, `CRIACAO`, `ALTERACAO`, `OCULTACAO`, `CONSULTA_IDENTIDADE`, `EXPORTACAO`, `ANONIMIZACAO`, `ELIMINACAO` | - | sim | - | - | Toda leitura de `VinculoConfidencial` gera `CONSULTA_IDENTIDADE` (RNF-003). Exportação, anonimização e eliminação de dados também são registradas (RF-058, RF-062) | Não |
 | `entidade` | Entidade afetada | `string` | 60* | - | sim | - | - | Nome de entidade do ER* (RNF-005: "o quê") | Não |
 | `entidade_id` | Registro afetado | `uuid` | 36 | - | sim | - | Qualquer entidade | - | Não |
-| `ip_origem` | Endereço IP de origem | `string` | 45* (IPv4 ou IPv6) | - | sim | - | - | Endereço IP válido* (RNF-005: "de onde"; RNF-032) | Pessoal |
+| `ip_origem` | Endereço IP de origem | `string` | 45* (IPv4 ou IPv6) | - | não | - | - | Endereço IP válido*, obrigatório quando `ator_id` está preenchido (RNF-005: "de onde"; RNF-032) | Pessoal |
 | `detalhes` | Informações adicionais | `text` | 4.000* caracteres | - | não | - | - | Não copia o conteúdo do feedback nem a identidade consultada* | Pessoal (R) |
 | `hash_anterior` | Resumo do registro anterior | `string` | 64* (SHA-256 em hexadecimal*) | - | sim | - | `RegistroAuditoria` anterior | Encadeamento que torna a trilha inalterável (RNF-005) | Não |
 
@@ -1172,7 +1173,7 @@ Esta seção registra os pontos encontrados na versão 1.0. A correção coube a
 | T-05 | **Receptor e avaliado** | A lista geral usa "receptor"; o ER usa `avaliado_id` nas entidades de ciclo | "Receptor" no feedback; "avaliado" no ciclo, como sinônimos | Resolvido. Proposta adotada (ERS-D09 (5)) |
 | T-06 | **Ciclo** | "Ciclo de feedback formal" (RF-022), "ciclo formal" (seção 2.4) e "ciclo de avaliação" (ER, casos de uso) | "Ciclo de avaliação", com os outros como sinônimos | Resolvido. Proposta adotada (ERS-D09 (6)) |
 | T-07 | **Encarregado** | "Encarregado" (RF-053), "encarregado de dados da organização" (RF-061), "Encarregado de dados (DPO)" (casos de uso) | "Encarregado", com "encarregado de dados" e "DPO" como sinônimos | Resolvido. Proposta adotada (ERS-D09 (7)) |
-| T-08 | **Nome do sistema** | A lista geral, a Especificação Suplementar e o diagrama de casos de uso usam "Sistema Web de Feedback e Gestão de Competências". O Documento Visão e o ER usam "Sistema Web de Feedback e Gestão de Competências" | Este documento usa o nome do Documento Visão, padronizado nos demais | Resolvido. Nome do Documento Visão adotado (ERS-D01) e padronizado nos cabeçalhos dos artefatos na revisão final |
+| T-08 | **Nome do sistema** | Na versão 1.0, a lista geral, a Especificação Suplementar e o diagrama de casos de uso usavam "Sistema de Gestão de Competências (módulo de Feedback)". O Documento Visão e o ER usavam "Sistema Web de Feedback e Gestão de Competências" | Este documento usa o nome do Documento Visão, padronizado nos demais | Resolvido. Nome do Documento Visão adotado (ERS-D01) e padronizado nos cabeçalhos dos artefatos na revisão final |
 
 ---
 

@@ -1,7 +1,7 @@
 # UC-19 Criar plano de ação
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
-**Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.1 · **Data:** 17/11/2026
+**Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsável:** Ana Luísa Pereira dos Santos
 **Prioridade:** Must · **Área:** Plano de ação e metas · [Diagrama](Diagrama_Casos_de_Uso.md#44-plano-de-ação-e-metas) · [Modelo e convenções](Casos_de_Uso_Completos.md)
 
@@ -11,6 +11,7 @@
 |---|---|---|---|
 | 1.0 | 17/11/2026 | Versão inicial | Ana Luísa Pereira dos Santos |
 | 1.1 | 17/11/2026 | Revisão final (#55): extensão 1e e decisão UC19-D04 para feedback confidencial (RN-004, RN-006); UC19-D01 indica que o impacto no modelo ER foi aplicado na versão 1.1; UC19-D02 trata o gestor direto no plano de feedback confidencial; nome do produto padronizado | Verônica Ribeiro Oliveira Palmeira |
+| 1.2 | 18/11/2026 | Ator principal alinhado ao diagrama de casos de uso: Colaborador no papel de emissor, chamado de Gestor no cenário | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
@@ -24,7 +25,7 @@ Objetivo do usuário. Estende o UC-08 Registrar feedback, no ponto de extensão 
 
 ## 3. Ator principal
 
-**Gestor (emissor)**: quem deu o feedback construtivo e conduz a definição do plano. Na maior parte dos casos é o gestor direto do receptor (E01 §4; E02 §4). O **receptor** do feedback participa como ator de apoio, porque o plano é definido em conjunto (RN-006).
+**Colaborador, no papel de emissor** do feedback construtivo, que conduz a definição do plano. Este é o ator ligado ao UC-19 no diagrama (seção 4.4), de quem o Gestor herda. Na maior parte dos casos o emissor é o gestor direto do receptor (E01 §4; E02 §4), por isso o cenário o chama de **Gestor**. As extensões 1d e 1e tratam o emissor que não é gestor do receptor. O **receptor** do feedback participa como ator de apoio, porque o plano é definido em conjunto (RN-006).
 
 ## 4. Interessados e interesses
 

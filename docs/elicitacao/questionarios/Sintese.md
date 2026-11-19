@@ -19,7 +19,7 @@
 
 ### 1.1 Indicadores numéricos (escala de 1 a 5)
 
-| Indicador | Q01 | Q02 | Média |
+| Indicador | Q01 | Q02 | Should |
 |---|---|---|---|
 | Satisfação com o feedback atual | 2 | 3 | **2,5** |
 | Daria feedback sincero ao gestor sendo identificado | 2 | 1 | **1,5** |
@@ -133,43 +133,43 @@ Os dois recursos com consenso máximo são **perguntas por cargo/competência** 
 ## 3. Requisitos consolidados com fonte identificada
 
 Legenda da coluna **Fonte:** Q01 = questionário de Isabella; Q02 = questionário de Vaneide; § = seção do questionário de origem.
-**Prioridade sugerida:** Alta = citado nas duas fontes ou ligado à necessidade central de sigilo/LGPD; Média = uma fonte ou divergência; Baixa = baixa utilidade média.
+**Prioridade sugerida (MoSCoW, conforme a seção 7 do [processo de requisitos](../../Processo_Requisitos.md)):** Must = citado nas duas fontes ou ligado à necessidade central de sigilo/LGPD; Should = uma fonte ou divergência entre as fontes; Could = baixa utilidade média. A prioridade é uma proposta e foi revista na [lista geral](../../Lista_Geral_Requisitos.md) (#45).
 
 ### 3.1 Requisitos funcionais
 
 | ID | Requisito | Fonte | Evidência | Prioridade |
 |---|---|---|---|---|
-| RQ-01 | O sistema deve permitir ciclos de feedback periódicos configuráveis, além do ciclo anual. | Q01 §3 | Problema "feedback só uma vez por ano"; feedback formal "raramente" (Q01) e "às vezes" (Q02) | Alta |
-| RQ-02 | O sistema deve permitir avaliações com critérios objetivos, com perguntas vinculadas às competências de cada cargo. | Q01 §3, §5; Q02 §5 | "Avaliações subjetivas" (Q01); recurso "Muito útil" nas duas fontes (média 4,0) | Alta |
-| RQ-03 | O sistema deve oferecer orientações/dicas para quem emite feedback construtivo. | Q01 §3, §5; Q02 §3, §5 | "Gestores não sabem dar feedback" nas duas fontes; média 3,5 | Alta |
-| RQ-04 | A avaliação do gestor feita pelo colaborador (avaliação ascendente) deve ser anônima. | Q01 §4; Q02 §4, §6 | Sinceridade identificada 2/5 (Q01) e 1/5 (Q02); Q02 pede anonimato explicitamente | Alta |
-| RQ-06 | O sistema deve permitir solicitar feedback a um colega a qualquer momento, fora do ciclo formal. | Q01 §5; Q02 §5 | "Útil" nas duas fontes (média 3,0) | Média |
-| RQ-07 | O sistema deve permitir criar um plano de ação com metas a partir de um feedback recebido. | Q01 §5, §6; Q02 §5 | "Muito útil" nas duas fontes (média 4,0) | Alta |
-| RQ-09 | O sistema deve manter o histórico de todos os feedbacks recebidos pelo colaborador. | Q01 §5; Q02 §5 | Média 3,5 | Média |
-| RQ-10 | O painel do colaborador deve exibir sua evolução ao longo do tempo, pontos fortes e a melhorar e o andamento das metas. | Q01 §6; Q02 §6 | "Pontos fortes e a melhorar" nas duas fontes; evolução e metas em Q01 | Alta |
-| RQ-15 | O sistema deve suportar avaliação 360°, reunindo autoavaliação, gestor, pares e liderados no mesmo ciclo. | Q02 §3 | Experiência prévia com avaliação 360° | Média |
-| RQ-16 | O sistema deve consolidar automaticamente os resultados de um ciclo ao seu encerramento. | Q02 §2 | Consolidação manual leva cerca de 1 semana | Média |
-| RQ-17 | O gestor deve poder acompanhar o andamento dos planos de ação da sua equipe. | Q02 §2 | Item que a gestora mais precisa acompanhar | Média |
-| RQ-18 | O painel do colaborador deve comparar sua autoavaliação com a visão dos demais avaliadores. | Q02 §6 | Item desejado no painel | Média |
-| RQ-19 | O painel do colaborador deve exibir os comentários recebidos. | Q02 §6 | Item desejado no painel; complementa RQ-09 e RQ-10 | Média |
-| RQ-21 | O sistema deve enviar lembretes de avaliações pendentes e prazos, com opção de desativar. | Q01 §5; Q02 §3, §5 | "Pouco útil" (Q01) × "Útil" (Q02); "falta de tempo para avaliar" (Q02) | Baixa |
+| RQ-01 | O sistema deve permitir ciclos de feedback periódicos configuráveis, além do ciclo anual. | Q01 §3 | Problema "feedback só uma vez por ano"; feedback formal "raramente" (Q01) e "às vezes" (Q02) | Must |
+| RQ-02 | O sistema deve permitir avaliações com critérios objetivos, com perguntas vinculadas às competências de cada cargo. | Q01 §3, §5; Q02 §5 | "Avaliações subjetivas" (Q01); recurso "Muito útil" nas duas fontes (média 4,0) | Must |
+| RQ-03 | O sistema deve oferecer orientações/dicas para quem emite feedback construtivo. | Q01 §3, §5; Q02 §3, §5 | "Gestores não sabem dar feedback" nas duas fontes; média 3,5 | Must |
+| RQ-04 | A avaliação do gestor feita pelo colaborador (avaliação ascendente) deve ser anônima. | Q01 §4; Q02 §4, §6 | Sinceridade identificada 2/5 (Q01) e 1/5 (Q02); Q02 pede anonimato explicitamente | Must |
+| RQ-06 | O sistema deve permitir solicitar feedback a um colega a qualquer momento, fora do ciclo formal. | Q01 §5; Q02 §5 | "Útil" nas duas fontes (média 3,0) | Should |
+| RQ-07 | O sistema deve permitir criar um plano de ação com metas a partir de um feedback recebido. | Q01 §5, §6; Q02 §5 | "Muito útil" nas duas fontes (média 4,0) | Must |
+| RQ-09 | O sistema deve manter o histórico de todos os feedbacks recebidos pelo colaborador. | Q01 §5; Q02 §5 | Média 3,5 | Should |
+| RQ-10 | O painel do colaborador deve exibir sua evolução ao longo do tempo, pontos fortes e a melhorar e o andamento das metas. | Q01 §6; Q02 §6 | "Pontos fortes e a melhorar" nas duas fontes; evolução e metas em Q01 | Must |
+| RQ-15 | O sistema deve suportar avaliação 360°, reunindo autoavaliação, gestor, pares e liderados no mesmo ciclo. | Q02 §3 | Experiência prévia com avaliação 360° | Should |
+| RQ-16 | O sistema deve consolidar automaticamente os resultados de um ciclo ao seu encerramento. | Q02 §2 | Consolidação manual leva cerca de 1 semana | Should |
+| RQ-17 | O gestor deve poder acompanhar o andamento dos planos de ação da sua equipe. | Q02 §2 | Item que a gestora mais precisa acompanhar | Should |
+| RQ-18 | O painel do colaborador deve comparar sua autoavaliação com a visão dos demais avaliadores. | Q02 §6 | Item desejado no painel | Should |
+| RQ-19 | O painel do colaborador deve exibir os comentários recebidos. | Q02 §6 | Item desejado no painel; complementa RQ-09 e RQ-10 | Should |
+| RQ-21 | O sistema deve enviar lembretes de avaliações pendentes e prazos, com opção de desativar. | Q01 §5; Q02 §3, §5 | "Pouco útil" (Q01) × "Útil" (Q02); "falta de tempo para avaliar" (Q02) | Could |
 
 ### 3.2 Requisitos não funcionais
 
 | ID | Requisito | Tipo | Fonte | Evidência | Prioridade |
 |---|---|---|---|---|---|
-| RQ-05 | O resultado da avaliação de um colaborador deve ser visível somente para ele, seu gestor direto e o RH (acesso da Diretoria a validar – ver seção 4). | Segurança / LGPD | Q01 §4; Q02 §4 | Pessoa, gestor e RH citados nas duas fontes | Alta |
-| RQ-11 | Uma avaliação de colega deve poder ser concluída em até 20 minutos. | Usabilidade | Q01 §6; Q02 §6 | 10–20 min (Q01) e mais de 20 min (Q02): o limite de 20 min atende às duas | Média |
-| RQ-12 | O sistema deve registrar o consentimento do participante antes da coleta de dados. | LGPD | Q01 §1; Q02 §1 | Consentimento coletado nas duas respostas | Alta |
-| RQ-13 | A identidade do autor de uma avaliação anônima não deve ser exibida a nenhum perfil, nem ao gestor avaliado. | Segurança / Privacidade | Q02 §3, §4, §6 | "Medo de retaliação"; "você fica marcado se expor alguma situação" | Alta |
-| RQ-20 | O sistema deve permitir responder avaliações pelo celular (interface responsiva). | Usabilidade / Portabilidade | Q01 §5; Q02 §5 | "Nada útil" (Q01) × "Muito útil" (Q02) | Média |
+| RQ-05 | O resultado da avaliação de um colaborador deve ser visível somente para ele, seu gestor direto e o RH (acesso da Diretoria a validar – ver seção 4). | Segurança / LGPD | Q01 §4; Q02 §4 | Pessoa, gestor e RH citados nas duas fontes | Must |
+| RQ-11 | Uma avaliação de colega deve poder ser concluída em até 20 minutos. | Usabilidade | Q01 §6; Q02 §6 | 10–20 min (Q01) e mais de 20 min (Q02): o limite de 20 min atende às duas | Should |
+| RQ-12 | O sistema deve registrar o consentimento do participante antes da coleta de dados. | LGPD | Q01 §1; Q02 §1 | Consentimento coletado nas duas respostas | Must |
+| RQ-13 | A identidade do autor de uma avaliação anônima não deve ser exibida a nenhum perfil, nem ao gestor avaliado. | Segurança / Privacidade | Q02 §3, §4, §6 | "Medo de retaliação"; "você fica marcado se expor alguns situação" (transcrição literal) | Must |
+| RQ-20 | O sistema deve permitir responder avaliações pelo celular (interface responsiva). | Usabilidade / Portabilidade | Q01 §5; Q02 §5 | "Nada útil" (Q01) × "Muito útil" (Q02) | Should |
 
 ### 3.3 Regras de negócio
 
 | ID | Regra | Fonte | Evidência | Prioridade |
 |---|---|---|---|---|
-| RQ-08 | As metas de desenvolvimento devem ser definidas em conjunto pelo colaborador e pelo gestor. | Q01 §6; Q02 §6 | Resposta idêntica nas duas fontes | Alta |
-| RQ-14 | Resultados de avaliações anônimas só devem ser exibidos de forma agregada quando houver um número mínimo de respondentes, para impedir a identificação por exclusão. | Q02 §4, §6 (proposta da equipe) | Derivada da necessidade de sigilo; o número mínimo deve ser validado com a cliente | Alta |
+| RQ-08 | As metas de desenvolvimento devem ser definidas em conjunto pelo colaborador e pelo gestor. | Q01 §6; Q02 §6 | Resposta idêntica nas duas fontes | Must |
+| RQ-14 | Resultados de avaliações anônimas só devem ser exibidos de forma agregada quando houver um número mínimo de respondentes, para impedir a identificação por exclusão. | Q02 §4, §6 (proposta da equipe) | Derivada da necessidade de sigilo; o número mínimo deve ser validado com a cliente | Must |
 
 ### 3.4 Resumo por fonte
 
@@ -179,7 +179,7 @@ Legenda da coluna **Fonte:** Q01 = questionário de Isabella; Q02 = questionári
 | Somente Q01 | RQ-01 |
 | Somente Q02 | RQ-13, RQ-14, RQ-15, RQ-16, RQ-17, RQ-18, RQ-19 |
 
-**Total:** 21 requisitos (14 funcionais, 5 não funcionais, 2 regras de negócio), sendo 11 de prioridade alta.
+**Total:** 21 requisitos (14 funcionais, 5 não funcionais, 2 regras de negócio): 11 Must, 10 Should e 1 Could.
 
 ---
 
@@ -191,7 +191,7 @@ As pendências abaixo ficaram em aberto ao fim desta síntese. Todas foram trata
 |---|---|---|---|---|
 | Anonimato | "Nada precisa ser anônimo" (sinceridade 2/5) | Avaliação do gestor deve ser anônima (sinceridade 1/5) | RQ-04 adotado como **obrigatório** na avaliação ascendente (a versão de Q01, "quando configurado", foi substituída) | Ponto P-01: confidencial como padrão na avaliação ascendente, anônimo como opção por ciclo (RN-004, RF-030) |
 | Diretoria vê resultados? | Não | Sim | Validar com a cliente; proposta: Diretoria vê apenas dados agregados | Ponto P-02: proposta adotada (RNF-001) |
-| Responder pelo celular | Nada útil | Muito útil | Manter RQ-20 com prioridade média | Conflito C-08: interface responsiva como Must (RNF-027); aplicativo nativo na versão futura |
+| Responder pelo celular | Nada útil | Muito útil | Manter RQ-20 como Should | Conflito C-08: interface responsiva como Must (RNF-027); aplicativo nativo na versão futura |
 | Lembretes | Pouco útil | Útil | Manter RQ-21 com opção de desativar | Conflito C-09: Should, desativável por usuário (RF-040) |
 | Tempo para avaliar | 10 a 20 min | Mais de 20 min | Manter limite de 20 min (RQ-11) | Mantido (RNF-014) |
 | Número mínimo de respondentes (RQ-14) | – | – | Definir o valor com a cliente | Ponto P-03: 3, configurável, nunca menor que 3 (RN-005) |

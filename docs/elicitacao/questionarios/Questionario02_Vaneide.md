@@ -95,7 +95,7 @@
 
 ## 7. Principais pontos observados
 
-- **Sigilo é a preocupação central:** a respondente deu nota 1/5 para a chance de ser sincera com o gestor identificado, apontou "medo de retaliação" como problema e pediu sigilo na pergunta aberta ("você fica marcado se expor alguma situação").
+- **Sigilo é a preocupação central:** a respondente deu nota 1/5 para a chance de ser sincera com o gestor identificado, apontou "medo de retaliação" como problema e pediu sigilo na pergunta aberta ("você fica marcado se expor alguns situação", transcrição literal).
 - **Anonimato na avaliação ascendente:** a avaliação do gestor feita pelo colaborador deve ser anônima.
 - **Visão de gestora:** precisa acompanhar os planos de ação da equipe, e a consolidação de um ciclo hoje leva cerca de 1 semana, o que indica espaço para automatizar.
 - **Experiência com avaliação 360°**, o que sugere que o sistema deve suportar várias fontes de avaliação no mesmo ciclo.
@@ -138,6 +138,6 @@ Os IDs continuam a numeração do Questionário 01. A coluna "Relação com Q01"
 |---|---|---|---|
 | Anonimato | "Nada precisa ser anônimo" (mas sinceridade 2/5) | Avaliação do gestor deve ser anônima (sinceridade 1/5) | Manter RQ-04 como obrigatório para a avaliação ascendente |
 | Quem vê o resultado | Pessoa avaliada, gestor direto e RH | Inclui também a Diretoria | Validar com a cliente; opção: Diretoria vê apenas dados agregados |
-| Responder pelo celular | Nada útil | Muito útil | Manter RQ-20 como requisito de prioridade média |
+| Responder pelo celular | Nada útil | Muito útil | Manter RQ-20 como requisito Should (MoSCoW) |
 | Lembretes | Pouco útil | Útil | Manter RQ-21, com opção de desativar |
 | Tempo para avaliar | 10 a 20 minutos | Mais de 20 minutos | Manter RQ-11 (até 20 min), que atende às duas |

@@ -2,7 +2,7 @@
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (2026/2) · 1ª Etapa: Levantamento de Requisitos
-**Issue:** #45 · **Versão:** 1.1 · **Data:** 17/11/2026
+**Issue:** #45 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsável:** Verônica Ribeiro Oliveira Palmeira
 **Artefatos relacionados:** [Lista_Geral_Requisitos.csv](Lista_Geral_Requisitos.csv) (mesmos requisitos, com todos os atributos, para a matriz de rastreabilidade)
 
@@ -23,6 +23,7 @@
 |---|---|---|---|
 | 1.0 | 17/11/2026 | Versão inicial: 160 candidatos de 5 técnicas consolidados em 117 requisitos | Verônica Ribeiro Oliveira Palmeira |
 | 1.1 | 17/11/2026 | Revisão final (#55): incorpora as alterações indicadas pela especificação IEEE 830 (Apêndice C.3): perfis diretoria e encarregado no RF-003 (ERS-D02), piso de 3 respondentes na RN-005 (ERS-D08) e plano de ação de feedback confidencial na RN-006 (ERS-D05). A seção 9 passa a registrar os pontos como decisões do grupo, ainda não confirmadas pela PO. Nenhum identificador, prioridade ou total foi alterado | Verônica Ribeiro Oliveira Palmeira |
+| 1.2 | 18/11/2026 | Observação do RNF-006 aponta os valores já definidos na especificação suplementar (DS-05 e DS-06); textos da seção 9 e da seção 12 sem atribuir motivo à PO. Nenhum identificador, prioridade ou total foi alterado | Verônica Ribeiro Oliveira Palmeira |
 
 ---
 
@@ -266,7 +267,7 @@ Na contagem acima, os candidatos do BPMN (`RP`) contam como entrevista, porque o
 | RNF-003 | Nos feedbacks e avaliações em modo confidencial, o vínculo entre emissor e resposta deve ser armazenado separado do conteúdo (pseudonimização), com acesso restrito ao RH e registrado na trilha de auditoria. | Segurança (confidencialidade, responsabilização) | RD-18 | Should | Boa prática derivada da LGPD (art. 13, §4º). |
 | RNF-004 | Dados pessoais e conteúdo de feedback devem ser criptografados em trânsito (TLS 1.2 ou superior) e em repouso. | Segurança (confidencialidade, integridade) | RD-19 | Must | Medida técnica de segurança (LGPD, art. 46). |
 | RNF-005 | O sistema deve manter trilha de auditoria inalterável dos acessos e das alterações a dados pessoais e feedbacks (quem, quando, o quê e de onde), incluindo toda consulta à identidade de emissores confidenciais. | Segurança (responsabilização, não repúdio) | RD-20 | Must | LGPD, arts. 6º, X, 37 e 46. |
-| RNF-006 | O sistema deve exigir autenticação em dois fatores para RH e administradores, bloquear o acesso após tentativas sucessivas de login sem sucesso e encerrar a sessão após um período de inatividade. | Segurança (autenticidade, resistência) | RD-21 | Should | Boa prática derivada da LGPD (art. 46). Número de tentativas e tempo de inatividade a definir na especificação suplementar (#51). |
+| RNF-006 | O sistema deve exigir autenticação em dois fatores para RH e administradores, bloquear o acesso após tentativas sucessivas de login sem sucesso e encerrar a sessão após um período de inatividade. | Segurança (autenticidade, resistência) | RD-21 | Should | Boa prática derivada da LGPD (art. 46). Número de tentativas e tempo de inatividade definidos na especificação suplementar (#51): decisões DS-05 e DS-06. |
 
 ### 5.2 Adequação funcional
 
@@ -431,7 +432,7 @@ Esta seção registra os pontos em que as fontes divergiam e que foram resolvido
 
 ## 9. Pontos decididos pelo grupo, sem confirmação da PO
 
-Nos pontos abaixo, as fontes não dão uma resposta definitiva: a PO não tratou do assunto, tratou sem fechar a questão, ou as fontes divergem sem que uma prevaleça pelos critérios da seção 2.2. Pela seção 4.3 do processo, esses pontos deveriam ser levados à PO. Como a PO não teve disponibilidade para confirmá-los, o grupo adotou uma decisão para cada um.
+Nos pontos abaixo, as fontes não dão uma resposta definitiva: a PO não tratou do assunto, tratou sem fechar a questão, ou as fontes divergem sem que uma prevaleça pelos critérios da seção 2.2. Pela seção 4.3 do processo, esses pontos são levados à PO. Para que a especificação não ficasse incompleta até a validação, o grupo adotou uma decisão para cada um.
 
 Cada ponto tem a **decisão do grupo, ainda não confirmada pela PO**, com a justificativa, e os requisitos afetados estão escritos de acordo com ela. A coluna Observações desses requisitos indica o ponto correspondente. As decisões continuam sujeitas à confirmação da PO, que leva os requisitos afetados ao status **Validado** (seção 2.4). Se a PO decidir de outra forma, a mudança segue a gestão de mudanças do processo (seção 9): análise de impacto pela matriz de rastreabilidade (#49) e atualização desta lista por PR.
 
@@ -665,6 +666,6 @@ Os candidatos `RP` foram extraídos nesta consolidação (seção 2.1), por isso
 
 - **Fontes pequenas.** São duas entrevistas e dois questionários. Falta a visão de alguém de RH, que aparece só pelo que a PO disse sobre o perfil.
 - **BPMN feito a partir das entrevistas.** Os dois diagramas modelam o que foi dito nas entrevistas, e não uma observação direta do processo. O AS-IS 1 também mistura a prática atual com a prática ideal descrita pela PO (documento do BPMN, seção 7). Por isso o BPMN foi usado para localizar as dores no fluxo e conferir a cobertura, e não como evidência independente. O processo proposto (TO-BE), opcional na issue #44, não foi modelado.
-- **Decisões do grupo sem confirmação da PO.** Em dez pontos as fontes não davam resposta definitiva (seção 9). O grupo decidiu cada um com justificativa nas fontes, porque a PO não teve disponibilidade para confirmá-los. Os requisitos afetados estão escritos de acordo com a decisão e só passam a Validado com a confirmação da PO.
+- **Decisões do grupo sem confirmação da PO.** Em dez pontos as fontes não davam resposta definitiva (seção 9). O grupo decidiu cada um com justificativa nas fontes, e as decisões aguardam a validação da PO. Os requisitos afetados estão escritos de acordo com a decisão e só passam a Validado com a confirmação da PO.
 - **Metas numéricas.** Os valores dos RNF de desempenho, disponibilidade, backup e do feedback informal em uma tela vêm da pesquisa documental ou desta consolidação, e não de pedido da PO (ponto P-10). Eles estão detalhados, com critério de aceitação e método de verificação, na [especificação suplementar](Especificacao_Suplementar.md) (#51).
 - **Escopo amplo de propósito.** A PO pediu requisitos amplos e disse que a arquitetura pode ser reduzida, por exemplo só a gestor e colaborador (E01 §24). A redução será decidida na segunda etapa do trabalho, sem alterar esta lista.

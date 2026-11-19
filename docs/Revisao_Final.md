@@ -2,7 +2,7 @@
 
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Disciplina:** Domínios de Software (INF0296, 2026/2) · 1ª Etapa: Levantamento de Requisitos
-**Issue:** #55 · **Versão:** 1.0 · **Data:** 17/11/2026
+**Issue:** #55 · **Versão:** 1.1 · **Data:** 18/11/2026
 **Responsável:** Verônica Ribeiro Oliveira Palmeira (Analista de Qualidade e Documentação; consolidadora, conforme a seção 4.2 do [processo de requisitos](Processo_Requisitos.md))
 **Base:** enunciado do Projeto da Disciplina (1ª etapa) e todos os artefatos da `main` em 17/11/2026
 
@@ -19,6 +19,7 @@
 7. [Correções feitas nesta revisão](#7-correções-feitas-nesta-revisão)
 8. [Pontos fora do repositório](#8-pontos-fora-do-repositório)
 9. [Versionamento](#9-versionamento)
+10. [Revisão de conformidade com o enunciado (18/11/2026)](#10-revisão-de-conformidade-com-o-enunciado-18112026)
 
 ---
 
@@ -55,7 +56,7 @@ Itens da lista "Entrega dos seguintes documentos" do enunciado, na mesma ordem.
 | 10 | Diagrama de casos de uso – cap. 6 do Larman | [Diagrama_Casos_de_Uso.md](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md), fonte [PlantUML](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.puml) e 8 imagens: 7 atores e 31 casos de uso | #47 | Atendido |
 | 11 | Casos de uso essenciais, pelo menos 1 completo por integrante – cap. 6 do Larman | [Casos_de_Uso_Completos.md](modelagem/casos-de-uso/Casos_de_Uso_Completos.md): 5 casos completos para 5 integrantes (UC-08, UC-13, UC-14, UC-19, UC-25). Os 31 casos estão em formato resumido no diagrama, seção 4 | #48 | Atendido |
 | 12 | Matriz de Rastreabilidade (horizontal e vertical) – requisitos, fontes e artefatos | [Matriz_Rastreabilidade.md](Matriz_Rastreabilidade.md) e [CSV](Matriz_Rastreabilidade.csv): vertical (fonte → requisito → caso de uso → tela → entidade) e horizontal (requisito ↔ requisito) | #49 | Atendido |
-| 13 | Protótipos das telas – Figma | [Prototipo.md](prototipacao/Prototipo.md) e [arquivo no Figma](https://www.figma.com/design/yiyjqLFpIp838MAi9x0EW4/Dom%C3%ADnios-de-Software-2026-2?node-id=6-3): 51 telas, 47 web e 4 para celular | #50 | Atendido. Ver a seção 8 |
+| 13 | Protótipos das telas – Figma | [Prototipo.md](prototipacao/Prototipo.md) e [arquivo no Figma](https://www.figma.com/design/yiyjqLFpIp838MAi9x0EW4/Dom%C3%ADnios-de-Software-2026-2?node-id=6-3): 54 telas, 50 web e 4 para celular, exportadas para [`prototipacao/telas/`](prototipacao/telas/) | #50 | Atendido |
 | 14 | Especificação suplementar para os RNF (ISO/IEC 25010) – cap. 7 do Larman | [Especificacao_Suplementar.md](Especificacao_Suplementar.md): 36 RNF com critério de aceitação e método de verificação, pela ISO/IEC 25010:2023 | #51 | Atendido |
 | 15 | Modelo Entidade-Relacionamento / Modelo de domínio | [Modelo_Dominio_ER.md](modelagem/modelo-dados/Modelo_Dominio_ER.md): diagramas Mermaid por área, tratamento do anonimato e rastreabilidade entidade × requisito | #52 | Atendido |
 | 16 | Dicionário de dados (glossário): termo, definição, formato (tipo, tamanho, unidade), relacionamento e regra de validação – cap. 7 do Larman | [Dicionario_de_Dados.md](Dicionario_de_Dados.md): glossário de termos de negócio e dicionário de todos os atributos do ER, com tipo, tamanho ou domínio, unidade, obrigatoriedade, chave, relacionamento, regra de validação e classificação LGPD | #53 | Atendido |
@@ -69,7 +70,7 @@ Itens da lista "Entrega dos seguintes documentos" do enunciado, na mesma ordem.
 | Atividade do enunciado | Como foi feita | Evidência |
 |---|---|---|
 | Busca de documentos: leis, regulamentações, padrões (ISO/IEC 25010) | 21 documentos analisados (`FD-01` a `FD-21`), entre eles LGPD, ISO/IEC 25010:2023, CLT, normas de acessibilidade e guias da ANPD. 59 candidatos `RD` | [Pesquisa_Documental.md](elicitacao/pesquisa-documental/Pesquisa_Documental.md), [Requisitos_Pesquisa_Documental.md](elicitacao/pesquisa-documental/Requisitos_Pesquisa_Documental.md) |
-| 2 entrevistas, transcritas e anexadas, com identificação, função e telefone | E01: Adriana Silveira de Souza, Product Owner e professora da disciplina, 20/10/2026, 1h57min de gravação. E02, com telefone, 17/11/2026. Na E01, o campo telefone consta como "N/A", porque a entrevistada é a própria professora da disciplina | Seção "Identificação" de cada transcrição |
+| 2 entrevistas, transcritas e anexadas, com identificação, função e telefone | E01: Adriana Silveira de Souza, Product Owner e professora da disciplina, 20/10/2026, 1h57min de gravação. E02: Eliene de Souza Oliveira, Secretária Municipal de Educação, 17/11/2026, 18 min de gravação. As duas com nome, função e telefone | Seção "Identificação" de cada transcrição |
 | 2 questionários com pessoas diferentes das entrevistadas, anexados com as respostas, identificação, função e telefone | Q01 e Q02. As duas com telefone e consentimento LGPD registrado | Seção 1 de cada questionário |
 | Pesquisar sistemas análogos e descrever as funcionalidades | 15Five, da lista de sugestões do enunciado, registrado na issue #32. 27 funcionalidades descritas (`FA-01` a `FA-27`), com capturas de tela | [Sistema_Analogo_15Five.md](elicitacao/sistema-analogo/Sistema_Analogo_15Five.md) |
 | Processo de negócio de avaliação, com as principais dores, em BPMN | Dois diagramas AS-IS, um por entrevista, com as dores D1 a D6 marcadas, em arquivo `.bpmn` e imagem | [Processo_AS-IS_e_Dores.md](elicitacao/bpmn/Processo_AS-IS_e_Dores.md) e arquivos em [`elicitacao/bpmn/`](elicitacao/bpmn/) |
@@ -161,7 +162,7 @@ Têm histórico de revisões, com a linha da versão 1.1, sete artefatos: a list
 | Artefato | Correção | Motivo |
 |---|---|---|
 | [Lista geral](Lista_Geral_Requisitos.md) (1.1) e CSV | RF-003 passa a incluir os perfis diretoria e encarregado; RN-005 registra que o mínimo de respondentes nunca é menor que 3; RN-006 trata o plano de ação de feedback confidencial | Alterações indicadas pela especificação IEEE 830 (Apêndice C.3; decisões ERS-D02, ERS-D08, ERS-D05) e ainda não aplicadas |
-| Lista geral | A seção 9 passa a "Pontos decididos pelo grupo, sem confirmação da PO". As observações chamam cada decisão de "decisão do grupo, não confirmada pela PO" | A PO não teve disponibilidade para confirmar os dez pontos. As decisões são do grupo e continuam sujeitas à confirmação dela |
+| Lista geral | A seção 9 passa a "Pontos decididos pelo grupo, sem confirmação da PO". As observações chamam cada decisão de "decisão do grupo, não confirmada pela PO" | Os dez pontos ainda não foram confirmados pela PO. As decisões são do grupo e continuam sujeitas à confirmação dela |
 | [Modelo ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (1.1) | Perfis `DIRETORIA` e `ENCARREGADO`; autor das versões e rascunho de feedback confidencial; `Feedback.peso`; regra do prazo de retenção; remoção de `Meta.atingida`; enumerações fechadas; `CheckInMeta`, `CheckInPlano`, `DestinatarioVisibilidade`, `DisponibilidadeAgenda`, `TermoOfensivo`; controle de falhas de login; `Fato.observado_equipe_id`; novos valores de notificação e de status do plano; `PlanoAcao.gestor_id` | Inconsistências I-01 e I-04 a I-13 do dicionário, decisões UC08-D01, UC08-D02 e UC19-D01 dos casos completos e Apêndice C.2 da especificação IEEE 830, que pediam esses ajustes |
 | [Dicionário de dados](Dicionario_de_Dados.md) (1.1) | Entidades e atributos conforme o ER 1.1; glossário de perfis, 360° e equipe; inventário LGPD e prazos; coluna "Tratamento" em todos os pontos da seção 5 | Manter o dicionário igual ao ER e registrar como cada ponto foi resolvido |
 | [Especificação IEEE 830](Especificacao_Requisitos_IEEE830.md) (1.1) | Textos de RF-003, RN-005 e RN-006; entidades novas na seção 3.4.1; situação dos apêndices C.2 e C.3 | Refletir a lista geral 1.1 e o ER 1.1 |
@@ -184,12 +185,43 @@ Estes pontos dependem de ferramentas fora do Git e não alteram nenhum requisito
 
 | # | Ponto | Situação |
 |---|---|---|
-| 1 | Anotações de 9 telas no Figma citam requisitos diferentes dos da lista geral | Corrigidas na matriz (seção 4.2), que é a referência. A atualização das anotações é feita no arquivo do Figma |
-| 2 | Casos de uso sem tela no protótipo, entre eles UC-03, UC-04 e UC-28, que atendem requisitos Must | Registrados na matriz (seções 4.1 e 8). Os requisitos continuam rastreados pelo caso de uso e pela entidade |
-| 3 | Imagens exportadas do modelo ER (pasta `img/`) | Mostram a versão 1.0. Os diagramas Mermaid da página do modelo, renderizados pelo GitHub, são a fonte e já estão na versão 1.1 |
+| 1 | Anotações de 9 telas no Figma citavam requisitos diferentes dos da lista geral | Resolvido em 18/11/2026: anotações corrigidas no Figma, conforme a matriz (seção 4.2) |
+| 2 | Requisitos Must sem tela (RF-005, RF-006 e RF-062) | Resolvido em 18/11/2026: telas T-52 (UC-03), T-53 (UC-04) e T-54 (UC-28) |
+| 3 | Imagens exportadas do modelo ER (pasta `img/`) | Resolvido em 18/11/2026: as 7 imagens, em PNG e SVG, foram geradas de novo a partir dos diagramas Mermaid da versão 1.2 do modelo |
+| 4 | Imagens PNG e SVG do diagrama de casos de uso | Resolvido em 18/11/2026: todas as imagens foram geradas de novo a partir do `.puml`, e o UC-19 aparece ligado ao Colaborador |
+| 5 | Telas do protótipo fora do repositório | Resolvido em 18/11/2026: as 54 telas foram exportadas do Figma para [`prototipacao/telas/`](prototipacao/telas/), e a matriz liga cada `T-xx` à sua imagem, no lugar das páginas dos PDFs |
 
 ---
 
 ## 9. Versionamento
 
 Todos os artefatos estão no repositório [isadora-yasmim/dominios-de-software-2026-2](https://github.com/isadora-yasmim/dominios-de-software-2026-2), em Markdown, CSV, BPMN, PlantUML, PNG e SVG. Cada artefato entrou por uma branch própria e um pull request ligado à sua issue (seção 5), e o histórico de cada arquivo está no Git. O único artefato mantido fora do Git é o arquivo de telas do Figma, que o enunciado pede nessa ferramenta. O repositório guarda o link e a descrição das telas ([Prototipo.md](prototipacao/Prototipo.md)).
+
+---
+
+## 10. Revisão de conformidade com o enunciado (18/11/2026)
+
+Depois do merge do PR #77, todo o repositório foi lido de novo e comparado, item a item, com o enunciado do Projeto da Disciplina: transcrições, questionários, pesquisa documental, sistema análogo, BPMN, sínteses, lista geral, Documento Visão, casos de uso, especificações, modelo ER, dicionário, matriz e protótipo. Os critérios foram os do próprio enunciado, os modelos de Larman (caps. 6 e 7) e a lista de verificação da seção 2.4 do processo de requisitos. Nenhum identificador, prioridade ou total da lista geral mudou.
+
+| Artefato | Correção | Motivo |
+|---|---|---|
+| [Entrevista 01](elicitacao/entrevistas/Entrevista01_Adriana.md) | Telefone da entrevistada preenchido | O enunciado pede identificação com nome, função e telefone. O campo estava "N/A" |
+| [Documento Visão](Documento_Visao.md) (1.2) | Nova seção 2.4, Alternativas e concorrência; coluna Prioridade na tabela de necessidades | Seções do modelo de Documento Visão de Larman (cap. 7) que faltavam: alternativas usadas hoje e concorrentes, e prioridade de cada necessidade |
+| [UC-19](modelagem/casos-de-uso/UC-19_Criar_Plano_de_Acao.md) (1.2) | Ator principal: Colaborador, no papel de emissor, chamado de Gestor no cenário | O caso completo dizia "Gestor", e o diagrama e o `.puml` ligam o UC-19 ao Colaborador |
+| [Síntese dos questionários](elicitacao/questionarios/Sintese.md) | Prioridades em MoSCoW (11 Must, 10 Should, 1 Could), no lugar de Alta, Média e Baixa | O processo (seção 7) e as outras sínteses usam MoSCoW. A correspondência mantém as mudanças de prioridade explicadas na lista geral, como "subiu de Could para Should" no RF-040 |
+| Síntese e Questionário 02 | Citação da resposta aberta igual à transcrição literal ("alguns situação") | A citação entre aspas tinha sido corrigida, o que a tornava diferente da resposta registrada |
+| [Processo AS-IS e dores](elicitacao/bpmn/Processo_AS-IS_e_Dores.md) | Retirada a observação sobre o número da issue no README, que já estava resolvida; justificativa para não modelar o TO-BE | A observação estava desatualizada |
+| [Dicionário de dados](Dicionario_de_Dados.md), ponto T-08 | Texto da divergência original do nome do sistema | A padronização do nome tinha deixado as duas metades da linha iguais, e a divergência deixava de fazer sentido |
+| [Protótipo](prototipacao/Prototipo.md) (1.2) | Cabeçalho com responsáveis, versão e base; papel do protótipo no processo e limitações conhecidas | Padrão dos demais artefatos e transparência sobre as pendências da matriz |
+| Documento Visão, lista geral, matriz e esta revisão | Os pontos P-01 a P-10 são descritos só como decisões do grupo ainda não confirmadas pela PO | Registrar a situação dos pontos sem atribuir motivo à PO |
+| README, pesquisa documental, BPMN e roteiros | "360°" com o símbolo de grau | Grafia definida no glossário (termo Avaliação 360°). Os nomes dos elementos dos diagramas BPMN foram mantidos como estão nas imagens |
+| [Sistema análogo](elicitacao/sistema-analogo/Sistema_Analogo_15Five.md) | Link para a síntese do sistema análogo no cabeçalho | O artefato relacionado era citado sem link |
+| [Especificação IEEE 830](Especificacao_Requisitos_IEEE830.md) (1.2) | Definição de Avaliação 360° igual à do glossário; definição de Plano de ação com o caso confidencial; ator do UC-19; texto da ERS-D01; matriz no Apêndice E | A definição de 360° ("todos avaliam todos") contradizia a decisão ERS-D09 e o RF-025, e a seção 1.3.1 declara transcrever o glossário sem alteração |
+| [Dicionário de dados](Dicionario_de_Dados.md) (1.2) | Termos Plano de ação, Emissor e Receptor com a regra do feedback confidencial; `Feedback.data_feedback` não futura; `AcaoPlano.responsavel_id` e `meta_acao`; `RegistroAuditoria.ator_id` e `ip_origem` opcionais nas rotinas automáticas; contato do encarregado no agente de pequeno porte | Coerência com a RN-006 1.1, com as decisões UC08-D05 e UC19-D02, com o UC-19 (toda ação tem meta) e com o UC-30, cuja eliminação automática não tem usuário mas precisa ser auditada |
+| [Modelo ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (1.2) | Cardinalidade zero ou um entre `Colaborador` e `RegistroAuditoria` | Mesma razão do item anterior |
+| [Especificação suplementar](Especificacao_Suplementar.md) (1.2) | Links para os artefatos relacionados; seção 12.3 com os itens do modelo de Larman sem requisito nesta etapa | Seções do modelo de Larman (cap. 7) que não estavam registradas |
+| [Protótipo no Figma](prototipacao/Prototipo.md) (1.3) | Anotações das 9 telas corrigidas e as demais completadas; telas de login sem "UC-01" no nome; frame solto sobre o título do login removido; telas T-52 a T-54; refinamento visual de todo o arquivo (paleta índigo e grafite com contraste conferido, sem degradês, cantos e sombras padronizados); 54 telas exportadas para o repositório, com galeria | Pendências 1, 2 e 5 da seção 8 e pedido de visual mais profissional |
+| [Matriz de rastreabilidade](Matriz_Rastreabilidade.md) (1.2) e CSV | Coluna Imagem no lugar da página do PDF; T-52 a T-54 no catálogo, nas telas por caso de uso e nas colunas Telas; cobertura recalculada (55 de 65 RF com tela, nenhum Must sem tela; 54 de 54 telas com requisito) | Refletir o protótipo atualizado |
+
+**Conferências refeitas depois das correções:** links internos e âncoras de todos os arquivos `.md` (nenhum quebrado); citações literais conferidas com as transcrições; texto dos 117 requisitos igual na lista geral, no CSV e na especificação IEEE 830, e dos 36 RNF na especificação suplementar; definições da IEEE 830 iguais às do glossário.
+
