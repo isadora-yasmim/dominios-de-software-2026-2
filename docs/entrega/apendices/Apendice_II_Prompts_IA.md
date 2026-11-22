@@ -153,12 +153,18 @@ sim
 | Data de acesso | 22 nov. 2026 |
 | Integrante | Isadora Yasmim da Silva |
 | Artefato | [Referências](../Referencias.md), este apêndice e [`scripts/verificar_referencias.py`](../../../scripts/verificar_referencias.py) |
-| O que a IA fez | Reuniu as referências que já estavam nas seções de referências dos artefatos, sem acrescentar fontes novas; transcreveu os prompts das sessões anteriores a partir dos registros locais; escreveu o script que aponta referências e prompts ainda não registrados |
+| O que a IA fez | Reuniu as referências que já estavam nas seções de referências dos artefatos, sem acrescentar fontes novas; transcreveu os prompts das sessões anteriores a partir dos registros locais; escreveu o script que aponta referências e prompts ainda não registrados. Depois, a pedido da integrante (mensagem 2), reorganizou as pastas de `docs/` por etapa e corrigiu os links entre os documentos |
 
 **Mensagem 1**
 
 ```text
 implemente a issue 107, não invente nenhuma referencia, como o trabalho ainda está sendo contruido coloque as que já temos e arrume uma forma de toda vez que uma nova referencia for usada o claude code adicionar ela automaticamente nas referencias
+```
+
+**Mensagem 2**
+
+```text
+voce colocou na pasta arquitetura, nao faz sentido, coloque em outro lugar, além disso aproveite e organize a estrutura de pastas do repositório para ficar mais organizado, pois alguns alquivps estáo muito soltos
 ```
 
 ---
