@@ -630,7 +630,7 @@ As sugestões de horários livres da tela de sessão de feedback (T-46) são cal
 
 **Uso de inteligência artificial**
 
-- ANTHROPIC. Claude Code (modelo Claude Opus 5.5). Disponível em: https://claude.com/claude-code. Acesso em: 22 nov. 2026. Usado para redigir a primeira versão deste documento a partir da issue #80 e dos artefatos da 1ª etapa. Questão: Apêndice II, Seção II.x (prompt a registrar na issue #107).
+- ANTHROPIC. Claude Code (modelo Claude Opus 5.5). Disponível em: https://claude.com/claude-code. Acesso em: 22 nov. 2026. Usado para redigir a primeira versão deste documento a partir da issue #80 e dos artefatos da 1ª etapa. Questão: Apêndice II, Seção II.3 (issue #107).
 
 ---
 
