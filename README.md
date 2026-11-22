@@ -125,6 +125,16 @@ git push -u origin 6-entrevista-1
 
 ## Referências
 
+A lista consolidada de todas as fontes citadas nos artefatos, com o registro do uso de IA, está em [`docs/arquitetura/Referencias.md`](docs/arquitetura/Referencias.md). Os prompts completos estão no [Apêndice II](docs/arquitetura/Apendice_II_Prompts_IA.md).
+
+Para conferir se alguma referência citada nos documentos ainda falta na lista consolidada:
+
+```bash
+python3 scripts/verificar_referencias.py
+```
+
+Principais referências de método:
+
 - LARMAN, C. *Utilizando UML e Padrões*. Caps. 6 e 7.
 - ISO/IEC 25010 — Modelo de qualidade de produto de software.
 - IEEE 830 — Práticas recomendadas para especificação de requisitos de software.

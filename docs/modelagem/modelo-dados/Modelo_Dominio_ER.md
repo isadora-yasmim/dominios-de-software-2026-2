@@ -22,7 +22,8 @@ Projeto: Sistema Web de Feedback e Gestão de Competências · Disciplina Domín
 11. [Dicionário de enumerações](#11-dicionário-de-enumerações)
 12. [Rastreabilidade entidade × requisito](#12-rastreabilidade-entidade--requisito)
 13. [Decisões de modelagem](#13-decisões-de-modelagem)
-14. [Histórico de revisões](#14-histórico-de-revisões)
+14. [Referências](#14-referências)
+15. [Histórico de revisões](#15-histórico-de-revisões)
 
 ---
 
@@ -853,10 +854,21 @@ Consequência aceita: no modo `ANONIMO` o emissor não pode editar a resposta de
 | M-09 | Feedback para equipe aparece no perfil de cada membro, sinalizado como "feedback em grupo", com os membros da data do envio guardados em `MembroFeedbackEquipe` | Decisão da equipe. O colaborador vê no próprio histórico (RF-048) tudo o que recebeu, e a lista de membros fixa na data impede que quem entrou depois veja o feedback e que quem saiu o perca |
 | M-10 | Ajustes da revisão final (versão 1.1), listados na seção 14 | Aplicam as inconsistências I-01 e I-04 a I-13 do [dicionário de dados](../../Dicionario_de_Dados.md) (seção 5.2), as decisões UC08-D01, UC08-D02 e UC19-D01 dos casos de uso completos e as decisões ERS-D02, ERS-D05 e ERS-D08 da [especificação IEEE 830](../../Especificacao_Requisitos_IEEE830.md) (Apêndice C), que pediam esses ajustes no modelo |
 
-## 14. Histórico de revisões
+## 14. Referências
+
+**Uso de inteligência artificial**
+
+- ANTHROPIC. Claude Code (modelo Claude Opus 5.5). Disponível em: https://claude.com/claude-code. Acesso em: 17 nov. 2026. Usado para redigir a versão inicial deste modelo e os diagramas em Mermaid a partir da issue #52 e dos artefatos da 1ª etapa. Questão: Apêndice II, Seção II.1 ([Apêndice II](../../arquitetura/Apendice_II_Prompts_IA.md)).
+
+A lista consolidada do projeto está em [Referências](../../arquitetura/Referencias.md).
+
+---
+
+## 15. Histórico de revisões
 
 | Versão | Data | Descrição |
 |---|---|---|
 | 1.0 | 17/11/2026 | Versão inicial (#52) |
 | 1.1 | 17/11/2026 | Revisão final (#55). Perfis `DIRETORIA` e `ENCARREGADO` (RF-003, I-01). Emissor e autor das versões de feedback confidencial só no vínculo, com o rascunho ligado ao autor até o envio (I-04). `Feedback.peso` e regra de exibição dos pesos (I-06). Prazo da categoria prevalece sobre o padrão da organização (I-07). Removido `Meta.atingida` (I-08). Enumerações `AcaoAuditoria` e `FrequenciaCheckIn` fechadas e domínio de `ResultadoConsolidado.modalidade` explicitado (I-09). `CheckInMeta` e `CheckInPlano` (I-10). `DestinatarioVisibilidade` (I-11). `CompartilhamentoDados.inclui_menores` (I-12). `DisponibilidadeAgenda`, `TermoOfensivo` e controle de falhas de login em `Colaborador` (I-13). `Fato.observado_equipe_id` (UC08-D02). `FEEDBACK_RECEBIDO` e `PLANO_PARA_CONFIRMAR` em `TipoNotificacao` e `AGUARDANDO_CONFIRMACAO` em `StatusPlano` (UC08-D01, UC19-D01). `PlanoAcao.gestor_id` para plano de feedback confidencial (ERS-D05). Piso de 3 em `min_respondentes` (ERS-D08) |
 | 1.2 | 18/11/2026 | `RegistroAuditoria.ator_id` opcional (cardinalidade zero ou um com `Colaborador`): as ações das rotinas automáticas do relógio do sistema, como a eliminação da política de retenção (UC-30), não têm usuário, mas precisam ser auditadas (RNF-005, RF-062). Imagens de `img/` geradas de novo a partir dos diagramas desta versão, com o dobro da resolução das anteriores |
+| 1.3 | 22/11/2026 | Seção 14, Referências, com o registro do uso de IA na versão inicial (#107) |
