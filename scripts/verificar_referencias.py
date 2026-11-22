@@ -2,7 +2,7 @@
 """Confere se as referências citadas nos documentos estão na lista consolidada.
 
 Lê a seção "Referências" de cada arquivo .md em docs/ e procura cada item na
-lista consolidada (docs/arquitetura/Referencias.md). Um item é considerado
+lista consolidada (docs/entrega/Referencias.md). Um item é considerado
 presente quando:
   - algum link http(s) dele aparece na lista consolidada; ou
   - pelo menos 70% das suas palavras significativas aparecem em uma mesma
@@ -34,8 +34,8 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 DOCS = RAIZ / "docs"
-CONSOLIDADA = DOCS / "arquitetura" / "Referencias.md"
-APENDICE = DOCS / "arquitetura" / "Apendice_II_Prompts_IA.md"
+CONSOLIDADA = DOCS / "entrega" / "Referencias.md"
+APENDICE = DOCS / "entrega" / "apendices" / "Apendice_II_Prompts_IA.md"
 IGNORAR = {CONSOLIDADA.resolve(), APENDICE.resolve()}
 GRUPOS_INTERNOS = ("internas", "artefatos do projeto")
 LIMIAR = 0.7
@@ -176,10 +176,10 @@ def verificar(arquivos: list[Path]) -> list[str]:
 
 
 INSTRUCAO = (
-    "Atualize docs/arquitetura/Referencias.md com a referência completa (copie os dados "
+    "Atualize docs/entrega/Referencias.md com a referência completa (copie os dados "
     "do documento de origem, sem inventar autor, ano ou URL) e acrescente o documento "
     "em 'Usada em'. Uso de IA: registre os prompts literais no Apêndice II "
-    "(docs/arquitetura/Apendice_II_Prompts_IA.md) e troque 'II.x' pela seção criada. "
+    "(docs/entrega/apendices/Apendice_II_Prompts_IA.md) e troque 'II.x' pela seção criada. "
     "Se a referência já estiver na lista com outra grafia, acrescente "
     "<!-- alias: ... --> na entrada."
 )

@@ -5,7 +5,7 @@
 **Issue:** #46 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsável:** Ana Luísa Pereira dos Santos
 **Referência de método:** Larman, *Utilizando UML e Padrões*, cap. 7 (Documento Visão)
-**Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (issue #45), versão 1.1. Os identificadores `RF-`, `RNF-` e `RN-` citados aqui são os dessa lista.
+**Base:** [Lista Geral de Requisitos](../analise/Lista_Geral_Requisitos.md) (issue #45), versão 1.1. Os identificadores `RF-`, `RNF-` e `RN-` citados aqui são os dessa lista.
 
 ## Histórico de revisões
 
@@ -35,7 +35,7 @@
 
 ### 1.1 Finalidade
 
-Este documento apresenta a visão geral do Sistema Web de Feedback e Gestão de Competências: que problema ele resolve, para quem, com que funções principais e dentro de que limites. É um texto curto, pensado para ser lido por todas as partes interessadas, inclusive quem não é da área técnica. O detalhe de cada requisito está na [Lista Geral de Requisitos](Lista_Geral_Requisitos.md), e os próximos artefatos (casos de uso, especificação suplementar, glossário) partem daqui.
+Este documento apresenta a visão geral do Sistema Web de Feedback e Gestão de Competências: que problema ele resolve, para quem, com que funções principais e dentro de que limites. É um texto curto, pensado para ser lido por todas as partes interessadas, inclusive quem não é da área técnica. O detalhe de cada requisito está na [Lista Geral de Requisitos](../analise/Lista_Geral_Requisitos.md), e os próximos artefatos (casos de uso, especificação suplementar, glossário) partem daqui.
 
 ### 1.2 Escopo
 
@@ -66,7 +66,7 @@ Há espaço para um sistema que torne o feedback fácil de registrar, seguro par
 | **O impacto disso é** | informação que se perde; ausência de controle sobre se a pessoa melhorou; feedback que não acontece por falta de tempo ou de agenda; reação defensiva de quem recebe; feedback dado de forma agressiva ou sem elogio; participação irregular nas avaliações 360°; dependência da discrição do gestor para proteger quem reclama |
 | **Uma solução bem-sucedida seria** | um sistema web que registre fatos e feedbacks, guie quem dá e quem recebe, ligue o feedback a planos de ação com prazo e lembrete, guarde o histórico e proteja a identidade de quem avalia, tudo em conformidade com a LGPD |
 
-As dores acima são as seis marcadas em cada um dos diagramas do processo atual (D1 a D6, ver [Processo AS-IS e dores](elicitacao/bpmn/Processo_AS-IS_e_Dores.md)). A seção 7.2 da Lista Geral de Requisitos mostra quais requisitos tratam cada uma.
+As dores acima são as seis marcadas em cada um dos diagramas do processo atual (D1 a D6, ver [Processo AS-IS e dores](../elicitacao/bpmn/Processo_AS-IS_e_Dores.md)). A seção 7.2 da Lista Geral de Requisitos mostra quais requisitos tratam cada uma.
 
 ### 2.3 Declaração de posição do produto
 
@@ -88,7 +88,7 @@ Larman (cap. 7) pede que o Documento Visão registre as alternativas que as part
 |---|---|---|---|
 | **Registro manual**: conversa sem registro, caderno de anotações, planilha eletrônica e mensagens de WhatsApp | E02 §2, §4 (conversa, caderninho e WhatsApp); E01 §15, §18 (planilha do Excel e papel) | Custo zero e nenhum aprendizado novo. A planilha permite montar gráficos de desempenho, como faz o gerente citado pela PO (E01 §15) | A informação se perde e não há controle de melhora (D1 e D4 dos dois diagramas AS-IS). Não há modo confidencial nem anônimo: a proteção de quem relata depende da discrição do gestor (D5 do AS-IS 2). Não há histórico consultável (E02 §7) |
 | **Módulos de feedback dentro de sistemas de RH mais amplos** | E01 §33: "tem muitas ferramentas que estão integradas a outros tipos de sistema, né? De sistema mais amplo de RH" | Integram o feedback ao cadastro e aos demais processos de RH | O feedback é uma função secundária. A PO pediu foco no desenvolvimento das pessoas, e não em promoção e salário, que ficam com outros sistemas de RH (E01 §8) |
-| **Ferramentas especializadas de mercado**, como o 15Five, analisado pelo grupo | [Sistema análogo – 15Five](elicitacao/sistema-analogo/Sistema_Analogo_15Five.md) | Feedback contínuo, avaliação 360°, metas e plano de crescimento no mesmo lugar; anonimato configurável; mínimo de respondentes; aplicativo móvel (seção 7 da análise) | Feedback em texto livre, sem fatos, tipo nem plano de ação nascido do feedback; interface sem português; cobrança em dólar por usuário; aplicativos desiguais entre iOS e Android; dados fora do Brasil, o que exige mecanismo de transferência internacional (seções 5 e 7 da análise) |
+| **Ferramentas especializadas de mercado**, como o 15Five, analisado pelo grupo | [Sistema análogo – 15Five](../elicitacao/sistema-analogo/Sistema_Analogo_15Five.md) | Feedback contínuo, avaliação 360°, metas e plano de crescimento no mesmo lugar; anonimato configurável; mínimo de respondentes; aplicativo móvel (seção 7 da análise) | Feedback em texto livre, sem fatos, tipo nem plano de ação nascido do feedback; interface sem português; cobrança em dólar por usuário; aplicativos desiguais entre iOS e Android; dados fora do Brasil, o que exige mecanismo de transferência internacional (seções 5 e 7 da análise) |
 
 O enunciado sugere outras dez ferramentas de feedback 360° (ClickUp, Culture Amp, SurveySparrow, SurveyMonkey, Qualtrics 360, Lattice, PerformYard, Trakstar, Leapsome e Spidergap). Cada grupo da turma analisa um sistema diferente, e este grupo analisou o 15Five. As demais não foram analisadas e por isso não aparecem como comparação.
 
@@ -255,7 +255,7 @@ A Lista Geral de Requisitos (seção 9) registra dez pontos em que as fontes nã
 | P-05 Prazo de guarda após o desligamento | 5 anos, configurável |
 | P-10 Metas numéricas de desempenho, disponibilidade e backup | Valores propostos pela pesquisa documental |
 
-Os demais (P-04, P-06 a P-09) tratam de edição de feedback, relatos de colegas, ocultação de respostas, problemas por cargo e check-ins periódicos. Se a PO confirmar essas decisões de outra forma, ou se qualquer delas mudar, a alteração segue a gestão de mudanças do [processo de requisitos](Processo_Requisitos.md) (seção 9) e atualiza a lista de requisitos e este documento.
+Os demais (P-04, P-06 a P-09) tratam de edição de feedback, relatos de colegas, ocultação de respostas, problemas por cargo e check-ins periódicos. Se a PO confirmar essas decisões de outra forma, ou se qualquer delas mudar, a alteração segue a gestão de mudanças do [processo de requisitos](../planejamento/Processo_Requisitos.md) (seção 9) e atualiza a lista de requisitos e este documento.
 
 ---
 
@@ -263,10 +263,10 @@ Os demais (P-04, P-06 a P-09) tratam de edição de feedback, relatos de colegas
 
 | Fonte | Artefato | Issue |
 |---|---|---|
-| Lista consolidada | [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) | #45 |
-| Entrevistas (E01 e E02) | [Síntese dos Requisitos das Entrevistas](elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md) | #41 |
-| Questionários (Q01 e Q02) | [Síntese dos Requisitos dos Questionários](elicitacao/questionarios/Sintese.md) | #42 |
-| Pesquisa documental | [Requisitos extraídos da Pesquisa Documental](elicitacao/pesquisa-documental/Requisitos_Pesquisa_Documental.md) | #33 |
-| Sistema análogo (15Five) | [Síntese dos Requisitos do Sistema Análogo](elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | #43 |
-| Processo atual (AS-IS 1 e 2) | [Processo AS-IS de feedback e avaliação, com as dores](elicitacao/bpmn/Processo_AS-IS_e_Dores.md) | #44 |
+| Lista consolidada | [Lista Geral de Requisitos](../analise/Lista_Geral_Requisitos.md) | #45 |
+| Entrevistas (E01 e E02) | [Síntese dos Requisitos das Entrevistas](../elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md) | #41 |
+| Questionários (Q01 e Q02) | [Síntese dos Requisitos dos Questionários](../elicitacao/questionarios/Sintese.md) | #42 |
+| Pesquisa documental | [Requisitos extraídos da Pesquisa Documental](../elicitacao/pesquisa-documental/Requisitos_Pesquisa_Documental.md) | #33 |
+| Sistema análogo (15Five) | [Síntese dos Requisitos do Sistema Análogo](../elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | #43 |
+| Processo atual (AS-IS 1 e 2) | [Processo AS-IS de feedback e avaliação, com as dores](../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) | #44 |
 | Enunciado | Projeto da Disciplina (área, escopo e restrições definidos pela professora) | |

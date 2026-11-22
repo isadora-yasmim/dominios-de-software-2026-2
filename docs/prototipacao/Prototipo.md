@@ -5,7 +5,7 @@
 **Issue:** #50 · **Versão:** 1.3 · **Data:** 18/11/2026
 **Responsáveis:** Júlia de Souza Nascimento e Verônica Ribeiro Oliveira Palmeira
 **Ferramenta:** Figma
-**Base:** [Lista Geral de Requisitos](../Lista_Geral_Requisitos.md) (#45) e [Diagrama de Casos de Uso](../modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47)
+**Base:** [Lista Geral de Requisitos](../analise/Lista_Geral_Requisitos.md) (#45) e [Diagrama de Casos de Uso](../modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47)
 
 ## Histórico de revisões
 
@@ -29,7 +29,7 @@
 
 [Abrir o protótipo no Figma](https://www.figma.com/design/yiyjqLFpIp838MAi9x0EW4/Dom%C3%ADnios-de-Software-2026-2?node-id=6-3)
 
-O arquivo **Domínios de Software 2026-2** é a fonte do protótipo. Ele tem as páginas Capa, Componentes (sistema visual e componentes), Desktop (telas web, cada uma com a anotação dos requisitos atendidos), Mobile e Fluxos (mapa dos fluxos navegáveis). Para que as telas possam ser vistas sem acesso ao Figma, cada uma foi exportada para a pasta [`telas/`](telas/), com o identificador `T-xx` da [matriz de rastreabilidade](../Matriz_Rastreabilidade.md) (#49, seção 4).
+O arquivo **Domínios de Software 2026-2** é a fonte do protótipo. Ele tem as páginas Capa, Componentes (sistema visual e componentes), Desktop (telas web, cada uma com a anotação dos requisitos atendidos), Mobile e Fluxos (mapa dos fluxos navegáveis). Para que as telas possam ser vistas sem acesso ao Figma, cada uma foi exportada para a pasta [`telas/`](telas/), com o identificador `T-xx` da [matriz de rastreabilidade](../analise/Matriz_Rastreabilidade.md) (#49, seção 4).
 
 ## 2. Escopo
 
@@ -61,7 +61,7 @@ O protótipo usa um sistema visual único, mantido na página Componentes do Fig
 
 ## 4. Telas por fluxo
 
-O protótipo tem **54 telas**: 50 na versão web e 4 na versão para celular. A coluna Requisitos de cada tela está no catálogo da [matriz](../Matriz_Rastreabilidade.md#41-catálogo-das-telas) e na anotação da tela no Figma.
+O protótipo tem **54 telas**: 50 na versão web e 4 na versão para celular. A coluna Requisitos de cada tela está no catálogo da [matriz](../analise/Matriz_Rastreabilidade.md#41-catálogo-das-telas) e na anotação da tela no Figma.
 
 | Fluxo | O que mostra | Telas |
 |---|---|---|
@@ -321,10 +321,10 @@ Clique na imagem para abrir em tamanho real. Cada legenda traz o perfil, o caso 
 
 ## 6. Papel no processo de requisitos
 
-O protótipo é a técnica de validação e de elicitação complementar do [processo de requisitos](../Processo_Requisitos.md) (seções 2.4 e 3, prefixo `RT`). Ele mostra como os requisitos da lista geral aparecem nas telas, nos fluxos dos casos de uso. Nenhum requisito novo surgiu na prototipação, por isso não há candidatos `RT` na lista geral.
+O protótipo é a técnica de validação e de elicitação complementar do [processo de requisitos](../planejamento/Processo_Requisitos.md) (seções 2.4 e 3, prefixo `RT`). Ele mostra como os requisitos da lista geral aparecem nas telas, nos fluxos dos casos de uso. Nenhum requisito novo surgiu na prototipação, por isso não há candidatos `RT` na lista geral.
 
 | Ponto | Situação |
 |---|---|
-| Anotações de 9 telas citavam requisitos diferentes dos da lista geral | Corrigidas no Figma em 18/11/2026, conforme a [matriz](../Matriz_Rastreabilidade.md), seção 4.2. As demais anotações foram completadas com todos os requisitos da tela |
+| Anotações de 9 telas citavam requisitos diferentes dos da lista geral | Corrigidas no Figma em 18/11/2026, conforme a [matriz](../analise/Matriz_Rastreabilidade.md), seção 4.2. As demais anotações foram completadas com todos os requisitos da tela |
 | RF-005, RF-006 e RF-062, de prioridade Must, não tinham tela | Telas T-52, T-53 e T-54, criadas em 18/11/2026 |
-| Casos de uso sem tela própria | UC-07, UC-12, UC-27 e UC-29 (prioridade Should ou Could); UC-30, rotina automática sem interface; UC-18, cujo requisito Must (RF-023, registro dos indicadores) aparece nas telas T-09 e T-30. Todos continuam rastreados pelo caso de uso e pela entidade ([matriz](../Matriz_Rastreabilidade.md), seção 4.1) |
+| Casos de uso sem tela própria | UC-07, UC-12, UC-27 e UC-29 (prioridade Should ou Could); UC-30, rotina automática sem interface; UC-18, cujo requisito Must (RF-023, registro dos indicadores) aparece nas telas T-09 e T-30. Todos continuam rastreados pelo caso de uso e pela entidade ([matriz](../analise/Matriz_Rastreabilidade.md), seção 4.1) |

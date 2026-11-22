@@ -4,7 +4,7 @@
 **Disciplina:** Domínios de Software — Bacharelado em Engenharia de Software — Universidade Federal de Goiás (UFG)  
 **Técnica de elicitação:** Entrevista semiestruturada  
 **Roteiro de origem:** [Roteiro_Entrevista_Reduzido.md](Roteiro_Entrevista_Reduzido.md) (versão completa: [Roteiro_Entrevista.md](Roteiro_Entrevista.md))  
-**Transcrição:** [Entrevista02_Eliene.md](Entrevista02_Eliene.md)
+**Transcrição:** [Entrevista02_Eliene.md](../Entrevista02_Eliene.md)
 
 ---
 
@@ -113,4 +113,4 @@ O roteiro reduzido foi pensado para uma conversa geral sobre feedback em uma org
 | Acompanhamento, plano de ação e histórico | 22, 23, 34, 35 |
 | Metas e plano de desenvolvimento | 36, 37 |
 | Principais dores do processo atual (alimenta o BPMN) | 7 a 15, 38, 39 |
-| Termo de consentimento do entrevistado (LGPD) | Nota de abertura da [transcrição](Entrevista02_Eliene.md) |
+| Termo de consentimento do entrevistado (LGPD) | Nota de abertura da [transcrição](../Entrevista02_Eliene.md) |

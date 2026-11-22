@@ -3,7 +3,7 @@
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.1 · **Data:** 17/11/2026
 **Responsável:** Davi Augusto Ferreira de Carvalho
-**Prioridade:** Must · **Área:** Feedback do dia a dia · [Diagrama](Diagrama_Casos_de_Uso.md#42-feedback-do-dia-a-dia) · [Modelo e convenções](Casos_de_Uso_Completos.md)
+**Prioridade:** Must · **Área:** Feedback do dia a dia · [Diagrama](../Diagrama_Casos_de_Uso.md#42-feedback-do-dia-a-dia) · [Modelo e convenções](../Casos_de_Uso_Completos.md)
 
 ## Histórico de revisões
 
@@ -216,4 +216,4 @@ O cenário descreve o caso mais comum: o gestor registra um feedback informal pa
 | Entidades do modelo ER | `Feedback`, `VersaoFeedback`, `FeedbackFato`, `Fato`, `FeedbackCompetencia`, `MembroFeedbackEquipe`, `VinculoConfidencial`, `SolicitacaoFeedback`, `DestinatarioSolicitacao`, `Notificacao`, `RegistroAuditoria` |
 | Casos de uso relacionados | UC-06 (registro de fato), UC-07 (relato de colega), UC-09 (solicitação de feedback), UC-10 (réplica do receptor), UC-11 (agendamento da sessão), UC-13 (ciclo formal), UC-19 (plano de ação, extensão), UC-22 (histórico do receptor) |
 | Decisões aplicadas | P-01, P-04, P-06 (lista geral); DS-02, DS-05, DS-07, DS-10, DS-13 (especificação suplementar); M-03, M-09 (modelo ER) |
-| Fontes | [Entrevista 01](../../elicitacao/entrevistas/Entrevista01_Adriana.md), §1, §2, §3, §10, §11, §12, §16, §17, §20 e §32; [Entrevista 02](../../elicitacao/entrevistas/Entrevista02_Eliene.md), §2, §3 e §8; [Síntese dos questionários](../../elicitacao/questionarios/Sintese.md); [Processo AS-IS e dores](../../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) |
+| Fontes | [Entrevista 01](../../../elicitacao/entrevistas/Entrevista01_Adriana.md), §1, §2, §3, §10, §11, §12, §16, §17, §20 e §32; [Entrevista 02](../../../elicitacao/entrevistas/Entrevista02_Eliene.md), §2, §3 e §8; [Síntese dos questionários](../../../elicitacao/questionarios/Sintese.md); [Processo AS-IS e dores](../../../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) |

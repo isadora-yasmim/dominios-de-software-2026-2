@@ -34,7 +34,7 @@
 **Método.**
 
 1. As duas transcrições foram lidas por completo. Cada pedido, dor ou regra citada pelas entrevistadas foi anotado com a seção da transcrição em que aparece.
-2. Pedidos sobre o mesmo assunto foram juntados em um único requisito candidato `RE-xx`, seguindo o padrão de identificação do [processo de requisitos](../../Processo_Requisitos.md).
+2. Pedidos sobre o mesmo assunto foram juntados em um único requisito candidato `RE-xx`, seguindo o padrão de identificação do [processo de requisitos](../../planejamento/Processo_Requisitos.md).
 3. Cada requisito foi classificado como RF, RNF (com a característica da ISO/IEC 25010) ou RN, conforme as definições da seção 5.2 do processo.
 4. A coluna **Relação com outras fontes** liga o requisito aos candidatos já levantados nos questionários (`RQ-xx`), na pesquisa documental (`RD-xx`) e no sistema análogo (`RA-xx`), para facilitar a lista geral (#45) e a matriz de rastreabilidade (#49).
 5. A prioridade segue os critérios MoSCoW do processo de requisitos. Ela é uma proposta e será confirmada na lista geral.
@@ -152,7 +152,7 @@
 
 ## 5. Pontos em aberto e tratamento na lista geral
 
-Os pontos abaixo ficaram em aberto ao fim desta síntese. Todos foram decididos na consolidação da [lista geral](../../Lista_Geral_Requisitos.md) (#45), como mostra a última coluna.
+Os pontos abaixo ficaram em aberto ao fim desta síntese. Todos foram decididos na consolidação da [lista geral](../../analise/Lista_Geral_Requisitos.md) (#45), como mostra a última coluna.
 
 | # | Tema | O que as fontes dizem | Proposta | Tratamento na lista geral |
 |---|---|---|---|---|

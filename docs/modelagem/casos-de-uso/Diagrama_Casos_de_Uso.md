@@ -3,7 +3,7 @@
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Referência:** Larman, *Utilizando UML e Padrões*, cap. 6
 **Issue:** #47 · **Data:** 17/11/2026
-**Entrada:** [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.1
+**Entrada:** [Lista Geral de Requisitos](../../analise/Lista_Geral_Requisitos.md) (#45), versão 1.1
 **Fonte dos diagramas:** [Diagrama_Casos_de_Uso.puml](Diagrama_Casos_de_Uso.puml) (PlantUML; gera todas as imagens desta página)
 
 ---
@@ -173,39 +173,39 @@ java -jar plantuml.jar -charset UTF-8 -tpng Diagrama_Casos_de_Uso.puml
 
 ### 6.1 Visão geral
 
-Todos os atores e casos de uso em um único diagrama. A versão em [SVG](UC_00_Visao_Geral.svg) pode ser ampliada sem perder qualidade.
+Todos os atores e casos de uso em um único diagrama. A versão em [SVG](img/UC_00_Visao_Geral.svg) pode ser ampliada sem perder qualidade.
 
-![Visão geral dos casos de uso](UC_00_Visao_Geral.png)
+![Visão geral dos casos de uso](img/UC_00_Visao_Geral.png)
 
 ### 6.2 Organização e parâmetros
 
-![Organização e parâmetros](UC_01_Organizacao.png)
+![Organização e parâmetros](img/UC_01_Organizacao.png)
 
 ### 6.3 Feedback do dia a dia
 
-![Feedback do dia a dia](UC_02_Feedback.png)
+![Feedback do dia a dia](img/UC_02_Feedback.png)
 
 ### 6.4 Ciclo de avaliação formal
 
-![Ciclo de avaliação formal](UC_03_Ciclo_Formal.png)
+![Ciclo de avaliação formal](img/UC_03_Ciclo_Formal.png)
 
 ### 6.5 Plano de ação e metas
 
 UC-08, em destaque, aparece apenas para mostrar o ponto de extensão do plano de ação. O UC-19 está ligado ao Colaborador, de quem o Gestor herda (seção 4.4).
 
-![Plano de ação e metas](UC_04_Plano_e_Metas.png)
+![Plano de ação e metas](img/UC_04_Plano_e_Metas.png)
 
 ### 6.6 Histórico e análise
 
-![Histórico e análise](UC_05_Historico_e_Analise.png)
+![Histórico e análise](img/UC_05_Historico_e_Analise.png)
 
 ### 6.7 Privacidade (LGPD)
 
-![Privacidade (LGPD)](UC_06_Privacidade.png)
+![Privacidade (LGPD)](img/UC_06_Privacidade.png)
 
 ### 6.8 Rotinas automáticas
 
-![Rotinas automáticas](UC_07_Rotinas_Automaticas.png)
+![Rotinas automáticas](img/UC_07_Rotinas_Automaticas.png)
 
 ---
 
@@ -247,8 +247,8 @@ Todos os 65 requisitos funcionais da lista geral foram conferidos. 62 são atend
 | Autenticação (parte de RF-003) | Fazer login não é um objetivo do usuário, e sim um passo para chegar a ele. Larman recomenda não modelar o login como caso de uso. Ele entra como **pré-condição** de todos os casos de uso. A atribuição de perfis está em UC-01 |
 | RF-004 – Login único (SSO) | Won't nesta versão: integração externa não pedida pela PO |
 | RF-064 – Atalho para o canal de denúncias | É um elemento fixo da interface, não uma tarefa do usuário. O canal de denúncias fica fora da fronteira (RN-009) |
-| RF-065 – Símbolo e declaração de acessibilidade | Elemento fixo da interface. É tratado na [especificação suplementar](../../Especificacao_Suplementar.md) (#51), seção 6.2, junto com os demais RNF de acessibilidade, e aparece na tela T-45 |
-| Requisitos não funcionais | Valem para vários casos de uso ao mesmo tempo e são tratados na [especificação suplementar](../../Especificacao_Suplementar.md) (#51) |
+| RF-065 – Símbolo e declaração de acessibilidade | Elemento fixo da interface. É tratado na [especificação suplementar](../../especificacao/Especificacao_Suplementar.md) (#51), seção 6.2, junto com os demais RNF de acessibilidade, e aparece na tela T-45 |
+| Requisitos não funcionais | Valem para vários casos de uso ao mesmo tempo e são tratados na [especificação suplementar](../../especificacao/Especificacao_Suplementar.md) (#51) |
 
 ---
 
@@ -266,7 +266,7 @@ Todos os 65 requisitos funcionais da lista geral foram conferidos. 62 são atend
 
 Os IDs e os nomes desta página são os usados em todos os artefatos. Se um caso de uso mudar de nome ou for dividido, o arquivo `.puml` e as imagens precisam ser atualizados.
 
-**Matriz de rastreabilidade (#49).** A tabela da seção 7 e a coluna Requisitos da seção 4 trazem a ligação RF ↔ UC, usada na [matriz](../../Matriz_Rastreabilidade.md).
+**Matriz de rastreabilidade (#49).** A tabela da seção 7 e a coluna Requisitos da seção 4 trazem a ligação RF ↔ UC, usada na [matriz](../../analise/Matriz_Rastreabilidade.md).
 
 **Pontos decididos na consolidação da lista geral.** Os casos de uso abaixo seguem as decisões da seção 9 da lista geral. Se alguma delas mudar, pela gestão de mudanças do processo, estes são os casos afetados:
 

@@ -3,7 +3,7 @@
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsável:** Ana Luísa Pereira dos Santos
-**Prioridade:** Must · **Área:** Plano de ação e metas · [Diagrama](Diagrama_Casos_de_Uso.md#44-plano-de-ação-e-metas) · [Modelo e convenções](Casos_de_Uso_Completos.md)
+**Prioridade:** Must · **Área:** Plano de ação e metas · [Diagrama](../Diagrama_Casos_de_Uso.md#44-plano-de-ação-e-metas) · [Modelo e convenções](../Casos_de_Uso_Completos.md)
 
 ## Histórico de revisões
 
@@ -187,4 +187,4 @@ Uma vez por feedback construtivo que precisa de correção. A PO diz que, no con
 | Entidades do modelo ER | `PlanoAcao`, `AcaoPlano`, `PontoMonitoramento`, `Feedback`, `FeedbackFato`, `FeedbackCompetencia`, `Notificacao` |
 | Casos de uso relacionados | UC-08 (feedback construtivo, caso estendido); UC-04 (competências específicas); UC-11 (sessão de feedback); UC-20 (acompanhamento do plano); UC-21 (metas de desenvolvimento); UC-31 (lembretes) |
 | Decisões aplicadas | DS-10, DS-13 (especificação suplementar); ERS-D05 (especificação IEEE 830) |
-| Fontes | [Entrevista 01](../../elicitacao/entrevistas/Entrevista01_Adriana.md), §4, §6 e §20; [Entrevista 02](../../elicitacao/entrevistas/Entrevista02_Eliene.md), §2 e §4; [Processo AS-IS e dores](../../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) |
+| Fontes | [Entrevista 01](../../../elicitacao/entrevistas/Entrevista01_Adriana.md), §4, §6 e §20; [Entrevista 02](../../../elicitacao/entrevistas/Entrevista02_Eliene.md), §2 e §4; [Processo AS-IS e dores](../../../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) |

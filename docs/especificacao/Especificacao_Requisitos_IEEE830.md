@@ -5,7 +5,7 @@
 **Issue:** #54 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsáveis:** Júlia de Souza Nascimento e Verônica Ribeiro Oliveira Palmeira
 **Padrão:** IEEE Std 830-1998, *Recommended Practice for Software Requirements Specifications*
-**Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45), versão 1.1, e [Documento Visão](Documento_Visao.md) (#46), versão 1.1
+**Base:** [Lista Geral de Requisitos](../analise/Lista_Geral_Requisitos.md) (#45), versão 1.1, e [Documento Visão](Documento_Visao.md) (#46), versão 1.1
 
 ## Histórico de revisões
 
@@ -34,7 +34,7 @@
 
 ### 1.1 Propósito
 
-Este documento especifica, de forma completa e verificável, os requisitos do **Sistema Web de Feedback e Gestão de Competências**. Ele é o artefato final da etapa de especificação do [processo de requisitos](Processo_Requisitos.md) (seção 2.3) e reúne em um só lugar o que os outros artefatos detalham por partes: as funções, as qualidades, as interfaces, os dados, as restrições e as regras de negócio.
+Este documento especifica, de forma completa e verificável, os requisitos do **Sistema Web de Feedback e Gestão de Competências**. Ele é o artefato final da etapa de especificação do [processo de requisitos](../planejamento/Processo_Requisitos.md) (seção 2.3) e reúne em um só lugar o que os outros artefatos detalham por partes: as funções, as qualidades, as interfaces, os dados, as restrições e as regras de negócio.
 
 O documento se destina a:
 
@@ -132,9 +132,9 @@ As definições abaixo são as do [Dicionário de Dados e Glossário](Dicionario
 | ES | [Especificação Suplementar](Especificacao_Suplementar.md) |
 | JSON | *JavaScript Object Notation* (RFC 8259) |
 | LGPD | Lei Geral de Proteção de Dados Pessoais, Lei nº 13.709/2018 |
-| M-xx | Decisão de modelagem do [modelo ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (seção 13) |
+| M-xx | Decisão de modelagem do [modelo ER](../modelagem/modelo-dados/Modelo_Dominio_ER.md) (seção 13) |
 | MoSCoW | Escala de prioridade: *Must*, *Should*, *Could*, *Won't* |
-| P-xx | Decisão adotada na consolidação da [lista geral](Lista_Geral_Requisitos.md) (seção 9) |
+| P-xx | Decisão adotada na consolidação da [lista geral](../analise/Lista_Geral_Requisitos.md) (seção 9) |
 | PO | *Product Owner*, a representante do cliente (Profa. Adriana) |
 | Q01, Q02 | Questionários 01 e 02 |
 | RF, RNF, RN | Requisito funcional, requisito não funcional e regra de negócio |
@@ -167,7 +167,7 @@ As definições abaixo são as do [Dicionário de Dados e Glossário](Dicionario
 
 A seção 2 descreve o produto e o seu contexto, sem detalhar requisitos. A seção 3 traz todos os requisitos, organizados como o IEEE 830 recomenda. Os requisitos funcionais seguem a organização **por funcionalidade** do anexo A.4 da norma, com as mesmas oito áreas da lista geral e do Documento Visão. Os apêndices mostram a cobertura, a consistência entre os artefatos e as decisões tomadas nesta especificação.
 
-**Fonte única dos requisitos.** Os 117 requisitos desta especificação são os da [lista geral](Lista_Geral_Requisitos.md), com os mesmos identificadores, textos, origens e prioridades. As tabelas da seção 3 foram geradas a partir do [CSV da lista](Lista_Geral_Requisitos.csv), sem redigitação. Os detalhes que pertencem a outros artefatos são referenciados, e não copiados, para que cada informação tenha um só lugar de manutenção (IEEE 830, seção 4.3.7):
+**Fonte única dos requisitos.** Os 117 requisitos desta especificação são os da [lista geral](../analise/Lista_Geral_Requisitos.md), com os mesmos identificadores, textos, origens e prioridades. As tabelas da seção 3 foram geradas a partir do [CSV da lista](../analise/Lista_Geral_Requisitos.csv), sem redigitação. Os detalhes que pertencem a outros artefatos são referenciados, e não copiados, para que cada informação tenha um só lugar de manutenção (IEEE 830, seção 4.3.7):
 
 | Detalhe | Onde está |
 |---|---|
@@ -181,13 +181,13 @@ A seção 2 descreve o produto e o seu contexto, sem detalhar requisitos. A seç
 
 | Item | Convenção |
 |---|---|
-| Identificadores | `RF-nnn` requisito funcional, `RNF-nnn` não funcional, `RN-nnn` regra de negócio, `UC-nn` caso de uso. Um identificador nunca é reutilizado ([processo](Processo_Requisitos.md), seção 5) |
+| Identificadores | `RF-nnn` requisito funcional, `RNF-nnn` não funcional, `RN-nnn` regra de negócio, `UC-nn` caso de uso. Um identificador nunca é reutilizado ([processo](../planejamento/Processo_Requisitos.md), seção 5) |
 | Verbo | "Deve" indica obrigação. Todo requisito é atendido de acordo com a sua prioridade |
 | Prioridade (importância) | MoSCoW, com os critérios da lista geral (seção 2.3): **Must** essencial para a primeira versão; **Should** importante, mas não essencial; **Could** desejável; **Won't** registrado para versão futura |
 | Estabilidade | **Alta**: requisito sustentado diretamente pelas fontes. **Média**: requisito escrito conforme uma decisão adotada na consolidação, indicada entre parênteses (P-xx); se essa decisão mudar, o requisito muda pela gestão de mudanças do processo (seção 9) |
 | Verificação | **T** teste, **I** inspeção, **A** análise, **D** demonstração (ES, seção 1.4). Os requisitos funcionais são verificados por teste dos cenários dos casos de uso |
 | Origem | Candidatos de cada fonte: `RE` entrevista, `RQ` questionário, `RD` pesquisa documental, `RA` sistema análogo, `RP` BPMN AS-IS, `ESC` enunciado; `E01 §n` é trecho de transcrição (lista geral, seção 2.4) |
-| Casos de uso | O link leva à descrição completa, quando ela existe. Os demais estão em formato resumido no [diagrama](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md#4-casos-de-uso) |
+| Casos de uso | O link leva à descrição completa, quando ela existe. Os demais estão em formato resumido no [diagrama](../modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md#4-casos-de-uso) |
 
 ---
 
@@ -254,7 +254,7 @@ Além das funções, o produto se distingue por qualidades que valem para todas 
 
 ### 2.3 Características dos usuários
 
-Os usuários vêm do Documento Visão (seção 3.3) e os atores, do [diagrama de casos de uso](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (seção 2). Uma mesma pessoa pode ter mais de um perfil, como o gestor que também é avaliado pelo seu superior (RF-003).
+Os usuários vêm do Documento Visão (seção 3.3) e os atores, do [diagrama de casos de uso](../modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (seção 2). Uma mesma pessoa pode ter mais de um perfil, como o gestor que também é avaliado pelo seu superior (RF-003).
 
 | Classe de usuário | Quem é | O que faz no sistema | Características relevantes para os requisitos |
 |---|---|---|---|
@@ -338,7 +338,7 @@ A PO admitiu reduzir o escopo da arquitetura, por exemplo só a gestor e colabor
 | Atalho fixo para o canal de denúncias da organização | RF-064 |
 | Símbolo de acessibilidade e declaração de acessibilidade | RF-065 |
 
-As telas estão no [protótipo do Figma](prototipacao/Prototipo.md) (#50): login e consentimento, painel do colaborador, emissão de feedback, resposta a questionários, relatório consolidado com proteção do anonimato, plano de ação, metas, histórico, administração de ciclos e questionários e ao menos uma tela em versão para celular.
+As telas estão no [protótipo do Figma](../prototipacao/Prototipo.md) (#50): login e consentimento, painel do colaborador, emissão de feedback, resposta a questionários, relatório consolidado com proteção do anonimato, plano de ação, metas, histórico, administração de ciclos e questionários e ao menos uma tela em versão para celular.
 
 #### 3.1.2 Interfaces de hardware
 
@@ -401,7 +401,7 @@ Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versã
 | UC-03 Manter competências dos cargos | RH, Administrador | Cadastra competências e as associa aos cargos, formando o conjunto fixo de cada cargo |
 | UC-04 Atribuir competências específicas | Gestor | Escolhe um colaborador ou grupo da sua equipe e acrescenta competências além das fixas do cargo |
 | UC-05 Manter questionários de avaliação | RH, Gestor | O RH cria questionários e o padrão da organização, com perguntas ligadas a competências e o tipo de resposta de cada uma; o gestor acrescenta perguntas para um colaborador |
-| [UC-13 Planejar ciclo de avaliação](modelagem/casos-de-uso/UC-13_Planejar_Ciclo_de_Avaliacao.md) (completo) | Gestor, RH | Define período, avaliados, objetivos, competências, indicadores, questionário, modalidades, participantes, modo de identificação e datas dos check-ins. Ao abrir o ciclo, o sistema notifica os avaliados e os avaliadores |
+| [UC-13 Planejar ciclo de avaliação](../modelagem/casos-de-uso/completos/UC-13_Planejar_Ciclo_de_Avaliacao.md) (completo) | Gestor, RH | Define período, avaliados, objetivos, competências, indicadores, questionário, modalidades, participantes, modo de identificação e datas dos check-ins. Ao abrir o ciclo, o sistema notifica os avaliados e os avaliadores |
 | UC-16 Consolidar resultados do ciclo | (incluído em UC-15) | Calcula os resultados por competência, indicador e modalidade, compara autoavaliação e avaliação dos outros e aplica o mínimo de respondentes |
 
 **Requisitos funcionais.**
@@ -413,7 +413,7 @@ Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versã
 | RF-007 | O sistema deve permitir criar questionários de avaliação, com perguntas vinculadas às competências e aos cargos, e salvá-los como modelos reutilizáveis em outros ciclos. | Must | Alta | RE-12; RA-14; RQ-02; RP-02; RP-16; ESC | UC-05 |
 | RF-008 | O RH deve poder definir um questionário padrão da organização, e o gestor deve poder acrescentar a ele perguntas específicas para um colaborador. | Should | Alta | RE-12; RP-02 | UC-05 |
 | RF-009 | Para cada pergunta ou indicador, o sistema deve permitir escolher o tipo de resposta: escala ordinal, valor numérico, atingido/não atingido ou texto livre. | Should | Alta | RE-13 | UC-05 |
-| RF-010 | O sistema deve permitir atribuir pesos diferentes aos feedbacks de um período e aos indicadores de um mesmo feedback no cálculo dos resultados consolidados. | Could | Alta | RE-14 | [UC-13](modelagem/casos-de-uso/UC-13_Planejar_Ciclo_de_Avaliacao.md), UC-16 |
+| RF-010 | O sistema deve permitir atribuir pesos diferentes aos feedbacks de um período e aos indicadores de um mesmo feedback no cálculo dos resultados consolidados. | Could | Alta | RE-14 | [UC-13](../modelagem/casos-de-uso/completos/UC-13_Planejar_Ciclo_de_Avaliacao.md), UC-16 |
 
 #### 3.2.3 Registro de fatos e feedbacks
 
@@ -425,9 +425,9 @@ Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versã
 |---|---|---|
 | UC-06 Registrar fato observado | Colaborador (emissor) | Registra um fato ou comportamento observado, com data e descrição. O fato fica visível só para quem registrou até ser vinculado a um feedback |
 | UC-07 Registrar relato de colega | Gestor | Estende UC-06: o fato vem do relato de outro colaborador, fica marcado como "relato" e só embasa um feedback depois de confirmado pelo gestor |
-| [UC-08 Registrar feedback](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md) (completo) | Colaborador (emissor) | Escolhe o receptor, o tipo e a modalidade, preenche a estrutura do tipo escolhido, vincula fatos e competências, vê quem poderá ler o conteúdo e envia. Inclui o formulário curto de reconhecimento e a edição com versões |
+| [UC-08 Registrar feedback](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md) (completo) | Colaborador (emissor) | Escolhe o receptor, o tipo e a modalidade, preenche a estrutura do tipo escolhido, vincula fatos e competências, vê quem poderá ler o conteúdo e envia. Inclui o formulário curto de reconhecimento e a edição com versões |
 | UC-10 Registrar réplica | Colaborador (receptor) | Registra uma manifestação sobre um feedback recebido, sem alterar o texto do emissor |
-| [UC-14 Responder avaliação](modelagem/casos-de-uso/UC-14_Responder_Avaliacao.md) (completo) | Avaliador convidado | Responde ao questionário da sua modalidade dentro do prazo, podendo consultar os fatos e feedbacks do período, e vê antes do envio quem poderá ver suas respostas |
+| [UC-14 Responder avaliação](../modelagem/casos-de-uso/completos/UC-14_Responder_Avaliacao.md) (completo) | Avaliador convidado | Responde ao questionário da sua modalidade dentro do prazo, podendo consultar os fatos e feedbacks do período, e vê antes do envio quem poderá ver suas respostas |
 
 **Requisitos funcionais.**
 
@@ -435,15 +435,15 @@ Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versã
 |---|---|---|---|---|---|
 | RF-011 | O emissor deve poder registrar fatos e comportamentos observados de um colaborador ao longo do período, com data e descrição, e vinculá-los depois a um ou mais feedbacks. Até o vínculo, o fato registrado é visível apenas para quem o registrou. | Must | Alta | RE-02; RA-02; RP-01; RP-11 | UC-06 |
 | RF-012 | O gestor deve poder registrar como fato um relato recebido de outro colaborador, marcado como "relato", sem que o receptor do feedback veja quem relatou. O relato só pode embasar um feedback depois de confirmado pela observação do próprio gestor. | Could | Média (P-06) | RE-05; RP-15 | UC-07 |
-| RF-013 | O sistema deve permitir registrar um feedback com emissor, receptor (colaborador ou equipe), data, tipo (positivo ou construtivo), modalidade (formal ou informal), descrição e os fatos que o motivaram. | Must | Alta | RE-01; RA-24; RP-01; RP-11; ESC | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md) |
-| RF-014 | O sistema deve permitir registrar um feedback informal a qualquer momento, sem ciclo ou planejamento prévio, inclusive para um colaborador de outra área. | Must | Alta | RE-04; RA-03; RP-01; ESC | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md) |
-| RF-015 | O sistema deve oferecer um formulário simplificado para o feedback positivo informal (reconhecimento), que peça apenas os campos obrigatórios de RN-002. | Should | Alta | RE-04; RA-03; RP-11 | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md) |
-| RF-016 | Ao escolher o tipo do feedback, o sistema deve apresentar a estrutura correspondente. Positivo: ação ou comportamento, resultados e repercussão para o gestor, o time e a organização. Construtivo: aspecto positivo, fatos, problema, repercussão, reflexão e plano de ação. | Should | Alta | RE-03; RA-21; RP-03; RP-05 | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md) |
-| RF-017 | O sistema deve oferecer orientações sobre como dar e como receber feedback, com exemplos de feedback positivo e construtivo, disponíveis durante o registro. | Should | Alta | RE-23; RQ-03; RD-37; RA-21; RP-03; RP-05; RP-09; RP-13 | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md) |
-| RF-018 | Nos campos de texto livre, o sistema deve orientar o emissor a descrever fatos e comportamentos observáveis e a não incluir dados sensíveis, informações de saúde ou dados de terceiros. | Should | Alta | RD-06 | UC-06, [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md) |
-| RF-019 | Antes do envio de um feedback ou de uma avaliação, o sistema deve informar ao emissor, em linguagem clara, quem poderá ver o conteúdo e a sua identidade, conforme o modo de identificação (RN-004). | Must | Alta | RD-16; RA-05 | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md), [UC-14](modelagem/casos-de-uso/UC-14_Responder_Avaliacao.md) |
+| RF-013 | O sistema deve permitir registrar um feedback com emissor, receptor (colaborador ou equipe), data, tipo (positivo ou construtivo), modalidade (formal ou informal), descrição e os fatos que o motivaram. | Must | Alta | RE-01; RA-24; RP-01; RP-11; ESC | [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md) |
+| RF-014 | O sistema deve permitir registrar um feedback informal a qualquer momento, sem ciclo ou planejamento prévio, inclusive para um colaborador de outra área. | Must | Alta | RE-04; RA-03; RP-01; ESC | [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md) |
+| RF-015 | O sistema deve oferecer um formulário simplificado para o feedback positivo informal (reconhecimento), que peça apenas os campos obrigatórios de RN-002. | Should | Alta | RE-04; RA-03; RP-11 | [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md) |
+| RF-016 | Ao escolher o tipo do feedback, o sistema deve apresentar a estrutura correspondente. Positivo: ação ou comportamento, resultados e repercussão para o gestor, o time e a organização. Construtivo: aspecto positivo, fatos, problema, repercussão, reflexão e plano de ação. | Should | Alta | RE-03; RA-21; RP-03; RP-05 | [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md) |
+| RF-017 | O sistema deve oferecer orientações sobre como dar e como receber feedback, com exemplos de feedback positivo e construtivo, disponíveis durante o registro. | Should | Alta | RE-23; RQ-03; RD-37; RA-21; RP-03; RP-05; RP-09; RP-13 | [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md) |
+| RF-018 | Nos campos de texto livre, o sistema deve orientar o emissor a descrever fatos e comportamentos observáveis e a não incluir dados sensíveis, informações de saúde ou dados de terceiros. | Should | Alta | RD-06 | UC-06, [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md) |
+| RF-019 | Antes do envio de um feedback ou de uma avaliação, o sistema deve informar ao emissor, em linguagem clara, quem poderá ver o conteúdo e a sua identidade, conforme o modo de identificação (RN-004). | Must | Alta | RD-16; RA-05 | [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md), [UC-14](../modelagem/casos-de-uso/completos/UC-14_Responder_Avaliacao.md) |
 | RF-020 | O receptor deve poder registrar uma manifestação (réplica) sobre um feedback recebido, sem alterar o conteúdo escrito pelo emissor. | Should | Alta | RD-09; RP-13 | UC-10 |
-| RF-021 | O sistema deve permitir vincular cada feedback a uma ou mais competências do receptor. | Must | Alta | RA-04; RE-11 | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md) |
+| RF-021 | O sistema deve permitir vincular cada feedback a uma ou mais competências do receptor. | Must | Alta | RA-04; RE-11 | [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md) |
 
 #### 3.2.4 Ciclos formais e modalidades
 
@@ -455,8 +455,8 @@ Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versã
 |---|---|---|
 | UC-09 Solicitar feedback | Colaborador | Pede feedback a um ou mais colegas, fora do ciclo formal, com tema e prazo. Os colegas respondem por UC-08 |
 | UC-12 Avaliar sessão de feedback | Colaborador | Após a sessão, o emissor avalia a postura do receptor e o receptor avalia se o feedback agregou valor |
-| [UC-13 Planejar ciclo de avaliação](modelagem/casos-de-uso/UC-13_Planejar_Ciclo_de_Avaliacao.md) (completo) | Gestor, RH | Define período, avaliados, objetivos, competências, indicadores, questionário, modalidades, participantes, modo de identificação e datas dos check-ins. Ao abrir o ciclo, o sistema notifica os avaliados e os avaliadores |
-| [UC-14 Responder avaliação](modelagem/casos-de-uso/UC-14_Responder_Avaliacao.md) (completo) | Avaliador convidado | Responde ao questionário da sua modalidade dentro do prazo, podendo consultar os fatos e feedbacks do período, e vê antes do envio quem poderá ver suas respostas |
+| [UC-13 Planejar ciclo de avaliação](../modelagem/casos-de-uso/completos/UC-13_Planejar_Ciclo_de_Avaliacao.md) (completo) | Gestor, RH | Define período, avaliados, objetivos, competências, indicadores, questionário, modalidades, participantes, modo de identificação e datas dos check-ins. Ao abrir o ciclo, o sistema notifica os avaliados e os avaliadores |
+| [UC-14 Responder avaliação](../modelagem/casos-de-uso/completos/UC-14_Responder_Avaliacao.md) (completo) | Avaliador convidado | Responde ao questionário da sua modalidade dentro do prazo, podendo consultar os fatos e feedbacks do período, e vê antes do envio quem poderá ver suas respostas |
 | UC-15 Acompanhar e encerrar ciclo | Gestor, RH | Acompanha quem já respondeu e quem não respondeu, e encerra o ciclo, o que dispara a consolidação dos resultados (UC-16) |
 | UC-16 Consolidar resultados do ciclo | (incluído em UC-15) | Calcula os resultados por competência, indicador e modalidade, compara autoavaliação e avaliação dos outros e aplica o mínimo de respondentes |
 | UC-17 Moderar resposta inadequada | RH | Estende UC-15: antes de liberar os resultados, oculta do avaliado uma resposta inadequada, sem apagá-la, registrando a ação e avisando o emissor |
@@ -467,15 +467,15 @@ Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versã
 
 | ID | Requisito | Prior. | Estab. | Origem | Casos de uso |
 |---|---|---|---|---|---|
-| RF-022 | O gestor ou o RH deve poder planejar um ciclo de feedback formal, informando período, receptor (indivíduo ou equipe), objetivos de comportamento ou de resultado, competências, questionário, modalidades, participantes e datas dos check-ins. | Must | Alta | RE-06; RA-09; RQ-01; ESC | [UC-13](modelagem/casos-de-uso/UC-13_Planejar_Ciclo_de_Avaliacao.md) |
-| RF-023 | Para cada objetivo de um ciclo formal, o sistema deve permitir definir indicadores, com a fonte de evidência e o valor esperado, e registrar o valor observado em cada check-in. | Must | Alta | RE-07; RA-16; RP-16 | [UC-13](modelagem/casos-de-uso/UC-13_Planejar_Ciclo_de_Avaliacao.md), UC-18 |
-| RF-024 | O sistema deve suportar as modalidades gestor → colaborador, colaborador → gestor (ascendente), entre pares, de equipe (todos avaliam todos), autoavaliação e 360°, e permitir combinar várias delas em um mesmo ciclo. | Must | Alta | RE-18; RA-10; RQ-15; ESC | [UC-13](modelagem/casos-de-uso/UC-13_Planejar_Ciclo_de_Avaliacao.md) |
-| RF-025 | Na avaliação 360°, o gestor deve abrir o ciclo e selecionar ou convidar os participantes, que precisam ser membros do seu time. | Must | Alta | RE-19; RA-11 | [UC-13](modelagem/casos-de-uso/UC-13_Planejar_Ciclo_de_Avaliacao.md) |
-| RF-026 | Ao abrir um ciclo formal, o sistema deve notificar cada avaliado sobre os objetivos, as competências e os indicadores pelos quais será avaliado e sobre as datas dos check-ins. | Should | Alta | E01 §29; E01 §19 | [UC-13](modelagem/casos-de-uso/UC-13_Planejar_Ciclo_de_Avaliacao.md), UC-31 |
-| RF-027 | Cada participante convidado deve poder responder, dentro do prazo do ciclo, ao questionário da modalidade em que avalia. | Must | Alta | RE-18; RE-19; RA-10; ESC | [UC-14](modelagem/casos-de-uso/UC-14_Responder_Avaliacao.md) |
-| RF-028 | Ao responder uma avaliação formal, o avaliador deve poder consultar os fatos e os feedbacks registrados sobre o avaliado no período do ciclo, respeitadas as regras de visibilidade. | Should | Alta | RA-15; ESC | [UC-14](modelagem/casos-de-uso/UC-14_Responder_Avaliacao.md) |
+| RF-022 | O gestor ou o RH deve poder planejar um ciclo de feedback formal, informando período, receptor (indivíduo ou equipe), objetivos de comportamento ou de resultado, competências, questionário, modalidades, participantes e datas dos check-ins. | Must | Alta | RE-06; RA-09; RQ-01; ESC | [UC-13](../modelagem/casos-de-uso/completos/UC-13_Planejar_Ciclo_de_Avaliacao.md) |
+| RF-023 | Para cada objetivo de um ciclo formal, o sistema deve permitir definir indicadores, com a fonte de evidência e o valor esperado, e registrar o valor observado em cada check-in. | Must | Alta | RE-07; RA-16; RP-16 | [UC-13](../modelagem/casos-de-uso/completos/UC-13_Planejar_Ciclo_de_Avaliacao.md), UC-18 |
+| RF-024 | O sistema deve suportar as modalidades gestor → colaborador, colaborador → gestor (ascendente), entre pares, de equipe (todos avaliam todos), autoavaliação e 360°, e permitir combinar várias delas em um mesmo ciclo. | Must | Alta | RE-18; RA-10; RQ-15; ESC | [UC-13](../modelagem/casos-de-uso/completos/UC-13_Planejar_Ciclo_de_Avaliacao.md) |
+| RF-025 | Na avaliação 360°, o gestor deve abrir o ciclo e selecionar ou convidar os participantes, que precisam ser membros do seu time. | Must | Alta | RE-19; RA-11 | [UC-13](../modelagem/casos-de-uso/completos/UC-13_Planejar_Ciclo_de_Avaliacao.md) |
+| RF-026 | Ao abrir um ciclo formal, o sistema deve notificar cada avaliado sobre os objetivos, as competências e os indicadores pelos quais será avaliado e sobre as datas dos check-ins. | Should | Alta | E01 §29; E01 §19 | [UC-13](../modelagem/casos-de-uso/completos/UC-13_Planejar_Ciclo_de_Avaliacao.md), UC-31 |
+| RF-027 | Cada participante convidado deve poder responder, dentro do prazo do ciclo, ao questionário da modalidade em que avalia. | Must | Alta | RE-18; RE-19; RA-10; ESC | [UC-14](../modelagem/casos-de-uso/completos/UC-14_Responder_Avaliacao.md) |
+| RF-028 | Ao responder uma avaliação formal, o avaliador deve poder consultar os fatos e os feedbacks registrados sobre o avaliado no período do ciclo, respeitadas as regras de visibilidade. | Should | Alta | RA-15; ESC | [UC-14](../modelagem/casos-de-uso/completos/UC-14_Responder_Avaliacao.md) |
 | RF-029 | O sistema deve registrar quem foi convidado para uma avaliação e não respondeu no prazo, e mostrar essa informação ao gestor e ao RH, sem aplicar nenhuma consequência automática. | Should | Alta | RE-20; RP-06 | UC-15 |
-| RF-030 | O RH ou o administrador deve poder configurar, por ciclo e por modalidade, o modo de identificação do emissor, dentro do que RN-004 permite. | Must | Média (P-01) | RA-12; RD-15; RE-33 | [UC-13](modelagem/casos-de-uso/UC-13_Planejar_Ciclo_de_Avaliacao.md) |
+| RF-030 | O RH ou o administrador deve poder configurar, por ciclo e por modalidade, o modo de identificação do emissor, dentro do que RN-004 permite. | Must | Média (P-01) | RA-12; RD-15; RE-33 | [UC-13](../modelagem/casos-de-uso/completos/UC-13_Planejar_Ciclo_de_Avaliacao.md) |
 | RF-031 | O colaborador deve poder solicitar feedback a um ou mais colegas a qualquer momento, fora do ciclo formal, informando o tema e o prazo de resposta. | Should | Alta | RQ-06; RA-06 | UC-09 |
 | RF-032 | Ao encerrar um ciclo, o sistema deve consolidar automaticamente os resultados de cada avaliado por competência, por indicador e por modalidade. | Should | Alta | RQ-16 | UC-16 |
 | RF-033 | O sistema deve comparar a autoavaliação de um colaborador com a avaliação feita pelos demais avaliadores do ciclo, mostrando onde as percepções convergem ou divergem. | Should | Alta | RE-21; RQ-18 | UC-16 |
@@ -513,7 +513,7 @@ Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versã
 
 | Caso de uso | Ator principal | Resumo |
 |---|---|---|
-| [UC-19 Criar plano de ação](modelagem/casos-de-uso/UC-19_Criar_Plano_de_Acao.md) (completo) | Colaborador (emissor); gestor direto do receptor, se o feedback for confidencial | Estende UC-08 quando o feedback é construtivo: emissor e receptor definem juntos ações, responsáveis, metas, pontos de monitoramento e data final. Se o feedback for confidencial, o plano é definido pelo receptor e pelo seu gestor direto (RN-004, RN-006; UC19-D04) |
+| [UC-19 Criar plano de ação](../modelagem/casos-de-uso/completos/UC-19_Criar_Plano_de_Acao.md) (completo) | Colaborador (emissor); gestor direto do receptor, se o feedback for confidencial | Estende UC-08 quando o feedback é construtivo: emissor e receptor definem juntos ações, responsáveis, metas, pontos de monitoramento e data final. Se o feedback for confidencial, o plano é definido pelo receptor e pelo seu gestor direto (RN-004, RN-006; UC19-D04) |
 | UC-20 Acompanhar plano de ação | Colaborador, Gestor | Registra o resultado de cada ponto de monitoramento, ajusta as ações e, na data final, registra se houve melhora ou se é preciso um novo feedback |
 | UC-21 Definir metas de desenvolvimento | Colaborador, Gestor | Cadastra metas individuais ou da equipe, com competência, indicador, valor esperado e prazo, e atualiza o progresso |
 | UC-23 Consultar painéis da equipe e da organização | Gestor, RH | Vê indicadores consolidados, tendências e a situação de planos e metas da equipe (gestor) ou da organização (RH), incluindo quais feedbacks geraram melhora e problemas recorrentes por cargo |
@@ -522,7 +522,7 @@ Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versã
 
 | ID | Requisito | Prior. | Estab. | Origem | Casos de uso |
 |---|---|---|---|---|---|
-| RF-042 | A partir de um feedback construtivo, o sistema deve permitir criar um plano de ação com ações, responsáveis, metas, pontos de monitoramento e data final. | Must | Alta | RE-15; RA-18; RQ-07; RP-14; ESC | [UC-19](modelagem/casos-de-uso/UC-19_Criar_Plano_de_Acao.md) |
+| RF-042 | A partir de um feedback construtivo, o sistema deve permitir criar um plano de ação com ações, responsáveis, metas, pontos de monitoramento e data final. | Must | Alta | RE-15; RA-18; RQ-07; RP-14; ESC | [UC-19](../modelagem/casos-de-uso/completos/UC-19_Criar_Plano_de_Acao.md) |
 | RF-043 | O sistema deve permitir acompanhar o plano de ação: registrar o resultado de cada ponto de monitoramento, ajustar as ações e, na data final, registrar se houve melhora ou se é necessário um novo feedback. | Must | Alta | RE-16; RA-18; RP-04; RP-07; RP-14; ESC | UC-20 |
 | RF-044 | O gestor deve poder acompanhar o andamento dos planos de ação da sua equipe, e o RH, os de toda a organização. | Should | Alta | RQ-17; RE-25 | UC-23 |
 | RF-045 | O sistema deve permitir consultar quais feedbacks e planos de ação resultaram em melhora do colaborador. | Should | Alta | RE-17; RP-04 | UC-23 |
@@ -559,7 +559,7 @@ Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versã
 
 | Caso de uso | Ator principal | Resumo |
 |---|---|---|
-| [UC-25 Exercer direitos de titular](modelagem/casos-de-uso/UC-25_Exercer_Direitos_de_Titular.md) (completo) | Colaborador | Consulta o aviso de privacidade e pede acesso, correção, exportação, anonimização ou eliminação dos seus dados, ou a lista de com quem foram compartilhados |
+| [UC-25 Exercer direitos de titular](../modelagem/casos-de-uso/completos/UC-25_Exercer_Direitos_de_Titular.md) (completo) | Colaborador | Consulta o aviso de privacidade e pede acesso, correção, exportação, anonimização ou eliminação dos seus dados, ou a lista de com quem foram compartilhados |
 | UC-26 Gerenciar consentimentos | Colaborador | Dá ou revoga o consentimento para funções opcionais; recusar não bloqueia o uso do sistema |
 | UC-27 Tratar solicitações de titulares | Encarregado (DPO), RH | Acompanha a fila de pedidos dos titulares, com prazo, responsável e histórico, e registra a resposta |
 | UC-28 Configurar privacidade e retenção | Administrador | Cadastra a finalidade e a base legal de cada categoria de dado e define os prazos de retenção |
@@ -570,14 +570,14 @@ Sem caso de uso, conforme o diagrama (seção 8): **RF-004**: Won't nesta versã
 
 | ID | Requisito | Prior. | Estab. | Origem | Casos de uso |
 |---|---|---|---|---|---|
-| RF-053 | O sistema deve disponibilizar, em local fixo e acessível de qualquer tela, o aviso de privacidade com finalidades, bases legais, compartilhamentos, prazos de retenção, direitos do titular e identidade e contato do encarregado. | Must | Alta | RD-01 | [UC-25](modelagem/casos-de-uso/UC-25_Exercer_Direitos_de_Titular.md) |
+| RF-053 | O sistema deve disponibilizar, em local fixo e acessível de qualquer tela, o aviso de privacidade com finalidades, bases legais, compartilhamentos, prazos de retenção, direitos do titular e identidade e contato do encarregado. | Must | Alta | RD-01 | [UC-25](../modelagem/casos-de-uso/completos/UC-25_Exercer_Direitos_de_Titular.md) |
 | RF-054 | O sistema deve permitir que o administrador cadastre a finalidade e a base legal de cada categoria de dado tratado e exporte esse inventário, para apoiar o registro das operações e o relatório de impacto (RIPD). | Should | Alta | RD-02 | UC-28 |
 | RF-055 | Quando houver funcionalidade opcional baseada em consentimento, o sistema deve registrar quem consentiu, quando, para qual finalidade e em qual versão do termo, e permitir a revogação a qualquer momento por meio tão simples quanto o usado para consentir. | Must | Alta | RD-04; RQ-12 | UC-26 |
-| RF-056 | O colaborador deve poder confirmar a existência de tratamento e acessar seus dados pessoais pelo próprio sistema, de forma imediata e simplificada ou por declaração completa (origem, critérios e finalidade) em até 15 dias, sem revelar a identidade de emissores confidenciais. | Must | Alta | RD-07 | [UC-25](modelagem/casos-de-uso/UC-25_Exercer_Direitos_de_Titular.md) |
-| RF-057 | O colaborador deve poder solicitar a correção de dados cadastrais incompletos, inexatos ou desatualizados. | Must | Alta | RD-08 | [UC-25](modelagem/casos-de-uso/UC-25_Exercer_Direitos_de_Titular.md) |
-| RF-058 | O colaborador deve poder exportar seus dados (cadastro, feedbacks recebidos, metas e planos de ação) em formato estruturado e legível por máquina, como JSON ou CSV. | Must | Alta | RD-10 | [UC-25](modelagem/casos-de-uso/UC-25_Exercer_Direitos_de_Titular.md) |
-| RF-059 | O colaborador deve poder solicitar a anonimização, o bloqueio ou a eliminação de dados desnecessários ou excessivos e a eliminação dos dados tratados com base em consentimento, ressalvadas as hipóteses de conservação do art. 16 da LGPD. | Must | Alta | RD-11 | [UC-25](modelagem/casos-de-uso/UC-25_Exercer_Direitos_de_Titular.md) |
-| RF-060 | O sistema deve informar ao colaborador com quais entidades públicas e privadas seus dados foram compartilhados. | Must | Alta | RD-12 | [UC-25](modelagem/casos-de-uso/UC-25_Exercer_Direitos_de_Titular.md) |
+| RF-056 | O colaborador deve poder confirmar a existência de tratamento e acessar seus dados pessoais pelo próprio sistema, de forma imediata e simplificada ou por declaração completa (origem, critérios e finalidade) em até 15 dias, sem revelar a identidade de emissores confidenciais. | Must | Alta | RD-07 | [UC-25](../modelagem/casos-de-uso/completos/UC-25_Exercer_Direitos_de_Titular.md) |
+| RF-057 | O colaborador deve poder solicitar a correção de dados cadastrais incompletos, inexatos ou desatualizados. | Must | Alta | RD-08 | [UC-25](../modelagem/casos-de-uso/completos/UC-25_Exercer_Direitos_de_Titular.md) |
+| RF-058 | O colaborador deve poder exportar seus dados (cadastro, feedbacks recebidos, metas e planos de ação) em formato estruturado e legível por máquina, como JSON ou CSV. | Must | Alta | RD-10 | [UC-25](../modelagem/casos-de-uso/completos/UC-25_Exercer_Direitos_de_Titular.md) |
+| RF-059 | O colaborador deve poder solicitar a anonimização, o bloqueio ou a eliminação de dados desnecessários ou excessivos e a eliminação dos dados tratados com base em consentimento, ressalvadas as hipóteses de conservação do art. 16 da LGPD. | Must | Alta | RD-11 | [UC-25](../modelagem/casos-de-uso/completos/UC-25_Exercer_Direitos_de_Titular.md) |
+| RF-060 | O sistema deve informar ao colaborador com quais entidades públicas e privadas seus dados foram compartilhados. | Must | Alta | RD-12 | [UC-25](../modelagem/casos-de-uso/completos/UC-25_Exercer_Direitos_de_Titular.md) |
 | RF-061 | O sistema deve oferecer ao RH e ao encarregado de dados da organização uma fila de solicitações de titulares, com data de abertura, prazo, status, responsável, histórico e resposta enviada. | Should | Alta | RD-13 | UC-27 |
 | RF-062 | O sistema deve permitir configurar a política de retenção por categoria de dado (feedbacks, planos de ação, registros de acesso), com eliminação ou anonimização automática ao fim do prazo, inclusive após o desligamento, e com bloqueio da eliminação quando houver processo judicial em curso. | Must | Média (P-05) | RD-24; RE-36 | UC-28, UC-30 |
 | RF-063 | O sistema deve apoiar a gestão de incidentes de segurança: alertar eventos suspeitos, registrar o incidente (data, dados e titulares afetados, medidas adotadas), gerar a lista de titulares a comunicar e guardar o registro por no mínimo 5 anos. | Should | Alta | RD-26 | UC-29 |
@@ -599,7 +599,7 @@ A escalabilidade além desse cenário está no RNF-029 (seção 3.6.7).
 
 ### 3.4 Requisitos lógicos de dados
 
-O [modelo de domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52) define as entidades e os relacionamentos, e o [dicionário de dados](Dicionario_de_Dados.md) (#53) define os atributos, os formatos e as regras de validação. Esta seção registra os requisitos que esses modelos precisam cumprir.
+O [modelo de domínio e ER](../modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52) define as entidades e os relacionamentos, e o [dicionário de dados](Dicionario_de_Dados.md) (#53) define os atributos, os formatos e as regras de validação. Esta seção registra os requisitos que esses modelos precisam cumprir.
 
 #### 3.4.1 Informações guardadas
 
@@ -772,12 +772,12 @@ Políticas do domínio que valem independentemente da tela ou da função. A col
 
 | ID | Regra | Prior. | Estab. | Origem | Casos de uso |
 |---|---|---|---|---|---|
-| RN-001 | Todo feedback deve se basear em fatos ou comportamentos observados. Não pode tratar de traços de personalidade, opiniões ou aspectos da vida privada, e os questionários não podem pedir esse tipo de avaliação. | Must | Alta | RE-31; RD-44; RA-24; ESC | UC-05, UC-06, [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md), [UC-14](modelagem/casos-de-uso/UC-14_Responder_Avaliacao.md) |
-| RN-002 | São obrigatórios em todo feedback: emissor, receptor, data, tipo, modalidade e pelo menos um fato. | Must | Alta | RA-24; RE-01 | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md) |
-| RN-003 | Um feedback registrado não pode ser excluído, porque é registro oficial do histórico do colaborador. O emissor pode editá-lo, e cada alteração gera uma nova versão datada, sem apagar a anterior. | Must | Média (P-04) | RE-32; RD-47 | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md), UC-17 |
-| RN-004 | Cada modalidade de feedback tem um modo de identificação do emissor: identificado (o receptor vê quem emitiu), confidencial (a identidade fica oculta para o receptor e só o RH pode consultá-la) ou anônimo (nenhum perfil, nem RH nem administrador, consegue vincular a resposta ao emissor). O feedback do gestor para o colaborador é identificado. Na avaliação ascendente, entre pares e na equipe, o modo padrão é confidencial, e o ciclo pode ser configurado como anônimo. Um usuário com perfil RH nunca pode consultar a identidade dos emissores das avaliações em que ele próprio é o avaliado. | Must | Média (P-01) | RE-33; RD-15; RQ-04; RQ-13; RP-17; ESC | [UC-08](modelagem/casos-de-uso/UC-08_Registrar_Feedback.md), [UC-13](modelagem/casos-de-uso/UC-13_Planejar_Ciclo_de_Avaliacao.md), [UC-14](modelagem/casos-de-uso/UC-14_Responder_Avaliacao.md) |
+| RN-001 | Todo feedback deve se basear em fatos ou comportamentos observados. Não pode tratar de traços de personalidade, opiniões ou aspectos da vida privada, e os questionários não podem pedir esse tipo de avaliação. | Must | Alta | RE-31; RD-44; RA-24; ESC | UC-05, UC-06, [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md), [UC-14](../modelagem/casos-de-uso/completos/UC-14_Responder_Avaliacao.md) |
+| RN-002 | São obrigatórios em todo feedback: emissor, receptor, data, tipo, modalidade e pelo menos um fato. | Must | Alta | RA-24; RE-01 | [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md) |
+| RN-003 | Um feedback registrado não pode ser excluído, porque é registro oficial do histórico do colaborador. O emissor pode editá-lo, e cada alteração gera uma nova versão datada, sem apagar a anterior. | Must | Média (P-04) | RE-32; RD-47 | [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md), UC-17 |
+| RN-004 | Cada modalidade de feedback tem um modo de identificação do emissor: identificado (o receptor vê quem emitiu), confidencial (a identidade fica oculta para o receptor e só o RH pode consultá-la) ou anônimo (nenhum perfil, nem RH nem administrador, consegue vincular a resposta ao emissor). O feedback do gestor para o colaborador é identificado. Na avaliação ascendente, entre pares e na equipe, o modo padrão é confidencial, e o ciclo pode ser configurado como anônimo. Um usuário com perfil RH nunca pode consultar a identidade dos emissores das avaliações em que ele próprio é o avaliado. | Must | Média (P-01) | RE-33; RD-15; RQ-04; RQ-13; RP-17; ESC | [UC-08](../modelagem/casos-de-uso/completos/UC-08_Registrar_Feedback.md), [UC-13](../modelagem/casos-de-uso/completos/UC-13_Planejar_Ciclo_de_Avaliacao.md), [UC-14](../modelagem/casos-de-uso/completos/UC-14_Responder_Avaliacao.md) |
 | RN-005 | Resultados de fontes confidenciais ou anônimas (pares, equipe, 360° e avaliação ascendente) só podem ser exibidos de forma agregada e quando houver um número mínimo de respondentes, configurável, com padrão de 3 e nunca menor que 3. Abaixo desse mínimo, as respostas são agrupadas em outra categoria ou omitidas. | Must | Média (P-03) | RQ-14; RD-17; RA-19 | UC-16, UC-23 |
-| RN-006 | Planos de ação e metas de desenvolvimento são definidos em conjunto pelo colaborador e pelo gestor; no plano de ação, pelo receptor e pelo emissor do feedback. Se o feedback de origem for confidencial, o plano é definido pelo receptor e pelo seu gestor direto, sem o emissor. | Must | Alta | RQ-08; RE-15 | [UC-19](modelagem/casos-de-uso/UC-19_Criar_Plano_de_Acao.md), UC-21 |
+| RN-006 | Planos de ação e metas de desenvolvimento são definidos em conjunto pelo colaborador e pelo gestor; no plano de ação, pelo receptor e pelo emissor do feedback. Se o feedback de origem for confidencial, o plano é definido pelo receptor e pelo seu gestor direto, sem o emissor. | Must | Alta | RQ-08; RE-15 | [UC-19](../modelagem/casos-de-uso/completos/UC-19_Criar_Plano_de_Acao.md), UC-21 |
 | RN-007 | O sistema apoia o desenvolvimento das pessoas e não decide promoção, salário ou desligamento. A organização pode usar o histórico como um dos critérios dessas decisões; nesse caso, os critérios devem estar documentados e ser os mesmos para todos no mesmo cargo. | Must | Alta | RE-34; RD-46; RP-10 | UC-23 |
 | RN-008 | Indicadores, pontuações e gráficos são apoio à decisão humana. O sistema não toma decisões automáticas sobre o colaborador e, quando calcular uma pontuação, deve exibir os critérios e os dados usados no cálculo. | Must | Alta | RD-27 | UC-16, UC-22 |
 | RN-009 | O sistema não é canal de denúncia. | Must | Alta | RE-35; RD-48 | Transversal |
@@ -815,7 +815,7 @@ Fonte: Documento Visão, seção 4.2.
 
 #### A.2 Dores do processo atual
 
-Fonte: lista geral, seção 7.2, a partir do [BPMN AS-IS](elicitacao/bpmn/Processo_AS-IS_e_Dores.md). Os códigos D1 a D6 são numerados em cada diagrama de forma independente.
+Fonte: lista geral, seção 7.2, a partir do [BPMN AS-IS](../elicitacao/bpmn/Processo_AS-IS_e_Dores.md). Os códigos D1 a D6 são numerados em cada diagrama de forma independente.
 
 | Dor | AS-IS 1 (E01, PO) | AS-IS 2 (E02, Secretaria) | Requisitos |
 |---|---|---|---|
@@ -951,15 +951,15 @@ Fonte: lista geral, seção 10.
 
 | Artefato | Uso nesta especificação | Issue |
 |---|---|---|
-| [Processo de Requisitos](Processo_Requisitos.md) | Etapas, identificadores, ciclo de vida e gestão de mudanças | #31 |
-| [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) e [CSV](Lista_Geral_Requisitos.csv) | Fonte única dos 117 requisitos | #45 |
+| [Processo de Requisitos](../planejamento/Processo_Requisitos.md) | Etapas, identificadores, ciclo de vida e gestão de mudanças | #31 |
+| [Lista Geral de Requisitos](../analise/Lista_Geral_Requisitos.md) e [CSV](../analise/Lista_Geral_Requisitos.csv) | Fonte única dos 117 requisitos | #45 |
 | [Documento Visão](Documento_Visao.md) | Escopo, objetivos, usuários, funções, restrições e suposições | #46 |
-| [Diagrama de Casos de Uso](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) | Atores, 31 casos de uso e ligação RF ↔ UC | #47 |
-| [Casos de Uso Completos](modelagem/casos-de-uso/Casos_de_Uso_Completos.md) | Sequências de estímulo e resposta (UC-08, UC-13, UC-14, UC-19, UC-25) | #48 |
-| [Protótipo de telas](prototipacao/Prototipo.md) | Interface com o usuário | #50 |
+| [Diagrama de Casos de Uso](../modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) | Atores, 31 casos de uso e ligação RF ↔ UC | #47 |
+| [Casos de Uso Completos](../modelagem/casos-de-uso/Casos_de_Uso_Completos.md) | Sequências de estímulo e resposta (UC-08, UC-13, UC-14, UC-19, UC-25) | #48 |
+| [Protótipo de telas](../prototipacao/Prototipo.md) | Interface com o usuário | #50 |
 | [Especificação Suplementar](Especificacao_Suplementar.md) | Critérios de aceitação e verificação dos RNF, decisões DS-xx | #51 |
-| [Modelo de Domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) | Requisitos lógicos de dados | #52 |
+| [Modelo de Domínio e ER](../modelagem/modelo-dados/Modelo_Dominio_ER.md) | Requisitos lógicos de dados | #52 |
 | [Dicionário de Dados e Glossário](Dicionario_de_Dados.md) | Definições e inconsistências entre artefatos | #53 |
-| [Processo AS-IS e dores](elicitacao/bpmn/Processo_AS-IS_e_Dores.md) | Dores D1 a D6 | #44 |
-| [Matriz de Rastreabilidade](Matriz_Rastreabilidade.md) e [CSV](Matriz_Rastreabilidade.csv) | Ligação de cada requisito à fonte, aos casos de uso, às telas e às entidades | #49 |
-| [Síntese das entrevistas](elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md), [dos questionários](elicitacao/questionarios/Sintese.md), [da pesquisa documental](elicitacao/pesquisa-documental/Requisitos_Pesquisa_Documental.md) e [do sistema análogo](elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | Fontes dos candidatos citados na coluna Origem | #41, #42, #33, #43 |
+| [Processo AS-IS e dores](../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) | Dores D1 a D6 | #44 |
+| [Matriz de Rastreabilidade](../analise/Matriz_Rastreabilidade.md) e [CSV](../analise/Matriz_Rastreabilidade.csv) | Ligação de cada requisito à fonte, aos casos de uso, às telas e às entidades | #49 |
+| [Síntese das entrevistas](../elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md), [dos questionários](../elicitacao/questionarios/Sintese.md), [da pesquisa documental](../elicitacao/pesquisa-documental/Requisitos_Pesquisa_Documental.md) e [do sistema análogo](../elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | Fontes dos candidatos citados na coluna Origem | #41, #42, #33, #43 |

@@ -2,7 +2,7 @@
 
 Projeto: Sistema Web de Feedback e Gestão de Competências · Disciplina Domínios de Software (INF0296, 2026/2)
 
-**Entrada:** [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.1 · **Versão deste modelo:** 1.2
+**Entrada:** [Lista Geral de Requisitos](../../analise/Lista_Geral_Requisitos.md) (#45), versão 1.1 · **Versão deste modelo:** 1.2
 **Notação:** diagramas `erDiagram` em [Mermaid](https://mermaid.js.org/syntax/entityRelationshipDiagram.html), renderizados direto pelo GitHub. Os diagramas Mermaid desta página são a fonte do modelo. As imagens em [`img/`](img/), em PNG e SVG, foram geradas desses diagramas com o Mermaid CLI na versão 1.2 do modelo (18/11/2026), uma por seção: `00` é a visão geral (seção 3) e `01` a `06` são as seções 4 a 9.
 
 ---
@@ -852,15 +852,15 @@ Consequência aceita: no modo `ANONIMO` o emissor não pode editar a resposta de
 | M-07 | Coletar `data_nascimento` e calcular a condição de menor de idade a partir dela | Decisão da equipe. A data identifica o menor (RN-016) e permite saber quando ele deixa de sê-lo, sem depender de atualização manual de um indicador |
 | M-08 | `ResultadoConsolidado` guardado ao encerrar o ciclo (RF-032), não calculado a cada consulta | Decisão da equipe. O resultado liberado ao avaliado não muda depois, mesmo que uma resposta seja ocultada ou um dado seja anonimizado mais tarde, e o histórico (RF-048) e os painéis (RF-049, RF-050) leem valores prontos |
 | M-09 | Feedback para equipe aparece no perfil de cada membro, sinalizado como "feedback em grupo", com os membros da data do envio guardados em `MembroFeedbackEquipe` | Decisão da equipe. O colaborador vê no próprio histórico (RF-048) tudo o que recebeu, e a lista de membros fixa na data impede que quem entrou depois veja o feedback e que quem saiu o perca |
-| M-10 | Ajustes da revisão final (versão 1.1), listados na seção 14 | Aplicam as inconsistências I-01 e I-04 a I-13 do [dicionário de dados](../../Dicionario_de_Dados.md) (seção 5.2), as decisões UC08-D01, UC08-D02 e UC19-D01 dos casos de uso completos e as decisões ERS-D02, ERS-D05 e ERS-D08 da [especificação IEEE 830](../../Especificacao_Requisitos_IEEE830.md) (Apêndice C), que pediam esses ajustes no modelo |
+| M-10 | Ajustes da revisão final (versão 1.1), listados na seção 14 | Aplicam as inconsistências I-01 e I-04 a I-13 do [dicionário de dados](../../especificacao/Dicionario_de_Dados.md) (seção 5.2), as decisões UC08-D01, UC08-D02 e UC19-D01 dos casos de uso completos e as decisões ERS-D02, ERS-D05 e ERS-D08 da [especificação IEEE 830](../../especificacao/Especificacao_Requisitos_IEEE830.md) (Apêndice C), que pediam esses ajustes no modelo |
 
 ## 14. Referências
 
 **Uso de inteligência artificial**
 
-- ANTHROPIC. Claude Code (modelo Claude Opus 5.5). Disponível em: https://claude.com/claude-code. Acesso em: 17 nov. 2026. Usado para redigir a versão inicial deste modelo e os diagramas em Mermaid a partir da issue #52 e dos artefatos da 1ª etapa. Questão: Apêndice II, Seção II.1 ([Apêndice II](../../arquitetura/Apendice_II_Prompts_IA.md)).
+- ANTHROPIC. Claude Code (modelo Claude Opus 5.5). Disponível em: https://claude.com/claude-code. Acesso em: 17 nov. 2026. Usado para redigir a versão inicial deste modelo e os diagramas em Mermaid a partir da issue #52 e dos artefatos da 1ª etapa. Questão: Apêndice II, Seção II.1 ([Apêndice II](../../entrega/apendices/Apendice_II_Prompts_IA.md)).
 
-A lista consolidada do projeto está em [Referências](../../arquitetura/Referencias.md).
+A lista consolidada do projeto está em [Referências](../../entrega/Referencias.md).
 
 ---
 

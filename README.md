@@ -36,19 +36,19 @@ O sistema deve permitir:
 | Júlia de Souza Nascimento | Analista de Requisitos Líder | julianascimento@discente.ufg.br |
 | Verônica Ribeiro Oliveira Palmeira | Analista de Qualidade e Documentação | veronica_palmeira@discente.ufg.br |
 
-Os papéis estão definidos na seção 4 do [processo de requisitos](docs/Processo_Requisitos.md). A Product Owner (PO) é a Profa. Adriana Silveira de Souza.
+Os papéis estão definidos na seção 4 do [processo de requisitos](docs/planejamento/Processo_Requisitos.md). A Product Owner (PO) é a Profa. Adriana Silveira de Souza.
 
 ---
 
 ## Índice dos artefatos
 
-A coluna **Item do enunciado** segue a lista de entregas da 1ª etapa. A conferência completa de cada item está na [revisão final](docs/Revisao_Final.md).
+A coluna **Item do enunciado** segue a lista de entregas da 1ª etapa. A conferência completa de cada item está na [revisão final](docs/entrega/Revisao_Final.md).
 
 | # | Artefato | Item do enunciado | Local | Issue |
 |---|----------|-------------------|-------|-------|
 | **Planejamento** |||||
 | 1 | Planejamento das atividades (Kanban) | Planejamento das atividades – estilo Kanban | [Project](https://github.com/users/isadora-yasmim/projects/3) | #30 |
-| 2 | Definição do processo de requisitos | Definição do processo de requisitos | [`docs/Processo_Requisitos.md`](docs/Processo_Requisitos.md) | #31 |
+| 2 | Definição do processo de requisitos | Definição do processo de requisitos | [`docs/planejamento/Processo_Requisitos.md`](docs/planejamento/Processo_Requisitos.md) | #31 |
 | **Elicitação** |||||
 | 3 | Pesquisa documental (LGPD, ISO/IEC 25010, normas trabalhistas e acessibilidade) | Busca de documentos (leis, regulamentações, padrões 25010) | [`docs/elicitacao/pesquisa-documental/`](docs/elicitacao/pesquisa-documental/) | #33 |
 | 4 | Roteiro, termo de consentimento e entrevistas transcritas (2) | Entrega da entrevista transcrita | [`docs/elicitacao/entrevistas/`](docs/elicitacao/entrevistas/) | #34, #35, #36 |
@@ -59,13 +59,13 @@ A coluna **Item do enunciado** segue a lista de entregas da 1ª etapa. A confer�
 | 8 | Síntese dos requisitos das entrevistas | Síntese dos Requisitos das Entrevistas | [`Sintese_Requisitos_Entrevistas.md`](docs/elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md) | #41 |
 | 9 | Síntese dos requisitos dos questionários | Síntese dos Requisitos dos Questionários | [`Sintese.md`](docs/elicitacao/questionarios/Sintese.md) | #42 |
 | 10 | Síntese dos requisitos do sistema análogo | Síntese dos Requisitos do Sistema análogo | [`Sintese_Requisitos_Sistema_Analogo.md`](docs/elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | #43 |
-| 11 | Lista de requisitos — geral | Lista de requisitos – Geral | [`docs/Lista_Geral_Requisitos.md`](docs/Lista_Geral_Requisitos.md) · [CSV](docs/Lista_Geral_Requisitos.csv) | #45 |
-| 12 | Matriz de rastreabilidade (horizontal e vertical) | Matriz de Rastreabilidade (horizontal e vertical) | [`docs/Matriz_Rastreabilidade.md`](docs/Matriz_Rastreabilidade.md) · [CSV](docs/Matriz_Rastreabilidade.csv) | #49 |
+| 11 | Lista de requisitos — geral | Lista de requisitos – Geral | [`docs/analise/Lista_Geral_Requisitos.md`](docs/analise/Lista_Geral_Requisitos.md) · [CSV](docs/analise/Lista_Geral_Requisitos.csv) | #45 |
+| 12 | Matriz de rastreabilidade (horizontal e vertical) | Matriz de Rastreabilidade (horizontal e vertical) | [`docs/analise/Matriz_Rastreabilidade.md`](docs/analise/Matriz_Rastreabilidade.md) · [CSV](docs/analise/Matriz_Rastreabilidade.csv) | #49 |
 | **Especificação** |||||
-| 13 | Documento Visão (Larman, cap. 7) | Documento Visão – cap. 7 | [`docs/Documento_Visao.md`](docs/Documento_Visao.md) | #46 |
-| 14 | Especificação suplementar: RNF segundo ISO/IEC 25010 (Larman, cap. 7) | Especificação suplementar (ISO/IEC 25010) – cap. 7 | [`docs/Especificacao_Suplementar.md`](docs/Especificacao_Suplementar.md) | #51 |
-| 15 | Dicionário de dados e glossário (Larman, cap. 7) | Dicionário de dados (glossário) – cap. 7 | [`docs/Dicionario_de_Dados.md`](docs/Dicionario_de_Dados.md) | #53 |
-| 16 | Especificação de requisitos (IEEE 830) | Especificação de Requisitos – IEEE 830 e/ou EOR | [`docs/Especificacao_Requisitos_IEEE830.md`](docs/Especificacao_Requisitos_IEEE830.md) | #54 |
+| 13 | Documento Visão (Larman, cap. 7) | Documento Visão – cap. 7 | [`docs/especificacao/Documento_Visao.md`](docs/especificacao/Documento_Visao.md) | #46 |
+| 14 | Especificação suplementar: RNF segundo ISO/IEC 25010 (Larman, cap. 7) | Especificação suplementar (ISO/IEC 25010) – cap. 7 | [`docs/especificacao/Especificacao_Suplementar.md`](docs/especificacao/Especificacao_Suplementar.md) | #51 |
+| 15 | Dicionário de dados e glossário (Larman, cap. 7) | Dicionário de dados (glossário) – cap. 7 | [`docs/especificacao/Dicionario_de_Dados.md`](docs/especificacao/Dicionario_de_Dados.md) | #53 |
+| 16 | Especificação de requisitos (IEEE 830) | Especificação de Requisitos – IEEE 830 e/ou EOR | [`docs/especificacao/Especificacao_Requisitos_IEEE830.md`](docs/especificacao/Especificacao_Requisitos_IEEE830.md) | #54 |
 | **Modelagem** |||||
 | 17 | Diagrama de casos de uso (Larman, cap. 6) | Diagrama de casos de uso – cap. 6 | [`Diagrama_Casos_de_Uso.md`](docs/modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) | #47 |
 | 18 | Casos de uso completos, 1 por integrante (Larman, cap. 6) | Casos de uso essenciais, 1 completo por integrante – cap. 6 | [`Casos_de_Uso_Completos.md`](docs/modelagem/casos-de-uso/Casos_de_Uso_Completos.md) | #48 |
@@ -73,34 +73,35 @@ A coluna **Item do enunciado** segue a lista de entregas da 1ª etapa. A confer�
 | **Protótipos** |||||
 | 20 | Protótipos das telas (Figma) | Protótipos das telas – Figma | [`docs/prototipacao/Prototipo.md`](docs/prototipacao/Prototipo.md) · [abrir no Figma](https://www.figma.com/design/yiyjqLFpIp838MAi9x0EW4/Dom%C3%ADnios-de-Software-2026-2?node-id=6-3) | #50 |
 | **Entrega** |||||
-| 21 | Revisão final e consolidação | Todos os artefatos armazenados em controle de versões | [`docs/Revisao_Final.md`](docs/Revisao_Final.md) | #55 |
+| 21 | Revisão final e consolidação | Todos os artefatos armazenados em controle de versões | [`docs/entrega/Revisao_Final.md`](docs/entrega/Revisao_Final.md) | #55 |
 | 22 | Apresentação final | Entrega e apresentação do trabalho | — | #56 |
 
 ---
 
 ## Estrutura do repositório
 
+As pastas de `docs/` seguem as etapas do índice acima. Cada documento fica junto dos arquivos que só ele usa: imagens em `img/`, fontes de diagramas (`.puml`, `.bpmn`) e planilhas (`.csv`).
+
 ```
 docs/
-├── Processo_Requisitos.md
-├── Lista_Geral_Requisitos.md / .csv
-├── Matriz_Rastreabilidade.md / .csv
-├── Documento_Visao.md
-├── Especificacao_Suplementar.md
-├── Dicionario_de_Dados.md
-├── Especificacao_Requisitos_IEEE830.md
-├── Revisao_Final.md
-├── assets/
+├── planejamento/          Processo de requisitos
 ├── elicitacao/
-│   ├── bpmn/
-│   ├── entrevistas/
+│   ├── bpmn/              Processo AS-IS e dores (.bpmn + img/)
+│   ├── entrevistas/       Transcrições, síntese e CSV de requisitos
+│   │   └── roteiros/      Roteiros e termo de consentimento
 │   ├── pesquisa-documental/
-│   ├── questionarios/
-│   └── sistema-analogo/
+│   ├── questionarios/     Respostas, síntese e img/
+│   └── sistema-analogo/   15Five, síntese, CSV e img/
+├── analise/               Lista geral de requisitos e matriz de rastreabilidade (.md + .csv)
+├── especificacao/         Documento Visão, especificação suplementar, dicionário de dados e IEEE 830
 ├── modelagem/
-│   ├── casos-de-uso/
-│   └── modelo-dados/
-└── prototipacao/
+│   ├── casos-de-uso/      Diagrama (.puml + img/) e índice dos casos completos
+│   │   └── completos/     Um arquivo por caso de uso (UC-nn)
+│   └── modelo-dados/      Modelo de domínio e ER (img/)
+├── prototipacao/          Protótipo e telas/
+├── arquitetura/           2ª etapa: decisões arquiteturais e modelos C4
+└── entrega/               Revisão final, referências consolidadas e apendices/
+scripts/                   Utilitários (verificador de referências)
 ```
 
 ## Convenções
@@ -125,7 +126,7 @@ git push -u origin 6-entrevista-1
 
 ## Referências
 
-A lista consolidada de todas as fontes citadas nos artefatos, com o registro do uso de IA, está em [`docs/arquitetura/Referencias.md`](docs/arquitetura/Referencias.md). Os prompts completos estão no [Apêndice II](docs/arquitetura/Apendice_II_Prompts_IA.md).
+A lista consolidada de todas as fontes citadas nos artefatos, com o registro do uso de IA, está em [`docs/entrega/Referencias.md`](docs/entrega/Referencias.md). Os prompts completos estão no [Apêndice II](docs/entrega/apendices/Apendice_II_Prompts_IA.md).
 
 Para conferir se alguma referência citada nos documentos ainda falta na lista consolidada:
 

@@ -6,7 +6,7 @@
 | Item | Descrição |
 |---|---|
 | Tipo e natureza | Apêndice documental (registro de uso de IA), não é modelo do sistema |
-| Propósito | Guardar o prompt completo de cada uso de IA citado nas [referências](Referencias.md), como pede a seção 8 do enunciado |
+| Propósito | Guardar o prompt completo de cada uso de IA citado nas [referências](../Referencias.md), como pede a seção 8 do enunciado |
 | Público-alvo | Docente/PO e integrantes do grupo |
 | Uso no documento final | Apêndice II do PDF (issue #109). Cada seção é citada na referência correspondente como "Questão: Apêndice II, Seção II.n" |
 
@@ -14,7 +14,7 @@
 
 ## Como ler este apêndice
 
-- Cada seção corresponde a uma sessão de trabalho com a ferramenta e a uma referência da [seção 8 das referências](Referencias.md#8-uso-de-inteligência-artificial).
+- Cada seção corresponde a uma sessão de trabalho com a ferramenta e a uma referência da [seção 8 das referências](../Referencias.md#8-uso-de-inteligência-artificial).
 - Os prompts estão **literais**, na ordem de envio, com a grafia original (inclusive erros de digitação). Foram copiados do registro local da sessão do Claude Code, e não reescritos de memória.
 - Não foram incluídos os avisos automáticos que a extensão do editor anexa às mensagens (arquivo aberto ou trecho selecionado), porque não foram digitados pela integrante.
 - O resultado de cada sessão foi revisado pela autora do artefato e é revisado por outro integrante no pull request da issue.
@@ -31,7 +31,7 @@
 | Ferramenta | ANTHROPIC. Claude Code, modelo Claude Opus 5.5. https://claude.com/claude-code |
 | Data de acesso | 17 nov. 2026 |
 | Integrante | Isadora Yasmim da Silva |
-| Artefato | [Modelo de domínio e ER](../modelagem/modelo-dados/Modelo_Dominio_ER.md), versão 1.0 |
+| Artefato | [Modelo de domínio e ER](../../modelagem/modelo-dados/Modelo_Dominio_ER.md), versão 1.0 |
 | O que a IA fez | Redigiu o modelo e os diagramas em Mermaid a partir da issue e dos artefatos da 1ª etapa. As decisões M-07, M-08 e M-09 foram tomadas pela equipe e informadas nas mensagens 2 e 3 |
 
 **Mensagem 1**
@@ -152,7 +152,7 @@ sim
 | Ferramenta | ANTHROPIC. Claude Code, modelo Claude Opus 5.5. https://claude.com/claude-code |
 | Data de acesso | 22 nov. 2026 |
 | Integrante | Isadora Yasmim da Silva |
-| Artefato | [Referências](Referencias.md), este apêndice e [`scripts/verificar_referencias.py`](../../scripts/verificar_referencias.py) |
+| Artefato | [Referências](../Referencias.md), este apêndice e [`scripts/verificar_referencias.py`](../../../scripts/verificar_referencias.py) |
 | O que a IA fez | Reuniu as referências que já estavam nas seções de referências dos artefatos, sem acrescentar fontes novas; transcreveu os prompts das sessões anteriores a partir dos registros locais; escreveu o script que aponta referências e prompts ainda não registrados |
 
 **Mensagem 1**

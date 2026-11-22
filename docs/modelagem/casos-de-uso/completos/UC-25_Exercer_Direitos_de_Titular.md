@@ -3,7 +3,7 @@
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.0 · **Data:** 17/11/2026
 **Responsável:** Verônica Ribeiro Oliveira Palmeira
-**Prioridade:** Must · **Área:** Privacidade (LGPD) · [Diagrama](Diagrama_Casos_de_Uso.md#46-privacidade-lgpd) · [Modelo e convenções](Casos_de_Uso_Completos.md)
+**Prioridade:** Must · **Área:** Privacidade (LGPD) · [Diagrama](../Diagrama_Casos_de_Uso.md#46-privacidade-lgpd) · [Modelo e convenções](../Casos_de_Uso_Completos.md)
 
 ---
 
@@ -163,4 +163,4 @@ Eventual. Depende da iniciativa de cada titular, e as fontes do levantamento nã
 | Entidades do modelo ER | `SolicitacaoTitular`, `CategoriaDado`, `CompartilhamentoDados`, `BloqueioLegal`, `Consentimento`, `RegistroAuditoria`, `Notificacao`, `VinculoConfidencial` |
 | Casos de uso relacionados | UC-10 (réplica, extensão 3d), UC-26 (consentimento, extensão 3f), UC-27 (tratamento dos pedidos), UC-28 (configuração da privacidade, pré-condição) |
 | Decisões aplicadas | DS-05, DS-07, DS-10 (especificação suplementar) |
-| Fontes | LGPD, arts. 6º, 9º, 12, 16, 18, 19 e 41 (FD-01); [Pesquisa Documental](../../elicitacao/pesquisa-documental/Pesquisa_Documental.md), seções 3.4 e 3.5 e conflito 3 da seção 8 |
+| Fontes | LGPD, arts. 6º, 9º, 12, 16, 18, 19 e 41 (FD-01); [Pesquisa Documental](../../../elicitacao/pesquisa-documental/Pesquisa_Documental.md), seções 3.4 e 3.5 e conflito 3 da seção 8 |
