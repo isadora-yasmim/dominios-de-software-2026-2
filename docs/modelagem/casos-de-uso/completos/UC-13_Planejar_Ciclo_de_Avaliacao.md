@@ -3,7 +3,7 @@
 **Projeto:** Sistema Web de Feedback e Gestão de Competências
 **Formato:** completo (Larman, cap. 6) · **Issue:** #48 · **Versão:** 1.0 · **Data:** 17/11/2026
 **Responsável:** Júlia de Souza Nascimento
-**Prioridade:** Must · **Área:** Ciclo de avaliação formal · [Diagrama](Diagrama_Casos_de_Uso.md#43-ciclo-de-avaliação-formal) · [Modelo e convenções](Casos_de_Uso_Completos.md)
+**Prioridade:** Must · **Área:** Ciclo de avaliação formal · [Diagrama](../Diagrama_Casos_de_Uso.md#43-ciclo-de-avaliação-formal) · [Modelo e convenções](../Casos_de_Uso_Completos.md)
 
 ---
 
@@ -214,4 +214,4 @@ Uma vez por equipe a cada ciclo formal. A PO citou ciclos de 3 ou 4 meses (E01 �
 | Entidades do modelo ER | `CicloAvaliacao`, `AvaliadoCiclo`, `CicloCompetencia`, `ObjetivoCiclo`, `Indicador`, `ModalidadeCiclo`, `Questionario`, `ConviteAvaliacao`, `CheckIn`, `ConfiguracaoOrganizacao`, `Notificacao`, `RegistroAuditoria` |
 | Casos de uso relacionados | UC-01, UC-03, UC-04, UC-05 (cadastros prévios); UC-14 (resposta dos avaliadores); UC-15 (acompanhamento e encerramento); UC-18 (check-ins); UC-31 (notificações e lembretes) |
 | Decisões aplicadas | P-01, P-03 (lista geral); DS-10 (especificação suplementar); M-04, M-05 (modelo ER) |
-| Fontes | [Entrevista 01](../../elicitacao/entrevistas/Entrevista01_Adriana.md), §5, §14, §15, §17, §19, §21 e §29; [Síntese dos questionários](../../elicitacao/questionarios/Sintese.md); [Processo AS-IS e dores](../../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) |
+| Fontes | [Entrevista 01](../../../elicitacao/entrevistas/Entrevista01_Adriana.md), §5, §14, §15, §17, §19, §21 e §29; [Síntese dos questionários](../../../elicitacao/questionarios/Sintese.md); [Processo AS-IS e dores](../../../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) |

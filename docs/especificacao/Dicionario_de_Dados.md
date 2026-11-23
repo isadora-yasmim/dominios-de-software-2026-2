@@ -5,7 +5,7 @@
 **Issue:** #53 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsável:** Ana Luísa Pereira dos Santos
 **Referência de método:** Larman, *Utilizando UML e Padrões*, cap. 7 (Glossário e dicionário de dados)
-**Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45), versão 1.1, e [Modelo de Domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52), versão 1.1. Os identificadores `RF-`, `RNF-` e `RN-` são os da lista geral. Os `UC-` são os do [Diagrama de Casos de Uso](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47).
+**Base:** [Lista Geral de Requisitos](../analise/Lista_Geral_Requisitos.md) (#45), versão 1.1, e [Modelo de Domínio e ER](../modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52), versão 1.1. Os identificadores `RF-`, `RNF-` e `RN-` são os da lista geral. Os `UC-` são os do [Diagrama de Casos de Uso](../modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47).
 
 ## Histórico de revisões
 
@@ -155,7 +155,7 @@ Termos em ordem alfabética. A coluna **No modelo ER** indica onde o termo apare
 
 ## 3. Dicionário de atributos do modelo ER
 
-Uma tabela por entidade, na ordem das seções 4 a 9 do [modelo ER](modelagem/modelo-dados/Modelo_Dominio_ER.md). Nomes de entidades e atributos sem alteração. Cada entidade traz uma linha com os **requisitos de origem**, com base na seção 12 e nas notas do ER. Lembre a legenda: `*` = proposto, porque o ER não define o valor.
+Uma tabela por entidade, na ordem das seções 4 a 9 do [modelo ER](../modelagem/modelo-dados/Modelo_Dominio_ER.md). Nomes de entidades e atributos sem alteração. Cada entidade traz uma linha com os **requisitos de origem**, com base na seção 12 e nas notas do ER. Lembre a legenda: `*` = proposto, porque o ER não define o valor.
 
 ### 3.1 Organização, usuários e acesso
 
@@ -1025,7 +1025,7 @@ Lembretes que cada usuário mantém ativos (RF-040).
 
 ### 3.7 Enumerações
 
-As enumerações com nome (`Perfil`, `TipoFeedback`, `ModoIdentificacao` e outras) estão na [seção 11 do modelo ER](modelagem/modelo-dados/Modelo_Dominio_ER.md#11-dicionário-de-enumerações) e foram repetidas nas tabelas acima. As enumerações abaixo aparecem só dentro dos diagramas do ER, sem nome próprio:
+As enumerações com nome (`Perfil`, `TipoFeedback`, `ModoIdentificacao` e outras) estão na [seção 11 do modelo ER](../modelagem/modelo-dados/Modelo_Dominio_ER.md#11-dicionário-de-enumerações) e foram repetidas nas tabelas acima. As enumerações abaixo aparecem só dentro dos diagramas do ER, sem nome próprio:
 
 | Atributo | Valores no ER | Observação |
 |---|---|---|
@@ -1128,7 +1128,7 @@ No modo **anônimo**, a identidade não é guardada em lugar nenhum (RN-004; ER,
 
 ## 5. Pontos não confirmados e inconsistências
 
-Esta seção registra os pontos encontrados na versão 1.0. A correção coube ao responsável por cada artefato, pela gestão de mudanças do [processo de requisitos](Processo_Requisitos.md) (seção 9). Na revisão final (#55), todos foram tratados, e a coluna **Tratamento** indica onde.
+Esta seção registra os pontos encontrados na versão 1.0. A correção coube ao responsável por cada artefato, pela gestão de mudanças do [processo de requisitos](../planejamento/Processo_Requisitos.md) (seção 9). Na revisão final (#55), todos foram tratados, e a coluna **Tratamento** indica onde.
 
 ### 5.1 Pontos não confirmados
 
@@ -1181,15 +1181,15 @@ Esta seção registra os pontos encontrados na versão 1.0. A correção coube a
 
 | Fonte | Artefato | Issue |
 |---|---|---|
-| Requisitos consolidados | [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) e [CSV](Lista_Geral_Requisitos.csv) | #45 |
-| Modelo de dados | [Modelo de Domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) | #52 |
+| Requisitos consolidados | [Lista Geral de Requisitos](../analise/Lista_Geral_Requisitos.md) e [CSV](../analise/Lista_Geral_Requisitos.csv) | #45 |
+| Modelo de dados | [Modelo de Domínio e ER](../modelagem/modelo-dados/Modelo_Dominio_ER.md) | #52 |
 | Visão do produto | [Documento Visão](Documento_Visao.md) | #46 |
 | Requisitos não funcionais | [Especificação Suplementar](Especificacao_Suplementar.md) | #51 |
-| Casos de uso | [Diagrama de Casos de Uso](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) | #47 |
-| Entrevistas (E01 e E02) | [Síntese dos Requisitos das Entrevistas](elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md) | #41 |
-| Questionários (Q01 e Q02) | [Síntese dos Requisitos dos Questionários](elicitacao/questionarios/Sintese.md) | #42 |
-| Pesquisa documental (LGPD) | [Pesquisa Documental](elicitacao/pesquisa-documental/Pesquisa_Documental.md) | #33 |
-| Sistema análogo (15Five) | [Síntese dos Requisitos do Sistema Análogo](elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | #43 |
-| Processo atual (AS-IS 1 e 2) | [Processo AS-IS de feedback e avaliação, com as dores](elicitacao/bpmn/Processo_AS-IS_e_Dores.md) | #44 |
+| Casos de uso | [Diagrama de Casos de Uso](../modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) | #47 |
+| Entrevistas (E01 e E02) | [Síntese dos Requisitos das Entrevistas](../elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md) | #41 |
+| Questionários (Q01 e Q02) | [Síntese dos Requisitos dos Questionários](../elicitacao/questionarios/Sintese.md) | #42 |
+| Pesquisa documental (LGPD) | [Pesquisa Documental](../elicitacao/pesquisa-documental/Pesquisa_Documental.md) | #33 |
+| Sistema análogo (15Five) | [Síntese dos Requisitos do Sistema Análogo](../elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | #43 |
+| Processo atual (AS-IS 1 e 2) | [Processo AS-IS de feedback e avaliação, com as dores](../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) | #44 |
 | Método | LARMAN, C. *Utilizando UML e Padrões*, cap. 7 | - |
 | Legislação | Lei nº 13.709/2018 (LGPD), arts. 5º, 12, 13, 14, 18, 38, 41 e 48 | - |

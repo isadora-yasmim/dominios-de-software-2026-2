@@ -2,7 +2,7 @@
 
 Projeto: Sistema Web de Feedback e Gestão de Competências · Disciplina Domínios de Software (INF0296, 2026/2)
 
-**Entrada:** [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.1 · **Versão deste modelo:** 1.2
+**Entrada:** [Lista Geral de Requisitos](../../analise/Lista_Geral_Requisitos.md) (#45), versão 1.1 · **Versão deste modelo:** 1.2
 **Notação:** diagramas `erDiagram` em [Mermaid](https://mermaid.js.org/syntax/entityRelationshipDiagram.html), renderizados direto pelo GitHub. Os diagramas Mermaid desta página são a fonte do modelo. As imagens em [`img/`](img/), em PNG e SVG, foram geradas desses diagramas com o Mermaid CLI na versão 1.2 do modelo (18/11/2026), uma por seção: `00` é a visão geral (seção 3) e `01` a `06` são as seções 4 a 9.
 
 ---
@@ -22,7 +22,8 @@ Projeto: Sistema Web de Feedback e Gestão de Competências · Disciplina Domín
 11. [Dicionário de enumerações](#11-dicionário-de-enumerações)
 12. [Rastreabilidade entidade × requisito](#12-rastreabilidade-entidade--requisito)
 13. [Decisões de modelagem](#13-decisões-de-modelagem)
-14. [Histórico de revisões](#14-histórico-de-revisões)
+14. [Referências](#14-referências)
+15. [Histórico de revisões](#15-histórico-de-revisões)
 
 ---
 
@@ -851,12 +852,23 @@ Consequência aceita: no modo `ANONIMO` o emissor não pode editar a resposta de
 | M-07 | Coletar `data_nascimento` e calcular a condição de menor de idade a partir dela | Decisão da equipe. A data identifica o menor (RN-016) e permite saber quando ele deixa de sê-lo, sem depender de atualização manual de um indicador |
 | M-08 | `ResultadoConsolidado` guardado ao encerrar o ciclo (RF-032), não calculado a cada consulta | Decisão da equipe. O resultado liberado ao avaliado não muda depois, mesmo que uma resposta seja ocultada ou um dado seja anonimizado mais tarde, e o histórico (RF-048) e os painéis (RF-049, RF-050) leem valores prontos |
 | M-09 | Feedback para equipe aparece no perfil de cada membro, sinalizado como "feedback em grupo", com os membros da data do envio guardados em `MembroFeedbackEquipe` | Decisão da equipe. O colaborador vê no próprio histórico (RF-048) tudo o que recebeu, e a lista de membros fixa na data impede que quem entrou depois veja o feedback e que quem saiu o perca |
-| M-10 | Ajustes da revisão final (versão 1.1), listados na seção 14 | Aplicam as inconsistências I-01 e I-04 a I-13 do [dicionário de dados](../../Dicionario_de_Dados.md) (seção 5.2), as decisões UC08-D01, UC08-D02 e UC19-D01 dos casos de uso completos e as decisões ERS-D02, ERS-D05 e ERS-D08 da [especificação IEEE 830](../../Especificacao_Requisitos_IEEE830.md) (Apêndice C), que pediam esses ajustes no modelo |
+| M-10 | Ajustes da revisão final (versão 1.1), listados na seção 14 | Aplicam as inconsistências I-01 e I-04 a I-13 do [dicionário de dados](../../especificacao/Dicionario_de_Dados.md) (seção 5.2), as decisões UC08-D01, UC08-D02 e UC19-D01 dos casos de uso completos e as decisões ERS-D02, ERS-D05 e ERS-D08 da [especificação IEEE 830](../../especificacao/Especificacao_Requisitos_IEEE830.md) (Apêndice C), que pediam esses ajustes no modelo |
 
-## 14. Histórico de revisões
+## 14. Referências
+
+**Uso de inteligência artificial**
+
+- ANTHROPIC. Claude Code (modelo Claude Opus 5.5). Disponível em: https://claude.com/claude-code. Acesso em: 17 nov. 2026. Usado para redigir a versão inicial deste modelo e os diagramas em Mermaid a partir da issue #52 e dos artefatos da 1ª etapa. Questão: Apêndice II, Seção II.1 ([Apêndice II](../../entrega/apendices/Apendice_II_Prompts_IA.md)).
+
+A lista consolidada do projeto está em [Referências](../../entrega/Referencias.md).
+
+---
+
+## 15. Histórico de revisões
 
 | Versão | Data | Descrição |
 |---|---|---|
 | 1.0 | 17/11/2026 | Versão inicial (#52) |
 | 1.1 | 17/11/2026 | Revisão final (#55). Perfis `DIRETORIA` e `ENCARREGADO` (RF-003, I-01). Emissor e autor das versões de feedback confidencial só no vínculo, com o rascunho ligado ao autor até o envio (I-04). `Feedback.peso` e regra de exibição dos pesos (I-06). Prazo da categoria prevalece sobre o padrão da organização (I-07). Removido `Meta.atingida` (I-08). Enumerações `AcaoAuditoria` e `FrequenciaCheckIn` fechadas e domínio de `ResultadoConsolidado.modalidade` explicitado (I-09). `CheckInMeta` e `CheckInPlano` (I-10). `DestinatarioVisibilidade` (I-11). `CompartilhamentoDados.inclui_menores` (I-12). `DisponibilidadeAgenda`, `TermoOfensivo` e controle de falhas de login em `Colaborador` (I-13). `Fato.observado_equipe_id` (UC08-D02). `FEEDBACK_RECEBIDO` e `PLANO_PARA_CONFIRMAR` em `TipoNotificacao` e `AGUARDANDO_CONFIRMACAO` em `StatusPlano` (UC08-D01, UC19-D01). `PlanoAcao.gestor_id` para plano de feedback confidencial (ERS-D05). Piso de 3 em `min_respondentes` (ERS-D08) |
 | 1.2 | 18/11/2026 | `RegistroAuditoria.ator_id` opcional (cardinalidade zero ou um com `Colaborador`): as ações das rotinas automáticas do relógio do sistema, como a eliminação da política de retenção (UC-30), não têm usuário, mas precisam ser auditadas (RNF-005, RF-062). Imagens de `img/` geradas de novo a partir dos diagramas desta versão, com o dobro da resolução das anteriores |
+| 1.3 | 22/11/2026 | Seção 14, Referências, com o registro do uso de IA na versão inicial (#107) |

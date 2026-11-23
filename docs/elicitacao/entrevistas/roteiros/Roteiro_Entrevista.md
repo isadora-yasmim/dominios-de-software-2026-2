@@ -36,7 +36,7 @@
 
 Padronizar as entrevistas de levantamento de requisitos para que todas cubram o escopo definido pela Product Owner e permitam comparar as respostas entre entrevistados. O roteiro é **semiestruturado**: as perguntas principais devem ser feitas a todos; as perguntas de aprofundamento (marcadas com ↳) são opcionais e dependem do que o entrevistado trouxer.
 
-O roteiro foi elaborado a partir do escopo do projeto (README), da [Entrevista 01 com a Profa. Adriana](Entrevista01_Adriana.md) e dos resultados do [Questionário 01](../questionarios/Questionario01_Isabella.md), de forma a aprofundar os pontos que ainda estão em aberto, em especial a tensão sobre anonimato, o ciclo formal de avaliação e as dores do processo atual.
+O roteiro foi elaborado a partir do escopo do projeto (README), da [Entrevista 01 com a Profa. Adriana](../Entrevista01_Adriana.md) e dos resultados do [Questionário 01](../../questionarios/Questionario01_Isabella.md), de forma a aprofundar os pontos que ainda estão em aberto, em especial a tensão sobre anonimato, o ciclo formal de avaliação e as dores do processo atual.
 
 ## 2. Perfis de entrevistados
 
@@ -207,7 +207,7 @@ Agradecer, confirmar o aceite do termo de consentimento, encerrar a gravação e
 
 - [ ] Salvar a gravação em local privado do grupo (não no repositório).
 - [ ] Transcrever na íntegra e revisar os trechos com ruído.
-- [ ] Criar o arquivo `EntrevistaNN_<Nome>.md` seguindo o modelo da [Entrevista 01](Entrevista01_Adriana.md): identificação, nota sobre a transcrição, sumário com marcações de tempo e seções por tema.
+- [ ] Criar o arquivo `EntrevistaNN_<Nome>.md` seguindo o modelo da [Entrevista 01](../Entrevista01_Adriana.md): identificação, nota sobre a transcrição, sumário com marcações de tempo e seções por tema.
 - [ ] Anexar o termo de consentimento assinado (ou registrar o aceite verbal com o tempo da gravação).
 - [ ] Listar as dores e etapas do processo para o BPMN (issue #44).
 - [ ] Extrair requisitos candidatos com a seção de origem, para a síntese das entrevistas (issue #41) e a matriz de rastreabilidade (issue #49).

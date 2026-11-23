@@ -35,7 +35,7 @@
 Ligar cada requisito da [lista geral](Lista_Geral_Requisitos.md) (#45) às fontes de onde veio e aos artefatos que o tratam: casos de uso, telas do protótipo, entidades do modelo de dados e especificação suplementar. Com a matriz é possível:
 
 - confirmar que nenhum requisito ficou sem origem ou sem artefato (seção 7);
-- fazer a análise de impacto de uma mudança, como pede a gestão de mudanças do [processo de requisitos](Processo_Requisitos.md) (seção 9): a linha do requisito mostra tudo o que precisa ser revisto.
+- fazer a análise de impacto de uma mudança, como pede a gestão de mudanças do [processo de requisitos](../planejamento/Processo_Requisitos.md) (seção 9): a linha do requisito mostra tudo o que precisa ser revisto.
 
 ---
 
@@ -64,10 +64,10 @@ Esta matriz segue o **processo de requisitos**, que foi aprovado pelo grupo e us
 | Ligação | Artefato | De onde a matriz tira a ligação |
 |---|---|---|
 | Fonte → requisito | [Lista geral](Lista_Geral_Requisitos.md) (#45) | Coluna Origem de cada requisito. O caminho de cada candidato até a fonte (seção da entrevista, pergunta do questionário, lei, funcionalidade do 15Five, dor do BPMN) está na seção 11 da lista geral e nas sínteses de cada técnica |
-| Requisito → caso de uso | [Diagrama de casos de uso](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47) e [casos de uso completos](modelagem/casos-de-uso/Casos_de_Uso_Completos.md) (#48) | Coluna Requisitos da seção 4 do diagrama. Dos cinco casos completos, as linhas de RNF e de regras de negócio da seção 13 (Rastreabilidade) |
-| Requisito → tela | [Protótipo no Figma](prototipacao/Prototipo.md) (#50) | Anotações "requisitos atendidos" de cada tela, conferidas com a lista geral (seção 4) |
-| Requisito → entidade | [Modelo de domínio e ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52) | Seção 12, entidade × requisito |
-| RNF → característica e verificação | [Especificação suplementar](Especificacao_Suplementar.md) (#51) | Seção 16.1 (RNF) e seção 14 (regras de negócio) |
+| Requisito → caso de uso | [Diagrama de casos de uso](../modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47) e [casos de uso completos](../modelagem/casos-de-uso/Casos_de_Uso_Completos.md) (#48) | Coluna Requisitos da seção 4 do diagrama. Dos cinco casos completos, as linhas de RNF e de regras de negócio da seção 13 (Rastreabilidade) |
+| Requisito → tela | [Protótipo no Figma](../prototipacao/Prototipo.md) (#50) | Anotações "requisitos atendidos" de cada tela, conferidas com a lista geral (seção 4) |
+| Requisito → entidade | [Modelo de domínio e ER](../modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52) | Seção 12, entidade × requisito |
+| RNF → característica e verificação | [Especificação suplementar](../especificacao/Especificacao_Suplementar.md) (#51) | Seção 16.1 (RNF) e seção 14 (regras de negócio) |
 | Requisito ↔ requisito | Lista geral | Requisitos citados no texto e nas observações de cada requisito, conflitos resolvidos (C-xx, seção 8) e pontos decididos na consolidação (P-xx, seção 9) |
 
 **Códigos das fontes.** Entrevista (`RE`, ou trecho `E01 §n` usado diretamente), Questionário (`RQ`), Pesquisa documental (`RD`), Sistema análogo (`RA`), BPMN AS-IS (`RP`) e Enunciado do trabalho (`ESC`). Como na lista geral, o BPMN foi feito a partir das entrevistas e não conta como fonte independente.
@@ -76,7 +76,7 @@ Esta matriz segue o **processo de requisitos**, que foi aprovado pelo grupo e us
 
 ## 4. Telas do protótipo
 
-As telas do [protótipo](prototipacao/Prototipo.md) (#50) foram exportadas do Figma para a pasta [`prototipacao/telas/`](prototipacao/telas/), uma imagem por tela, com o nome do identificador (`T-01.jpg` a `T-54.jpg`). A coluna Imagem abre a tela.
+As telas do [protótipo](../prototipacao/Prototipo.md) (#50) foram exportadas do Figma para a pasta [`prototipacao/telas/`](../prototipacao/telas/), uma imagem por tela, com o nome do identificador (`T-01.jpg` a `T-54.jpg`). A coluna Imagem abre a tela.
 
 - **versão web:** 50 telas, `T-01` a `T-47` e `T-52` a `T-54`;
 - **versão para celular:** 4 telas, `T-48` a `T-51`.
@@ -87,60 +87,60 @@ As telas `T-52` a `T-54` foram criadas na revisão de 18/11/2026 para os requisi
 
 | Tela | Imagem | Nome | Perfil | Casos de uso | Requisitos |
 |---|---|---|---|---|---|
-| T-01 | [ver](prototipacao/telas/T-01.jpg) | Entrar (login) | Todos | — | RF-003, RNF-022, RF-053, RF-064, RF-065, RN-009 |
-| T-02 | [ver](prototipacao/telas/T-02.jpg) | Verificação em duas etapas | RH, Administrador | — | RF-003, RNF-006 |
-| T-03 | [ver](prototipacao/telas/T-03.jpg) | Entrar – erro de login | Todos | — | RNF-021 |
-| T-04 | [ver](prototipacao/telas/T-04.jpg) | Primeiro acesso – como tratamos seus dados | Colaborador | UC-25, UC-26 | RF-053, RF-055, RN-012 |
-| T-05 | [ver](prototipacao/telas/T-05.jpg) | Início – painel do colaborador | Colaborador | UC-22 | RF-048, RF-049, RNF-007, RNF-020 |
-| T-06 | [ver](prototipacao/telas/T-06.jpg) | Início – sem feedbacks (estado vazio) | Colaborador | UC-22, UC-09 | RF-049, RF-031 |
-| T-07 | [ver](prototipacao/telas/T-07.jpg) | Evolução por competência – dados em tabela | Colaborador | UC-22 | RF-049, RNF-007, RNF-020 |
-| T-08 | [ver](prototipacao/telas/T-08.jpg) | Dar feedback – informal | Colaborador | UC-08 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RN-001, RN-002, RN-003, RN-004, RNF-012, RNF-013 |
-| T-09 | [ver](prototipacao/telas/T-09.jpg) | Dar feedback – formal (ciclo) | Gestor | UC-08 | RF-013, RF-016, RF-019, RF-022, RF-023, RN-004 |
-| T-10 | [ver](prototipacao/telas/T-10.jpg) | Dar feedback – erro: nenhum fato vinculado | Colaborador | UC-08 | RN-001, RN-002, RNF-021 |
-| T-11 | [ver](prototipacao/telas/T-11.jpg) | Dar feedback – confirmar envio | Colaborador | UC-08 | RF-019, RN-003, RNF-015 |
-| T-12 | [ver](prototipacao/telas/T-12.jpg) | Dar feedback – alerta de termo ofensivo | Colaborador | UC-08 | RNF-024 |
-| T-13 | [ver](prototipacao/telas/T-13.jpg) | Feedback enviado | Colaborador | UC-08, UC-11, UC-19 | RF-037, RF-042 |
-| T-14 | [ver](prototipacao/telas/T-14.jpg) | Avaliações pendentes | Avaliador convidado | UC-14 | RF-027 |
-| T-15 | [ver](prototipacao/telas/T-15.jpg) | Responder avaliação – modo confidencial | Avaliador convidado | UC-14 | RF-019, RF-027, RF-028, RN-004, RN-005, RNF-012, RNF-014 |
-| T-16 | [ver](prototipacao/telas/T-16.jpg) | Responder avaliação – modo anônimo | Avaliador convidado | UC-14 | RF-019, RN-004, RN-005 |
-| T-17 | [ver](prototipacao/telas/T-17.jpg) | Responder avaliação – confirmar envio | Avaliador convidado | UC-14 | RF-019, RNF-015 |
-| T-18 | [ver](prototipacao/telas/T-18.jpg) | Avaliações – após o envio | Avaliador convidado | UC-14 | RF-027 |
-| T-19 | [ver](prototipacao/telas/T-19.jpg) | Resultado do ciclo | Colaborador | UC-16, UC-22 | RF-032, RF-033, RN-005, RN-007, RN-008, RNF-007 |
-| T-20 | [ver](prototipacao/telas/T-20.jpg) | Novo plano de ação | Gestor | UC-19 | RF-042, RN-006 |
-| T-21 | [ver](prototipacao/telas/T-21.jpg) | Acompanhar plano de ação | Colaborador | UC-20 | RF-043 |
-| T-22 | [ver](prototipacao/telas/T-22.jpg) | Plano de ação – data final | Gestor | UC-20 | RF-043, RN-006 |
-| T-23 | [ver](prototipacao/telas/T-23.jpg) | Metas e planos de ação | Colaborador | UC-21 | RF-046, RF-047 |
-| T-24 | [ver](prototipacao/telas/T-24.jpg) | Nova meta | Colaborador | UC-21 | RF-046, RN-006 |
-| T-25 | [ver](prototipacao/telas/T-25.jpg) | Feedbacks recebidos e enviados | Colaborador | UC-22 | RF-048, RF-020, RN-003 |
-| T-26 | [ver](prototipacao/telas/T-26.jpg) | Detalhe do feedback, com versões e réplica | Colaborador | UC-10, UC-22 | RF-020, RN-003, RN-004 |
-| T-27 | [ver](prototipacao/telas/T-27.jpg) | Histórico do colaborador – visão do RH | RH | UC-24 | RF-048, RF-051, RNF-005 |
-| T-28 | [ver](prototipacao/telas/T-28.jpg) | Ciclos de avaliação | RH, Gestor | UC-13, UC-15 | RF-022 |
-| T-29 | [ver](prototipacao/telas/T-29.jpg) | Planejar ciclo 1/6 – dados gerais | RH, Gestor | UC-13 | RF-022 |
-| T-30 | [ver](prototipacao/telas/T-30.jpg) | Planejar ciclo 2/6 – objetivos e indicadores | RH, Gestor | UC-13 | RF-022, RF-023 |
-| T-31 | [ver](prototipacao/telas/T-31.jpg) | Planejar ciclo 3/6 – competências e questionário | RH, Gestor | UC-13 | RF-022 |
-| T-32 | [ver](prototipacao/telas/T-32.jpg) | Planejar ciclo 4/6 – modalidades e privacidade | RH, Gestor | UC-13 | RF-024, RF-030, RN-004, RN-005 |
-| T-33 | [ver](prototipacao/telas/T-33.jpg) | Planejar ciclo 5/6 – participantes e datas | RH, Gestor | UC-13 | RF-022, RF-025 |
-| T-34 | [ver](prototipacao/telas/T-34.jpg) | Planejar ciclo 6/6 – revisão e abertura | RH, Gestor | UC-13 | RF-022, RF-026 |
-| T-35 | [ver](prototipacao/telas/T-35.jpg) | Acompanhar ciclo | RH, Gestor | UC-15 | RF-029, RF-040 |
-| T-36 | [ver](prototipacao/telas/T-36.jpg) | Encerrar ciclo – confirmação | RH, Gestor | UC-15, UC-16 | RN-005, RNF-015 |
-| T-37 | [ver](prototipacao/telas/T-37.jpg) | Competências e questionários | RH | UC-05 | RF-007, RF-008, RF-009, RN-001, RN-014 |
-| T-38 | [ver](prototipacao/telas/T-38.jpg) | Moderação antes de liberar resultados | RH | UC-17 | RF-035, RN-003, RNF-005 |
-| T-39 | [ver](prototipacao/telas/T-39.jpg) | Minha equipe – painel do gestor | Gestor | UC-23 | RF-044, RF-050, RN-005, RNF-007, RNF-020 |
-| T-40 | [ver](prototipacao/telas/T-40.jpg) | Painel da organização | RH | UC-23 | RF-050, RN-005 |
-| T-41 | [ver](prototipacao/telas/T-41.jpg) | Meus dados (direitos do titular) | Colaborador | UC-25, UC-26 | RF-055, RF-056, RF-057, RF-058, RF-059, RF-060 |
-| T-42 | [ver](prototipacao/telas/T-42.jpg) | Registrar fato | Colaborador | UC-06 | RF-011 |
-| T-43 | [ver](prototipacao/telas/T-43.jpg) | Pedir feedback | Colaborador | UC-09 | RF-031 |
-| T-44 | [ver](prototipacao/telas/T-44.jpg) | Usuários e estrutura – importação de planilha | RH, Administrador | UC-01, UC-02 | RF-001, RF-002 |
-| T-45 | [ver](prototipacao/telas/T-45.jpg) | Declaração de acessibilidade | Todos | — | RF-065 |
-| T-46 | [ver](prototipacao/telas/T-46.jpg) | Agendar sessão de feedback | Gestor | UC-11 | RF-037, RF-038, RF-039 |
-| T-47 | [ver](prototipacao/telas/T-47.jpg) | Notificações | Todos | UC-31 | RF-040 |
-| T-48 | [ver](prototipacao/telas/T-48.jpg) | Início – celular (área visível) | Colaborador | UC-22 | RF-048, RF-049, RNF-027 |
-| T-49 | [ver](prototipacao/telas/T-49.jpg) | Início – celular (página inteira) | Colaborador | UC-22 | RF-048, RF-049, RNF-007, RNF-020, RNF-027 |
-| T-50 | [ver](prototipacao/telas/T-50.jpg) | Dar feedback – celular (área visível) | Colaborador | UC-08 | RF-013, RF-015, RF-018, RNF-013, RNF-027 |
-| T-51 | [ver](prototipacao/telas/T-51.jpg) | Dar feedback – celular (página inteira) | Colaborador | UC-08 | RF-013, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RN-002, RNF-012, RNF-013, RNF-027 |
-| T-52 | [ver](prototipacao/telas/T-52.jpg) | Competências dos cargos | RH, Administrador | UC-03 | RF-005, RN-001, RN-014 |
-| T-53 | [ver](prototipacao/telas/T-53.jpg) | Competências específicas da equipe | Gestor | UC-04 | RF-006, RF-018 |
-| T-54 | [ver](prototipacao/telas/T-54.jpg) | Retenção e finalidades | Administrador | UC-28 | RF-054, RF-062, RN-011, RN-012 |
+| T-01 | [ver](../prototipacao/telas/T-01.jpg) | Entrar (login) | Todos | — | RF-003, RNF-022, RF-053, RF-064, RF-065, RN-009 |
+| T-02 | [ver](../prototipacao/telas/T-02.jpg) | Verificação em duas etapas | RH, Administrador | — | RF-003, RNF-006 |
+| T-03 | [ver](../prototipacao/telas/T-03.jpg) | Entrar – erro de login | Todos | — | RNF-021 |
+| T-04 | [ver](../prototipacao/telas/T-04.jpg) | Primeiro acesso – como tratamos seus dados | Colaborador | UC-25, UC-26 | RF-053, RF-055, RN-012 |
+| T-05 | [ver](../prototipacao/telas/T-05.jpg) | Início – painel do colaborador | Colaborador | UC-22 | RF-048, RF-049, RNF-007, RNF-020 |
+| T-06 | [ver](../prototipacao/telas/T-06.jpg) | Início – sem feedbacks (estado vazio) | Colaborador | UC-22, UC-09 | RF-049, RF-031 |
+| T-07 | [ver](../prototipacao/telas/T-07.jpg) | Evolução por competência – dados em tabela | Colaborador | UC-22 | RF-049, RNF-007, RNF-020 |
+| T-08 | [ver](../prototipacao/telas/T-08.jpg) | Dar feedback – informal | Colaborador | UC-08 | RF-013, RF-014, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RN-001, RN-002, RN-003, RN-004, RNF-012, RNF-013 |
+| T-09 | [ver](../prototipacao/telas/T-09.jpg) | Dar feedback – formal (ciclo) | Gestor | UC-08 | RF-013, RF-016, RF-019, RF-022, RF-023, RN-004 |
+| T-10 | [ver](../prototipacao/telas/T-10.jpg) | Dar feedback – erro: nenhum fato vinculado | Colaborador | UC-08 | RN-001, RN-002, RNF-021 |
+| T-11 | [ver](../prototipacao/telas/T-11.jpg) | Dar feedback – confirmar envio | Colaborador | UC-08 | RF-019, RN-003, RNF-015 |
+| T-12 | [ver](../prototipacao/telas/T-12.jpg) | Dar feedback – alerta de termo ofensivo | Colaborador | UC-08 | RNF-024 |
+| T-13 | [ver](../prototipacao/telas/T-13.jpg) | Feedback enviado | Colaborador | UC-08, UC-11, UC-19 | RF-037, RF-042 |
+| T-14 | [ver](../prototipacao/telas/T-14.jpg) | Avaliações pendentes | Avaliador convidado | UC-14 | RF-027 |
+| T-15 | [ver](../prototipacao/telas/T-15.jpg) | Responder avaliação – modo confidencial | Avaliador convidado | UC-14 | RF-019, RF-027, RF-028, RN-004, RN-005, RNF-012, RNF-014 |
+| T-16 | [ver](../prototipacao/telas/T-16.jpg) | Responder avaliação – modo anônimo | Avaliador convidado | UC-14 | RF-019, RN-004, RN-005 |
+| T-17 | [ver](../prototipacao/telas/T-17.jpg) | Responder avaliação – confirmar envio | Avaliador convidado | UC-14 | RF-019, RNF-015 |
+| T-18 | [ver](../prototipacao/telas/T-18.jpg) | Avaliações – após o envio | Avaliador convidado | UC-14 | RF-027 |
+| T-19 | [ver](../prototipacao/telas/T-19.jpg) | Resultado do ciclo | Colaborador | UC-16, UC-22 | RF-032, RF-033, RN-005, RN-007, RN-008, RNF-007 |
+| T-20 | [ver](../prototipacao/telas/T-20.jpg) | Novo plano de ação | Gestor | UC-19 | RF-042, RN-006 |
+| T-21 | [ver](../prototipacao/telas/T-21.jpg) | Acompanhar plano de ação | Colaborador | UC-20 | RF-043 |
+| T-22 | [ver](../prototipacao/telas/T-22.jpg) | Plano de ação – data final | Gestor | UC-20 | RF-043, RN-006 |
+| T-23 | [ver](../prototipacao/telas/T-23.jpg) | Metas e planos de ação | Colaborador | UC-21 | RF-046, RF-047 |
+| T-24 | [ver](../prototipacao/telas/T-24.jpg) | Nova meta | Colaborador | UC-21 | RF-046, RN-006 |
+| T-25 | [ver](../prototipacao/telas/T-25.jpg) | Feedbacks recebidos e enviados | Colaborador | UC-22 | RF-048, RF-020, RN-003 |
+| T-26 | [ver](../prototipacao/telas/T-26.jpg) | Detalhe do feedback, com versões e réplica | Colaborador | UC-10, UC-22 | RF-020, RN-003, RN-004 |
+| T-27 | [ver](../prototipacao/telas/T-27.jpg) | Histórico do colaborador – visão do RH | RH | UC-24 | RF-048, RF-051, RNF-005 |
+| T-28 | [ver](../prototipacao/telas/T-28.jpg) | Ciclos de avaliação | RH, Gestor | UC-13, UC-15 | RF-022 |
+| T-29 | [ver](../prototipacao/telas/T-29.jpg) | Planejar ciclo 1/6 – dados gerais | RH, Gestor | UC-13 | RF-022 |
+| T-30 | [ver](../prototipacao/telas/T-30.jpg) | Planejar ciclo 2/6 – objetivos e indicadores | RH, Gestor | UC-13 | RF-022, RF-023 |
+| T-31 | [ver](../prototipacao/telas/T-31.jpg) | Planejar ciclo 3/6 – competências e questionário | RH, Gestor | UC-13 | RF-022 |
+| T-32 | [ver](../prototipacao/telas/T-32.jpg) | Planejar ciclo 4/6 – modalidades e privacidade | RH, Gestor | UC-13 | RF-024, RF-030, RN-004, RN-005 |
+| T-33 | [ver](../prototipacao/telas/T-33.jpg) | Planejar ciclo 5/6 – participantes e datas | RH, Gestor | UC-13 | RF-022, RF-025 |
+| T-34 | [ver](../prototipacao/telas/T-34.jpg) | Planejar ciclo 6/6 – revisão e abertura | RH, Gestor | UC-13 | RF-022, RF-026 |
+| T-35 | [ver](../prototipacao/telas/T-35.jpg) | Acompanhar ciclo | RH, Gestor | UC-15 | RF-029, RF-040 |
+| T-36 | [ver](../prototipacao/telas/T-36.jpg) | Encerrar ciclo – confirmação | RH, Gestor | UC-15, UC-16 | RN-005, RNF-015 |
+| T-37 | [ver](../prototipacao/telas/T-37.jpg) | Competências e questionários | RH | UC-05 | RF-007, RF-008, RF-009, RN-001, RN-014 |
+| T-38 | [ver](../prototipacao/telas/T-38.jpg) | Moderação antes de liberar resultados | RH | UC-17 | RF-035, RN-003, RNF-005 |
+| T-39 | [ver](../prototipacao/telas/T-39.jpg) | Minha equipe – painel do gestor | Gestor | UC-23 | RF-044, RF-050, RN-005, RNF-007, RNF-020 |
+| T-40 | [ver](../prototipacao/telas/T-40.jpg) | Painel da organização | RH | UC-23 | RF-050, RN-005 |
+| T-41 | [ver](../prototipacao/telas/T-41.jpg) | Meus dados (direitos do titular) | Colaborador | UC-25, UC-26 | RF-055, RF-056, RF-057, RF-058, RF-059, RF-060 |
+| T-42 | [ver](../prototipacao/telas/T-42.jpg) | Registrar fato | Colaborador | UC-06 | RF-011 |
+| T-43 | [ver](../prototipacao/telas/T-43.jpg) | Pedir feedback | Colaborador | UC-09 | RF-031 |
+| T-44 | [ver](../prototipacao/telas/T-44.jpg) | Usuários e estrutura – importação de planilha | RH, Administrador | UC-01, UC-02 | RF-001, RF-002 |
+| T-45 | [ver](../prototipacao/telas/T-45.jpg) | Declaração de acessibilidade | Todos | — | RF-065 |
+| T-46 | [ver](../prototipacao/telas/T-46.jpg) | Agendar sessão de feedback | Gestor | UC-11 | RF-037, RF-038, RF-039 |
+| T-47 | [ver](../prototipacao/telas/T-47.jpg) | Notificações | Todos | UC-31 | RF-040 |
+| T-48 | [ver](../prototipacao/telas/T-48.jpg) | Início – celular (área visível) | Colaborador | UC-22 | RF-048, RF-049, RNF-027 |
+| T-49 | [ver](../prototipacao/telas/T-49.jpg) | Início – celular (página inteira) | Colaborador | UC-22 | RF-048, RF-049, RNF-007, RNF-020, RNF-027 |
+| T-50 | [ver](../prototipacao/telas/T-50.jpg) | Dar feedback – celular (área visível) | Colaborador | UC-08 | RF-013, RF-015, RF-018, RNF-013, RNF-027 |
+| T-51 | [ver](../prototipacao/telas/T-51.jpg) | Dar feedback – celular (página inteira) | Colaborador | UC-08 | RF-013, RF-015, RF-016, RF-017, RF-018, RF-019, RF-021, RN-002, RNF-012, RNF-013, RNF-027 |
+| T-52 | [ver](../prototipacao/telas/T-52.jpg) | Competências dos cargos | RH, Administrador | UC-03 | RF-005, RN-001, RN-014 |
+| T-53 | [ver](../prototipacao/telas/T-53.jpg) | Competências específicas da equipe | Gestor | UC-04 | RF-006, RF-018 |
+| T-54 | [ver](../prototipacao/telas/T-54.jpg) | Retenção e finalidades | Administrador | UC-28 | RF-054, RF-062, RN-011, RN-012 |
 
 
 Telas por caso de uso:
@@ -189,13 +189,13 @@ Divergências encontradas na versão 1.0 do protótipo. Em 18/11/2026 as anotaç
 |---|---|---|---|
 | T-01, T-02 | UC-01 | Sem caso de uso (RF-003) | O login é pré-condição de todos os casos de uso. O UC-01 é "Manter colaboradores e estrutura" (diagrama, seção 8) |
 | T-03, T-10 | RNF-022 | RNF-021 | RNF-022 trata do login sem teste cognitivo. Mensagem de erro clara é RNF-021 |
-| T-09 | [ver](prototipacao/telas/T-09.jpg) | RF-022, RF-023 | RF-014 é o feedback informal. O feedback formal vinculado a ciclo é RF-022, com indicadores em RF-023 |
-| T-30 | [ver](prototipacao/telas/T-30.jpg) | RF-022, RF-023 | RF-024 são as modalidades, que estão na etapa 4 |
-| T-31 | [ver](prototipacao/telas/T-31.jpg) | RF-022 | A etapa escolhe questionário e competências do ciclo (RF-022). RF-025 é a seleção de participantes do 360° e RF-026 é a notificação |
-| T-32 | [ver](prototipacao/telas/T-32.jpg) | RF-024, RF-030 | A etapa define modalidades (RF-024) e modo de identificação (RF-030). RF-027 é responder e RF-029 é registrar quem não respondeu |
-| T-33 | [ver](prototipacao/telas/T-33.jpg) | RF-022, RF-025 | A etapa convida os avaliadores (RF-025) e define datas (RF-022). RF-028 é consultar fatos ao responder |
-| T-34 | [ver](prototipacao/telas/T-34.jpg) | RF-022, RF-026 | A revisão abre o ciclo e notifica os participantes (RF-026). O intervalo inclui RF-027 a RF-029, que não são do planejamento |
-| T-35 | [ver](prototipacao/telas/T-35.jpg) | RF-029, RF-040 | A tela mostra quem respondeu e envia lembretes. RF-030 é a configuração do modo de identificação |
+| T-09 | [ver](../prototipacao/telas/T-09.jpg) | RF-022, RF-023 | RF-014 é o feedback informal. O feedback formal vinculado a ciclo é RF-022, com indicadores em RF-023 |
+| T-30 | [ver](../prototipacao/telas/T-30.jpg) | RF-022, RF-023 | RF-024 são as modalidades, que estão na etapa 4 |
+| T-31 | [ver](../prototipacao/telas/T-31.jpg) | RF-022 | A etapa escolhe questionário e competências do ciclo (RF-022). RF-025 é a seleção de participantes do 360° e RF-026 é a notificação |
+| T-32 | [ver](../prototipacao/telas/T-32.jpg) | RF-024, RF-030 | A etapa define modalidades (RF-024) e modo de identificação (RF-030). RF-027 é responder e RF-029 é registrar quem não respondeu |
+| T-33 | [ver](../prototipacao/telas/T-33.jpg) | RF-022, RF-025 | A etapa convida os avaliadores (RF-025) e define datas (RF-022). RF-028 é consultar fatos ao responder |
+| T-34 | [ver](../prototipacao/telas/T-34.jpg) | RF-022, RF-026 | A revisão abre o ciclo e notifica os participantes (RF-026). O intervalo inclui RF-027 a RF-029, que não são do planejamento |
+| T-35 | [ver](../prototipacao/telas/T-35.jpg) | RF-029, RF-040 | A tela mostra quem respondeu e envia lembretes. RF-030 é a configuração do modo de identificação |
 
 As anotações das telas para celular estão corretas. A matriz acrescentou a elas o RNF-027 (interface responsiva), que é o requisito que essas telas demonstram.
 

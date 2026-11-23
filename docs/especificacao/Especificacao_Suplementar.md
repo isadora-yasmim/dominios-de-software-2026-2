@@ -4,7 +4,7 @@
 **Disciplina:** Domínios de Software (2026/2) · 1ª Etapa: Levantamento de Requisitos
 **Issue:** #51 · **Versão:** 1.2 · **Data:** 18/11/2026
 **Responsável:** Verônica Ribeiro Oliveira Palmeira
-**Base:** [Lista Geral de Requisitos](Lista_Geral_Requisitos.md), versão 1.1 (#45)
+**Base:** [Lista Geral de Requisitos](../analise/Lista_Geral_Requisitos.md), versão 1.1 (#45)
 
 ## Histórico de revisões
 
@@ -56,13 +56,13 @@ Este documento não cria requisitos novos. Quando a lista geral deixou um valor 
 
 | Artefato | Relação |
 |---|---|
-| [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45) | Fonte dos identificadores, textos, origens e prioridades. As decisões dos pontos da seção 9 da lista valem aqui, em especial a do P-10, sobre as metas numéricas |
-| [Pesquisa documental](elicitacao/pesquisa-documental/Pesquisa_Documental.md) (#33) | Fonte das obrigações legais e normas técnicas e da adaptação da ISO/IEC 25010:2023 ao sistema |
+| [Lista Geral de Requisitos](../analise/Lista_Geral_Requisitos.md) (#45) | Fonte dos identificadores, textos, origens e prioridades. As decisões dos pontos da seção 9 da lista valem aqui, em especial a do P-10, sobre as metas numéricas |
+| [Pesquisa documental](../elicitacao/pesquisa-documental/Pesquisa_Documental.md) (#33) | Fonte das obrigações legais e normas técnicas e da adaptação da ISO/IEC 25010:2023 ao sistema |
 | [Documento Visão](Documento_Visao.md) (#46) | Resume os atributos de qualidade mais importantes para os interessados |
-| [Diagrama de casos de uso](modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47) e [casos de uso completos](modelagem/casos-de-uso/Casos_de_Uso_Completos.md) (#48) | Descrevem o comportamento funcional. A seção "Requisitos especiais" de cada caso de uso completo aponta para os RNF deste documento |
-| [Modelo ER](modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52) | Reflete as decisões de armazenamento da seção 8: vínculo confidencial separado (`VinculoConfidencial`) e convite sem ligação com a resposta (seção 10 do modelo) |
+| [Diagrama de casos de uso](../modelagem/casos-de-uso/Diagrama_Casos_de_Uso.md) (#47) e [casos de uso completos](../modelagem/casos-de-uso/Casos_de_Uso_Completos.md) (#48) | Descrevem o comportamento funcional. A seção "Requisitos especiais" de cada caso de uso completo aponta para os RNF deste documento |
+| [Modelo ER](../modelagem/modelo-dados/Modelo_Dominio_ER.md) (#52) | Reflete as decisões de armazenamento da seção 8: vínculo confidencial separado (`VinculoConfidencial`) e convite sem ligação com a resposta (seção 10 do modelo) |
 | [Especificação IEEE 830](Especificacao_Requisitos_IEEE830.md) (#54) | Usa este documento como fonte da sua seção de requisitos não funcionais |
-| [Matriz de rastreabilidade](Matriz_Rastreabilidade.md) (#49) | Usa a seção 16 para ligar cada RNF à característica de qualidade e ao método de verificação |
+| [Matriz de rastreabilidade](../analise/Matriz_Rastreabilidade.md) (#49) | Usa a seção 16 para ligar cada RNF à característica de qualidade e ao método de verificação |
 
 ### 1.4 Como ler as tabelas
 
@@ -79,7 +79,7 @@ Este documento não cria requisitos novos. Quando a lista geral deixou um valor 
 
 **Prioridade Won't.** Os requisitos Won't ficam registrados com critério de aceitação, para orientar a versão futura, mas não são verificados nesta versão.
 
-**Termos em português.** As traduções dos nomes da ISO/IEC 25010:2023 seguem a [pesquisa documental](elicitacao/pesquisa-documental/Pesquisa_Documental.md) (seção 4), com o termo em inglês entre parênteses quando ajuda a identificar o conceito.
+**Termos em português.** As traduções dos nomes da ISO/IEC 25010:2023 seguem a [pesquisa documental](../elicitacao/pesquisa-documental/Pesquisa_Documental.md) (seção 4), com o termo em inglês entre parênteses quando ajuda a identificar o conceito.
 
 ---
 
@@ -364,7 +364,7 @@ O modelo de especificação suplementar de Larman (cap. 7) traz também componen
 |---|---|
 | Componentes adquiridos | Nenhum requisito ou fonte exige componente comercial. A escolha de componentes faz parte da arquitetura e do projeto, que a PO indicou como a segunda etapa do trabalho (E01 §24) |
 | Componentes de código aberto | Mesma situação: a escolha fica para a segunda etapa. Qualquer componente escolhido terá de respeitar os RNF desta especificação, em especial a segurança (seção 8) e a acessibilidade (seção 6.2) |
-| Informações do domínio de interesse | Estão no [glossário e dicionário de dados](Dicionario_de_Dados.md) (#53), na [pesquisa documental](elicitacao/pesquisa-documental/Pesquisa_Documental.md) (#33), que reúne as normas legais e técnicas do domínio, e no [processo AS-IS](elicitacao/bpmn/Processo_AS-IS_e_Dores.md) (#44) |
+| Informações do domínio de interesse | Estão no [glossário e dicionário de dados](Dicionario_de_Dados.md) (#53), na [pesquisa documental](../elicitacao/pesquisa-documental/Pesquisa_Documental.md) (#33), que reúne as normas legais e técnicas do domínio, e no [processo AS-IS](../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) (#44) |
 
 ---
 
@@ -372,7 +372,7 @@ O modelo de especificação suplementar de Larman (cap. 7) traz também componen
 
 ### 13.1 Interface com o usuário
 
-Interface web responsiva, em português do Brasil, acessível conforme a seção 6.2 e usável nos navegadores da seção 12. As telas estão nos [protótipos](prototipacao/Prototipo.md) (#50).
+Interface web responsiva, em português do Brasil, acessível conforme a seção 6.2 e usável nos navegadores da seção 12. As telas estão nos [protótipos](../prototipacao/Prototipo.md) (#50).
 
 ### 13.2 Interfaces de software
 
@@ -390,7 +390,7 @@ O formato do relatório de histórico exportado pelo RH (RF-051) fica para o det
 
 ## 14. Regras de negócio relacionadas
 
-Larman inclui na especificação suplementar as regras do domínio que afetam a aplicação. Neste projeto, elas já estão na [lista geral](Lista_Geral_Requisitos.md#6-regras-de-negócio), seção 6, e não são repetidas. As que impõem condições de qualidade estão especificadas nesta seção:
+Larman inclui na especificação suplementar as regras do domínio que afetam a aplicação. Neste projeto, elas já estão na [lista geral](../analise/Lista_Geral_Requisitos.md#6-regras-de-negócio), seção 6, e não são repetidas. As que impõem condições de qualidade estão especificadas nesta seção:
 
 | Regra | Onde é especificada aqui |
 |---|---|
@@ -405,7 +405,7 @@ Larman inclui na especificação suplementar as regras do domínio que afetam a 
 
 ## 15. Decisões desta especificação
 
-A lista geral deixou alguns valores para esta especificação. Cada decisão abaixo tem a justificativa e a fonte. A coluna **Situação** indica em que a decisão se apoia: uma norma, as fontes do projeto, um método de medição ou uma configuração que cabe à organização. Todas estão aplicadas aos critérios desta versão. Qualquer mudança futura segue a gestão de mudanças do [processo de requisitos](Processo_Requisitos.md) (seção 9).
+A lista geral deixou alguns valores para esta especificação. Cada decisão abaixo tem a justificativa e a fonte. A coluna **Situação** indica em que a decisão se apoia: uma norma, as fontes do projeto, um método de medição ou uma configuração que cabe à organização. Todas estão aplicadas aos critérios desta versão. Qualquer mudança futura segue a gestão de mudanças do [processo de requisitos](../planejamento/Processo_Requisitos.md) (seção 9).
 
 | # | Questão | Decisão | Justificativa e fonte | Requisitos | Situação |
 |---|---|---|---|---|---|
@@ -507,7 +507,7 @@ Todos os 36 RNF da lista geral estão especificados neste documento.
 - BRASIL. [Lei nº 12.965/2014](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm) – Marco Civil da Internet.
 - BRASIL. [Lei nº 13.146/2015](http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2015/Lei/L13146.htm) – Lei Brasileira de Inclusão da Pessoa com Deficiência.
 - ANPD. Resolução CD/ANPD nº 15/2024 (comunicação de incidentes) e nº 19/2024 (transferência internacional de dados).
-- Demais normas trabalhistas citadas: ver a [pesquisa documental](elicitacao/pesquisa-documental/Pesquisa_Documental.md), seção 9.
+- Demais normas trabalhistas citadas: ver a [pesquisa documental](../elicitacao/pesquisa-documental/Pesquisa_Documental.md), seção 9.
 
 **Bibliografia e dados**
 
@@ -516,8 +516,8 @@ Todos os 36 RNF da lista geral estão especificados neste documento.
 
 **Fontes internas do projeto**
 
-- [Lista Geral de Requisitos](Lista_Geral_Requisitos.md) (#45).
-- [Pesquisa documental](elicitacao/pesquisa-documental/Pesquisa_Documental.md) (#33), seções 3, 4 e 6.
-- [Entrevista 01](elicitacao/entrevistas/Entrevista01_Adriana.md), §5, §9, §15, §20, §29, §30 e §33. [Entrevista 02](elicitacao/entrevistas/Entrevista02_Eliene.md), §1 e §2.
-- [Questionário 01](elicitacao/questionarios/Questionario01_Isabella.md) e [Questionário 02](elicitacao/questionarios/Questionario02_Vaneide.md): porte das empresas e tempo de consolidação.
-- [Processo de requisitos](Processo_Requisitos.md) (#31).
+- [Lista Geral de Requisitos](../analise/Lista_Geral_Requisitos.md) (#45).
+- [Pesquisa documental](../elicitacao/pesquisa-documental/Pesquisa_Documental.md) (#33), seções 3, 4 e 6.
+- [Entrevista 01](../elicitacao/entrevistas/Entrevista01_Adriana.md), §5, §9, §15, §20, §29, §30 e §33. [Entrevista 02](../elicitacao/entrevistas/Entrevista02_Eliene.md), §1 e §2.
+- [Questionário 01](../elicitacao/questionarios/Questionario01_Isabella.md) e [Questionário 02](../elicitacao/questionarios/Questionario02_Vaneide.md): porte das empresas e tempo de consolidação.
+- [Processo de requisitos](../planejamento/Processo_Requisitos.md) (#31).

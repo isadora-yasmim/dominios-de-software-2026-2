@@ -115,12 +115,12 @@ flowchart LR
 
 | Técnica | Para que serve neste projeto | Fonte | Artefato | Prefixo dos requisitos candidatos |
 |---|---|---|---|---|
-| **Entrevista** semiestruturada | Entender o domínio com quem conhece o processo de feedback, ouvir as dores e decisões da PO | PO e profissionais que dão ou recebem feedback | [`docs/elicitacao/entrevistas/`](elicitacao/entrevistas/) | `RE-xx` |
-| **Questionário** | Ouvir mais pessoas, de diferentes cargos, sobre como o feedback acontece hoje | Profissionais de empresas diversas | [`docs/elicitacao/questionarios/`](elicitacao/questionarios/) | `RQ-xx` |
-| **Pesquisa documental** | Levantar obrigações legais e normas técnicas: LGPD, ISO/IEC 25010, normas trabalhistas, acessibilidade | Leis, regulamentos e normas | [`docs/elicitacao/pesquisa-documental/`](elicitacao/pesquisa-documental/) | `RD-xx` |
-| **Análise de sistema análogo** | Ver como uma ferramenta de mercado resolve o problema, o que copiar e o que evitar | 15Five | [`docs/elicitacao/sistema-analogo/`](elicitacao/sistema-analogo/) | `RA-xx` |
-| **Modelagem de processo (BPMN)** | Representar o processo atual de avaliação e feedback e marcar onde estão as dores | Entrevistas e questionários | [`docs/elicitacao/bpmn/`](elicitacao/bpmn/) | `RP-xx` |
-| **Prototipação** | Validar fluxos e telas com a PO e descobrir requisitos que faltaram | Requisitos especificados | [`docs/prototipacao/`](prototipacao/) | `RT-xx` |
+| **Entrevista** semiestruturada | Entender o domínio com quem conhece o processo de feedback, ouvir as dores e decisões da PO | PO e profissionais que dão ou recebem feedback | [`docs/elicitacao/entrevistas/`](../elicitacao/entrevistas/) | `RE-xx` |
+| **Questionário** | Ouvir mais pessoas, de diferentes cargos, sobre como o feedback acontece hoje | Profissionais de empresas diversas | [`docs/elicitacao/questionarios/`](../elicitacao/questionarios/) | `RQ-xx` |
+| **Pesquisa documental** | Levantar obrigações legais e normas técnicas: LGPD, ISO/IEC 25010, normas trabalhistas, acessibilidade | Leis, regulamentos e normas | [`docs/elicitacao/pesquisa-documental/`](../elicitacao/pesquisa-documental/) | `RD-xx` |
+| **Análise de sistema análogo** | Ver como uma ferramenta de mercado resolve o problema, o que copiar e o que evitar | 15Five | [`docs/elicitacao/sistema-analogo/`](../elicitacao/sistema-analogo/) | `RA-xx` |
+| **Modelagem de processo (BPMN)** | Representar o processo atual de avaliação e feedback e marcar onde estão as dores | Entrevistas e questionários | [`docs/elicitacao/bpmn/`](../elicitacao/bpmn/) | `RP-xx` |
+| **Prototipação** | Validar fluxos e telas com a PO e descobrir requisitos que faltaram | Requisitos especificados | [`docs/prototipacao/`](../prototipacao/) | `RT-xx` |
 
 **Cuidados com dados pessoais.** Toda entrevista e questionário com terceiros usa o termo de consentimento. Nome, cargo e contato do participante só entram no repositório com consentimento registrado.
 

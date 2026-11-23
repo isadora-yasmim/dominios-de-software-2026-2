@@ -27,7 +27,7 @@
 
 1. Cada funcionalidade `FA-xx` foi comparada com o que a PO pediu na [Entrevista 01](../entrevistas/Entrevista01_Adriana.md), com os questionários (`RQ-xx`) e com a pesquisa documental (`RD-xx`).
 2. Cada funcionalidade recebeu uma das decisões abaixo.
-3. As funcionalidades adotadas ou adaptadas viraram requisitos candidatos `RA-xx`, seguindo o padrão de identificação do [processo de requisitos](../../Processo_Requisitos.md).
+3. As funcionalidades adotadas ou adaptadas viraram requisitos candidatos `RA-xx`, seguindo o padrão de identificação do [processo de requisitos](../../planejamento/Processo_Requisitos.md).
 4. Os pontos fracos do 15Five também geraram requisitos, porque mostram o que o nosso sistema deve fazer diferente (seção 5).
 5. A prioridade segue os critérios MoSCoW do processo de requisitos. Ela é uma proposta e será confirmada na lista geral (#45).
 
@@ -136,7 +136,7 @@ Os pontos fracos levantados na [seção 7 da descrição](Sistema_Analogo_15Five
 
 ## 6. Pontos em aberto e tratamento na lista geral
 
-Os pontos abaixo ficaram em aberto ao fim desta síntese. Todos foram decididos na consolidação da [lista geral](../../Lista_Geral_Requisitos.md) (#45), como indicado em cada item.
+Os pontos abaixo ficaram em aberto ao fim desta síntese. Todos foram decididos na consolidação da [lista geral](../../analise/Lista_Geral_Requisitos.md) (#45), como indicado em cada item.
 
 1. **Registro de fatos antes do feedback (RA-02).** A PO falou em coletar e registrar fatos e depois ligá-los a um feedback. Confirmar se esse registro prévio deve ser uma função própria ou só um campo do feedback. **Tratamento:** conflito C-05 da lista geral, função própria de registro de fatos (RF-011).
 2. **Check-ins periódicos (RA-01).** Confirmar se o acompanhamento entre sessões de feedback deve existir para todos os colaboradores ou só para quem tem plano de ação aberto. **Tratamento:** ponto P-09, o gestor define para quais colaboradores da equipe os check-ins valem (RF-041).

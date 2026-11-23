@@ -104,7 +104,7 @@ No contexto de emprego, a relação entre empregado e empregador é assimétrica
 | Funcionalidades opcionais (ex.: foto de perfil, pesquisa voluntária) | Consentimento (art. 7º, I) | Livre, específico, revogável e sem prejuízo para quem recusar (RD-04) |
 | Dados sensíveis (art. 11) | Evitar | Nenhuma funcionalidade do escopo precisa deles (RD-05) |
 
-> O [Termo de Consentimento](../entrevistas/Termo_Consentimento_Entrevista.md) usado nas entrevistas é outro contexto: ali a participação é voluntária e não há vínculo de emprego com o grupo, então o consentimento é adequado.
+> O [Termo de Consentimento](../entrevistas/roteiros/Termo_Consentimento_Entrevista.md) usado nas entrevistas é outro contexto: ali a participação é voluntária e não há vínculo de emprego com o grupo, então o consentimento é adequado.
 
 ### 3.4 Direitos do titular (arts. 18 e 19)
 
@@ -331,7 +331,7 @@ Os pontos abaixo ficaram em aberto ao fim da pesquisa documental. Todos foram tr
 | 4 | **Prazo padrão de retenção** | CLT art. 11; LGPD art. 16 | Padrão sugerido: duração do contrato + 2 anos, configurável (RD-24) | PO | Ponto P-05 da lista geral: 5 anos após o desligamento, configurável (RN-011, RF-062) |
 | 5 | **Número mínimo de respondentes** para exibir agregados | FD-07; RQ-14 | Sugestão: 3, configurável (RD-17) | PO | Ponto P-03 da lista geral: 3, configurável, nunca menor que 3 (RN-005) |
 | 6 | **Uso dos resultados para promoção ou salário** | Entrevista 01 §8; CLT art. 461; Lei nº 14.611/2023 | Fora do escopo; RD-46 limita o sistema a apoiar, sem calcular | PO | Fora do escopo (lista geral, seção 10; RN-007) |
-| 7 | **Metas numéricas dos RNF** (desempenho, disponibilidade, RPO/RTO) | ISO/IEC 25010 | Valores propostos em RD-31 a RD-34 | Grupo (issue #51) | Ponto P-10 da lista geral e [especificação suplementar](../../Especificacao_Suplementar.md) (#51) |
+| 7 | **Metas numéricas dos RNF** (desempenho, disponibilidade, RPO/RTO) | ISO/IEC 25010 | Valores propostos em RD-31 a RD-34 | Grupo (issue #51) | Ponto P-10 da lista geral e [especificação suplementar](../../especificacao/Especificacao_Suplementar.md) (#51) |
 | 8 | **Regulamentação pendente.** A ANPD ainda não publicou o regulamento de direitos do titular (portabilidade, prazos e formatos), que está na Agenda Regulatória | FD-08 | Projetar RD-07 a RD-13 de forma configurável e revisar quando o regulamento sair | Grupo | Requisitos configuráveis (RF-054, RF-062); decisão ERS-D10 da especificação IEEE 830 |
 | 9 | **Diretoria vendo resultados individuais.** O Questionário 02 incluiu a Diretoria entre quem vê o resultado; o Questionário 01 e a PO citam só avaliado, gestor direto e RH | RQ-05; Questionário 02 §9; LGPD art. 6º III | Diretoria vê apenas indicadores agregados, respeitando o mínimo de respondentes (RD-14, RD-17) | PO | Ponto P-02 da lista geral: proposta adotada (RNF-001) |
 

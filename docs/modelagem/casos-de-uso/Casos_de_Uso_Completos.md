@@ -4,7 +4,7 @@
 **Disciplina:** Domínios de Software (2026/2) · 1ª Etapa: Levantamento de Requisitos
 **Referência:** Larman, *Utilizando UML e Padrões*, cap. 6
 **Issue:** #48 · **Data:** 17/11/2026
-**Entrada:** [Diagrama de Casos de Uso](Diagrama_Casos_de_Uso.md) (#47) e [Lista Geral de Requisitos](../../Lista_Geral_Requisitos.md) (#45), versão 1.1
+**Entrada:** [Diagrama de Casos de Uso](Diagrama_Casos_de_Uso.md) (#47) e [Lista Geral de Requisitos](../../analise/Lista_Geral_Requisitos.md) (#45), versão 1.1
 
 ---
 
@@ -30,11 +30,11 @@ O formato completo (*fully dressed*) é o mais detalhado dos três formatos de L
 
 | Caso de uso | Integrante | Por que este caso | Arquivo | Situação |
 |---|---|---|---|---|
-| UC-25 Exercer direitos de titular | Verônica Ribeiro Oliveira Palmeira | Cobre a LGPD, que é restrição do enunciado. Verônica cuida da LGPD e dos RNF no processo (seção 4.1) | [UC-25_Exercer_Direitos_de_Titular.md](UC-25_Exercer_Direitos_de_Titular.md) | Descrito |
-| UC-14 Responder avaliação | Isadora Yasmim da Silva | Mostra o fluxo do avaliador e as regras de confidencialidade e anonimato, que Isadora modelou no modelo ER (#52, seção 10) | [UC-14_Responder_Avaliacao.md](UC-14_Responder_Avaliacao.md) | Descrito |
-| UC-19 Criar plano de ação | Ana Luísa Pereira dos Santos | Liga o feedback construtivo ao acompanhamento da melhora, a principal dor do processo atual (D4 nos dois diagramas AS-IS). Ana modelou o BPMN AS-IS (#44) | [UC-19_Criar_Plano_de_Acao.md](UC-19_Criar_Plano_de_Acao.md) | Descrito |
-| UC-08 Registrar feedback | Davi Augusto Ferreira de Carvalho | Núcleo do domínio: emissor, receptor, fatos, tipo e regras de visibilidade. Davi fez o diagrama de casos de uso (#47) e coordena os modelos (seção 4.1) | [UC-08_Registrar_Feedback.md](UC-08_Registrar_Feedback.md) | Descrito |
-| UC-13 Planejar ciclo de avaliação | Júlia de Souza Nascimento | Concentra o feedback formal: objetivos, indicadores, modalidades e modos de identificação. Júlia definiu o processo de requisitos (#31) e analisou o sistema análogo (#40), que tem ciclos de avaliação | [UC-13_Planejar_Ciclo_de_Avaliacao.md](UC-13_Planejar_Ciclo_de_Avaliacao.md) | Descrito |
+| UC-25 Exercer direitos de titular | Verônica Ribeiro Oliveira Palmeira | Cobre a LGPD, que é restrição do enunciado. Verônica cuida da LGPD e dos RNF no processo (seção 4.1) | [UC-25_Exercer_Direitos_de_Titular.md](completos/UC-25_Exercer_Direitos_de_Titular.md) | Descrito |
+| UC-14 Responder avaliação | Isadora Yasmim da Silva | Mostra o fluxo do avaliador e as regras de confidencialidade e anonimato, que Isadora modelou no modelo ER (#52, seção 10) | [UC-14_Responder_Avaliacao.md](completos/UC-14_Responder_Avaliacao.md) | Descrito |
+| UC-19 Criar plano de ação | Ana Luísa Pereira dos Santos | Liga o feedback construtivo ao acompanhamento da melhora, a principal dor do processo atual (D4 nos dois diagramas AS-IS). Ana modelou o BPMN AS-IS (#44) | [UC-19_Criar_Plano_de_Acao.md](completos/UC-19_Criar_Plano_de_Acao.md) | Descrito |
+| UC-08 Registrar feedback | Davi Augusto Ferreira de Carvalho | Núcleo do domínio: emissor, receptor, fatos, tipo e regras de visibilidade. Davi fez o diagrama de casos de uso (#47) e coordena os modelos (seção 4.1) | [UC-08_Registrar_Feedback.md](completos/UC-08_Registrar_Feedback.md) | Descrito |
+| UC-13 Planejar ciclo de avaliação | Júlia de Souza Nascimento | Concentra o feedback formal: objetivos, indicadores, modalidades e modos de identificação. Júlia definiu o processo de requisitos (#31) e analisou o sistema análogo (#40), que tem ciclos de avaliação | [UC-13_Planejar_Ciclo_de_Avaliacao.md](completos/UC-13_Planejar_Ciclo_de_Avaliacao.md) | Descrito |
 
 Os cinco casos sugeridos na seção 9 do diagrama estão descritos.
 

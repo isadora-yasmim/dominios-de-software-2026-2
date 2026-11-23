@@ -55,7 +55,7 @@ Nenhum tipo de feedback formal ou construtivo aparece como "frequente". O reconh
 | Medo de retaliação ao ser sincero | | ✔ | 1 |
 | Falta de tempo para avaliar | | ✔ | 1 |
 
-![Problemas do processo atual (nº de citações)](../../assets/problemas_processo_atual.png)
+![Problemas do processo atual (nº de citações)](img/problemas_processo_atual.png)
 
 ### 1.5 Utilidade dos recursos propostos
 
@@ -71,7 +71,7 @@ Pontuação usada: Muito útil = 4 · Útil = 3 · Pouco útil = 2 · Nada útil
 | Responder avaliações pelo celular | Nada útil | Muito útil | 2,5 | 6º |
 | Lembretes de avaliações pendentes e prazos | Pouco útil | Útil | 2,5 | 6º |
 
-![Utilidade média dos recursos propostos](../../assets/utilidade_recursos.png)
+![Utilidade média dos recursos propostos](img/utilidade_recursos.png)
 
 Os dois recursos com consenso máximo são **perguntas por cargo/competência** e **plano de ação com metas**. Celular e lembretes têm a menor média e também a maior divergência entre as respostas.
 
@@ -133,7 +133,7 @@ Os dois recursos com consenso máximo são **perguntas por cargo/competência** 
 ## 3. Requisitos consolidados com fonte identificada
 
 Legenda da coluna **Fonte:** Q01 = questionário de Isabella; Q02 = questionário de Vaneide; § = seção do questionário de origem.
-**Prioridade sugerida (MoSCoW, conforme a seção 7 do [processo de requisitos](../../Processo_Requisitos.md)):** Must = citado nas duas fontes ou ligado à necessidade central de sigilo/LGPD; Should = uma fonte ou divergência entre as fontes; Could = baixa utilidade média. A prioridade é uma proposta e foi revista na [lista geral](../../Lista_Geral_Requisitos.md) (#45).
+**Prioridade sugerida (MoSCoW, conforme a seção 7 do [processo de requisitos](../../planejamento/Processo_Requisitos.md)):** Must = citado nas duas fontes ou ligado à necessidade central de sigilo/LGPD; Should = uma fonte ou divergência entre as fontes; Could = baixa utilidade média. A prioridade é uma proposta e foi revista na [lista geral](../../analise/Lista_Geral_Requisitos.md) (#45).
 
 ### 3.1 Requisitos funcionais
 
@@ -185,7 +185,7 @@ Legenda da coluna **Fonte:** Q01 = questionário de Isabella; Q02 = questionári
 
 ## 4. Divergências e pendências para validação com a cliente
 
-As pendências abaixo ficaram em aberto ao fim desta síntese. Todas foram tratadas na consolidação da [lista geral](../../Lista_Geral_Requisitos.md) (#45), como mostra a última coluna.
+As pendências abaixo ficaram em aberto ao fim desta síntese. Todas foram tratadas na consolidação da [lista geral](../../analise/Lista_Geral_Requisitos.md) (#45), como mostra a última coluna.
 
 | Tema | Q01 | Q02 | Encaminhamento | Tratamento na lista geral |
 |---|---|---|---|---|

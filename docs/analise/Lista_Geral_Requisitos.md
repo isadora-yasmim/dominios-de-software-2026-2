@@ -10,11 +10,11 @@
 
 | Fonte | Artefato | Issue |
 |---|---|---|
-| Entrevistas (E01 e E02) | [Síntese dos Requisitos das Entrevistas](elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md) | #41 |
-| Questionários (Q01 e Q02) | [Síntese dos Requisitos dos Questionários](elicitacao/questionarios/Sintese.md) | #42 |
-| Pesquisa documental | [Requisitos extraídos da Pesquisa Documental](elicitacao/pesquisa-documental/Requisitos_Pesquisa_Documental.md) | #33 |
-| Sistema análogo (15Five) | [Síntese dos Requisitos do Sistema Análogo](elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | #43 |
-| Processo atual em BPMN (AS-IS 1 e AS-IS 2) | [Processo AS-IS de feedback e avaliação, com as dores](elicitacao/bpmn/Processo_AS-IS_e_Dores.md) | #44 |
+| Entrevistas (E01 e E02) | [Síntese dos Requisitos das Entrevistas](../elicitacao/entrevistas/Sintese_Requisitos_Entrevistas.md) | #41 |
+| Questionários (Q01 e Q02) | [Síntese dos Requisitos dos Questionários](../elicitacao/questionarios/Sintese.md) | #42 |
+| Pesquisa documental | [Requisitos extraídos da Pesquisa Documental](../elicitacao/pesquisa-documental/Requisitos_Pesquisa_Documental.md) | #33 |
+| Sistema análogo (15Five) | [Síntese dos Requisitos do Sistema Análogo](../elicitacao/sistema-analogo/Sintese_Requisitos_Sistema_Analogo.md) | #43 |
+| Processo atual em BPMN (AS-IS 1 e AS-IS 2) | [Processo AS-IS de feedback e avaliação, com as dores](../elicitacao/bpmn/Processo_AS-IS_e_Dores.md) | #44 |
 | Enunciado do trabalho | Projeto da Disciplina (área, escopo e restrições definidos pela professora) | — |
 
 ## Histórico de revisões
@@ -78,9 +78,9 @@ Os diagramas modelam o que foi dito nas entrevistas. Por isso os candidatos `RP`
 ### 2.2 Passos
 
 1. **Leitura das fontes.** Foram lidas as quatro sínteses, as transcrições das duas entrevistas, os dois questionários respondidos, o relatório da pesquisa documental, a descrição do 15Five, os dois diagramas BPMN com o documento que os acompanha e o enunciado do trabalho. As transcrições foram relidas para conferir a evidência de cada requisito e decidir os conflitos.
-2. **Agrupamento por assunto.** Os candidatos que tratam da mesma necessidade foram reunidos em um único requisito. A coluna **Origem** lista todos os candidatos que deram origem a ele, como pede a seção 5.2 do [processo de requisitos](Processo_Requisitos.md).
+2. **Agrupamento por assunto.** Os candidatos que tratam da mesma necessidade foram reunidos em um único requisito. A coluna **Origem** lista todos os candidatos que deram origem a ele, como pede a seção 5.2 do [processo de requisitos](../planejamento/Processo_Requisitos.md).
 3. **Separação.** Candidatos que misturavam mais de uma necessidade foram divididos, para que cada requisito descreva uma só necessidade e possa ser verificado (lista de verificação da seção 2.4 do processo).
-4. **Classificação.** Cada requisito foi classificado como RF, RNF ou RN, conforme as definições da seção 5.2 do processo. Os RNF levam a característica da ISO/IEC 25010:2023. As restrições legais e de plataforma ficaram como RNF, na seção 5.10, e são tratadas na [especificação suplementar](Especificacao_Suplementar.md) (#51).
+4. **Classificação.** Cada requisito foi classificado como RF, RNF ou RN, conforme as definições da seção 5.2 do processo. Os RNF levam a característica da ISO/IEC 25010:2023. As restrições legais e de plataforma ficaram como RNF, na seção 5.10, e são tratadas na [especificação suplementar](../especificacao/Especificacao_Suplementar.md) (#51).
 5. **Resolução de conflitos.** Quando as fontes divergiam, prevaleceu a fala da PO e, depois dela, a obrigação legal. Os conflitos resolvidos assim, ou pelos critérios do processo, estão na seção 8. Quando a PO não tratou do assunto, ou tratou sem dar uma resposta definitiva, a decisão seguiu a fonte com evidência mais forte e a opção mais protetiva para o colaborador. Esses casos estão na seção 9, como decisões do grupo ainda não confirmadas pela PO, cada uma com a justificativa.
 6. **Priorização.** A prioridade proposta nas sínteses foi revista com os critérios MoSCoW do processo (seção 7), aplicados a todas as fontes ao mesmo tempo (seção 2.3).
 7. **Verificação de cobertura.** Cada item do enunciado e cada dor do processo atual foram ligados aos requisitos que os atendem (seção 7). Cada candidato foi ligado ao requisito definitivo para onde foi (seção 11). Nenhum candidato ficou sem destino.
@@ -109,7 +109,7 @@ Requisitos citados por mais fontes subiram de prioridade, como manda o passo 2 d
 
 **Códigos das fontes nas observações.** E01 = entrevista com a PO (Profa. Adriana); E02 = entrevista com a Secretária Municipal de Educação; Q01 e Q02 = questionários; AS-IS 1 e AS-IS 2 = diagramas BPMN do processo atual, feitos a partir da E01 e da E02; D1 a D6 = dores marcadas em cada diagrama; § = seção da transcrição ou do questionário.
 
-**Termos usados.** As definições abaixo valem para esta lista. O glossário completo está no [Dicionário de Dados e Glossário](Dicionario_de_Dados.md) (#53).
+**Termos usados.** As definições abaixo valem para esta lista. O glossário completo está no [Dicionário de Dados e Glossário](../especificacao/Dicionario_de_Dados.md) (#53).
 
 | Termo | Significado nesta lista |
 |---|---|
@@ -667,5 +667,5 @@ Os candidatos `RP` foram extraídos nesta consolidação (seção 2.1), por isso
 - **Fontes pequenas.** São duas entrevistas e dois questionários. Falta a visão de alguém de RH, que aparece só pelo que a PO disse sobre o perfil.
 - **BPMN feito a partir das entrevistas.** Os dois diagramas modelam o que foi dito nas entrevistas, e não uma observação direta do processo. O AS-IS 1 também mistura a prática atual com a prática ideal descrita pela PO (documento do BPMN, seção 7). Por isso o BPMN foi usado para localizar as dores no fluxo e conferir a cobertura, e não como evidência independente. O processo proposto (TO-BE), opcional na issue #44, não foi modelado.
 - **Decisões do grupo sem confirmação da PO.** Em dez pontos as fontes não davam resposta definitiva (seção 9). O grupo decidiu cada um com justificativa nas fontes, e as decisões aguardam a validação da PO. Os requisitos afetados estão escritos de acordo com a decisão e só passam a Validado com a confirmação da PO.
-- **Metas numéricas.** Os valores dos RNF de desempenho, disponibilidade, backup e do feedback informal em uma tela vêm da pesquisa documental ou desta consolidação, e não de pedido da PO (ponto P-10). Eles estão detalhados, com critério de aceitação e método de verificação, na [especificação suplementar](Especificacao_Suplementar.md) (#51).
+- **Metas numéricas.** Os valores dos RNF de desempenho, disponibilidade, backup e do feedback informal em uma tela vêm da pesquisa documental ou desta consolidação, e não de pedido da PO (ponto P-10). Eles estão detalhados, com critério de aceitação e método de verificação, na [especificação suplementar](../especificacao/Especificacao_Suplementar.md) (#51).
 - **Escopo amplo de propósito.** A PO pediu requisitos amplos e disse que a arquitetura pode ser reduzida, por exemplo só a gestor e colaborador (E01 §24). A redução será decidida na segunda etapa do trabalho, sem alterar esta lista.
